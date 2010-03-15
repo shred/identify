@@ -1,0 +1,29 @@
+/*****************************************************************
+**                                                              **
+**  alert.ify           rexxidentify.library demonstration      **
+**                                                              **
+******************************************************************
+**
+**      (c) 1997 by Richard Körber -- All Rights Reserved
+**
+**      You may use this example freely for your own programs.
+**
+*/
+
+  /* Add the library functions */
+CALL AddLib("/libs/rexxidentify.library",0,-30,0)
+
+SAY "Please enter a system alert code (e.g. 81000005)"
+PULL alert
+
+SAY "Alert Code ..." alert
+SAY "Deadend ......" ID_Alert(alert,"DEAD")
+SAY "Subsystem ...." ID_Alert(alert,"SUBSYS")
+SAY "General ......" ID_Alert(alert,"GENERAL")
+SAY "Specific ....." ID_Alert(alert,"SPEC")
+
+SAY ""
+
+EXIT
+
+

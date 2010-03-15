@@ -1,0 +1,59 @@
+#
+# identify.library
+#
+# Copyright (C) 2010 Richard "Shred" Körber
+#   http://identify.shredzone.org
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License / GNU Lesser
+# General Public License as published by the Free Software Foundation,
+# either version 3 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+
+IDENTIFYP = /identify
+REXXIFYP  = /rexxidentify
+DOCSP     = /docs
+INCLUDEP  = /include
+LOCALEP   = /locale
+TOOLSP    = /tools
+
+TARGETP   = release
+
+.PHONY : all clean
+
+all: $(TARGETP) $(TARGETP)/IdentifyDev $(TARGETP)/IdentifyUsr
+
+clean:
+    delete ALL QUIET $(TARGETP)
+
+$(TARGETP):
+    makedir $(TARGETP)
+
+$(TARGETP)/IdentifyDev:
+    copy ALL QUIET FROM IdentifyDev TO $(TARGETP)/IdentifyDev
+    copy FROM $(LOCALEP)/Identify.cd TO $(TARGETP)/IdentifyDev/Identify/catalogs/
+    copy FROM $(LOCALEP)/IdentifyTools.cd TO $(TARGETP)/IdentifyDev/Identify/catalogs/
+    copy FROM $(LOCALEP)/bin/Identify.ct TO $(TARGETP)/IdentifyDev/Identify/catalogs/
+    copy FROM $(LOCALEP)/bin/IdentifyTools.ct TO $(TARGETP)/IdentifyDev/Identify/catalogs/
+    copy FROM $(DOCSP)/bin/identify.doc TO $(TARGETP)/IdentifyDev/Identify/developer/
+    copy FROM $(DOCSP)/bin/Identify-Dev.guide TO $(TARGETP)/IdentifyDev/Identify/developer/
+    copy FROM $(INCLUDEP)/libraries/identify.i TO $(TARGETP)/IdentifyDev/Identify/developer/include/libraries/
+    copy FROM IdentifyDev.readme TO $(TARGETP)/IndentifyDev.readme
+
+$(TARGETP)/IdentifyUsr:
+    copy ALL QUIET FROM IdentifyUsr TO $(TARGETP)/IdentifyUsr
+    copy FROM $(TOOLSP)/bin/\#? TO $(TARGETP)/IdentifyUsr/Identify/c/
+    copy FROM $(IDENTIFYP)/bin/identify.library TO $(TARGETP)/IdentifyUsr/Identify/libs/
+    copy FROM $(IDENTIFYP)/bin/identify.library_000 TO $(TARGETP)/IdentifyUsr/Identify/libs/
+    copy FROM $(REXXIFYP)/bin/rexxidentify.library TO $(TARGETP)/IdentifyUsr/Identify/libs/
+    copy FROM $(DOCSP)/bin/Identify-D.guide TO $(TARGETP)/IdentifyUsr/Identify/docs/
+    copy FROM $(DOCSP)/bin/Identify-E.guide TO $(TARGETP)/IdentifyUsr/Identify/docs/
+    makedir $(TARGETP)/IdentifyUsr/Identify/catalogs/deutsch
+    copy ALL FROM $(LOCALEP)/bin/deutsch TO $(TARGETP)/IdentifyUsr/Identify/catalogs/deutsch/
+    copy FROM IdentifyUsr.readme TO $(TARGETP)/IndentifyUsr.readme
+
+#

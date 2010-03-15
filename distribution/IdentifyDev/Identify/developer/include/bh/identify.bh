@@ -1,0 +1,48 @@
+'
+' identify.library
+'
+' Copyright (C) 2010 Richard "Shred" Körber
+'   http://identify.shredzone.org
+'
+' This program is free software: you can redistribute it and/or modify
+' it under the terms of the GNU General Public License / GNU Lesser
+' General Public License as published by the Free Software Foundation,
+' either version 3 of the License, or (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+'
+' This file was contributed by: Dámaso D. Estévez <amidde@arrakis.es>
+'
+' *********************************************************************
+'              Please read the comments/remarks included
+'      in clib/identify_protos.h and library/identify.h files and
+'                    the documentation for coders
+'             (all included in the library dev package).
+'      ----------------------------------------------------------
+'   Por favor, lea los comentarios/notas incluidas en los ficheros
+'            clib/identify_protos.h y library/identify.h
+'             y en la documentación para programadores
+'     (todo ello incluido en el paquete para desarrolladores).
+' *********************************************************************
+'          This file include as remark the arguments required
+'    for each routine and the version from the routine is available.
+'    ---------------------------------------------------------------
+'          Este fichero incluye como comentario los argumentos
+'                     requeridos por cada rutina y
+'        la versión de la biblioteca desde la que está disponible.
+' **********************************************************************
+
+REM $include identify.bc
+
+LIBRARY DECLARE "identify.library"
+
+DECLARE SUB      IdHardwareUpdate      LIBRARY ' [v8]
+DECLARE FUNCTION IdAlert&              LIBRARY ' [v11] - code&, taglist&
+DECLARE FUNCTION IdEstimateFormatSize& LIBRARY ' [v11] - string&, taglist&
+DECLARE FUNCTION IdExpansion&          LIBRARY ' [v3]  - taglist&
+DECLARE FUNCTION IdFormatString&       LIBRARY ' [v11] - string&, buffer&, length&, taglist&
+DECLARE FUNCTION IdFunction&           LIBRARY ' [v4]  - libname&, offset&, taglist&
+DECLARE FUNCTION IdHardware&           LIBRARY ' [v3]  - type&, taglist&
+DECLARE FUNCTION IdHardwareNum&        LIBRARY ' [v6]  - type&, taglist&

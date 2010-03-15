@@ -1,0 +1,110 @@
+;**********************************************************
+;*                                                        *
+;*           Identify Installer Script example            *
+;*                                                        *
+;**********************************************************
+;*
+;*      $VER: InstallIfy example 1.0 (3.1.1998)
+;*      (C) 1998 Richard Körber -- All Rights Reserved
+;*
+;**********************************************************
+
+(set @default-dest "")
+
+
+(message (cat
+  "\nWelcome to the\n\n"
+  "InstallIfy demonstration\n\n"
+  "InstallIfy is a support tool for the Amiga Installer. You can easily "
+  "check the system configuration and do some conditional installations "
+  "with the result.\n"
+  "You will see some short examples. Also have a look at the source."
+  )
+)
+
+
+;
+; This is the basic principle of InstallIfy. Just call it with the RUN
+; command, and provide the field name you want to check. RUN returns
+; the appropriate value, you just have to store it in a variable. Of
+; course, you can also use the result at once.
+;
+; Do NOT forget the (safe) option, since you eventually want to check
+; the environment even on a simulated installation.
+;
+(set rc (run "c:InstallIfy System" (safe)))
+(if (= rc 11)       ; DraCo?
+  (message "\n\nThis program does not run on DraCo systems, sorry!\n")
+  (if (= rc 12)     ; UAE?
+    (message "\n\nUAE sucks! Buy the real thing!\n")
+    (message "\n\nYou seem to have a standard Amiga\n")
+  )
+)
+
+
+;
+; Let's check if AGA chipset is present.
+;
+(set rc (run "c:InstallIfy Chipset" (safe)))
+(if (= rc 2)        ; AGA?
+  (message "\n\nYou have an AGA chipset\n")
+  (message "\n\nYou don't have an AGA chipset\n")
+)
+
+
+;
+; A more useful thing: let's find out what version of your programm
+; should be installled.
+;
+(set rc (run "c:InstallIfy CPU" (safe)))
+(if (< rc 2)        ; 68020 or higher?
+  (set cpudef 0)
+  (
+     ; Okay, we have at least an 68020 CPU. Let's find out if a FPU is
+     ; present as well.
+    (set rc (run "c:InstallIfy FPU" (safe)))
+    (if (= rc 0)    ; noFPU?
+      (set cpudef 1)
+      (set cpudef 2)
+    )
+  )
+)
+(set rc (run "c:InstallIfy POWERPC" (safe)))
+(if (<> rc 0)       ; PowerPC
+  (set cpudef 3)
+)
+(askchoice (prompt "What program version do you want to install?")
+           (help   "The default has been evaluated using InstallIfy")
+           (choices "68000" "68020+" "68020+ with FPU" "PowerPC")(default cpudef))
+
+
+;
+; Check out if the right PowerPC environment is present.
+;
+(set rc (run "c:InstallIfy POWERPC" (safe)))
+(if (= rc 0)
+  (message "Uh, this program requires a PowerPC to run.")
+  (
+    (set rc (run "c:InstallIfy PPCOS" (safe)))
+    (if (= rc 1)
+      (message "This program requires WarpOS")
+      (if (= rc 2)
+        (message "This program requires PowerUp")
+        (message "You are using some unknown PowerPC OS")
+      )
+    )
+  )
+)
+
+
+(message (cat
+  "\nI hope you was quite impressed by this example.\n\n"
+  "If you have further questions, feel free to send me a mail:\n\n"
+  "shred@chessy.aworld.de"
+  )
+)
+
+(exit)
+
+;********* DONE *******************************************
+

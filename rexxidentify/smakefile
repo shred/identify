@@ -1,0 +1,44 @@
+#
+# identify.library
+#
+# Copyright (C) 2010 Richard "Shred" Körber
+#   http://identify.shredzone.org
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License / GNU Lesser
+# General Public License as published by the Free Software Foundation,
+# either version 3 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+
+OBJP      = bin
+INCP      = /include
+
+OBJS      = $(OBJP)/Main.o
+
+AOPTS     = ERRORS=0 OPT=NRQLPSBT NOEXE INCPATH=Include:,$(INCP)
+LOPTS     = NODEBUG SMALLCODE SMALLDATA
+
+.PHONY : all install clean
+
+all: $(OBJP) $(OBJP)/rexxidentify.library
+
+install: all
+    copy FROM $(OBJP)/rexxidentify.library TO LIBS:rexxidentify.library
+
+clean:
+    delete ALL QUIET $(OBJP)
+
+$(OBJP):
+    makedir $(OBJP)
+
+$(OBJP)/rexxidentify.library: $(OBJS)
+    phxlnk $(LOPTS) TO $(OBJP)/rexxidentify.library FROM $(OBJS)
+
+$(OBJP)/Main.o: Main.s
+    phxass $(AOPTS) FROM Main.s TO $(OBJP)/Main.o
+
+#

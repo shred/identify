@@ -1,0 +1,164 @@
+;*
+;* identify.library
+;*
+;* Copyright (C) 2010 Richard "Shred" Körber
+;*   http://identify.shredzone.org
+;*
+;* This program is free software: you can redistribute it and/or modify
+;* it under the terms of the GNU General Public License / GNU Lesser
+;* General Public License as published by the Free Software Foundation,
+;* either version 3 of the License, or (at your option) any later version.
+;*
+;* This program is distributed in the hope that it will be useful,
+;* but WITHOUT ANY WARRANTY; without even the implied warranty of
+;* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+;*
+## version $VER: IdentifyTools.catalog 0.7 (9.9.1)
+## codeset 0
+## language deutsch
+;
+MSG_NOIDENTIFY
+Benötigt identify.library V%ld oder höher!\n\
+
+;
+MSG_LISTEXP_HAIL
+-- ListExp V%s -- Richard Koerber <%s>\n\
+ (ListExp gehört zum Identify-Paket, siehe AmiNet util/libs)\n\
+\n\
+
+;
+MSG_LISTEXP_HELP
+Format:\n\
+\n\
+  FULL/S\t\talle Commodities auflisten\n\
+  MID=MANUFID/K/N\tInformation über den Hersteller\n\
+  PID=PRODID/K/N\tund sein Produkt\n\
+\n\
+Bitte lesen Sie die Anleitung für weitere Details.\n\
+
+;
+MSG_LISTEXP_OVERFLOW
+Falscher Bereich! (ManufID=0..65535 ProdID=0..255)\n\
+\n\
+
+;
+MSG_LISTEXP_SPECBOARD
+ Hersteller: %s\n\
+ Produkt:    %s\n\
+ Klasse:     %s\n\
+\n\
+
+;
+MSG_LISTEXP_HARDWARE
+** HARDWARE **\n\
+\n\
+System:  %s\n\
+CPU:     CPU=%s/%s (Rev %s), FPU=%s/%s, MMU=%s\n\
+
+;
+MSG_LISTEXP_POWERPC
+PowerPC: %s/%s (unter %s)\n\
+
+;
+MSG_LISTEXP_HARDWARE2
+Chips:   %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
+Agnus:   %s (Modus: %s)\n\
+Denise:  %s (Revision: %s)\n\
+AmigaOS: %s (%s, BoingBag %s, SetPatch %s)\n\
+         Exec %s   Workbench %s\n\
+Sys-Erw: GrafikOS: %s, AudioOS: %s, TCP/IP: %s\n\
+Takte:   Netz %s, VBlank %s, E %s\n\
+RAM:     Motherboard %s bit, %s, %s CAS, %sfache Bandbreite\n\
+\n\
+Speicher:\t   CHIP\t   FAST\t GESAMT\tROM = %s\tSLOW = %s\n\
+\t NORMAL\t%7s\t%7s\t%7s\n\
+\t  VIRT.\t%7s\t%7s\t%7s\n\
+\t GESAMT\t%7s\t%7s\t%7s\n\
+\n\
+\n\
+
+;
+MSG_LISTEXP_LISTTITLE
+** ERWEITERUNGEN **\n\
+\n\
+Nr ID        Adresse  Größe Hersteller           Produkt\n\
+----------------------------------------------------------------------------\n\
+
+;
+MSG_LISTEXP_BOARDLINE
+%2ld %04lx.%02lx %08lx %3ld%lcB %-20s %s %s\n
+;
+MSG_LISTEXP_CXTITLE
+\n\
+\n\
+** COMMODITIES **\n\
+\n\
+Name                     Title\n\
+----------------------------------------------------------------------------\n\
+
+;
+MSG_LISTEXP_CXLINE
+%-24s %-40s\n\
+
+;
+MSG_LISTEXP_EMULATED
+         -- Emuliertes System --\n\
+AmigaXL: Version %s\n\
+Host:    OS: %s (Version %s), %s\n\
+         CPU: %s/%s\n\
+
+;
+MSG_GURU_HAIL
+-- Guru V%s -- Richard Koerber <%s>\n\
+\n\
+
+;
+MSG_GURU_HELP
+Format:\n\
+\n\
+  GURU\t\tzu analysierender Guru-Code\n\
+  LASTALERT/S\tLetzten System-Alert analysieren\n\
+\n\
+Bitte lesen Sie die Anleitung für weitere Details.\n\
+
+;
+MSG_GURU_BADCODE
+Dies ist kein gültiger GURU-Code...\n\
+\n\
+
+;
+MSG_GURU_RESULT
+ Alert-Code: %08lx\n\
+ Typ:        %s\n\
+ Subsystem:  %s\n\
+ Generell:   %s\n\
+ Speziell:   %s\n\
+\n\
+
+;
+MSG_GURU_NOLAST
+Bisher ist noch kein Guru aufgetreten...\n\
+\n\
+
+;
+MSG_FUNC_HAIL
+-- Function V%s -- Richard Koerber <%s>\n\
+\n\
+
+;
+MSG_FUNC_HELP
+Format:\n\
+\n\
+  LN=LIBNAME/A\tName der Library\n\
+  O=OFFSET/N/A\tFunktionsoffset\n\
+\n\
+Bitte lesen Sie die Anleitung für weitere Details.\n\
+
+;
+MSG_FUNC_RESULT
+ Library:    %s\n\
+ Offset:     %ld\n\
+ Funktion:   %s\n\
+\n\
+
+;

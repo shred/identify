@@ -1,0 +1,109 @@
+/*****************************************************************
+**                                                              **
+**  system.ify          rexxidentify.library demonstration      **
+**                                                              **
+******************************************************************
+**
+**      (c) 1997 by Richard Körber -- All Rights Reserved
+**
+**      You may use this example freely for your own programs.
+**
+*/
+
+  /* Add the library functions */
+CALL AddLib("/libs/rexxidentify.library",0,-30,0)
+IF Word(ID_Release(),1)<5 THEN DO
+  SAY "This script requires at least rexxidentify.library release 5!"
+  EXIT
+END
+
+  /* Get every information about the hardware */
+system    = ID_Hardware("SYSTEM",NOLOCALE)
+cpu       = ID_Hardware("CPU",NOLOCALE)
+fpu       = ID_Hardware("FPU",EMPTYNA,NOLOCALE)
+mmu       = ID_Hardware("MMU",EMPTYNA,NOLOCALE)
+osver     = ID_Hardware("OSVER",NOLOCALE)
+execver   = ID_Hardware("EXECVER",NOLOCALE)
+wbver     = ID_Hardware("WBVER",NOLOCALE)
+romsize   = ID_Hardware("ROMSIZE",NOLOCALE)
+chipset   = ID_Hardware("CHIPSET",NOLOCALE)
+gfxsys    = ID_Hardware("GFXSYS",NOLOCALE)
+chipram   = ID_Hardware("CHIPRAM",NOLOCALE)
+fastram   = ID_Hardware("FASTRAM",NOLOCALE)
+ram       = ID_Hardware("RAM",NOLOCALE)
+setpatch  = ID_Hardware("SETPATCHVER",NOLOCALE)
+audiosys  = ID_Hardware("AUDIOSYS",NOLOCALE)
+osnr      = ID_Hardware("OSNR",NOLOCALE)
+vmmchip   = ID_Hardware("VMMCHIPRAM",NOLOCALE)
+vmmfast   = ID_Hardware("VMMFASTRAM",NOLOCALE)
+vmmram    = ID_Hardware("VMMRAM",NOLOCALE)
+plnchip   = ID_Hardware("PLNCHIPRAM",NOLOCALE)
+plnfast   = ID_Hardware("PLNFASTRAM",NOLOCALE)
+plnram    = ID_Hardware("PLNRAM",NOLOCALE)
+vbr       = ID_Hardware("VBR",NOLOCALE)
+lastalert = ID_Hardware("LASTALERT",NOLOCALE)
+vblank    = ID_Hardware("VBLANKFREQ",NOLOCALE)
+power     = ID_Hardware("POWERFREQ",NOLOCALE)
+eclock    = ID_Hardware("ECLOCK",NOLOCALE)
+slowram   = ID_Hardware("SLOWRAM",NOLOCALE)
+gary      = ID_Hardware("GARY",NOLOCALE)
+ramsey    = ID_Hardware("RAMSEY",NOLOCALE)
+battclock = ID_Hardware("BATTCLOCK",NOLOCALE)
+cplanar   = ID_Hardware("CHUNKYPLANAR",NOLOCALE)
+powerpc   = ID_Hardware("POWERPC",EMPTYNA,NOLOCALE)
+ppcclock  = ID_Hardware("PPCCLOCK",NOLOCALE)
+cpurev    = ID_Hardware("CPUREV",EMPTYNA,NOLOCALE)
+cpuclock  = ID_Hardware("CPUCLOCK",NOLOCALE)
+fpuclock  = ID_Hardware("FPUCLOCK",NOLOCALE)
+
+  /* Some nice formatting */
+IF Left(system,1)='A'                   /* English grammar... */
+  THEN system = 'an '||system
+  ELSE system = 'a '||system
+
+chipram   = Right(chipram,7)            /* 7 chars wide */
+fastram   = Right(fastram,7)
+ram       = Right(ram,7)
+vmmchip   = Right(vmmchip,7)
+vmmfast   = Right(vmmfast,7)
+vmmram    = Right(vmmram,7)
+plnchip   = Right(plnchip,7)
+plnfast   = Right(plnfast,7)
+plnram    = Right(plnram,7)
+
+IF Left(lastalert,8)='FFFFFFFF'         /* Do we have an alert code? */
+  THEN lastalert = "no alert yet... :)"
+
+
+  /* Now tell the user what we've found... */
+SAY "This is" system "with" chipset "Chipset."
+IF cpurev~=""
+  THEN SAY "It has a" cpu "CPU (Revision" cpurev||"), clocked at" cpuclock
+  ELSE SAY "It has a" cpu "CPU, clocked at" cpuclock
+IF fpu~=""
+  THEN SAY "The" fpu "FPU is clocked at" fpuclock||"."
+IF mmu~=""
+  THEN SAY "It has also a" mmu "MMU."
+IF powerpc~=""
+  THEN SAY "And it is powered by a" powerpc " PowerPC (clocked at" ppcclock||")."
+SAY ""
+SAY "Versions:     OS" osver "(known as" osnr ||") Exec" execver "Workbench" wbver ||"."
+SAY "              SetPatch" setpatch ||", ROM size" romsize
+SAY ""
+SAY "Multimedia:   Graphics" gfxsys ||", Audio" audiosys
+SAY ""
+SAY "Specialities: VBR" vbr ||", Gary" gary ||", Ramsey" ramsey ||", Clock" battclock
+SAY "              Chunky-to-planar chip:" cplanar
+SAY "              E-Clock" eclock ||", VBlank" vblank ||", Power" power
+SAY ""
+SAY "Memory:                 CHIP   FAST  TOTAL    (SLOW" slowram ||")"
+SAY "              REAL   " plnchip plnfast plnram
+SAY "              VIRTUAL" vmmchip vmmfast vmmram
+SAY "              TOTAL  " chipram fastram ram
+SAY ""
+SAY "Last alert:  " lastalert
+SAY ""
+
+EXIT
+
+

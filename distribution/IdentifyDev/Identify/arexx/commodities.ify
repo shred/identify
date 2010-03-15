@@ -1,0 +1,48 @@
+/*****************************************************************
+**                                                              **
+**  commodities.ify     rexxidentify.library demonstration      **
+**                                                              **
+******************************************************************
+**
+**      (c) 1997 by Richard Körber -- All Rights Reserved
+**
+**      You may use this example freely for your own programs.
+**
+*/
+
+  /* Add the library functions */
+CALL AddLib("/libs/rexxidentify.library",0,-30,0)
+IF Word(ID_Release(),1)<4 THEN DO
+  SAY "This script requires at least rexxidentify.library release 4!"
+  EXIT
+END
+
+  /* Lock a commodity slot */
+slot = ID_LockCX()
+
+  /* List up all commodities */
+DO i=0 TO ID_CountCX(slot)-1
+  name   = Left(ID_GetCX(slot,i,"NAME"),20)
+  title  = ID_GetCX(slot,i,"TITLE")
+  desc   = ID_GetCX(slot,i,"DESC")
+
+  IF ID_GetCX(slot,i,"GUI") = 1 THEN
+    flags = "[GUI] "
+  ELSE
+    flags = ""
+
+  IF ID_GetCX(slot,i,"ACTIVE") = 1 THEN
+    flags = flags||"[ACTIVE]"
+
+  SAY "Name ........ :" name flags
+  SAY "  Title ..... :" title
+  SAY "  Description :" desc
+  SAY ""
+END
+
+ /* Free the slot */
+CALL ID_UnlockCX(slot)
+
+EXIT
+
+

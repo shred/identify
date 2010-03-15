@@ -1,0 +1,41 @@
+/*****************************************************************
+**                                                              **
+**  gfxaudio.ify        rexxidentify.library demonstration      **
+**                                                              **
+******************************************************************
+**
+**      (c) 1997 by Richard Körber -- All Rights Reserved
+**
+**      You may use this example freely for your own programs.
+**
+*/
+
+  /* Add the library functions */
+CALL AddLib("/libs/rexxidentify.library",0,-30,0)
+IF Word(ID_Release(),1)<5 THEN DO
+  SAY "This script requires at least rexxidentify.library release 5!"
+  EXIT
+END
+
+  /* Get the number of present expansions */
+number = ID_NumBoards()
+
+SAY "These Graphics boards were found:"
+DO i=0 TO number-1
+  classid = ID_Expansion(i,"CLASSID")
+  IF (classid=19 | classid=20) & (ID_Expansion(i,"SECONDARY")~="Secondary")
+    THEN SAY "  ·" ID_Expansion(i,"PROD")
+END
+SAY ""
+
+SAY "These Sound boards were found:"
+DO i=0 TO number-1
+  classid = ID_Expansion(i,"CLASSID")
+  IF (classid=10) & (ID_Expansion(i,"SECONDARY")~="Secondary")
+    THEN SAY "  ·" ID_Expansion(i,"PROD")
+END
+SAY ""
+
+EXIT
+
+

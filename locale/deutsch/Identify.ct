@@ -1,0 +1,928 @@
+;*
+;* identify.library
+;*
+;* Copyright (C) 2010 Richard "Shred" Körber
+;*   http://identify.shredzone.org
+;*
+;* This program is free software: you can redistribute it and/or modify
+;* it under the terms of the GNU General Public License / GNU Lesser
+;* General Public License as published by the Free Software Foundation,
+;* either version 3 of the License, or (at your option) any later version.
+;*
+;* This program is distributed in the hope that it will be useful,
+;* but WITHOUT ANY WARRANTY; without even the implied warranty of
+;* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+;*
+## version $VER: Identify.catalog 0.26 (6.6.99)
+## codeset 0
+## language deutsch
+;
+MSG_BYTE
+%ld
+;
+MSG_KBYTE
+%ld.%cKB
+;
+MSG_MBYTE
+%ld.%cMB
+;
+MSG_GBYTE
+%ld.%cGB
+;
+MSG_EXP_UNKNOWN
+(unbekannt)
+;
+MSG_EXP_MISC
+Erweiterung
+;
+MSG_EXP_TURBO
+Turbo
+;
+MSG_EXP_TURBORAM
+Turbo RAM
+;
+MSG_EXP_TURBOHD
+Turbo HD-Kontroller
+;
+MSG_EXP_TURBOIDE
+Turbo IDE-Kontroller
+;
+MSG_EXP_TURBOSCSIHD
+Turbo SCSI-Hostadapter
+;
+MSG_EXP_NET
+Netzwerk
+;
+MSG_EXP_ARCNET
+ArcNet
+;
+MSG_EXP_ETHERNET
+Ethernet
+;
+MSG_EXP_AUDIO
+Audio
+;
+MSG_EXP_VIDEO
+Video
+;
+MSG_EXP_MULTIMEDIA
+Multimedia
+;
+MSG_EXP_DSP
+DSP
+;
+MSG_EXP_BUSBRIDGE
+ISA-Bus-Brücke
+;
+MSG_EXP_BRIDGE
+PC-Brücke
+;
+MSG_EXP_EMULATOR
+Emulator
+;
+MSG_EXP_MACEMU
+Macintosh-Emulator
+;
+MSG_EXP_ATARIEMU
+Atari-Emulator
+;
+MSG_EXP_GFX
+Graphik
+;
+MSG_EXP_GFXRAM
+Graphik-RAM
+;
+MSG_EXP_HD
+HD-Kontroller
+;
+MSG_EXP_HDRAM
+HD-Kontroller-RAM
+;
+MSG_EXP_IDEHD
+IDE-Kontroller
+;
+MSG_EXP_IDEHDRAM
+IDE-Kontroller-RAM
+;
+MSG_EXP_SCSIHD
+SCSI-Hostadapter
+;
+MSG_EXP_RAMSCSIHD
+SCSI-Hostadapter-RAM
+;
+MSG_EXP_CDROM
+CD-ROM-Interface
+;
+MSG_EXP_MODEM
+internes Modem
+;
+MSG_EXP_ISDN
+internes ISDN
+;
+MSG_EXP_MULTIIO
+Multi-I/O
+;
+MSG_EXP_SERIAL
+Multiserielle
+;
+MSG_EXP_PARALLEL
+Multiparallele
+;
+MSG_EXP_SCANIF
+Scanner-Interface
+;
+MSG_EXP_TABLET
+Zeichentablett-Interface
+;
+MSG_EXP_RAM
+RAM-Erweiterung
+;
+MSG_EXP_FLASHROM
+Flash-ROM
+;
+MSG_EXP_SCSIIDE
+SCSI/IDE-Kontroller
+;
+MSG_EXP_RAMFPU
+RAM-Erweiterung / FPU
+;
+MSG_EXP_GUESS
+(geraten)
+;
+MSG_EXP_KICKSTART
+KickStart
+;
+MSG_EXP_RAM32
+32bit RAM-Erweiterung
+;
+MSG_EXP_TURBOANDRAM
+Turbo, RAM-Erweiterung
+;
+MSG_EXP_ACCESS
+Zugangskontrolle
+;
+MSG_EXP_INTERFACE
+Interface
+;
+MSG_EXP_MFMHD
+MFM-Festplatte
+;
+MSG_EXP_FLOPPY
+Floppy-Interface
+;
+MSG_ALERT_RECOVERY
+Recoverable
+;
+MSG_ALERT_DEADEND
+Deadend
+;
+MSG_ALERT_UNKNOWN
+Unbekannt
+;
+MSG_AG_BADPARM
+Falsche Parameter
+;
+MSG_AG_CLOSEDEV
+Kann Device nicht schließen
+;
+MSG_AG_CLOSELIB
+Kann Library nicht schließen
+;
+MSG_AG_GENERAL
+Genereller Fehler
+;
+MSG_AG_IOERROR
+I/O-Fehler
+;
+MSG_AG_MAKELIB
+Kann Library nicht erzeugen
+;
+MSG_AG_NOMEMORY
+Kein Speicher
+;
+MSG_AG_NOSIGNAL
+Kein Signal
+;
+MSG_AG_OPENDEV
+Kann Device nicht öffnen
+;
+MSG_AG_OPENLIB
+Kann Library nicht öffnen
+;
+MSG_AG_OPENRES
+Kann Resource nicht öffnen
+;
+MSG_AG_PROCCREATE
+Kann Prozeß nicht erstellen
+;
+MSG_ACPU_ADDRESSERR
+Illegaler Adreßzugriff
+;
+MSG_ACPU_AUTOVEC1
+AutoVektor Ebene 1 Interruptfehler
+;
+MSG_ACPU_AUTOVEC2
+AutoVektor Ebene 2 Interruptfehler
+;
+MSG_ACPU_AUTOVEC3
+AutoVektor Ebene 3 Interruptfehler
+;
+MSG_ACPU_AUTOVEC4
+AutoVektor Ebene 4 Interruptfehler
+;
+MSG_ACPU_AUTOVEC5
+AutoVektor Ebene 5 Interruptfehler
+;
+MSG_ACPU_AUTOVEC6
+AutoVektor Ebene 6 Interruptfehler
+;
+MSG_ACPU_AUTOVEC7
+AutoVektor Ebene 7 Interruptfehler
+;
+MSG_ACPU_BUSERR
+Hardware-Bus (Zugriffs-) Fehler
+;
+MSG_ACPU_CHK
+CHK-Befehlsfehler
+;
+MSG_ACPU_COPRVIOL
+Koprozessor-Protokollverletzung
+;
+MSG_ACPU_DIVZERO
+Division durch Null
+;
+MSG_ACPU_FORMAT
+Stackframe-Formatfehler
+;
+MSG_ACPU_FPCPBRANCH
+FPCP Verzweigung nach ungeordnetem Zustand
+;
+MSG_ACPU_FPCPDIVZERO
+FPCP Division durch Null
+;
+MSG_ACPU_FPCPINEXACT
+FPCP Ungenaues Ergebnis
+;
+MSG_ACPU_FPCPOPERROR
+FPCP Operandfehler
+;
+MSG_ACPU_FPCPOVER
+FPCP Überlauf
+;
+MSG_ACPU_FPCPUNDER
+FPCP Unterlauf
+;
+MSG_ACPU_UNIMPLDTYPE
+FPCP Unendlich signalisiert
+;
+MSG_ACPU_INSTERR
+Illegaler Befehl
+;
+MSG_ACPU_LINEA
+Line 1010 Emulator
+;
+MSG_ACPU_LINEF
+Line 1111 Emulator
+;
+MSG_ACPU_MMUACCVIOL
+PMMU Zugriffsebenen-Verletzung
+;
+MSG_ACPU_MMUCONFIG
+PMMU Einstellung
+;
+MSG_ACPU_MMUILLEGAL
+PMMU Illegale Einstellung
+;
+MSG_ACPU_NAN
+FPCP signalisiert NAN
+;
+MSG_ACPU_PRIVERR
+Privilegverletzung
+;
+MSG_ACPU_SPURIOUS
+Unechter Interrupt
+;
+MSG_ACPU_TRACE
+Trace
+;
+MSG_ACPU_TRAPV
+TRAPV-Befehl
+;
+MSG_AN_ADDSWGADGET
+Kein Speicher für SW-Gadgets
+;
+MSG_AN_ASYNCPKT
+Unerwartetes Paket erhalten
+;
+MSG_AN_AUDIODEV
+audio.device-Probleme
+;
+MSG_AN_BADCHKSUM
+Falsche Prüfsumme
+;
+MSG_AN_BADEXPANSIONFREE
+Freigegebene Speicherregion
+;
+MSG_AN_BADFREEADDR
+Memory-Header nicht gefunden
+;
+MSG_AN_BADGADGET
+Recovery-Form von AN_GadgetType
+;
+MSG_AN_BADINITFUNC
+Ungültiges Init-Paket für CLI/Shell
+;
+MSG_AN_BADMESSAGE
+Fehlerhafte IDCMP-Nachricht empfangen
+;
+MSG_AN_BADOVERLAY
+Fehlerhaftes Overlay
+;
+MSG_AN_BADQUICKINT
+Ein uninitialisierter Quick-Interrupt trat auf
+;
+MSG_AN_BADSEGLIST
+Overlays sind für Libraries nicht erlaubt
+;
+MSG_AN_BADSEMAPHORE
+Versuch, alte Msg-Semaphore zu benutzen
+;
+MSG_AN_BADSTATE
+Fehlerh. Rückgabestatus bei Intuition-Eintritt
+;
+MSG_AN_BASECHKSUM
+Execbase-Prüfsumme falsch
+;
+MSG_AN_BITMAP
+Bitmap zerstört
+;
+MSG_AN_BLTBITMAP
+BltBitMap: kein Speicher
+;
+MSG_AN_BOGUSEXCPT
+Illegale 68k-Exception verwendet
+;
+MSG_AN_BOOTERROR
+Boot-Code lieferte eine Fehlermeldung
+;
+MSG_AN_BOOTSTRAP
+Bootstrap-Probleme
+;
+MSG_AN_CIARSRC
+cia.resource-Probleme
+;
+MSG_AN_CONSOLEDEV
+colsole.device-Probleme
+;
+MSG_AN_CREATEPORT
+Kein Speicher für Port
+;
+MSG_AN_DISKBLKSEQ
+Disk-Blocksequenz-Fehler
+;
+MSG_AN_DISKCOPY
+DiskCopy-Probleme
+;
+MSG_AN_DISKERROR
+Disk-Fehler
+;
+MSG_AN_DISKFONTLIB
+diskfont.library-Probleme
+;
+MSG_AN_DISKRSRC
+disk.resource-Probleme
+;
+MSG_AN_DOSLIB
+dos.library-Probleme
+;
+MSG_AN_DRHASDISK
+Get unit hat bereits eine Disk
+;
+MSG_AN_DRINTNOACT
+Interrupt: keine aktive Unit
+;
+MSG_AN_ENDTASK
+EndTask schlug fehl
+;
+MSG_AN_EXCPTVECT
+68000 Exception-Vektor-Prüfsumme
+;
+MSG_AN_EXECLIB
+exec.library-Probleme
+;
+MSG_AN_EXPANSIONLIB
+expansion.library-Probleme
+;
+MSG_AN_FILERECLOSED
+Filehandle mehr als einmal geschlossen
+;
+MSG_AN_FREETWICE
+Bereits freien Speicher freigegeben
+;
+MSG_AN_FREEVEC
+FreeVec schlug fehl
+;
+MSG_AN_GADGETTYPE
+Unbekannter Gadget-Typ
+;
+MSG_AN_GADTOOLS
+gadtools.library-Probleme
+;
+MSG_AN_GAMEPORTDEV
+gameport.device-Probleme
+;
+MSG_AN_GFXFREEERROR
+Fehler bei Freigabe von graphics
+;
+MSG_AN_GFXNEWERROR
+Fehler bei neuer graphics
+;
+MSG_AN_GFXNOLCM
+Notfall-Speicher nicht verfügbar
+;
+MSG_AN_GFXNOMEM
+graphics: Speichermangel
+;
+MSG_AN_GFXNOMEMMSPC
+MonitorSpec-Belegung, kein Speicher
+;
+MSG_AN_GRAPHICSLIB
+graphics.library-Probleme
+;
+MSG_AN_ICONLIB
+icon.library-Probleme
+;
+MSG_AN_INITAPTR
+InitStruct() einer APTR-Quelle
+;
+MSG_AN_INTRMEM
+Kein Speicher für Interrupt-Server
+;
+MSG_AN_INTUITION
+intuition.library-Probleme
+;
+MSG_AN_IOAFTERCLOSE
+IO auf geschlossenem IORequest versucht
+;
+MSG_AN_IOUSEDTWICE
+Verwendung eines aktiven IORequest versucht
+;
+MSG_AN_ISEMORDER
+Intuition belegte Semaphore falsch
+;
+MSG_AN_ITEMALLOC
+Kein Speicher für Item-Plane
+;
+MSG_AN_ITEMBOXTOP
+Obere Item-Ecke < RelZero
+;
+MSG_AN_KEYBOARDDEV
+keyboard.device-Probleme
+;
+MSG_AN_KEYFREE
+Taste ist bereits frei
+;
+MSG_AN_KEYRANGE
+Taste außerhalb des Bereiches
+;
+MSG_AN_LAYERSLIB
+layers.library-Probleme
+;
+MSG_AN_LAYERSNOMEM
+Layers: Speichermangel
+;
+MSG_AN_LIBCHKSUM
+Library-Prüfsumme falsch
+;
+MSG_AN_LONGFRAME
+Kein Speicher für langen Frame
+;
+MSG_AN_MAKEVPORT
+Kein Speicher für MakeVPort
+;
+MSG_AN_MATHLIB
+math.library-Probleme
+;
+MSG_AN_MEMCORRUPT
+FreeMem: zerstörte Speicherliste entdeckt
+;
+MSG_AN_MEMORYINSANE
+Prüfung der Speicherliste schlug fehl
+;
+MSG_AN_MISCRSRC
+misc.resource-Probleme
+;
+MSG_AN_NOCONSOLE
+Konnte console.device nicht öffnen
+;
+MSG_AN_NOFONTS
+Keine Zeichensätze verfügbar
+;
+MSG_AN_NOISEM
+Intuition bei Semaphorebelegung übersprungen
+;
+MSG_AN_NOWINDOW
+Konsole kann erstes Fenster nicht öffnen
+;
+MSG_AN_OBSOLETEFONT
+Zeichensatzbeschreibung nicht unterstützt
+;
+MSG_AN_OPENSCREEN
+Kein Speicher für neuen Bildschirm
+;
+MSG_AN_OPENSCRNRAST
+Kein Speicher für neues Bildschirmraster
+;
+MSG_AN_OPENWINDOW
+Kein Speicher für neues Fenster
+;
+MSG_AN_PLANEALLOC
+Kein Speicher für Plane
+;
+MSG_AN_QPKTFAIL
+Qpkt-Fehler
+;
+MSG_AN_RAMLIB
+ramlib-Probleme
+;
+MSG_AN_REGIONMEMORY
+Region-Speicher nicht verfügbar
+;
+MSG_AN_SEMCORRUPT
+Eine Semaphore ist in illegalem Zustand
+;
+MSG_AN_SHORTFRAME
+Kein Speicher für kurzen Frame
+;
+MSG_AN_STACKPROBE
+Stack scheint außerhalb des Bereichs zu sein
+;
+MSG_AN_STARTMEM
+Kein Speicher für Startup
+;
+MSG_AN_SUBALLOC
+Speichermangel bei Unterbelegung
+;
+MSG_AN_SYSSCRNTYPE
+Unbekannter Typ für Systemschirm
+;
+MSG_AN_TDCALIBSEEK
+Kalibrierung: Suchfehler
+;
+MSG_AN_TDDELAY
+Delay: Fehler beim Timer-Wartevorgang
+;
+MSG_AN_TEXTTMPRAS
+Text: kein Speicher für TmpRas
+;
+MSG_AN_TIMERDEV
+timer.device-Probleme
+;
+MSG_AN_TMBADREQ
+Fehlerhafte Anfrage
+;
+MSG_AN_TMBADSUPPLY
+Spannungsversorgung: kein 50/60Hz-Takt
+;
+MSG_AN_TRACKDISKDEV
+trackdisk.device-Probleme
+;
+MSG_AN_UTILITYLIB
+utility.library-Probleme
+;
+MSG_AN_WBBADIOMSG
+Fehlerhafte IO-Nachricht (Hacker-Code?)
+;
+MSG_AN_WBBADSTARTUPMSG2
+Fehlerhafte Start-Nachricht 2
+;
+MSG_AN_WBRELAYOUTTOOLMENU
+GadTools kaputt?
+;
+MSG_AN_WEIRDECHO
+Seltsames Echo
+;
+MSG_AN_WORKBENCH
+Workbench-Probleme
+;
+MSG_AN_LAWBREAKER
+LawBreaker-Demonstration
+;
+MSG_AN_NOALERT
+Kein Alert aufgetreten
+;
+MSG_ACPU_EMUINTR
+Emulator-Interrupt
+;
+MSG_ACPU_UNIMPLEA
+Nicht implementierte effektive Adresse
+;
+MSG_ACPU_UNIMPLII
+Nicht implementierter Integer-Befehl
+;
+MSG_HW_VERSION
+V%ld.%ld
+;
+MSG_HW_NOVERSION
+N/V
+;
+MSG_HW_NONE
+N/V
+;
+MSG_HW_FOUND
+Gefunden
+;
+MSG_HW_AMIGA1000
+Amiga 1000
+;
+MSG_HW_OCSAMIGA
+Amiga (OCS)
+;
+MSG_HW_ECSAMIGA
+Amiga (ECS)
+;
+MSG_HW_AMIGA500
+Amiga 500
+;
+MSG_HW_AMIGA2000
+Amiga 2000
+;
+MSG_HW_AMIGA3000
+Amiga 3000
+;
+MSG_HW_CDTV
+CDTV
+;
+MSG_HW_AMIGA600
+Amiga 600
+;
+MSG_HW_CD32
+CD32
+;
+MSG_HW_AMIGA1200
+Amiga 1200
+;
+MSG_HW_AMIGA4000
+Amiga 4000
+;
+MSG_HW_DRACO
+DraCo
+;
+MSG_HW_UAE
+UAE
+;
+MSG_HW_AMIGA4000T
+Amiga 4000 T
+;
+MSG_HW_AMIGAXL
+AmigaXL
+;
+MSG_HW_68000
+68000
+;
+MSG_HW_68010
+68010
+;
+MSG_HW_68020
+68020
+;
+MSG_HW_68030
+68030
+;
+MSG_HW_68EC030
+68EC030
+;
+MSG_HW_68040
+68040
+;
+MSG_HW_68LC040
+68LC040
+;
+MSG_HW_68060
+68060
+;
+MSG_HW_68LC060
+68LC060
+;
+MSG_HW_68881
+68881
+;
+MSG_HW_68882
+68882
+;
+MSG_HW_68851
+68851
+;
+MSG_HW_AMIGAOS
+AmigaOS
+;
+MSG_HW_EGS
+EGS
+;
+MSG_HW_RETINA
+Retina
+;
+MSG_HW_GRAFFITI
+Graffiti
+;
+MSG_HW_TIGA
+TIGA
+;
+MSG_HW_PROBENCH
+ProBench
+;
+MSG_HW_PICASSO
+Picasso
+;
+MSG_HW_CYBERGRAPHX
+CyberGraphX
+;
+MSG_HW_CGX3
+CyberGraphX 3
+;
+MSG_HW_PICASSO96
+Picasso96
+;
+MSG_HW_CGX4
+CyberGraphX 4
+;
+MSG_HW_AUDAMIGAOS
+AmigaOS
+;
+MSG_HW_MAESTIX
+Maestix
+;
+MSG_HW_TOCCATA
+Toccata
+;
+MSG_HW_PRELUDE
+Prelude
+;
+MSG_HW_AHI
+AHI
+;
+MSG_HW_MACROAUDIO
+MacroAudio
+;
+MSG_HW_OS_UNKNOWN
+Unbekanntes OS
+;
+MSG_HW_OS_36
+2.0
+;
+MSG_HW_OS_37
+2.04
+;
+MSG_HW_OS_38
+2.1
+;
+MSG_HW_OS_39
+3.0
+;
+MSG_HW_OS_40
+3.1
+;
+MSG_HW_OS_44
+3.5
+;
+MSG_HW_OS_45
+3.9
+;
+MSG_HW_NORMAL
+Normal
+;
+MSG_HW_ENHANCED
+Verbessert
+;
+MSG_HW_REVD
+D
+;
+MSG_HW_REVF
+F
+;
+MSG_HW_OCS
+OCS
+;
+MSG_HW_ECS
+ECS
+;
+MSG_HW_AGA
+AGA
+;
+MSG_HW_ALTAIS
+Altais
+;
+MSG_HW_NECS
+Nearly ECS
+;
+MSG_HW_PPCFOUND
+Vorhanden
+;
+MSG_HW_602
+602
+;
+MSG_HW_603
+603
+;
+MSG_HW_603E
+603e
+;
+MSG_HW_603P
+603p
+;
+MSG_HW_604
+604
+;
+MSG_HW_604E
+604e
+;
+MSG_HW_620
+620
+;
+MSG_HW_RAMCAS_NORMAL
+Normal
+;
+MSG_HW_RAMCAS_DOUBLE
+Doppelt
+;
+MSG_HW_TCPIP_NONE
+N/V
+;
+MSG_HW_TCPIP_AMITCP
+AmiTCP/IP
+;
+MSG_HW_TCPIP_MIAMI
+Miami
+;
+MSG_HW_TCPIP_TERMITE
+TermiteTCP
+;
+MSG_HW_TCPIP_GENESIS
+GENESiS
+;
+MSG_HW_TCPIP_MIAMIDX
+MiamiDx
+;
+MSG_HW_PPCOS_NONE
+N/V
+;
+MSG_HW_PPCOS_POWERUP
+PowerUp
+;
+MSG_HW_PPCOS_WARPOS
+WarpOS
+;
+MSG_HW_AGNUS_NONE
+N/V
+;
+MSG_HW_AGNUS_UNKNOWN
+Unbekannt
+;
+MSG_HW_AGNUS_8361
+Agnus 8361
+;
+MSG_HW_AGNUS_8367
+Agnus 8367
+;
+MSG_HW_AGNUS_8370
+Agnus 8370
+;
+MSG_HW_AGNUS_8371
+Agnus 8371
+;
+MSG_HW_AGNUS_8372_R4
+Agnus 8372 Rev. 1-4
+;
+MSG_HW_AGNUS_8372_R5
+Agnus 8372 Rev. 5
+;
+MSG_HW_AGNUS_8374_R2
+Alice 8374 Rev. 1-2
+;
+MSG_HW_AGNUS_8374_R3
+Alice 8374 Rev. 3-4
+;
+MSG_HW_AMODE_NONE
+N/V
+;
+MSG_HW_AMODE_NTSC
+NTSC
+;
+MSG_HW_AMODE_PAL
+PAL
+;
+MSG_HW_DENISE_NONE
+N/V
+;
+MSG_HW_DENISE_UNKNOWN
+Unbekannt
+;
+MSG_HW_DENISE_8362
+Denise 8362
+;
+MSG_HW_DENISE_8373
+Denise 8373
+;
+MSG_HW_DENISE_8364
+Lisa 8364
+;

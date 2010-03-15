@@ -1,0 +1,272 @@
+;*
+;* identify.library
+;*
+;* Copyright (C) 2010 Richard "Shred" Körber
+;*   http://identify.shredzone.org
+;*
+;* This program is free software: you can redistribute it and/or modify
+;* it under the terms of the GNU General Public License / GNU Lesser
+;* General Public License as published by the Free Software Foundation,
+;* either version 3 of the License, or (at your option) any later version.
+;*
+;* This program is distributed in the hope that it will be useful,
+;* but WITHOUT ANY WARRANTY; without even the implied warranty of
+;* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+;*
+
+;********* MESSAGES ***************************************
+
+(set MStartup
+  (cat  "\nWelcome to the\n\n"
+        "Identify installation\n\n\n"
+        "Please read the manual BEFORE you use the software!"
+  )
+)
+
+(set POptions "What do you want to install?")
+(set HOptions
+  (cat  "Please choose the parts of the packet that should be installed.\n\n"
+        "Libraries: All identify libraries (this is the main part).\n\n"
+        "Tools: Small but useful tools.\n\n"
+        "Documentation: The user documentation.\n\n"
+        "Catalogs: Language catalogs (English is the built-in language)\n\n"
+        "If you are not sure what to install, I suggest you to use the default. "
+        "You can add further parts later, without problems."
+  )
+)
+(set SLibs    "Libraries")
+(set STools   "Tools")
+(set SDoc     "Documentation")
+(set SCatalog "Catalogs")
+
+(set PLibDestDir "Where do you want to install the libraries?")
+(set HLibDestDir
+  (cat  "Choose the drawer for the system libraries. "
+        "Usually, this is \"LIBS:\"."
+  )
+)
+
+(set P68k   "What version do you want to install?")
+(set H68k
+  (cat  "Please choose the processor version to be installed. "
+        "The 68020 version does not work on a 68000 and 68010. The 68000 "
+        "version runs on any processor, but requires more memory. "
+        "If you are in doubt, choose the default."
+  )
+)
+
+(set C68000 "68000, 68010")
+(set C68020 "68020 and above")
+
+(set PToolDestDir "Where do you want to install the tools?")
+(set HToolDestDir
+  (cat  "Choose a drawer that is within the shell path. "
+        "Usually, this is \"C:\"."
+  )
+)
+
+(set PDocDestDir "Where do you want to install the docs?\nA drawer will not be created.")
+(set HDocDestDir
+  (cat  "Choose a drawer where you put documentations into. You can also use "
+        "HELP:, if available."
+  )
+)
+
+(set PCatDestDir "Where do you want to install the catalogs?")
+(set HCatDestDir
+  (cat  "Choose the drawer where you put all locale catalog files. "
+        "Usually, this is \"LOCALE:Catalogs/\"."
+  )
+)
+
+(set PCopyLib     "Copying the identify.library")
+(set PCopyRexxLib "Copying the rexxidentify.library")
+(set PCopyTool    "Copying the tools")
+(set PCopyDoc     "Copying the documentations")
+(set PCopyCat     "Copying the catalogs")
+
+(set HCopyTool
+  (cat  "What tools should be installed?\n\n"
+        "ListExp: Describes your system, the expansion boards and commodities. "
+        "Very useful for bug reports or as ShowConfig replacement.\n\n"
+        "Guru: Translates a Guru code in human readable form.\n\n"
+        "Function: Returns the function name of a library at the provided offset."
+        "InstallIfy: Is an utility for installer scripts."
+  )
+)
+
+;********* FILES ******************************************
+
+(set FIfyLibName "identify.library")
+(set FIfyLib     "libs/identify.library")
+(set FIfy000Lib  "libs/identify.library_000")
+(set FRexxLib    "libs/rexxidentify.library")
+(set FListExp    "ListExp")
+(set FGuru       "Guru")
+(set FFunction   "Function")
+(set FInstallIfy "InstallIfy")
+(set FTool       "c/")
+(set FDocs       "docs/")
+(set FCat        "catalogs/")
+
+
+
+;********* INSTALLER SCRIPT *******************************
+
+(set @default-dest "")          ; currently no specific dir
+
+;------ Greetings to the user -----------------------------
+(message MStartup)
+
+;------ What should be installed --------------------------
+(set InstOpts                   ; ask what to install
+  (askoptions
+    (prompt  POptions)
+    (help    HOptions)
+    (choices SLibs STools SDoc SCatalog)
+    (default -1)
+  )
+)
+
+(if (< (database "cpu") 68020)
+  (set FCopyIfyLib FIfy000Lib)
+  (set FCopyIfyLib FIfyLib)
+)
+
+;------ Ask for destinations ------------------------------
+(if (IN InstOpts 0)             ; Libs
+  (
+    (set LibDestDir "LIBS:")    ; Destination for the library
+    (if (= @user-level 2)
+      (
+        (set LibDestDir
+          (askdir
+            (prompt PLibDestDir)
+            (help   HLibDestDir)
+            (default LibDestDir)
+          )
+        )
+        (if (< (database "cpu") 68020)
+          (set cpuchoice 0)
+          (set cpuchoice 1)
+        )
+        (if (= 0 (askchoice (prompt P68k) (help H68k) (choices C68000 C68020) (default cpuchoice)))
+          (set FCopyIfyLib FIfy000Lib)
+          (set FCopyIfyLib FIfyLib)
+        )
+      )
+    )
+  )
+)
+
+(if (IN InstOpts 1)             ; Tools
+  (
+    (set ToolDestDir "C:")
+    (if (= @user-level 2)
+      (set ToolDestDir
+        (askdir
+          (prompt PToolDestDir)
+          (help   HToolDestDir)
+          (default ToolDestDir)
+        )
+      )
+    )
+  )
+)
+
+(if (IN InstOpts 2)             ; Docs
+  (
+    (set DocDestDir
+      (askdir
+        (prompt  PDocDestDir)
+        (help    HDocDestDir)
+        (default "Work:")
+      )
+    )
+  )
+)
+
+(if (IN InstOpts 3)             ; Catalogs
+  (
+    (set CatDestDir "Locale:Catalogs/")
+    (if (= @user-level 2)
+      (set CatDestDir
+        (askdir
+          (prompt PCatDestDir)
+          (help   HCatDestDir)
+          (default CatDestDir)
+        )
+      )
+    )
+  )
+)
+
+
+;------ Copy all files ------------------------------------
+(if (IN InstOpts 0)             ; Libraries
+  (
+    (copylib
+      (prompt  PCopyLib)
+      (help    @copylib-help)
+      (confirm)
+      (source  FCopyIfyLib)
+      (dest    LibDestDir)
+      (newname FIfyLibName)
+    )
+    (copylib
+      (prompt PCopyRexxLib)
+      (help   @copylib-help)
+      (confirm)
+      (source FRexxLib)
+      (dest   LibDestDir)
+    )
+  )
+)
+
+(if (IN InstOpts 1)             ; Tools
+  (
+    (copyfiles
+      (prompt PCopyTool)
+      (help   HCopyTool)
+      (confirm)
+      (choices FListExp FGuru FFunction FInstallIfy)
+      (source FTool)
+      (dest   ToolDestDir)
+    )
+  )
+)
+
+(if (IN InstOpts 2)             ; Docs
+  (
+    (copyfiles
+      (prompt PCopyDocs)
+      (help   @copyfiles-help)
+      (confirm)
+      (source FDocs)
+      (dest   DocDestDir)
+      (all)
+      (infos)
+      (noposition)
+    )
+  )
+)
+
+(if (IN InstOpts 3)             ; Catalogs
+  (
+    (copyfiles
+      (prompt PCopyCat)
+      (help   @copyfiles-help)
+      (confirm)
+      (source FCat)
+      (dest   CatDestDir)
+      (all)
+      (infos)
+      (noposition)
+    )
+  )
+)
+
+
+(exit)
+
+;********* DONE *******************************************
