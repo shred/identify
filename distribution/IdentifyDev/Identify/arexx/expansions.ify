@@ -1,0 +1,44 @@
+/*****************************************************************
+**                                                              **
+**  expansions.ify      rexxidentify.library demonstration      **
+**                                                              **
+******************************************************************
+**
+**      (c) 1997 by Richard Körber -- All Rights Reserved
+**
+**      You may use this example freely for your own programs.
+**
+*/
+
+  /* Add the library functions */
+CALL AddLib("/libs/rexxidentify.library",0,-30,0)
+
+  /* Get the number of present expansions */
+number = ID_NumBoards()
+
+SAY "I found" number "boards inside this computer:"
+SAY ""
+
+  /* Check these expansions */
+DO i=0 TO ID_NumBoards()-1
+  manuf   = ID_Expansion(i,"MANUF")
+  prod    = ID_Expansion(i,"PROD")
+  class   = ID_Expansion(i,"CLASS")
+  address = ID_Expansion(i,"ADDRESS")
+  size    = ID_Expansion(i,"SIZE")
+  shut    = ID_Expansion(i,"SHUTUP")
+
+  size    = Right(size,6)||"K"          /* Some small formatting */
+
+  IF shut='1'                           /* And human readability */
+    THEN shut="SHUT UP"
+    ELSE shut="working"
+
+  SAY i+1||":" address size ">" manuf prod class "("||shut||")"
+END
+
+SAY ""
+
+EXIT
+
+

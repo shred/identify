@@ -1,0 +1,15 @@
+ShowModule v1.10 (c) 1992 $#%!
+now showing: "identify_pragmas.m"
+NOTE: don't use this output in your code, use the module instead.
+
+LIBRARY identifybase         /* informal notation */
+  IdExpansion(A0)     /* -30 (1E) */
+  IdHardware(D0,A0)     /* -36 (24) */
+  IdAlert(D0,A0)     /* -42 (2A) */
+  IdFunction(A0,D0,A1)     /* -48 (30) */
+  IdHardwareNum(D0,A0)     /* -54 (36) */
+  IdHardwareUpdate()     /* -60 (3C) */
+  IdFormatString(A0,A1,D0,A2)     /* -66 (42) */
+  IdEstimateFormatSize(A0,A1)     /* -72 (48) */
+ENDLIBRARY
+

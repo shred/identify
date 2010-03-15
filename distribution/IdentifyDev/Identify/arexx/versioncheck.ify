@@ -1,0 +1,36 @@
+/*****************************************************************
+**                                                              **
+**  versioncheck.ify    rexxidentify.library demonstration      **
+**                                                              **
+******************************************************************
+**
+**      (c) 1997 by Richard Körber -- All Rights Reserved
+**
+**      You may use this example freely for your own programs.
+**
+*/
+
+  /* Add the library functions */
+CALL AddLib("/libs/rexxidentify.library",0,-30,0)
+
+  /* You should use the release part of ID_Release() to   */
+  /* check if a special function or parameter you need is */
+  /* really available. One easy example:                  */
+IF Word(ID_Release(),1)<1 THEN DO
+  SAY "This script requires at least rexxidentify.library release 1!"
+  EXIT
+END
+
+
+relstring = ID_Release()
+PARSE VAR relstring rel ver '.' rev '(' date ')'
+
+SAY "This is rexxidentify.library release" rel
+SAY "The library's version is" ver ||", revision" rev
+SAY "Compilation date:" date
+
+SAY ""
+
+EXIT
+
+
