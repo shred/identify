@@ -101,12 +101,6 @@ Name                     Title\n\
 MSG_LISTEXP_CXLINE (//)
 %-24s %-40s\n
 ;
-MSG_LISTEXP_EMULATED (//)
-         -- emulated system detected --\n\
-AmigaXL: Version %s\n\
-Host:    OS: %s (Version %s), %s\n\
-         CPU: %s/%s\n
-;
 ;
 ;
 ;================================================================

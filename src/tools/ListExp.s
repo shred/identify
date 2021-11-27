@@ -236,27 +236,8 @@ HardList	 move.l	sp,d7			; remember stack
 		dos	VPrintf
 		move.l	d7,sp			; restore stack
 	;-- third line
-.noppc		moveq	#IDHW_EMULATED,d0
-		sub.l	a0,a0
-		idfy	IdHardwareNum
-		tst.l	d0
-		beq	.noemul
-		sub.l	a0,a0
+.noppc		sub.l	a0,a0
 		lea	(.idtab3,PC),a1
-.putloop3	move.l	(a1)+,d0
-		bmi	.loopdone3
-		idfy	IdHardware
-		move.l	d0,-(sp)
-		bra	.putloop3
-.loopdone3	move.l	SP,d2
-		move.l	#MSG_LISTEXP_EMULATED,d0
-		bsr	GetLocString
-		move.l	a0,d1
-		dos	VPrintf
-		move.l	d7,sp			; restore stack
-	;-- fourth line
-.noemul		sub.l	a0,a0
-		lea	(.idtab4,PC),a1
 .putloop4	move.l	(a1)+,d0
 		bmi	.loopdone4
 		idfy	IdHardware
@@ -271,7 +252,7 @@ HardList	 move.l	sp,d7			; remember stack
 		rts
 
 	;-- output table for each row
-.idtab4		dc.l	IDHW_RAM,IDHW_FASTRAM,IDHW_CHIPRAM
+.idtab3		dc.l	IDHW_RAM,IDHW_FASTRAM,IDHW_CHIPRAM
 		dc.l	IDHW_VMMRAM,IDHW_VMMFASTRAM,IDHW_VMMCHIPRAM
 		dc.l	IDHW_PLNRAM,IDHW_PLNFASTRAM,IDHW_PLNCHIPRAM
 		dc.l	IDHW_SLOWRAM,IDHW_ROMSIZE,IDHW_RAMBANDWIDTH
@@ -284,7 +265,6 @@ HardList	 move.l	sp,d7			; remember stack
 		dc.l	IDHW_AGNUSMODE,IDHW_AGNUS
 		dc.l	IDHW_VBR,IDHW_CHUNKYPLANAR,IDHW_GARY,IDHW_RAMSEY
 		dc.l	IDHW_CHIPSET,-1
-.idtab3		dc.l	IDHW_HOSTSPEED,IDHW_HOSTCPU,IDHW_HOSTMACHINE
 		dc.l	IDHW_HOSTVERS,IDHW_HOSTOS,IDHW_XLVERSION,-1
 .idtab2		dc.l	IDHW_PPCOS,IDHW_PPCCLOCK,IDHW_POWERPC,-1
 .idtab1		dc.l	IDHW_MMU,IDHW_FPUCLOCK,IDHW_FPU
