@@ -220,9 +220,9 @@ identify.library/IdHardwareUpdate
    BUGS
         You must also provide IDTAG_ProdStr if you want to use IDTAG_Secondary.
 
-        There are by far not all existing boards implemented. Please send
-        the manufacturer id and name and the products id, name and class
-        of all unknown boards to me. My E-Mail: "shred@eratosthenes.starfleet.de"
+        There are by far not all existing boards implemented. If your board
+        is missing or not correctly detected, please open an issue at
+        https://identify.shredzone.org, or send me an e-mail.
 
    SEE ALSO
  

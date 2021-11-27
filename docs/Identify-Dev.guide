@@ -1,0 +1,438 @@
+@database Identify-Dev.guide
+@Width 72
+
+@Node Main "Identify-Dev.guide"
+@Next "Copyright"
+
+                          ___________
+                      | _| _  _ |.|_ \\/
+                      |(_|(/_| )|||  /
+
+________________________________________________________________________
+
+ @{" 1. Copyright " Link "Copyright"}                   Please read!
+
+ @{" 2. ARexx " Link "ARexx"}                       The ARexx interface
+ @{" 3. InstallIfy " Link "InstallIfy"}                  InstallIfy
+________________________________________________________________________
+
+@EndNode
+
+@Node "Copyright" "Identify-Dev.guide/Copyright"
+@Next "ARexx"
+@Prev "Main"
+@Toc "Main"
+
+Copyright
+*********
+
+Identify is © 1996-2021 Richard 'Shred' Körber and contributors.
+
+
+LICENSE
+-------
+
+Identify is Open Source Software. It is distributed under the
+GNU Lesser General Public License v3.
+
+You can find the license on the internet at http://www.gnu.org/licenses/lgpl.html .
+
+
+SOURCE CODE
+-----------
+
+You can find the reference source code at https://identify.shredzone.org .
+
+If you want to modify the source code, please consider contributing to
+the reference repository. This is better than having an unknown number
+of branches and different source codes versions circulating around.
+
+
+DISCLAIMER
+----------
+
+You are using the program "as is", with all flaws, and on your
+own risk! There is no warranty expressed or implied that the software
+is bug free or fit for your purpose.
+
+@EndNode
+
+@Node "ARexx" "Identify-Dev.guide/ARexx"
+@Next "InstallIfy"
+@Prev "Copyright"
+@Toc "Main"
+
+ARexx
+*****
+
+Since V6.0 an ARexx function library is available. You can now also use Identify
+in your ARexx scripts.
+
+To do so, you just have to install the @{b}rexxidentify.library@{ub} into
+@{b}libs:@{ub}. The library is included into ARexx by using a @{b}CALL
+AddLib("/libs/rexxidentify.library",0,-30,0)@{ub} command.
+
+These functions are available since Release 1:
+
+@{b}ID_Release()@{ub}
+     Returns the release- and version numbers of the
+     @{b}rexxidentify.library@{ub}.  The format is: `@{b}<release>
+     <version>.<revision>(<date>)@{ub}' (Example: `@{b}1 1.0(23.4.97)@{ub}'). You
+     should use the @{b}<release>@{ub} part to check out if a function or option
+     is available (e.g. @{b}Word(ID_Release(),1)@{ub}).  The result can also be
+     easily split up into the single contents by using the @{b}PARSE@{ub}
+     command.
+
+@{b}ID_NumBoards()@{ub}
+     Returns the number of expansion boards added to the system. You
+     can easily construct a loop for @{b}ID_Expansion@{ub}, using this function.
+
+@{b}ID_Expansion(<board>,<result code>)@{ub}
+     Returns the appropriate result to the board number @{b}<board>@{ub} (0 to
+     @{b}ID_NumBoards()@{ub}-1) and the @{b}<result code>@{ub}. Result codes are:
+    @{b}MANUF@{ub}
+          Manufacturer name
+
+    @{b}PROD@{ub}
+          Product name
+
+    @{b}CLASS@{ub}
+          Product class (localized)
+
+    @{b}ADDRESS@{ub}
+          Memory address of the expansion (hexadecimal)
+
+    @{b}SIZE@{ub}
+          Reserved amount of memory for the expansion board (decimal,
+          KBytes)
+
+    @{b}SHUTUP@{ub}
+          Has the expansion been shut up? (0:No, 1:Yes)
+
+    @{b}SECONDARY@{ub}
+          (since Release 4) Checks if the entry is primary (Result:
+          @{b}Primary@{ub}) or secondary (Result: @{b}Secondary@{ub}).
+
+    @{b}CLASSID@{ub}
+          (since Release 5) Returns the Class ID of the expansion
+          board, see include files (decimal).
+
+@{b}ID_Function(<library>,<offset>)@{ub}
+     Returns the name of the @{b}<library>@{ub}'s function and the offset
+     @{b}<offset>@{ub}. See the Shell program @{b}Function@{ub}.
+
+@{b}ID_Alert(<code>,<result code>)@{ub}
+     Returns the appropriate result to the alert code @{b}<code>@{ub}
+     (hexadecimal string) and the @{b}<result code>@{ub}. Result codes are:
+    @{b}DEAD@{ub}
+          Deadend or Recovery?
+
+    @{b}SUBSYS@{ub}
+          System causing the alert
+
+    @{b}GENERAL@{ub}
+          General alert class
+
+    @{b}SPEC@{ub}
+          Specific alert class See the Shell program @{b}Guru@{ub}.
+
+@{b}ID_Hardware(<result code>,{<option>,...})@{ub}
+     Returns a description of the hardware. @{b}<result code>@{ub} are:
+    @{b}SYSTEM@{ub}
+          Used Amiga model (e.g. @{b}Amiga 4000@{ub})
+
+    @{b}CPU@{ub}
+          Used CPU
+
+    @{b}FPU@{ub}
+          Used FPU, if available
+
+    @{b}MMU@{ub}
+          Used MMU, if available
+
+    @{b}OSVER@{ub}
+          AmigaOS ROM version
+
+    @{b}EXECVER@{ub}
+          exec.library version
+
+    @{b}WBVER@{ub}
+          Workbench version, if available
+
+    @{b}ROMSIZE@{ub}
+          Size of the AmigaOS ROM.
+
+    @{b}CHIPSET@{ub}
+          Available chip set (e.g. @{b}AGA@{ub})
+
+    @{b}GFXSYS@{ub}
+          Used graphics system (e.g. @{b}CyberGraphX@{ub})
+
+    @{b}CHIPRAM@{ub}
+          Total size of Chip RAM (includes virtual RAM)
+
+    @{b}FASTRAM@{ub}
+          Total size of Fast RAM (includes virtual RAM)
+
+    @{b}RAM@{ub}
+          Total size of total RAM (includes virtual RAM)
+
+    @{b}SETPATCHVER@{ub}
+          SetPatch version, if available.
+
+    @{b}AUDIOSYS@{ub}
+          Used audio system (e.g. @{b}AHI@{ub})
+
+    @{b}OSNR@{ub}
+          Used OS version (e.g. @{b}3.5@{ub})
+
+    @{b}VMMCHIPRAM@{ub}
+          Size of virtual Chip RAM
+
+    @{b}VMMFASTRAM@{ub}
+          Size of virtual Fast RAM
+
+    @{b}VMMRAM@{ub}
+          Size of virtual RAM
+
+    @{b}PLNCHIPRAM@{ub}
+          Size of physical Chip RAM
+
+    @{b}PLNFASTRAM@{ub}
+          Size of physical Fast RAM
+
+    @{b}PLNRAM@{ub}
+          Size of physical RAM
+
+    @{b}VBR@{ub}
+          Address of the processor vectors
+
+    @{b}LASTALERT@{ub}
+          Last system alert
+
+    @{b}VBLANKFREQ@{ub}
+          VBlank interrupt frequency
+
+    @{b}POWERFREQ@{ub}
+          Power frequency
+
+    @{b}ECLOCK@{ub}
+          Special system clock's frequency
+
+    @{b}SLOWRAM@{ub}
+          Size of the A500 and A2000's special Fast RAM.
+
+    @{b}GARY@{ub}
+          Gary version
+
+    @{b}RAMSEY@{ub}
+          Ramsey version
+
+    @{b}BATTCLOCK@{ub}
+          Battery backed up clock available?
+
+    @{b}CHUNKYPLANAR@{ub}
+          Does a chunky planar hardware exist?
+
+    @{b}POWERPC@{ub}
+          Is a PowerPC available?
+
+    @{b}PPCCLOCK@{ub}
+          The clock of the PowerPC, in MHz units.
+
+    @{b}CPUREV@{ub}
+          (since Release 5) Returns the revision of the built-in CPU,
+          if available.
+
+    @{b}CPUCLOCK@{ub}
+          (since Release 5) Returns the CPU clock, in MHz units.
+
+    @{b}FPUCLOCK@{ub}
+          (since Release 5) Returns the FPU clock, if available, in MHz
+          units.
+
+    @{b}RAMACCESS@{ub}
+          (since Release 6) Returns the access time of the motherboard
+          RAM (unit ns), if available.
+
+    @{b}RAMWIDTH@{ub}
+          (since Release 6) Returns the width of the motherboard RAM
+          (bit), if available.
+
+    @{b}RAMCAS@{ub}
+          (since Release 6) Returns the CAS mode of the motherboard
+          RAM, if available.
+
+    @{b}RAMBANDWIDTH@{ub}
+          (since Release 6) Returns the motherboard RAM bandwidth, if
+          available.
+
+    @{b}TCPIP@{ub}
+          (since Release 7) Returns the used TCP/IP stack, if started.
+
+    @{b}PPCOS@{ub}
+          (since Release 7) Returns the PowerPC OS (PowerUp, WarpOS),
+          if available.
+
+    @{b}AGNUS@{ub}
+          (since Release 7) Returns the Agnus chip revision, if
+          available.
+
+    @{b}AGNUSMODE@{ub}
+          (since Release 7) Returns the Agnus chip mode (PAL or NTSC).
+
+    @{b}DENISE@{ub}
+          (since Release 8) Returns the Denise chip version, if
+          available.
+
+    @{b}DENISEREV@{ub}
+          (since Release 8) Returns the Denise chip revision, if
+          available.
+
+    @{b}BOINGBAG@{ub}
+          (since Release 10) Returns the BoingBag number, if available.
+
+    @{b}EMULATED@{ub}
+          (since Release 11) Returns 0 if this is a real Amiga. Any
+          other value means that the Amiga is emulated.
+
+    @{b}XLVERSION@{ub}
+          (since Release 11) The major version number of the AmigaXL
+          emulator.  0 if AmigaXL is not available.
+
+    @{b}HOSTOS@{ub}
+          (since Release 11) The host operating system of the emulated
+          Amiga.  Currently only available on AmigaXL systems.
+
+    @{b}HOSTVER@{ub}
+          (since Release 11) The host operating system version of the
+          emulated Amiga.  Currently only available on AmigaXL systems.
+
+    @{b}HOSTMACHINE@{ub}
+          (since Release 11) The host architecture of the emulated
+          Amiga.  Currently only available on AmigaXL systems.
+
+    @{b}HOSTCPU@{ub}
+          (since Release 11) The host CPU of the emulated Amiga.
+          Currently only available on AmigaXL systems.
+
+    @{b}HOSTSPEED@{ub}
+          (since Release 11) The host CPU speed of the emulated Amiga.
+          Currently only available on AmigaXL systems.
+
+     These @{b}<options>@{ub} are allowed:
+    @{b}EMPTYNA@{ub}
+          Returns an empty string if the item is not available.
+          Otherwise, a localized `not available' kind of string is
+          returned.
+
+    @{b}NOLOCALE@{ub}
+          The return string is always in English, independent of the
+          current language.
+
+     See also the AutoDocs of @{b}IdHardware()@{ub}.
+
+
+These functions are available since Release 2:
+
+@{b}ID_ExpName(<manufid>,<prodid>,<result code>)@{ub}
+     Returns the appropriate result to the manufacturer @{b}<manufid>@{ub} (0 to
+     65535), product @{b}<prodid>@{ub} (0 to 255) and the @{b}<result code>@{ub}.  Note
+     that Identify cannot differ between expansions with the same
+     product ID in this access mode. Result codes are:
+    @{b}MANUF@{ub}
+          Manufacturer name
+
+    @{b}PROD@{ub}
+          Product name
+
+    @{b}CLASS@{ub}
+          Product class (localized)
+
+
+These functions are available since Release 4:
+
+@{b}ID_LockCX()@{ub}
+     Fetches a copy of all currently present commodities and returns a
+     slot for it. You must always provide this slot to the other
+     functions.
+
+@{b}ID_CountCX(<slot>)@{ub}
+     Results is the number of commodities found.
+
+@{b}ID_GetCX(<slot>,<nr>,<result code>)@{ub}
+     Returns the appropriate result to the commodity @{b}<nr>@{ub} of the slot
+     @{b}<slot>@{ub}. Result codes are:
+    @{b}NAME@{ub}
+          Name of the commodity
+
+    @{b}TITLE@{ub}
+          Title of the commodity
+
+    @{b}DESC@{ub}
+          A short description
+
+    @{b}GUI@{ub}
+          Result is @{b}1@{ub} if the commodity provides a GUI, @{b}0@{ub} otherwise.
+
+    @{b}ACTIVE@{ub}
+          Result is @{b}1@{ub} if the commodity is active, @{b}0@{ub} otherwise.
+
+@{b}ID_UnlockCX(<slot>)@{ub}
+     Frees the slot. You must not use it after that!
+
+
+These functions are available since Release 6:
+
+@{b}ID_Update()@{ub}
+     Actualizes the hardware information. Please use it wisely (see
+     AutoDocs).
+
+
+You will find some example programs in the @{b}arexx@{ub} drawer.
+
+@EndNode
+
+@Node "InstallIfy" "Identify-Dev.guide/InstallIfy"
+@Prev "ARexx"
+@Toc "Main"
+
+InstallIfy
+**********
+
+Since V9.0, a new tool has been added.
+
+InstallIfy allows you to import identify's hardware information into
+Installer scripts.
+
+So you can find out in an Installer script, if e.g. a PowerPC is available,
+what PowerPC OS is used, or if sufficient processor power is available.
+
+InstallIfy should be invoked with the installer's RUN function. The
+name for the desired hardware information is provided, and the
+appropriate numerical result is returned as DOS return code. For
+example:
+
+     (set rc (run "c:InstallIfy POWERPC" (safe)))
+     (if (<> rc 0)       ; PowerPC
+       (message "A PowerPC is available!")
+     )
+
+These options are available:
+
+@{b}FIELD@{ub}
+     Here, the name of the desired hardware field is passed. This are
+     the same as for the ARexx @{b}ID_Hardware@{ub} command. See the include
+     files to find out how the return code has to be interpreted.
+
+@{b}UPDATE@{ub}
+     If this option is set, the @{b}identify.library@{ub} hardware information
+     cache will be flushed. Use this option wisely, see @{b}ListExp@{ub}.
+
+@{b}HELP@{ub}
+     Shows a short help page and exits.
+
+There is an example Installer script in the developer packet. Just have a look
+at it and see how InstallIfy is used.
+
+@EndNode

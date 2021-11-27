@@ -5,7 +5,7 @@
 ;**********************************************************
 ;*
 ;*      $VER: InstallIfy example 1.0 (3.1.1998)
-;*      (C) 1998 Richard Körber -- All Rights Reserved
+;*      (C) 1998 Richard "Shred" Koerber
 ;*
 ;**********************************************************
 
@@ -99,8 +99,7 @@
 
 (message (cat
   "\nI hope you was quite impressed by this example.\n\n"
-  "If you have further questions, feel free to send me a mail:\n\n"
-  "shred@chessy.aworld.de"
+  "Please visit: https://identify.shredzone.org"
   )
 )
 

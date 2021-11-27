@@ -1,0 +1,37 @@
+Short:        Identify hardware and more
+Author:       Richard 'Shred' Koerber
+Uploader:     aminet@shredzone.de (Richard Koerber)
+Type:         util/libs
+Version:      13.1
+Requires:     AmigaOS 2.0 or higher
+Architecture: m68k-amigaos >= 2.0.4
+
+License:      GNU Lesser General Public License v3
+Source:       https://github.com/shred/identify
+Website:      https://identify.shredzone.org
+
+This is an official update! :-)
+
+This is the developer packet for IdentifyUsr. In this packet you will
+find everything you need to use the identify.library for your own
+projects:
+
+  - AutoDocs
+  - Assembler include files
+  - C header files (also protos, pragmas, GCC inlines)
+  - PASCAL include files
+  - FD file
+  - cd file for language translations
+  - C example showing how to use identify with MUI
+  - ARexx examples
+  - Installer examples
+
+Identify is Open Source Software. The source code is distributed under
+the LGPLv3 Lesser Gnu Public License.
+
+The reference repository is at GitHub: https://github.com/shred/identify
+
+The source code is deliberately not part of this package. If you want to
+modify the source code, please consider contributing to the reference
+repository. This is better than having an unknown number of branches and
+different source codes versions circulating around.

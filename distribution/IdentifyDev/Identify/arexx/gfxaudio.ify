@@ -4,7 +4,7 @@
 **                                                              **
 ******************************************************************
 **
-**      (c) 1997 by Richard Körber -- All Rights Reserved
+**      (c) 1997 by Richard "Shred" Koerber
 **
 **      You may use this example freely for your own programs.
 **
@@ -24,7 +24,7 @@ SAY "These Graphics boards were found:"
 DO i=0 TO number-1
   classid = ID_Expansion(i,"CLASSID")
   IF (classid=19 | classid=20) & (ID_Expansion(i,"SECONDARY")~="Secondary")
-    THEN SAY "  ·" ID_Expansion(i,"PROD")
+    THEN SAY "  ï¿½" ID_Expansion(i,"PROD")
 END
 SAY ""
 
@@ -32,10 +32,8 @@ SAY "These Sound boards were found:"
 DO i=0 TO number-1
   classid = ID_Expansion(i,"CLASSID")
   IF (classid=10) & (ID_Expansion(i,"SECONDARY")~="Secondary")
-    THEN SAY "  ·" ID_Expansion(i,"PROD")
+    THEN SAY "  ï¿½" ID_Expansion(i,"PROD")
 END
 SAY ""
 
 EXIT
-
-

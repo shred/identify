@@ -4,7 +4,7 @@
 **                                                              **
 ******************************************************************
 **
-**      (c) 1997 by Richard Körber -- All Rights Reserved
+**      (c) 1997 by Richard "Shred" Koerber
 **
 **      You may use this example freely for your own programs.
 **
@@ -25,5 +25,3 @@ SAY "Specific ....." ID_Alert(alert,"SPEC")
 SAY ""
 
 EXIT
-
-

@@ -1,10 +1,9 @@
-              ___________
-          | _| _  _ |.|_ \/
-          |(_|(/_| )|||  /    v13.1
+                 ___________
+             | _| _  _ |.|_ \/
+             |(_|(/_| )|||  /
 
-             by rkoerber@gmx.de
+       https://identify.shredzone.org
 --------------------------------------------
-   Developer material to the identify
-   packet. Supported are: Assembler, C,
-   E, PASCAL, ARexx, Installer.
+   Developer material and include files
+   to the IdentifyUsr packet.
 --------------------------------------------

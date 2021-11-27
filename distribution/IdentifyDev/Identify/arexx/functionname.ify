@@ -4,7 +4,7 @@
 **                                                              **
 ******************************************************************
 **
-**      (c) 1997 by Richard Körber -- All Rights Reserved
+**      (c) 1997 by Richard "Shred" Koerber
 **
 **      You may use this example freely for your own programs.
 **
@@ -23,5 +23,3 @@ SAY "The function name is '"|| ID_Function(libname,offset) ||"'."
 SAY ""
 
 EXIT
-
-
