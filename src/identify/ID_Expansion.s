@@ -534,6 +534,15 @@ manuf_tab	tabinit
 		board	  000,"KCS Power PC",		MSG_EXP_BRIDGE
 		endmf	00767
 
+		manuf	01001,"Tecmar"
+		endmf	01001
+
+		manuf	01002,"Telesys"
+		endmf	01002
+
+		manuf	01003,"The Micro-Forge"
+		endmf	01003
+
 		manuf	01004,"Cardco Ltd."
 		board	  004,"Kronos 2000",		MSG_EXP_SCSIHD
 		board	  012,"A1000/A2000",		MSG_EXP_SCSIHD
@@ -548,6 +557,12 @@ manuf_tab	tabinit
 		manuf	01006,"Comspec Communications"
 		board	  001,"AX2000",			MSG_EXP_RAM
 		endmf	01006
+
+		manuf	01007,"HT Electonics"
+		endmf	01007
+
+		manuf	01008,"RDS Software"
+		endmf	01008
 
 		manuf	01009,"Anakin Research"
 		board	  001,"Easyl",			MSG_EXP_TABLET
@@ -572,13 +587,43 @@ manuf_tab	tabinit
 		board	  193,"MBX 1200 / 1200z",	MSG_EXP_MISC
 		endmf	01010
 
+		manuf	01011,"Bob Krauth"
+		endmf	01011
+
 		manuf	01012,"Access Associates"
 		board	  000,"Allegra",		MSG_EXP_RAM	; correct ID?
 		board	  001,"Allegra",		MSG_EXP_RAM
 		endmf	01012
 
-		manuf   01014,"Expansion Technologies"
+		manuf	01013,"Mini Comp Systems Ltd."
+		endmf	01013
+
+		manuf	01014,"Cypress Technologies"
 		endmf	01014
+
+		manuf	01015,"Fuller Computers"
+		endmf	01015
+
+		manuf	01016,"Galaxy Computers"
+		endmf	01016
+
+		manuf	01017,"ADA Research"
+		endmf	01017
+
+		manuf	01018,"Computer Sevice Italia"
+		endmf	01018
+
+		manuf	01019,"Amigo"
+		endmf	01019
+
+		manuf	01020,"Micro-Solutions Inc."
+		endmf	01020
+
+		manuf	01021,"Stacar International"
+		endmf	01021
+
+		manuf	01022,"Video Precisions"
+		endmf	01022
 
 		manuf	01023,"ASDG"
 		board	  001,"2MB",			MSG_EXP_RAM
@@ -586,6 +631,15 @@ manuf_tab	tabinit
 		board	  254,"LanRover",		MSG_EXP_ETHERNET
 		board	  255,"GPIB / IEEE-488 / Twin-X (dual)",MSG_EXP_SERIAL
 		endmf	01023
+
+		manuf	01025,"Ing.-B\xFCro Kalawsky"
+		endmf	01025
+
+		manuf	01026,"Computer Tuning"
+		endmf	01026
+
+		manuf	01027,"Interplan Unternehmensberatung"
+		endmf	01027
 
 		manuf	01028,"Imtronics"
 		board	  057,"Hurricane 2800 (68030)",	MSG_EXP_TURBO
@@ -596,12 +650,54 @@ manuf_tab	tabinit
 		board	  000,"A2410 HiRes Framebuffer",MSG_EXP_GFX
 		endmf	01030
 
-		manuf	01053,"Ameristar"
+		manuf	01041,"Design Labs"
+		endmf	01041
+
+		manuf	01042,"MCS"
+		endmf	01042
+
+		manuf	01043,"B. J. Freeman"
+		endmf	01043
+
+		manuf	01044,"Side Effects Inc."
+		endmf	01044
+
+		manuf	01045,"Oklahoma Personal Comp."
+		endmf	01045
+
+		manuf	01046,"Advanced Micro Innovations"
+		endmf	01046
+
+		manuf	01047,"Industrial Support Services"
+		endmf	01047
+
+		manuf	01048,"Technisoft"
+		endmf	01048
+
+		manuf	01049,"Prolific"
+		endmf	01049
+
+		manuf	01050,"Softeam"
+		endmf	01050
+
+		manuf	01051,"GRC Electronics"
+		endmf	01051
+
+		manuf	01052,"David Lai"
+		endmf	01052
+
+		manuf	01053,"Ameristar Technologies"
 		board	  001,"A2065",			MSG_EXP_ETHERNET
 		board	  009,"A2060 / A560",		MSG_EXP_ARCNET
 		board	  010,"A4066",			MSG_EXP_ETHERNET
 		board	  020,"1600-GX",		MSG_EXP_GFX
 		endmf	01053
+
+		manuf	01054,"Cline Refrigeration"
+		endmf	01054
+
+		manuf	01055,"Cardiac Pacemakers"
+		endmf	01055
 
 		manuf	01056,"Supra"
 		board	  001,"SupraDrive 4x4",		MSG_EXP_SCSIHD
@@ -617,19 +713,40 @@ manuf_tab	tabinit
 		board	  016,"2400zi+",		MSG_EXP_MODEM
 		endmf	01056
 
+		manuf	01057,"Wayne Diener"
+		endmf	01057
+
 		manuf	01058,"Computer Systems Ass."
 		board	  017,"Magnum 040",		MSG_EXP_TURBOANDRAM
 		board	  021,"12 Gauge 030/882",	MSG_EXP_TURBOANDRAM
 		endmf	01058
 
+		manuf	01059,"Trionix"
+		endmf	01059
+
+		manuf	01060,"David Lucas"
+		endmf	01060
+
+		manuf	01061,"Analog Precision"
+		endmf	01061
+
 		manuf	01081,"Marc Michael Groth"
 		endmf	01081
 
-		manuf	01282,"M-Tech"
+		manuf	01267,"RBM Digitaltechnik"
+		endmf	01267
+
+		manuf	01282,"M-Tech Hardware Design"
 		board	  003,"AT500",			MSG_EXP_RAM
 		endmf	01282
 
-		manuf   01761,"GVP"
+		manuf	01337,"Thomas Stenzel"
+		endmf	01337
+
+		manuf	01576,"Boris Krizma"
+		endmf	01576
+
+		manuf	01761,"Great Valley Products"
 		board	  008,"Impact Series I",	MSG_EXP_RAMSCSIHD ; A2000 2MB RAM Board
 		endmf	01761
 
@@ -639,6 +756,30 @@ manuf_tab	tabinit
 		board	  003,"emulated",		MSG_EXP_RAM
 		board	  096,"emulated",		MSG_EXP_GFX
 		endmf	01803
+
+		manuf	02002,"Mimetics"
+		endmf	02002
+
+		manuf	02003,"ACDA"
+		endmf	02003
+
+		manuf	02004,"Finn R. Jacobsen"
+		endmf	02004
+
+		manuf	02005,"Elthen Electronics"
+		endmf	02005
+
+		manuf	02006,"Nine Tiles Computer Systems"
+		endmf	02006
+
+		manuf	02007,"Analog Electronics"
+		endmf	02007
+
+		manuf	02008,"Bell & Howell"
+		endmf	02008
+
+		manuf	02009,"Roland Kochler"
+		endmf	02009
 
 		manuf	02010,"ByteBox"
 		board	  000,"A500",			MSG_EXP_UNKNOWN
@@ -667,6 +808,18 @@ manuf_tab	tabinit
 		board	  255,"WildFire 060",		MSG_EXP_TURBO
 		endmf	02012
 
+		manuf	02013,"Pacific Peripherals"
+		endmf	02013
+
+		manuf	02014,"Sysaphus Software"
+		endmf	02014
+
+		manuf	02015,"Digitronics"
+		endmf	02015
+
+		manuf	02016,"Akron Systems"
+		endmf	02016
+
 		manuf	02017,"GVP"
 		board	  001,"Impact Series I (4K)",	MSG_EXP_SCSIHD
 		board	  002,"Impact Series I (16K/2)",MSG_EXP_SCSIHD
@@ -682,6 +835,15 @@ manuf_tab	tabinit
 		board	  255,"\xA7G-Force '0\xA740 I/O",MSG_EXP_MULTIIO
 		endmf	02017
 
+		manuf	02018,"Calmos"
+		endmf	02018
+
+		manuf	02019,"Dover Research"
+		endmf	02019
+
+		manuf	02020,"David Krehbiel"
+		endmf	02020
+
 		manuf	02021,"Synergy"			; California Access
 		board	  001,"Malibu",			MSG_EXP_SCSIHD
 		endmf	02021
@@ -692,7 +854,16 @@ manuf_tab	tabinit
 		board	  003,"FastCard plus",		MSG_EXP_HD
 		endmf	02022
 
-		manuf   02026,"Progressive Periph.&Systems"
+		manuf	02023,"Micron Technology"
+		endmf	02023
+
+		manuf	02024,"CH Electronics"
+		endmf	02024
+
+		manuf	02025,"American Liquid Light"
+		endmf	02025
+
+		manuf	02026,"Progressive Periph.&Softw."
 		board	  000,"Mercury",		MSG_EXP_TURBO
 		board	  001,"A3000 68040",		MSG_EXP_TURBO
 		board	  002,"?",			MSG_EXP_RAM
@@ -705,12 +876,27 @@ manuf_tab	tabinit
 		board	  255,"Pixel64",		MSG_EXP_GFXRAM
 		endmf	02026
 
-		manuf   02028,"Xebec"
+		manuf	02027,"Wicat Systems"
+		endmf	02027
+
+		manuf	02028,"Applied Systems&Periph."
 		endmf	02028
+
+		manuf	02029,"Delaware Valley Software"
+		endmf	02029
 
 		manuf	02030,"Palomax"
 		board	  000,"MAX-125",		MSG_EXP_MISC
 		endmf	02030
+
+		manuf	02031,"Incognito Software"
+		endmf	02031
+
+		manuf	02032,"Jadesign"
+		endmf	02032
+
+		manuf	02033,"BVR"
+		endmf	02033
 
 		manuf	02034,"Spirit Technology"
 		board	  001,"Insider IN1000",		MSG_EXP_RAM	; 1.5MB
@@ -725,9 +911,42 @@ manuf_tab	tabinit
 		manuf	02035,"Spirit Technology"
 		endmf	02035
 
+		manuf	02036,"Atronic"
+		endmf	02036
+
+		manuf	02037,"Scott Karlin"
+		endmf	02037
+
+		manuf	02038,"Howitch"
+		endmf	02038
+
+		manuf	02039,"Sullivan Brothers"
+		endmf	02039
+
+		manuf	02040,"G I T"
+		endmf	02040
+
+		manuf	02041,"Amigo Business Computers"
+		endmf	02041
+
+		manuf	02042,"Micro E"
+		endmf	02042
+
+		manuf	02043,"Ralph Kruse"
+		endmf	02043
+
+		manuf	02044,"Clearpoint Research"
+		endmf	02044
+
+		manuf	02045,"Kodiak"
+		endmf	02045
+
 		manuf	02046,"AlfaData"
 		board	  003,"ALF 3",			MSG_EXP_SCSIHD
 		endmf	02046
+
+		manuf	02048,"Commodore Braunschweig"
+		endmf	02048
 
 		manuf	02049,"BSC"		; (Elaborate Bytes)
 		board	  001,"ALF 2 MFM",		MSG_EXP_HD
@@ -743,13 +962,46 @@ manuf_tab	tabinit
 		board	  012,"A1000",			MSG_EXP_SCSIHD
 		endmf	02050
 
+		manuf	02051,"Spartanics"
+		endmf	02051
+
 		manuf	02052,"Jochheim"
 		board	  001,"2/8 MB",			MSG_EXP_RAM
 		endmf	02052
 
+		manuf	02053,"Trans Data Systems"
+		endmf	02053
+
+		manuf	02054,"Applied Systems&Periph."
+		endmf	02054
+
 		manuf	02055,"Checkpoint Technologies"
 		board	  000,"Serial Solution (dual)",	MSG_EXP_SERIAL
 		endmf	02055
+
+		manuf	02056,"Adept Development"
+		endmf	02056
+
+		manuf	02057,"Advanced Computer Design"
+		endmf	02057
+
+		manuf	02058,"Sir Netics"
+		endmf	02058
+
+		manuf	02059,"Expert Services"
+		endmf	02059
+
+		manuf	02060,"Digital Art Systems"
+		endmf	02060
+
+		manuf	02061,"Adept Development"
+		endmf	02061
+
+		manuf	02062,"Expansion Technologies"
+		endmf	02062
+
+		manuf	02063,"Alphatech"
+		endmf	02063
 
 		manuf	02064,"Edotronik"
 		board	  001,"IEEE-488 Controller",	MSG_EXP_MISC
@@ -767,9 +1019,21 @@ manuf_tab	tabinit
 		board	  001,"Malibu",			MSG_EXP_SCSIHD
 		endmf	02065
 
+		manuf	02066,"Bowden, Williams, Full"
+		endmf	02066
+
 		manuf	02067,"NES Inc."
 		board	  000,"Expansion RAM",		MSG_EXP_RAM
 		endmf	02067
+
+		manuf	02068,"Amdev"
+		endmf	02068
+
+		manuf	02069,"Big Brother Security"
+		endmf	02069
+
+		manuf	02070,"Active Circuits"
+		endmf	02070
 
 		manuf	02071,"ICD"
 		board	  001,"AdSCSI 2000",		MSG_EXP_SCSIHD ; Advantage SCSI
@@ -779,6 +1043,9 @@ manuf_tab	tabinit
 		board	  255,"?",			MSG_EXP_IDEHD
 		endmf	02071
 
+		manuf	02072,"Multi-Meg Electronique"
+		endmf	02072
+
 		manuf	02073,"Kupke"
 		board	  001,"Omti",			MSG_EXP_MFMHD	; Golem
 		board	  002,"SCSI-II",		MSG_EXP_SCSIHD	; Golem
@@ -786,6 +1053,12 @@ manuf_tab	tabinit
 		board	  004,"030/882 (synchronous)",	MSG_EXP_TURBO
 		board	  005,"030/882 (asynchronous)",	MSG_EXP_TURBO
 		endmf	02073
+
+		manuf	02074,"The Checkered Ball"
+		endmf	02074
+
+		manuf	02075,"Hi Tension Computer Services"
+		endmf	02075
 
 		manuf	02076,"Alfa Data"
 		board	  024,"AlfaRAM",		MSG_EXP_RAM
@@ -799,14 +1072,47 @@ manuf_tab	tabinit
 		manuf	02078,"Interworks Network"
 		endmf	02078
 
+		manuf	02079,"Galysh Enterprises"
+		endmf	02079
+
 		manuf	02080,"Hardital Synthesis"
 		board	  020,"TQM 68030+68882",	MSG_EXP_TURBO
 		endmf	02080
+
+		manuf	02081,"GBS"
+		endmf	02081
+
+		manuf	02082,"Circum Design"
+		endmf	02082
+
+		manuf	02083,"Alberta Micro Electronic"
+		endmf	02083
+
+		manuf	02084,"Bestech"
+		endmf	02084
+
+		manuf	02085,"Lasar Fantasy"
+		endmf	02085
+
+		manuf	02086,"Pulsar"
+		endmf	02086
+
+		manuf	02087,"Ivis"
+		endmf	02087
 
 		manuf	02088,"Applied Engineering"
 		board	  016,"DL2000",			MSG_EXP_MODEM
 		board	  224,"RAM Works",		MSG_EXP_RAM
 		endmf	02088
+
+		manuf	02089,"Solid-State Design & Dev."
+		endmf	02089
+
+		manuf	02090,"Vison Quest"
+		endmf	02090
+
+		manuf	02091,"Seaview Software"
+		endmf	02091
 
 		manuf	02092,"BSC"		; Elaborate Bytes
 		boarda	  002,"AlfaData","ALF 2",	MSG_EXP_SCSIHD
@@ -826,9 +1132,27 @@ manuf_tab	tabinit
 		board	  065,"ISDN MasterCard II",	MSG_EXP_ISDN
 		endmf	02092
 
+		manuf	02093,"Bernd Culenfeld"
+		endmf	02093
+
+		manuf	02094,"American Liquid Light"
+		endmf	02094
+
+		manuf	02095,"CEGITES"
+		endmf	02095
+
+		manuf	02097,"Silicon Peace"
+		endmf	02097
+
+		manuf	02098,"Black Belt Systems"
+		endmf	02098
+
 		manuf	02099,"VillageTronic"
 		board	  137,"Ariadne",		MSG_EXP_ETHERNET
 		endmf	02099
+
+		manuf	02100,"ReadySoft"
+		endmf	02100
 
 		manuf	02101,"Phoenix"
 		board	  033,"ST506 Autoboot",		MSG_EXP_MFMHD
@@ -842,10 +1166,34 @@ manuf_tab	tabinit
 		board	  008,"Nexus",			MSG_EXP_RAM
 		endmf	02102
 
+		manuf	02103,"Rombo Productions"
+		endmf	02103
+
 		manuf	02104,"Impulse"
 		board	  000,"FireCracker 24 NTSC",	MSG_EXP_GFX
 		board	  001,"FireCracker 24 PAL",	MSG_EXP_GFX
 		endmf	02104
+
+		manuf	02105,"Beta Unlimited"
+		endmf	02105
+
+		manuf	02106,"Memory Expansion System"
+		endmf	02106
+
+		manuf	02107,"Vortex Computer Systems"
+		endmf	02107
+
+		manuf	02108,"Platypus Systems"
+		endmf	02108
+
+		manuf	02109,"Gigatron"
+		endmf	02109
+
+		manuf	02110,"PG Electronics"
+		endmf	02110
+
+		manuf	02111,"New Technologies Group"
+		endmf	02111
 
 		manuf	02112,"Interactive Video Systems"	; IVS (Pacific Peripherals)
 		board	  002,"GrandSlam PIC 2",	MSG_EXP_SCSIHD
@@ -868,11 +1216,14 @@ manuf_tab	tabinit
 		board	  002,"Symposium",		MSG_EXP_MISC
 		endmf	02114
 
+		manuf	02115,"Xanadu"
+		endmf	02115
+
 		manuf	02116,"Pacific Digital"
 		board	  002,"PC-Access",		MSG_EXP_MISC
 		endmf	02116
 
-		manuf	02117,"XPert ProDev"
+		manuf	02117,"XPert"
 		board	  001,"\xA1Visiona",		MSG_EXP_GFXRAM
 		board	  002,"Visiona",		MSG_EXP_GFX
 		board	  003,"\xA1Merlin",		MSG_EXP_GFXRAM
@@ -880,9 +1231,30 @@ manuf_tab	tabinit
 		board	  201,"Merlin",			MSG_EXP_GFX
 		endmf	02117
 
+		manuf	02118,"The Amiga Centre"
+		endmf	02118
+
+		manuf	02119,"Digital Pacific"
+		endmf	02119
+
+		manuf	02120,"Solid State Leisure"
+		endmf	02120
+
 		manuf	02121,"Hydra Systems"
 		board	  001,"Amiganet",		MSG_EXP_ETHERNET
 		endmf	02121
+
+		manuf	02122,"Cumana"
+		endmf	02122
+
+		manuf	02123,"KAPS 2C Conception"
+		endmf	02123
+
+		manuf	02124,"Mike Mason"
+		endmf	02124
+
+		manuf	02125,"For Your Eyes"
+		endmf	02125
 
 		manuf	02126,"VOB Computersysteme"
 		board	  001,"Access X",		MSG_EXP_HD
@@ -905,10 +1277,49 @@ manuf_tab	tabinit
 		board	  009,"Digital Broadcaster",	MSG_EXP_VIDEO
 		endmf	02129
 
+		manuf	02130,"Alfa-Laval"
+		endmf	02130
+
+		manuf	02131,"Multigros"
+		endmf	02131
+
+		manuf	02132,"Archos"
+		endmf	02132
+
+		manuf	02133,"Icom Simulations"
+		endmf	02133
+
+		manuf	02134,"Commodore Test Engineering"
+		endmf	02134
+
+		manuf	02135,"Microcreations"
+		endmf	02135
+
+		manuf	02136,"Shoestring Productions"
+		endmf	02136
+
+		manuf	02137,"Faberushi"
+		endmf	02137
+
+		manuf	02138,"Evesham Micro"
+		endmf	02138
+
+		manuf	02139,"Pangulin Laser Software"
+		endmf	02139
+
+		manuf	02140,"Thomas Rudloff"
+		endmf	02140
+
+		manuf	02141,"Daniel Hohabir"
+		endmf	02141
+
 		manuf	02142,"GFX-Base"
 		board	  000,"GDA-1 VRAM",		MSG_EXP_GFX
 		board	  001,"GDA-1",			MSG_EXP_GFX
 		endmf	02142
+
+		manuf	02143,"Axellabs"
+		endmf	02143
 
 		manuf	02144,"RocTec"
 		board	  001,"RH 800C",		MSG_EXP_HD
@@ -926,6 +1337,9 @@ manuf_tab	tabinit
 		manuf	02146,"Atlantis"
 		endmf	02146
 
+		manuf	02147,"Skytec Computers"
+		endmf	02147
+
 		manuf	02148,"Protar"
 		endmf	02148
 
@@ -936,11 +1350,26 @@ manuf_tab	tabinit
 		board	  001,"Golden Gate 2 Bus+",	MSG_EXP_BRIDGE	; pure IDE bus bridge?
 		endmf	02150
 
+		manuf	02151,"Infinity Systems"
+		endmf	02151
+
+		manuf	02152,"Trade It"
+		endmf	02152
+
+		manuf	02153,"Suntec"
+		endmf	02153
+
 		manuf	02154,"DJW Micro Systems"
 		board	  001,"Horizon",		MSG_EXP_GFX
 		board	  002,"BlackBox",		MSG_EXP_GFX
 		board	  003,"Voyager",		MSG_EXP_GFX
 		endmf	02154
+
+		manuf	02155,"Power Computing"
+		endmf	02155
+
+		manuf	02156,"MacroSystems"
+		endmf	02156
 
 		manuf	02157,"Masoboshi"
 		boarda	  000,"DCE","Viper 520 CD",	MSG_EXP_TURBO
@@ -949,13 +1378,31 @@ manuf_tab	tabinit
 		board	  007,"MVD 819",		MSG_EXP_UNKNOWN
 		endmf	02157
 
+		manuf	02158,"HAL"
+		endmf	02158
+
 		manuf	02159,"Mainhattan Data"
 		board	  001,"A-Team",			MSG_EXP_IDEHD
 		endmf	02159
 
+		manuf	02160,"Digital Processing System"
+		endmf	02160
+
 		manuf	02161,"Blue Ribbon"
 		board	  002,"One Stop Music Shop",	MSG_EXP_AUDIO
 		endmf	02161
+
+		manuf	02162,"XPert"
+		endmf	02162
+
+		manuf	02164,"Superformance"
+		endmf	02164
+
+		manuf	02165,"Overland Engineering"
+		endmf	02165
+
+		manuf	02166,"Thomas Hamren"
+		endmf	02166
 
 		manuf	02167,"VillageTronic"
 		board	  001,"\xA1Domino",		MSG_EXP_GFXRAM
@@ -972,23 +1419,80 @@ manuf_tab	tabinit
 		board	  202,"Ariadne II",		MSG_EXP_ETHERNET
 		endmf	02167
 
+		manuf	02168,"Toolbox Design"
+		endmf	02168
+
+		manuf	02169,"Digital Processing System"
+		endmf	02169
+
+		manuf	02170,"Superformance"
+		endmf	02170
+
 		manuf	02171,"Utilities Unlimited"
 		board	  021,"Emplant Deluxe",		MSG_EXP_MACEMU
 		board	  032,"Emplant Deluxe",		MSG_EXP_MACEMU
 		endmf	02171
+
+		manuf	02172,"phase 5"
+		endmf	02172
+
+		manuf	02173,"J\xFCrgen Kommos"
+		endmf	02173
+
+		manuf	02174,"Electronic Design"
+		endmf	02174
+
+		manuf	02175,"James Cook University"
+		endmf	02175
 
 		manuf	02176,"Amitrix"
 		board	  001,"?",			MSG_EXP_MULTIIO
 		board	  002,"CD-RAM (CDTV)",		MSG_EXP_RAM
 		endmf	02176
 
+		manuf	02177,"Ferranti"
+		endmf	02177
+
+		manuf	02178,"Leviathan Development"
+		endmf	02178
+
+		manuf	02179,"United Video"
+		endmf	02179
+
+		manuf	02180,"GPSoft"
+		endmf	02180
+
 		manuf	02181,"ArMax"
 		board	  000,"oMniBus",		MSG_EXP_GFX
 		endmf	02181
 
+		manuf	02182,"CP Computer"
+		endmf	02182
+
+		manuf	02183,"Amiga Module&Oberon Klub"
+		endmf	02183
+
+		manuf	02184,"ITEK Neser & Sieber"
+		endmf	02184
+
+		manuf	02185,"Phillip C. Lello"
+		endmf	02185
+
+		manuf	02186,"Cyborg Design Services"
+		endmf	02186
+
+		manuf	02187,"G2 Systems"
+		endmf	02187
+
+		manuf	02188,"Pro System"
+		endmf	02188
+
 		manuf	02189,"ZEUS"
 		board	  001,"ConneXion",		MSG_EXP_ETHERNET
 		endmf	02189
+
+		manuf	02190,"Altatech"
+		endmf	02190
 
 		manuf	02191,"NewTek"
 		board	  000,"VideoToaster",		MSG_EXP_VIDEO
@@ -1023,6 +1527,24 @@ manuf_tab	tabinit
 		board	  011,"Piccolo SD-64",		MSG_EXP_GFX
 		endmf	02195
 
+		manuf	02196,"The Neo Group"
+		endmf	02196
+
+		manuf	02197,"Cyon"
+		endmf	02197
+
+		manuf	02198,"Bob Research Group"
+		endmf	02198
+
+		manuf	02199,"Richmond Sound Design"
+		endmf	02199
+
+		manuf	02200,"US Cybernetics"
+		endmf	02200
+
+		manuf	02201,"Fulvio Ieva"
+		endmf	02201
+
 		manuf	02202,"Silicon Studio Ltd."
 		board	  000,"20bit / 4 channel",	MSG_EXP_AUDIO
 		board	  001,"Digital Multitrack",	MSG_EXP_AUDIO
@@ -1031,6 +1553,12 @@ manuf_tab	tabinit
 		manuf	02203,"MacroSystem USA"
 		board	  019,"Warp Engine 40xx",	MSG_EXP_TURBOSCSIHD
 		endmf	02203
+
+		manuf	02204,"Conspector Entertainment"
+		endmf	02204
+
+		manuf	02205,"Laserforum"
+		endmf	02205
 
 		manuf	02206,"Elbox"			; confirmed by Elbox
 		board	  001,"Elbox 500/2MB",		MSG_EXP_RAM
@@ -1061,6 +1589,12 @@ manuf_tab	tabinit
 		board	  160,"Mediator PCI 1200 memory window",MSG_EXP_MISC
 		endmf	02206
 
+		manuf	02207,"Applied Magic"
+		endmf	02207
+
+		manuf	02208,"SDL"
+		endmf	02208
+
 		manuf	02372,"AmigaXL"			; confirmed by H&P
 		board	  001,"emulated",		MSG_EXP_RAM
 		board	  002,"emulated",		MSG_EXP_HD
@@ -1074,9 +1608,24 @@ manuf_tab	tabinit
 		board	  208,"3500 Prof. 030/882",	MSG_EXP_TURBOANDRAM	;2-16MB
 		endmf	02560
 
+		manuf	02588,"a1k.org Community"	; see https://www.a1k.org/forum/index.php?threads/40276/
+		board	  001,"Protein_1",		MSG_EXP_UNKNOWN	; by botfixer and crasbe
+		board	  002,"68030TK 4MB 32bit SRAM",	MSG_EXP_RAM	; by Matze
+		board	  003,"68030TK",		MSG_EXP_TURBO	; by Matze
+		board	  004,"68030TK IDE controller",	MSG_EXP_IDEHD	; by Matze
+		board	  005,"Nova-Thylacine Rev.1",	MSG_EXP_UNKNOWN	; by crasbe & ACT Australia
+		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_UNKNOWN	; by crasbe & ACR Australia
+		endmf	02588
+
 		manuf	02640,"Micronik"
 		board	  010,"RCA 120",		MSG_EXP_RAM
 		endmf	02640
+
+		manuf	03084,"Team 4"
+		endmf	03084
+
+		manuf	03643,"E3B"
+		endmf	03643
 
 		manuf	03855,"Micronik"
 		board	  001,"Infinitiv Z3",		MSG_EXP_SCSIHD
@@ -1102,6 +1651,9 @@ manuf_tab	tabinit
 		board	  052,"?",			MSG_EXP_RAM
 		endmf	04149
 
+		manuf	04369,"Frank Strau\xDF Elektronik"
+		endmf	04369
+
 		manuf	04626,"Individual Computers"
 		board	  000,"Buddha Flash",		MSG_EXP_IDEHD
 		board	  005,"ISDN Surfer",		MSG_EXP_ISDN
@@ -1117,6 +1669,9 @@ manuf_tab	tabinit
 		board	  121, "VarIO/26Port",		MSG_EXP_MULTIIO
 		endmf	04626
 
+		manuf	04648,"Flesch Hornemann"
+		endmf	04648
+
 		manuf	04680,"Kupke/Golem"
 		board	  001,"OMTI HD 3000",		MSG_EXP_MFMHD
 		endmf	04680
@@ -1126,6 +1681,9 @@ manuf_tab	tabinit
 		board	  002,"IOBlix 1200S",		MSG_EXP_SERIAL
 		board	  003,"IOBlix 1200P",		MSG_EXP_PARALLEL
 		endmf	04711
+
+		manuf	04754,"MacroSystems"
+		endmf	04754
 
 		manuf	05000,"ITH"
 		board	  001,"ISDN-Master II",		MSG_EXP_ISDN
@@ -1140,17 +1698,107 @@ manuf_tab	tabinit
 		boarda	  015,"Michael B\xF6hmer","ICY",MSG_EXP_INTERFACE
 		endmf	05001
 
-		manuf	05500,"Information"
+		manuf	05010,"Amibience Creation Tech"
+		endmf	05010
+
+		manuf	05011,"Creative Development"
+		endmf	05011
+
+		manuf	05012,"Georg Braun"
+		endmf	05012
+
+		manuf	05013,"Swedish UG"
+		endmf	05013
+
+		manuf	05014,"Jakub Bednarski"
+		endmf	05014
+
+		manuf	05015,"KryoFlux"
+		endmf	05015
+
+		manuf	05016,"Igor Majstorovic"
+		endmf	05016
+
+		manuf	05017,"Alastair M. Robinson"
+		endmf	05017
+
+		manuf	05018,"Austex Software"
+		endmf	05018
+
+		manuf	05019,"S\xF6ren Gust"
+		endmf	05019
+
+		manuf	05020,"Rok Krajnc"
+		endmf	05020
+
+		manuf	05030,"Tim Tashpulatov"
+		endmf	05030
+
+		manuf	05040,"7-bit"
+		endmf	05040
+
+		manuf	05050,"Sakura IT"
+		endmf	05050
+
+		manuf	05060,"FPGA Arcade"
+		endmf	05060
+
+		manuf	05070,"CancerSoft"
+		endmf	05070
+
+		manuf	05080,"Stephen Leary"
+		endmf	05080
+
+		manuf	05090,"DMA Softlab"
+		endmf	05090
+
+		manuf	05100,"Brookhouse Engineering"
+		endmf	05100
+
+		manuf	05110,"Eduardo Arana"
+		endmf	05110
+
+		manuf	05120,"CS-LAB"
+		endmf	05120
+
+		manuf	05130,"Roert Miranda"
+		endmf	05130
+
+		manuf	05140,"RastPort"
+		endmf	05140
+
+		manuf	05150,"Amiga Kit"
+		endmf	05150
+
+		manuf	05160,"Central Texas CUG"
+		endmf	05160
+
+		manuf	05170,"Confusion Research Center"
+		endmf	05170
+
+		manuf	05180,"Solar Soyuz Zaibatsu"
+		endmf	05180
+
+		manuf	05500,"Inhouse Information"
 		board	  100,"ISDN Engine I",		MSG_EXP_ISDN
 		endmf	05500
 
-;		manuf	05768,"Bio-Con"
-;		board	  137,"BC-1208MA",		MSG_EXP_UNKNOWN
-;		endmf	05768
+		manuf	05768,"Bio-Con"
+		board	  137,"BC-1208MA",		MSG_EXP_UNKNOWN
+		endmf	05768
 
 		manuf	06148,"HK-Computer"
 		board	  000,"Vector",			MSG_EXP_RAM
 		endmf	06148
+
+		manuf	06502,"Cloanto"
+		endmf	06502
+
+		manuf	06520,"Oliver Gantert"
+		endmf	06520
+
+		manuf	07777,"Rafal Gabriel Chyla"
+		endmf	07777
 
 		manuf	08215,"Vortex"
 		board	  003,"Athlet",			MSG_EXP_IDEHD
@@ -1191,7 +1839,7 @@ manuf_tab	tabinit
 		board	  110,"Blizzard PPC",		MSG_EXP_TURBOSCSIHD
 		endmf	08512
 
-		manuf   08553,"DPS"
+		manuf	08553,"Digital Processing Systems"
 		board	  001,"Personal Animation Recorder",MSG_EXP_VIDEO
 		endmf	08553
 
@@ -1219,6 +1867,9 @@ manuf_tab	tabinit
 		board	  136,"ZIP",			MSG_EXP_RAM
 		endmf	10676
 
+		manuf	14195,"Media-net-Point"
+		endmf	14195
+
 		manuf	14501,"Petsoff LP"
 		board	  000,"Delfina DSP",		MSG_EXP_DSP
 		board	  001,"Delfina DSP Lite",	MSG_EXP_DSP
@@ -1236,7 +1887,10 @@ manuf_tab	tabinit
 		board	  255,"\xA1Pixel64",		MSG_EXP_GFXRAM
 		endmf	16707
 
-		manuf   16945,"A.C.T."			; Albrecht Computer Technik
+		manuf	16708,"ALiENDESiGN"
+		endmf	16708
+
+		manuf	16945,"Albrecht Computer Technik"
 		board	  001,"Prelude",		MSG_EXP_AUDIO
 		endmf	16945
 
@@ -1267,10 +1921,16 @@ manuf_tab	tabinit
 		board	  137,"Videotext decoder",	MSG_EXP_MISC
 		endmf	22359
 
+		manuf	26464,"Combitec"
+		endmf	26464
+
 		manuf	26470,"Combitec"
 		board	  018,"?",			MSG_EXP_RAM
 		board	  130,"?",			MSG_EXP_RAM
 		endmf	26470
+
+		manuf	28014,"MNT"
+		endmf	28014
 
 		manuf	32768,"SKI Peripherals"
 		board	  008,"M.A.S.T. Fireball",	MSG_EXP_SCSIHD
@@ -1289,6 +1949,9 @@ manuf_tab	tabinit
 		board	  017,"Handyscanner",		MSG_EXP_SCANIF
 		endmf	43537
 
+		manuf	44359,"Matay"
+		endmf	44359
+
 		manuf	46504,"Phoenix"
 		board	  033,"ST506 Autoboot",		MSG_EXP_MFMHD
 		board	  034,"SCSI Autoboot",		MSG_EXP_SCSIHD
@@ -1300,6 +1963,9 @@ manuf_tab	tabinit
 		board	  042,"?",			MSG_EXP_HD
 		board	  043,"SRAM Card",		MSG_EXP_RAM
 		endmf	49160
+
+		manuf	61453,"Forefront Technologies"
+		endmf	61453
 
 		manuf	63524,"Inverted Prototype ID"
 		endmf	63524
