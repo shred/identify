@@ -39,7 +39,7 @@
 * Number of loops in the CPU/FPU clock frequency meter. Do not change!
 *
 CPULOOPS	EQU	5000
-FPULOOPS	EQU	100
+FPULOOPS	EQU	500
 
 CACHEMASK	EQU	CACRF_EnableI
 
@@ -192,11 +192,11 @@ GetClocks	movem.l d2-d7/a0-a4,-(SP)
 		dc.b	50		; 68060: 49.99 1E6/((CPULOOPS* 4)+ 5)
 
 	; FPU PERFORMANCE CONSTANTS
-.fpuconst	dc.b	"5"		; version number, please increment on changes
-		dc.b	46		; 68881: 46.30 1E6/(FPULOOPS*216)
-		dc.b	49		; 68882: 48.54 1E6/(FPULOOPS*206)
-		dc.b	49		; 68040: 48.54 1E6/(FPULOOPS*206)
-		dc.b	74		; 68060: 73.53 1E6/(FPULOOPS*136)
+.fpuconst	dc.b	"6"		; version number, please increment on changes
+		dc.b	 9		; 68881:  9.26 1E6/(FPULOOPS*216)
+		dc.b	 9		; 68882:  9.71 1E6/(FPULOOPS*206)
+		dc.b	 9		; 68040:  9.71 1E6/(FPULOOPS*206)
+		dc.b	14		; 68060: 14.71 1E6/(FPULOOPS*136)
 		even
 
 **
@@ -281,7 +281,7 @@ ComputeClk	movem.l d1-d3/a0-a1,-(SP)
 		lea	(.quarztab,PC),a1	; table of common frequencies
 		moveq	#0,d1
 .limloop	move.b	(a0)+,d1
-		beq	.exit			; bigger than max -> give direct value
+		beq	.toofast		; bigger than max -> give direct value
 		cmp.l	d1,d0			; less than upper boundary?
 		ble	.found
 		addq.l	#1,a1			; no -> try next boundary
@@ -289,6 +289,10 @@ ComputeClk	movem.l d1-d3/a0-a1,-(SP)
 .found		move.b	(a1),d0			; yes -> use matching quartz frequency
 .exit		movem.l (SP)+,d1-d3/a0-a1
 		rts
+	;-- faster than table
+.toofast	divu	#10,d0			; Round down to next divisible by 10
+		mulu	#10,d0
+		bra	.exit
 	;-- error
 .error		moveq	#0,d0
 		bra	.exit
