@@ -1654,19 +1654,31 @@ manuf_tab	tabinit
 		manuf	04369,"Frank Strau\xDF Elektronik"
 		endmf	04369
 
-		manuf	04626,"Individual Computers"
-		board	  000,"Buddha Flash",		MSG_EXP_IDEHD
+		manuf	04626,"Individual Computers"	; see http://wiki.icomp.de/wiki/Autoconfig_IDs
+		boardf    000,f_icomp_000
 		board	  005,"ISDN Surfer",		MSG_EXP_ISDN
 		board	  007,"VarIO",			MSG_EXP_MULTIIO
+		board	  010,"Kickflash",		MSG_EXP_FLASHROM
+		board	  021,"ACA1221",		MSG_EXP_TURBOANDRAM
+		board	  022,"ACA1221EC",		MSG_EXP_TURBOANDRAM
 		board	  023,"X-Surf",			MSG_EXP_ETHERNET
-		board	  042,"CatWeasel",		MSG_EXP_FLOPPY
-		board	  100, "SilverSurfer/Z2",	MSG_EXP_SERIAL
-		board	  101, "SilverSurfer/ClockPort",MSG_EXP_SERIAL
-		board	  102, "SilverSurferLE",	MSG_EXP_SERIAL
-		board	  110, "GoldSurfer/ClockPort",	MSG_EXP_MULTIIO
-		board	  111, "GoldSurfer/26Port",	MSG_EXP_MULTIIO
-		board	  120, "VarIO/ClockPort",	MSG_EXP_MULTIIO
-		board	  121, "VarIO/26Port",		MSG_EXP_MULTIIO
+		board	  024,"ACA1221lc",		MSG_EXP_TURBOANDRAM
+		boardf	  026,f_icomp_026
+		board	  027,"ACA1211",		MSG_EXP_MISC	; Control registers (64KB @E90000)
+		board	  028,"ACA1234",		MSG_EXP_TURBO	; Control registers (64KB @E90000)
+		board	  029,"ACA1234",		MSG_EXP_RAM
+		board	  032,"ACA1233n (020 mode)",	MSG_EXP_RAM	; Serial = MHz, >128 = 2019 version
+		board	  033,"ACA1233n",		MSG_EXP_TURBOANDRAM ; Serial = MHz, >128 = 2019 version
+		boardf	  042,f_icomp_042
+		board	  064,"ACA500",			MSG_EXP_MISC
+		board	  065,"ACA500plus",		MSG_EXP_MISC
+		board	  066,"Catweasel MK3",		MSG_EXP_FLOPPY
+		board	  068,"ACA1233n (2016.0)",	MSG_EXP_TURBOANDRAM	; Serial = MHz
+		board	  069,"ACA630",			MSG_EXP_TURBOANDRAM
+		board	  070,"ACA620",			MSG_EXP_TURBOANDRAM
+		board	  072,"ACA1233n (2016.0, 020 mode)", MSG_EXP_RAM 	; Serial = MHz
+		board	  073,"ACA500plus virtual autoconfig", MSG_EXP_MISC
+		board	  100,"X-Surf-100",		MSG_EXP_ETHERNET
 		endmf	04626
 
 		manuf	04648,"Flesch Hornemann"
@@ -2386,9 +2398,100 @@ f_bsc_005	move.l	a5,d0			; ConfigDev present?
 .done		rts
 
 
+**
+* Individual Computers (04626) ID 000
+*
+		defstr	icompbuddha,"Buddha", MSG_EXP_IDEHD
+		defstr	icompflash,"Buddha Flash", MSG_EXP_IDEHD
+f_icomp_000	move.l	a5,d0			; ConfigDev present?
+		beq	.ibuddha		;  no -> return generic expansion
+	;-- check serial number
+		move.l	(cd_Rom+er_SerialNumber,a5),d0
+		beq	.ibuddha
+	;-- buddha flash
+		lea	(str_icompflash,a4),a1
+		move.l	#typ_icompflash,d0
+		bra	.done
+	;-- buddha classic or generic
+.ibuddha	lea	(str_icompbuddha,a4),a1
+		move.l	#typ_icompbuddha,d0
+	;-- done
+.done		rts
+
+
+**
+* Individual Computers (04626) ID 026
+*
+		defstr	icompmemory,"BigRam 2630",		MSG_EXP_RAM
+		defstr	icompreverse,"BigRam 2630 Reverse",	MSG_EXP_RAM
+		defstr	icompaca1211,"ACA1211",			MSG_EXP_RAM
+f_icomp_026	move.l	a5,d0			; ConfigDev present?
+		beq	.imemory		;  no -> return generic memory expansion
+	;-- is ACA1211 present?
+		move.l	#4626,d0		; Individual Computers
+		move.l	#27,d1			; ACA1211 registers
+		bsr	tst_board
+		bne	.iaca1211
+	;-- BigRam Reverse Edition?
+		move.l	(cd_Rom+er_SerialNumber,a5),d0
+		cmp.l	#2631,d0
+		bne	.imemory
+		lea	(str_icompreverse,a4),a1
+		move.l	#typ_icompreverse,d0
+		bra	.done
+	;-- ACA1211 Memory Expansion
+.iaca1211	lea	(str_icompaca1211,a4),a1
+		move.l	#typ_icompaca1211,d0
+		bra	.done
+	;-- BigRam Memory Expansion
+.imemory	lea	(str_icompmemory,a4),a1
+		move.l	#typ_icompmemory,d0
+	;-- done
+.done		rts
+
+
+
+**
+* Individual Computers (04626) ID 042
+*
+		defstr	icompcatmk1,"Catweasel",	MSG_EXP_FLOPPY
+		defstr	icompcatmk2,"Catweasel MK2",	MSG_EXP_FLOPPY
+f_icomp_042	move.l	a5,d0			; ConfigDev present?
+		beq	.imk1			;  no -> return generic expansion
+	;-- check serial number
+		move.l	(cd_Rom+er_SerialNumber,a5),d0
+		cmp.l	#2,d0
+		bne	.imk1
+	;-- Catweasel MK2
+		lea	(str_icompcatmk2,a4),a1
+		move.l	#typ_icompcatmk2,d0
+		bra	.done
+	;-- Generic Expansion
+.imk1		lea	(str_icompcatmk1,a4),a1
+		move.l	#typ_icompcatmk1,d0
+	;-- done
+.done		rts
+
+
+
 *
 * ======== HELPER ROUTINES ========
 *
+
+**
+* Test if a certain manufacturer/product ID is present.
+*
+*	-> d0.l	Manufacturer ID
+*	-> d1.l	Product ID
+*	<- CCR	eq:not present, ne:present
+*
+tst_board	movem.l a0-a1,-(SP)
+		sub.l	a0,a0
+		expans	FindConfigDev
+		tst.l	d0
+		movem.l (SP)+,a0-a1
+		rts
+
 
 **
 * Tests if we are living in an emulated Amiga.
