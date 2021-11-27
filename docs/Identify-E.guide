@@ -477,6 +477,12 @@ Frequently Asked Questions
 History
 *******
 
+@{i}V 37.1@{ui}
+        @{b}*@{ub} Inofficial release by Thore Böckelmann
+        @{b}*@{ub} Added further boards
+        @{b}*@{ub} IDCID_USB identifies USB boards
+        @{b}*@{ub} IDHW_LASTALERTTASK returns the task that caused an alert
+
 @{i}V 13.0@{ui}
         @{b}*@{ub} Supports AmigaXL [Markus Pöllmann]
         @{b}*@{ub} Added further boards
@@ -752,6 +758,9 @@ I want to especially thank these people (in no special order):
 @{i}Kössi@{ui}
      for his many boards, his help for all my TexInfo problems, and his
      debug skills.
+
+@{i}Thore Böckelmann@{ui}
+     for his work on keeping the Identify project alive.
 
 @{i}...and everyone who has reported their boards!@{ui}
 

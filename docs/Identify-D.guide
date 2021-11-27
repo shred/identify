@@ -529,6 +529,12 @@ FAQ
 History
 *******
 
+@{i}V 37.1@{ui}
+        @{b}*@{ub} Inoffizielle Release von Thore Böckelmann
+        @{b}*@{ub} Weitere Karten hinzugefügt
+        @{b}*@{ub} IDCID_USB zur Identifikation von USB-Erweiterungen
+        @{b}*@{ub} IDHW_LASTALERTTASK liefert den Task, der einen Alert auslöste
+
 @{i}V 13.0@{ui}
         @{b}*@{ub} Unterstützt AmigaXL [Markus Pöllmann]
         @{b}*@{ub} Weitere Karten hinzugefügt
@@ -818,6 +824,9 @@ Ich möchte mich besonders bei folgenden Leuten bedanken (ohne Reihenfolge):
 @{i}Kössi@{ui}
      für seine vielen Karten, seiner Hilfestellung bei
      TexInfo-Problemen und seinem Debugger-Talent.
+
+@{i}Thore Böckelmann@{ui}
+     dafür, dass der das Identify-Projekt am Leben hielt.
 
 @{i}...und alle, die ihre Boards bei mir gemeldet haben!@{ui}
 
