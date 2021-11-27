@@ -591,6 +591,14 @@ MSG_HW_OS_44            (//49)
 3.5
 MSG_HW_OS_45            (//49)
 3.9
+MSG_HW_OS_205           (//49)
+2.05
+MSG_HW_OS_32P           (//49)
+3.2 (Walker)
+MSG_HW_OS_314           (//49)
+3.1.4
+MSG_HW_OS_32            (//49)
+3.2
 ;
 ;GARY
 MSG_HW_NORMAL           (6500//49)

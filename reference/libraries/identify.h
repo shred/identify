@@ -196,14 +196,18 @@ struct IdentifyBase {
 /*
  * IDHW_OSNR numerical result codes
  */
-#define IDOS_UNKNOWN    (0)       /*  <V36 or >V40 */
-#define IDOS_2_0        (1)       /*  OS2.0  (V36) */
-#define IDOS_2_04       (2)       /*  OS2.04 (V37) */
-#define IDOS_2_1        (3)       /*  OS2.1  (V38) */
-#define IDOS_3_0        (4)       /*  OS3.0  (V39) */
-#define IDOS_3_1        (5)       /*  OS3.1  (V40) */
-#define IDOS_3_5        (6)       /*  OS3.5  (V44) */
-#define IDOS_3_9        (7)       /*  OS3.9  (V45) */
+#define IDOS_UNKNOWN    (0)       /*  <V36 or unknown */
+#define IDOS_2_0        (1)       /*  OS2.0   (V36) */
+#define IDOS_2_04       (2)       /*  OS2.04  (V37) */
+#define IDOS_2_1        (3)       /*  OS2.1   (V38) */
+#define IDOS_3_0        (4)       /*  OS3.0   (V39) */
+#define IDOS_3_1        (5)       /*  OS3.1   (V40) */
+#define IDOS_3_5        (6)       /*  OS3.5   (V44 by Haage&Partner) */
+#define IDOS_3_9        (7)       /*  OS3.9   (V45 by Haage&Partner) */
+#define IDOS_2_05       (8)       /*  OS2.05  (V37.299+) */
+#define IDOS_3_2_PROTO  (9)       /*  OS3.2   (V43, Walker prototype) */
+#define IDOS_3_1_4      (10)      /*  OS3.1.4 (V46 by Hyperion) */
+#define IDOS_3_2        (11)      /*  OS3.9   (V47 by Hyperion) */
 
 /*
  * IDHW_CHIPSET numerical result codes

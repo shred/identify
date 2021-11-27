@@ -1192,8 +1192,7 @@ do_WbVer	lea	(versionname,a4),a1
 **
 * AmigaOS Version (e.g. OS 3.1).
 *
-do_OsNr
-	;-- Check for pure software upgrades
+do_OsNr	;-- Check for pure software upgrades
 		bsr	.get_version
 		moveq	#IDOS_3_9,d2		; AmigaOS 3.9
 		cmp	#45,d0
@@ -1209,19 +1208,39 @@ do_OsNr
 		move.l	(LIB_IDSTRING,a0),d0
 		and.l	#$FFFFFC00,d0
 		move.l	d0,a0
-		moveq	#0,d1
 		move	(12,a0),d1
-		moveq	#IDOS_UNKNOWN,d2	; assume it's unknown
-		sub.l	#36,d1			; when version is < 36
-		bcs	.found
-		cmp.l	#4,d1			; or version is > 40
-		bhi	.found
-		addq.l	#1,d1
-		move.l	d1,d2
-	;; TODO: Add new OS versions like 3.2 or 3.X
-	;; TODO: Add AmigaOS vendor (Commodore, Hyperion, ...)
+		moveq	#IDOS_2_0,d2		; AmigaOS 2.0
+		cmp	#36,d1
+		beq	.found
+		moveq	#IDOS_2_04,d2		; AmigaOS 2.04 (or 2.05)
+		cmp	#37,d1
+		beq	.found_37
+		moveq	#IDOS_3_0,d2		; AmigaOS 3.0
+		cmp	#39,d1
+		beq	.found
+		moveq	#IDOS_3_1,d2		; AmigaOS 3.1
+		cmp	#40,d1
+		beq	.found
+		moveq	#IDOS_3_2_PROTO,d2	; AmigaOS 3.2 (Walker prototype)
+		cmp	#43,d1
+		beq	.found
+		moveq	#IDOS_3_1_4,d2		; AmigaOS 3.1.4
+		cmp	#46,d1
+		beq	.found
+		moveq	#IDOS_3_2,d2		; AmigaOS 3.2
+		cmp	#47,d1
+		beq	.found
+	;-- unknown OS
+		moveq	#IDOS_UNKNOWN,d2
 .found		move.l	d2,d0
 		rts
+
+	;-- may be 2.05
+.found_37	move	(14,a0),d1
+		cmp	#299,d1
+		blo	.found
+		moveq	#IDOS_2_05,d2		; AmigaOS 2.05
+		bra	.found
 
 	; Fetch the workbench version in D0
 .get_version	movem.l d1-d2/a0-a2,-(SP)
@@ -2114,34 +2133,45 @@ do_DeniseRev	moveq	#-1,d0
 **
 * What BoingBag is installed?
 *
-	defhws	bb_workbench,	"workbench.library"
-
 do_BoingBag	moveq	#0,d3
-		lea	(bb_workbench,a4),a1
-		moveq	#44,d0			; no BoingBags below V44
+		lea	(versionname,a4),a1
+		moveq	#0,d0
 		exec	OpenLibrary
 		tst.l	d0
-		beq	.found
+		beq	.nobb
 		move.l	d0,a1
 	;-- read version,revision
 		move	(LIB_VERSION,a1),d0
 		move	(LIB_REVISION,a1),d1
 	;-- V44
-		cmp	#44,d0			; this check only works for V44
+		cmp	#44,d0
 		bne	.non_v44
-		cmp	#1479,d1		; < V44.1479 -> no BB
-		blo	.found
+		cmp	#2,d1			; <= V44.2 -> no BB
+		bls	.found
 		moveq	#1,d3
-		cmp	#1479,d1		; V44.1479 -> BB1
-		beq	.found
+		cmp	#4,d1			; <= V44.4 -> BB1
+		bls	.found
 		moveq	#2,d3
-		cmp	#1559,d1		; V44.1559 -> BB2
+		cmp	#5,d1			; <= V44.5 -> BB2
 		bls	.found
 		moveq	#3,d3			; must be a BB3 :)
-	;-- reserved for V45+
-.non_v44
-		exec.q	CloseLibrary
-.found		move.l	d3,d0
+		bra	.found
+	;-- V45
+.non_v44	cmp	#45,d0
+		bne	.non_v45
+		cmp	#1,d1			; <= V45.1 -> no BB
+		bls	.found
+		moveq	#1,d3
+		cmp	#2,d1			; <= V45.2 -> BB1
+		bls	.found
+		moveq	#2,d3
+		cmp	#3,d1			; <= V45.3 -> BB2
+		bls	.found
+		moveq	#3,d3			; must be a BB3 :)
+	;-- no more BoingBags in later versions
+.non_v45
+.found		exec.q	CloseLibrary
+.nobb		move.l	d3,d0
 		rts
 
 **

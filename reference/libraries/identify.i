@@ -201,13 +201,17 @@ IDMMU_68060	EQU	4	; 68060
 * IDHW_OSNR numerical result codes
 *
 IDOS_UNKNOWN	EQU	0	; none of the below
-IDOS_2_0	EQU	1	; OS2.0	(V36)
-IDOS_2_04	EQU	2	; OS2.04 (V37)
-IDOS_2_1	EQU	3	; OS2.1	(V38)
-IDOS_3_0	EQU	4	; OS3.0	(V39)
-IDOS_3_1	EQU	5	; OS3.1	(V40)
-IDOS_3_5	EQU	6	; OS3.5	(V44)
-IDOS_3_9	EQU	7	; OS3.9	(V45)
+IDOS_2_0	EQU	1	; OS2.0	  (V36)
+IDOS_2_04	EQU	2	; OS2.04  (V37)
+IDOS_2_1	EQU	3	; OS2.1	  (V38)
+IDOS_3_0	EQU	4	; OS3.0	  (V39)
+IDOS_3_1	EQU	5	; OS3.1	  (V40)
+IDOS_3_5	EQU	6	; OS3.5	  (V44 by Haage&Partner)
+IDOS_3_9	EQU	7	; OS3.9	  (V45 by Haage&Partner)
+IDOS_2_05	EQU	8	; OS2.05  (V37.299+)
+IDOS_3_2_PROTO	EQU	9	; OS3.2	  (V43, Walker prototype)
+IDOS_3_1_4	EQU 	10	; OS3.1.4 (V46 by Hyperion)
+IDOS_3_2	EQU	11	; OS3.2   (V47 by Hyperion)
 
 *
 * IDHW_CHIPSET numerical result codes
