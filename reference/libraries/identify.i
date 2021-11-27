@@ -42,7 +42,7 @@ IDENTIFYNAME	MACRO
 		dc.b	"identify.library",0
 		ENDM
 
-IDENTIFYVERSION EQU	13
+IDENTIFYVERSION EQU	37
 
 	STRUCTURE IdentifyBase,0
 	STRUCT	ifyb_LibNode,LIB_SIZE
@@ -144,7 +144,8 @@ IDHW_HOSTVERS	EQU	51	; when emulated: Host Version (see autodocs!)
 IDHW_HOSTMACHINE EQU	52	; when emulated: Host Machine (see autodocs!)
 IDHW_HOSTCPU	EQU	53	; when emulated: Host CPU (see autodocs!)
 IDHW_HOSTSPEED	EQU	54	; when emulated: Host CPU speed (unit MHz, see autodocs!)
-IDHW_NUMBEROF	EQU	55	; Number of types, PRIVATE!
+IDHW_LASTALERTTASK EQU	55	; Task of last alert			[V37]
+IDHW_NUMBEROF	EQU	56	; Number of types, PRIVATE!
 
 *
 * IDHW_SYSTEM numerical result codes
@@ -372,6 +373,8 @@ IDCID_TURBOANDRAM	EQU	42	; accelerator + RAM expansion
 IDCID_ACCESS		EQU	43	; access control
 IDCID_INTERFACE		EQU	44	; some interface
 IDCID_MFMHD		EQU	45	; MFM HD controller
+IDCID_FLOPPY		EQU	46	; floppy disk controller
+IDCID_USB		EQU	47	; USB interface
 	; Be prepared to get other numbers as well. In this case you
 	; should assume IDCID_MISC.
 

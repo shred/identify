@@ -154,6 +154,8 @@ MSG_EXP_MFMHD           (//49)
 MFM HD controller
 MSG_EXP_FLOPPY          (//49)
 floppy disk interface
+MSG_EXP_USB             (//49)
+USB interface
 ;
 ;================================================================
 ;       ALERT GENERAL ERROR (1024..)

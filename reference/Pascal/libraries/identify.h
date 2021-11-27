@@ -30,7 +30,7 @@ CONST  _IDTAGS      = $CD450000;
 
 { Generic library informations }
 
-CONST  IDENTIFYVERSION = 13;
+CONST  IDENTIFYVERSION = 37;
 
 TYPE   p_IdentifyBase = ^_IdentifyBase;
        _IdentifyBase  = Record
@@ -132,7 +132,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDHW_HOSTMACHINE = 52;  { when emulated: Host Machine (see autodocs!) }
        IDHW_HOSTCPU     = 53;  { when emulated: Host CPU (see autodocs!) }
        IDHW_HOSTSPEED   = 54;  { when emulated: Host CPU speed (unit MHz, see autodocs!) }
-       IDHW_NUMBEROF    = 55;  { Number of types, PRIVATE! }
+       IDHW_LASTALERTTASK = 55; { Task of last alert                   [V37] }
+       IDHW_NUMBEROF    = 56;  { Number of types, PRIVATE! }
 
 { IDHW_SYSTEM numerical result codes }
 
@@ -343,6 +344,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDCID_INTERFACE   = 44;  {  some interface }
        IDCID_MFMHD       = 45;  {  MFM HD controller }
        IDCID_FLOPPY      = 46;  {  floppy disk controller }
+       IDCID_USB         = 47;  {  USB interface }
         { Be prepared to get other numbers as well. In this case you }
         { should assume IDCID_MISC. }
 

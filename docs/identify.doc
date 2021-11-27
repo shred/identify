@@ -308,6 +308,7 @@ identify.library/IdHardwareUpdate
                 $HOSTMACHINE$
                 $HOSTCPU$
                 $HOSTSPEED$
+                $LASTALERTTASK$
 
         For their meanings, see the include file.
 
@@ -573,6 +574,9 @@ identify.library/IdHardwareUpdate
                 IDHW_DENISEREV  -- [V10] Denise chip revision
                         (e.g. "0")
 
+                IDHW_LASTALERTTASK -- [V37] Task that caused the last alert
+                        (e.g. "0x0003742A")
+
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.
 
@@ -764,6 +768,9 @@ identify.library/IdHardwareUpdate
                 IDHW_DENISEREV  -- [V10] Denise chip revision
                         (LONG, -1 means not available)
 
+                IDHW_LASTALERTTASK -- [V37] Task that caused the last alert
+                        (LONG, 0 means not available)
+
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.
 
@@ -818,8 +825,9 @@ identify.library/IdHardwareUpdate
         it when you will only query hardware information that will for sure
         not change while run-time, e.g. CPU.
 
-        IDHW_VBR, IDHW_LASTALERT and IDHW_TCPIP are NOT cached, so there is
-        absolutely no need to call IdHardwareUpdate() just to check them out.
+        IDHW_VBR, IDHW_LASTALERT, IDHW_LASTALERTTASK and IDHW_TCPIP are NOT
+        cached, so there is absolutely no need to call IdHardwareUpdate() just
+        to check them out.
 
    INPUTS
 

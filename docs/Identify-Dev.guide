@@ -320,6 +320,9 @@ These functions are available since Release 1:
           (since Release 11) The host CPU speed of the emulated Amiga.
           Currently only available on AmigaXL systems.
 
+    @{b}LASTALERTTASK@{ub}
+          (since Release 37) Task that was causing the last system alert.
+
      These @{b}<options>@{ub} are allowed:
     @{b}EMPTYNA@{ub}
           Returns an empty string if the item is not available.

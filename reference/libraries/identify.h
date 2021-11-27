@@ -38,7 +38,7 @@
 /*
  * Generic library information
  */
-#define IDENTIFYVERSION (13)
+#define IDENTIFYVERSION (37)
 
 struct IdentifyBase {
   struct  Library ifyb_LibNode;
@@ -140,7 +140,8 @@ struct IdentifyBase {
 #define IDHW_HOSTMACHINE  (52)    /*  when emulated: Host Machine (see autodocs!) */
 #define IDHW_HOSTCPU      (53)    /*  when emulated: Host CPU (see autodocs!) */
 #define IDHW_HOSTSPEED    (54)    /*  when emulated: Host CPU speed (unit MHz, see autodocs!) */
-#define IDHW_NUMBEROF     (55)    /*  Number of types, PRIVATE! */
+#define IDHW_LASTALERTTASK (55)   /*  Task of last alert                    [V37] */
+#define IDHW_NUMBEROF     (56)    /*  Number of types, PRIVATE! */
 
 /*
  * IDHW_SYSTEM numerical result codes
@@ -369,6 +370,7 @@ struct IdentifyBase {
 #define IDCID_INTERFACE (44)    /*  some interface */
 #define IDCID_MFMHD     (45)    /*  MFM HD controller */
 #define IDCID_FLOPPY    (46)    /*  floppy disk controller */
+#define IDCID_USB       (47)    /*  USB interface */
     /*  Be prepared to get other numbers as well. In this case you */
     /*  should assume IDCID_MISC. */
 

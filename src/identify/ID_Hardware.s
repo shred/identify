@@ -166,7 +166,7 @@ IdHardwareNum	movem.l d1-d3/a0-a6,-(SP)
 		dc.l	do_RAMBandwidth, do_TCPIP,	do_PPCOS,	do_Agnus
 		dc.l	do_AgnusMode,	do_Denise,	do_DeniseRev,	do_BoingBag
 		dc.l	do_Emulated,	do_XLVersion,	do_HostOS,	do_HostVers
-		dc.l	do_HostMachine,	do_HostCPU,	do_HostSpeed
+		dc.l	do_HostMachine,	do_HostCPU,	do_HostSpeed,	do_LastAlertTask
 
 
 **
@@ -235,7 +235,7 @@ IdHardware	movem.l d1-d3/a0-a3/a6,-(SP)
 		dc.l	cv_RAMBandwidth, cv_TCPIP,	cv_PPCOS,	cv_Agnus
 		dc.l	cv_AgnusMode,	cv_Denise,	cv_DeniseRev,	cv_BoingBag
 		dc.l	cv_Emulated,	cv_XLVersion,	cv_HostOS,	cv_HostVers
-		dc.l	cv_HostMachine,	cv_HostCPU,	cv_HostSpeed
+		dc.l	cv_HostMachine,	cv_HostCPU,	cv_HostSpeed,	cv_LastAlertTask
 
 
 *
@@ -477,6 +477,10 @@ cv_HostCPU	lea	buf_HostCPU,a0
 cv_HostSpeed	lea	buf_HostSpeed,a0
 		bra	quick_mhz
 
+cv_LastAlertTask lea	buf_LastAlertTask,a0
+		sf	(a0)			; no caching!
+		bra	quick_addr
+
 
 *
 * ======== Quick Formatter Functions ========
@@ -696,6 +700,7 @@ buf_HostVers		ds.b	STRSIZE
 buf_HostMachine		ds.b	STRSIZE
 buf_HostCPU		ds.b	STRSIZE
 buf_HostSpeed		ds.b	STRSIZE
+buf_LastAlertTask	ds.b	STRSIZE
 buf_ENDOFBUF		ds.b	0
 
 		SECTION text,CODE
@@ -827,7 +832,7 @@ fmtcommands	dc.b	"SYSTEM$CPU$FPU$MMU$"
 		dc.b	"RAMBANDWIDTH$TCPIP$PPCOS$AGNUS$"
 		dc.b	"AGNUSMODE$DENISE$DENISEREV$BOINGBAG$"
 		dc.b	"EMULATED$XLVERSION$HOSTOS$HOSTVERS$"
-		dc.b	"HOSTMACHINE$HOSTCPU$HOSTSPEED$"
+		dc.b	"HOSTMACHINE$HOSTCPU$HOSTSPEED$LASTALERTTASK$"
 		dc.b	0
 		even
 
@@ -1551,52 +1556,35 @@ do_VBR		lea	buildflags,a0
 *
 do_LastAlert	lea	buildflags,a0
 		sf	(IDHW_LASTALERT,a0)	; never cache this value
+		sf	(IDHW_LASTALERTTASK,a0)	; never cache this value
 		move.l	(execbase,PC),a0
 		move.l	(LastAlert,a0),d0	; is there an alert in execbase?
 		cmp.l	#-1,d0
 		bne	.showalert		;  yes: use this one
-		bsr	.get100			; read from $100
+		bsr	ReadLastAlert		; read from $100/$104
 		btst	#31,d0			; must be deadend, otherwise invalid
 		bne	.showalert
 		moveq	#-1,d0			; there was no alert yet
 .showalert	rts
 
-	; Read longword from $100. Use the Blitter if possible, to avoid an
-	; Enforcer hit. People are starting to get on my nerves with that. :(
-.get100		move.b	(flags_draco,PC),d0	; DraCo has no Blitter
-		bne	.noblit			;   so read immediately
-	;-- allocate target memory
-		moveq	#8,d0
-		move.l	#MEMF_CHIP,d1		; must be Chip-RAM
-		exec	AllocMem
-		move.l	d0,a3
-		tst.l	d0			; read immediately if no memory left
-		beq	.noblit
-	;-- read via Blitter
-		gfx	OwnBlitter		; ugly, but simple...
-		gfx	WaitBlit
-		lea	$dff000,a2
-		move.l	a3,($054,a2)		; target: our memory allocation
-		moveq	#0,d0
-		move.l	d0,($064,a2)		; no modulo
-		move	#$0100,d0
-		move.l	d0,($050,a2)		; source: $00000100
-		moveq	#-1,d0
-		move.l	d0,($044,a2)		; do not mas bits
-		move.l	#$09F00000,($040,a2)	; DMA-A DMA-D, simple copy miniterm
-		move	#$0042,($058,a2)	; size is 1 row with 2 words
-		gfx	WaitBlit		; wait for Blitter do be done
-		gfx	DisownBlitter
-		move.l	(a3),d3			; read alert code from allocated memory
-	;-- free target memory
-		move.l	a3,a1
-		moveq	#8,d0
-		exec	FreeMem
-	;-- return alert code
-		move.l	d3,d0
+**
+* Read last alert task.
+*
+do_LastAlertTask lea	buildflags,a0
+		sf	(IDHW_LASTALERT,a0)	; never cache this value
+		sf	(IDHW_LASTALERTTASK,a0)	; never cache this value
+		move.l	(execbase,PC),a0
+		move.l	(LastAlert,a0),d0	; is there an alert in execbase?
+		cmp.l	#-1,d0
+		bne	.showexecalert		;  yes: use this one
+		bsr	ReadLastAlert		; read from $100/$104
+		btst	#31,d0			; alert must be deadend, otherwise invalid
+		beq	.noalerttask
+		move.l	d1,d0			; read alert task from $104
 		rts
-	;-- cannot use blitter
-.noblit		move.l	$100.w,d0		; read $100 immediately
+.showexecalert	move.l	(LastAlert+4,a0),d0	; Last Alert Task
+		rts
+.noalerttask	moveq	#0,d0			; No last alert yet
 		rts
 
 **
@@ -2356,6 +2344,55 @@ CalcClock	lea	(flags_gotclock,PC),a1
 		move.l	d1,fpuclk
 		st	(a1)
 .done		rts
+
+**
+* Read last alert and last alert task.
+*
+* Use the Blitter if possible, to avoid an Enforcer hit. People are starting to
+* get on my nerves with that. :(
+*
+*	<- D0.l	Last alert (from $100)
+*	<- D1.l	Last alert task (from $104)
+*
+ReadLastAlert	move.b	(flags_draco,PC),d0	; DraCo has no Blitter
+		bne	.noblit			;   so read immediately
+	;-- allocate target memory
+		moveq	#8,d0
+		move.l	#MEMF_CHIP,d1		; must be Chip-RAM
+		exec	AllocMem
+		move.l	d0,a3
+		tst.l	d0			; read immediately if no memory left
+		beq	.noblit
+	;-- read via Blitter
+		gfx	OwnBlitter		; ugly, but simple...
+		gfx	WaitBlit
+		lea	$dff000,a2
+		move.l	a3,($054,a2)		; target: our memory allocation
+		moveq	#0,d0
+		move.l	d0,($064,a2)		; no modulo
+		move	#$0100,d0
+		move.l	d0,($050,a2)		; source: $00000100
+		moveq	#-1,d0
+		move.l	d0,($044,a2)		; do not mask bits
+		move.l	#$09F00000,($040,a2)	; DMA-A DMA-D, simple copy miniterm
+		move	#$0042,($058,a2)	; size is 2 row with 2 words
+		gfx	WaitBlit		; wait for Blitter do be done
+		gfx	DisownBlitter
+		move.l	(a3),d3			; read alert code from allocated memory
+		move.l	(4,a3),d4		; read alert task
+	;-- free target memory
+		move.l	a3,a1
+		moveq	#8,d0
+		exec	FreeMem
+	;-- return alert code
+		move.l	d3,d0
+		move.l	d4,d1
+		rts
+	;-- cannot use blitter
+.noblit		move.l	$100.w,d0		; read $100 immediately
+		move.l	$104.w,d1		; read $104 immediately
+		rts
+
 
 
 *

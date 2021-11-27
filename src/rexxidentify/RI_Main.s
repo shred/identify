@@ -740,6 +740,7 @@ ID_Hardware	link	a4,#idh_LENGTH
 		dc.b	"HOSTMACHINE",0
 		dc.b	"HOSTCPU",0
 		dc.b	"HOSTSPEED",0
+		dc.b	"LASTALERTTASK",0
 		dc.b	0		; end marker
 
 .options	dc.b	"EMPTYNA",0

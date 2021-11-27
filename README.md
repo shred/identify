@@ -50,6 +50,14 @@ At the AmiNet, you will find [official binaries](http://aminet.net/package/util/
 
 **Please keep the "IdentifyDev" and "IdentifyUsr" package names reserved for official releases.** If you want to release a fork, use a different package name. But please consider contributing to the reference repository instead. This is better than having an unknown number of different versions circulating around.
 
+## What about Identify V37?
+
+Identify V37 was released by Thore Böckelmann in 2003. This release added new boards and new features. He published it with good intentions, but unfortunately without my consent. I can only blame myself for that, because I haven't provided the infrastructure where a coordinated development was made possible. I hope that with this GitHub project, I can bring Identify back on track.
+
+I have backported Thore's changes to the official repository. Thore also did a major version jump from V13 to V37, for no apparent reason. I will keep the new version numbering though.
+
+For archiving purposes, you will find my last official Amiga built release V13.0, and Thore's V37.1, in the [GitHub releases](https://github.com/shred/identify/releases). Note that the code at the `v37.1` tag does not actually correspond to his V37.1 release, as he had used a completely different code base that was never published (to my knowledge).
+
 ## Licence
 
 `Identify` is distributed under LGPLv3 ([Lesser Gnu Public Licence](http://www.gnu.org/licenses/lgpl.html)).

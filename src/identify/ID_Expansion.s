@@ -918,7 +918,9 @@ manuf_tab	tabinit
 		manuf	02145,"Ingenieurb\xFCro Helfrich" ; Omega Datentechnik?
 		board	  032,"Rainbow II",		MSG_EXP_GFX
 		board	  033,"Rainbow III",		MSG_EXP_GFX
-		boarda	128,"Kato","Melody MPEG",	MSG_EXP_AUDIO
+		boarda	  128,"Kato","Melody MPEG",	MSG_EXP_AUDIO
+		boarda	  129,"E3B","Unity",		MSG_EXP_ETHERNET
+		boarda	  200,"E3B","Highway",		MSG_EXP_USB
 		endmf	02145
 
 		manuf	02146,"Atlantis"
@@ -1103,8 +1105,16 @@ manuf_tab	tabinit
 		manuf	04626,"Individual Computers"
 		board	  000,"Buddha Flash",		MSG_EXP_IDEHD
 		board	  005,"ISDN Surfer",		MSG_EXP_ISDN
+		board	  007,"VarIO",			MSG_EXP_MULTIIO
 		board	  023,"X-Surf",			MSG_EXP_ETHERNET
 		board	  042,"CatWeasel",		MSG_EXP_FLOPPY
+		board	  100, "SilverSurfer/Z2",	MSG_EXP_SERIAL
+		board	  101, "SilverSurfer/ClockPort",MSG_EXP_SERIAL
+		board	  102, "SilverSurferLE",	MSG_EXP_SERIAL
+		board	  110, "GoldSurfer/ClockPort",	MSG_EXP_MULTIIO
+		board	  111, "GoldSurfer/26Port",	MSG_EXP_MULTIIO
+		board	  120, "VarIO/ClockPort",	MSG_EXP_MULTIIO
+		board	  121, "VarIO/26Port",		MSG_EXP_MULTIIO
 		endmf	04626
 
 		manuf	04680,"Kupke/Golem"

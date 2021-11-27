@@ -179,6 +179,7 @@ str_table	dc.b	"SYSTEM",0
 		dc.b	"HOSTMACHINE",0
 		dc.b	"HOSTCPU",0
 		dc.b	"HOSTSPEED",0
+		dc.b	"LASTALERTTASK",0
 		dc.b	0
 		even
 
