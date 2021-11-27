@@ -1941,7 +1941,11 @@ manuf_tab	tabinit
 		board	  130,"?",			MSG_EXP_RAM
 		endmf	26470
 
-		manuf	28014,"MNT"
+		manuf	28014,"MNT Research"
+		board	  001,"VA2000",			MSG_EXP_GFX
+		board	  003,"ZZ9000",			MSG_EXP_GFXRAM	; Zorro II
+		board	  004,"ZZ9000",			MSG_EXP_GFXRAM	; Zorro III
+		board	  005,"ZZ9000",			MSG_EXP_RAM	; Zorro III
 		endmf	28014
 
 		manuf	32768,"SKI Peripherals"
