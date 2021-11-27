@@ -1192,55 +1192,53 @@ do_WbVer	lea	(versionname,a4),a1
 **
 * AmigaOS Version (e.g. OS 3.1).
 *
-do_OsNr	;-- Check for pure software upgrades
-		bsr	.get_version
-		moveq	#IDOS_3_9,d2		; AmigaOS 3.9
-		cmp	#45,d0
-		beq	.found
-		moveq	#IDOS_3_5,d2		; AmigaOS 3.5
-		cmp	#44,d0
-		beq	.found
-		moveq	#IDOS_2_1,d2		; AmigaOS 2.1
-		cmp	#38,d0
-		beq	.found
-	;-- Check physical AmigaOS version
+do_OsNr;-- get versions
 		move.l	(execbase,PC),a0
 		move.l	(LIB_IDSTRING,a0),d0
 		and.l	#$FFFFFC00,d0
 		move.l	d0,a0
-		move	(12,a0),d1
-		moveq	#IDOS_2_0,d2		; AmigaOS 2.0
-		cmp	#36,d1
-		beq	.found
-		moveq	#IDOS_2_04,d2		; AmigaOS 2.04 (or 2.05)
-		cmp	#37,d1
-		beq	.found_37
-		moveq	#IDOS_3_0,d2		; AmigaOS 3.0
-		cmp	#39,d1
-		beq	.found
-		moveq	#IDOS_3_1,d2		; AmigaOS 3.1
-		cmp	#40,d1
-		beq	.found
-		moveq	#IDOS_3_2_PROTO,d2	; AmigaOS 3.2 (Walker prototype)
-		cmp	#43,d1
-		beq	.found
-		moveq	#IDOS_3_1_4,d2		; AmigaOS 3.1.4
-		cmp	#46,d1
-		beq	.found
-		moveq	#IDOS_3_2,d2		; AmigaOS 3.2
+		move	(12,a0),d1		; D1: ROM Version
+		move	(14,a0),d2		; D2: ROM Revision
+		bsr	.get_version		; D0: Workbench Version
+	;-- test AmigaOS versions
+		moveq	#IDOS_3_2,d3		; AmigaOS 3.2
 		cmp	#47,d1
 		beq	.found
-	;-- unknown OS
-		moveq	#IDOS_UNKNOWN,d2
-.found		move.l	d2,d0
-		rts
-
-	;-- may be 2.05
-.found_37	move	(14,a0),d1
-		cmp	#299,d1
+		moveq	#IDOS_3_1_4,d3		; AmigaOS 3.1.4
+		cmp	#46,d1
+		beq	.found
+		moveq	#IDOS_3_9,d3		; AmigaOS 3.9
+		cmp	#45,d0
+		beq	.found
+		moveq	#IDOS_3_5,d3		; AmigaOS 3.5
+		cmp	#44,d0
+		beq	.found
+		moveq	#IDOS_3_2_PROTO,d3	; AmigaOS 3.2 (Walker prototype)
+		cmp	#43,d1
+		beq	.found
+		moveq	#IDOS_3_1,d3		; AmigaOS 3.1
+		cmp	#40,d1
+		beq	.found
+		moveq	#IDOS_3_0,d3		; AmigaOS 3.0
+		cmp	#39,d1
+		beq	.found
+		moveq	#IDOS_2_1,d3		; AmigaOS 2.1
+		cmp	#38,d0
+		beq	.found
+		moveq	#IDOS_2_04,d3		; AmigaOS 2.04 (or 2.05)
+		cmp	#37,d1
+		bne	.not_37
+		cmp	#299,d2
 		blo	.found
-		moveq	#IDOS_2_05,d2		; AmigaOS 2.05
+		moveq	#IDOS_2_05,d3		; AmigaOS 2.05
 		bra	.found
+.not_37		moveq	#IDOS_2_0,d3		; AmigaOS 2.0
+		cmp	#36,d1
+		beq	.found
+	;-- unknown OS
+		moveq	#IDOS_UNKNOWN,d3
+.found		move.l	d3,d0
+		rts
 
 	; Fetch the workbench version in D0
 .get_version	movem.l d1-d2/a0-a2,-(SP)
