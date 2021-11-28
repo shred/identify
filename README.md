@@ -50,6 +50,10 @@ At the AmiNet, you will find [official binaries](http://aminet.net/package/util/
 
 **Please keep the "IdentifyDev" and "IdentifyUsr" package names reserved for official releases.** If you want to release a fork, use a different package name. But please consider contributing to the reference repository instead. This is better than having an unknown number of different versions circulating around.
 
+## Sync with your own Board Database?
+
+If you're managing an own board database in your project, feel invited to sync it with [this database](src/identify/ID_Expansion.s). However, it would only be fair if you then also share the boards that are missing here. Please open an issue, send a merge request, or just get in contact with me. Thank you!
+
 ## What about Identify V37?
 
 Identify V37 was released by Thore Böckelmann in 2003. This release added new boards and new features. He published it with good intentions, but unfortunately without my consent. I can only blame myself for that, because I haven't provided the infrastructure where a coordinated development was made possible. I hope that with this GitHub project, I can bring Identify back on track.
