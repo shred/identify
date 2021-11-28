@@ -250,7 +250,7 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 .prodok		move.l	(exp_ProdStr,a4),a2
 		move	(exp_StrLength,a4),d1
 		move.b	(a1),d2			; check for special characters
-		cmp.b	#"\xA1",d2		; is there a secondary meaning?
+		cmp.b	#"\241",d2		; is there a secondary meaning?
 		bne	.no2nd
 		tst.b	(exp_Secondary,a4)	; shall we warn about it?
 		beq	.no2ndwarn
@@ -258,7 +258,7 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		move.l	d2,(exp_ReturnCode,a4)
 .no2ndwarn	addq.l	#1,a1
 		move.b	(a1),d2
-.no2nd		cmp.b	#"\xA7",d2		; CPU number placeholder?
+.no2nd		cmp.b	#"\247",d2		; CPU number placeholder?
 		beq	.cpu_special
 .prodcopy	move.b	(a1)+,(a2)+
 		dbeq	d1,.prodcopy
@@ -300,7 +300,7 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		addq.l	#1,a1
 		move.l	(exp_ConfigDev,a4),d2
 .speccopy	move.b	(a1)+,d0
-		cmp.b	#"\xA7",d0		; placeholder character for CPU number
+		cmp.b	#"\247",d0		; placeholder character for CPU number
 		bne	.specnocpu
 		move.b	(a1)+,d0		; fetch the CPU number
 		tst.l	d2			; there is no ConfigDev?
@@ -448,13 +448,13 @@ NameFromNode	movem.l d1-d3/d6/a0-a3,-(SP)
 * can be used to invoke a function that will try to evaluate the correct board name.
 * Parameters are: board ID, reference to the board function.
 *
-* In the board name, the \xA7 character can be used as a placeholder for the CPU. It
+* In the board name, the \247 character can be used as a placeholder for the CPU. It
 * must be given at the very beginning of the string (as indicator), and again at the
 * position of the CPU number, followed by a default CPU number. For example:
-* "\xA7G-Force '0\xA740" would give "G-Force '060" if there is a 68060 present, and
-* "G-Force '040" if there is a 68040 present, or on a general board query.
+* "\247G-Force \'0\24740" would give "G-Force \'060" if there is a 68060 present, and
+* "G-Force \'040" if there is a 68040 present, or on a general board query.
 *
-* The "\xA1" marker at the very beginning of the string marks that for expansions that
+* The "\241" marker at the very beginning of the string marks that for expansions that
 * always come as a pair, this one is the secondary board. If present, IDERR_SECONDARY
 * will be returned by the query as a warning. This feature is not used consequently
 * though, and may become deprecated.
@@ -829,14 +829,14 @@ manuf_tab	tabinit
 		board	  002,"Impact Series I (16K/2)",MSG_EXP_SCSIHD
 		board	  003,"Impact Series I (16K/3)",MSG_EXP_SCSIHD	; Rev 3.5
 		board	  008,"Impact 3001",		MSG_EXP_TURBOIDE; Rev 3, 68030
-		board	  009,"\xA1Impact 3001",	MSG_EXP_RAM	; TurboIDE? 1-16MB 32bit
+		board	  009,"\241Impact 3001",	MSG_EXP_RAM	; TurboIDE? 1-16MB 32bit
 		board	  010,"Impact Series II",	MSG_EXP_RAM	; 2-8MB
 		boardf	  011,f_gvp_011
 		board	  013,"Impact 3001",		MSG_EXP_TURBOIDE ; GForce 040 with SCSI ; GVP A2000 68030 Turbo Board
-		board	  022,"\xA7G-Force '0\xA740",	MSG_EXP_TURBOSCSIHD ; ID 32? ; TekMagic A2000'060 Combo (TURBO/RAM)
+		board	  022,"\247G-Force \'0\24740",	MSG_EXP_TURBOSCSIHD ; ID 32? ; TekMagic A2000'060 Combo (TURBO/RAM)
 		board	  032,"Impact Vision 24",	MSG_EXP_GFX
 		board	  254,"A1230 030/882",		MSG_EXP_TURBO
-		board	  255,"\xA7G-Force '0\xA740 I/O",MSG_EXP_MULTIIO
+		board	  255,"\247G-Force \'0\24740 I/O",MSG_EXP_MULTIIO
 		endmf	02017
 
 		manuf	02018,"Calmos"
@@ -1130,7 +1130,7 @@ manuf_tab	tabinit
 		board	  018,"Multiface III",		MSG_EXP_MULTIIO
 		board	  024,"Tandem AT-2008 CD",	MSG_EXP_IDEHD
 		board	  032,"Framebuffer",		MSG_EXP_GFX
-		board	  033,"\xA1Graffiti",		MSG_EXP_GFXRAM
+		board	  033,"\241Graffiti",		MSG_EXP_GFXRAM
 		board	  034,"Graffiti",		MSG_EXP_GFX
 		board	  064,"ISDN MasterCard",	MSG_EXP_ISDN
 		board	  065,"ISDN MasterCard II",	MSG_EXP_ISDN
@@ -1228,9 +1228,9 @@ manuf_tab	tabinit
 		endmf	02116
 
 		manuf	02117,"XPert"
-		board	  001,"\xA1Visiona",		MSG_EXP_GFXRAM
+		board	  001,"\241Visiona",		MSG_EXP_GFXRAM
 		board	  002,"Visiona",		MSG_EXP_GFX
-		board	  003,"\xA1Merlin",		MSG_EXP_GFXRAM
+		board	  003,"\241Merlin",		MSG_EXP_GFXRAM
 		board	  004,"Merlin",			MSG_EXP_GFX
 		board	  201,"Merlin",			MSG_EXP_GFX
 		endmf	02117
@@ -1409,14 +1409,14 @@ manuf_tab	tabinit
 		endmf	02166
 
 		manuf	02167,"VillageTronic"
-		board	  001,"\xA1Domino",		MSG_EXP_GFXRAM
+		board	  001,"\241Domino",		MSG_EXP_GFXRAM
 		board	  002,"Domino",			MSG_EXP_GFX
 		board	  003,"Domino 16M Prototype",	MSG_EXP_GFX
-		board	  011,"\xA1Picasso II / II+",	MSG_EXP_GFXRAM
+		board	  011,"\241Picasso II / II+",	MSG_EXP_GFXRAM
 		board	  012,"Picasso II / II+",	MSG_EXP_GFX
 		board	  013,"Picasso II (Segmented Mode)",MSG_EXP_GFX
-		board	  021,"\xA1Picasso IV Z2",	MSG_EXP_GFXRAM
-		board	  022,"\xA1Picasso IV Z2",	MSG_EXP_GFXRAM
+		board	  021,"\241Picasso IV Z2",	MSG_EXP_GFXRAM
+		board	  022,"\241Picasso IV Z2",	MSG_EXP_GFXRAM
 		board	  023,"Picasso IV Z2",		MSG_EXP_GFX
 		board	  024,"Picasso IV Z3",		MSG_EXP_GFX
 		board	  201,"Ariadne",		MSG_EXP_ETHERNET
@@ -1576,7 +1576,7 @@ manuf_tab	tabinit
 		board	  014,"Amiga 1200 E/Box",	MSG_EXP_MISC
 		board	  015,"ScanDoubler/Flickerfixer",MSG_EXP_MISC
 		board	  016,"FastATA 1200 Lite",	MSG_EXP_IDEHD
-		board	  017,"Buffered Interface 4xEIDE'99",MSG_EXP_IDEHD
+		board	  017,"Buffered Interface 4xEIDE\'99",MSG_EXP_IDEHD
 		board	  018,"FastATA 1200",		MSG_EXP_IDEHD
 		board	  019,"FastATA 1200 MKII Gold",	MSG_EXP_IDEHD
 		board	  020,"E/Box 4000 + Zorro III/II busboard",MSG_EXP_MISC
@@ -1829,7 +1829,7 @@ manuf_tab	tabinit
 
 		manuf	08290,"Expansion Systems"
 		board	  001,"DataFlyer",		MSG_EXP_SCSIHD
-		board	  002,"\xA1DataFlyer",		MSG_EXP_RAM
+		board	  002,"\241DataFlyer",		MSG_EXP_RAM
 		endmf	08290
 
 		manuf	08448,"ReadySoft"
@@ -1843,10 +1843,10 @@ manuf_tab	tabinit
 		board	  010,"FastLane Z3",		MSG_EXP_RAM
 		boardf	  011,f_phase5_011
 		boardf	  012,f_phase5_012
-		board	  013,"\xA7Blizzard 12\xA730",	MSG_EXP_TURBO	; Blizzard 1230-I -II -III
+		board	  013,"\247Blizzard 12\24730",	MSG_EXP_TURBO	; Blizzard 1230-I -II -III
 		boardf	  017,f_phase5_017
 		boardf	  024,f_phase5_024
-		board	  025,"\xA7CyberStorm '0\xA760 MK-II",MSG_EXP_FLASHROM
+		board	  025,"\247CyberStorm \'0\24760 MK-II",MSG_EXP_TURBO
 		board	  034,"CyberVision 64",		MSG_EXP_GFX
 		board	  050,"CyberVision 3D Prototype",MSG_EXP_GFX
 		board	  067,"CyberVision 3D",		MSG_EXP_GFX
@@ -1861,7 +1861,7 @@ manuf_tab	tabinit
 
 		manuf	08704,"ACT"
 		boardf	  000,f_act_000
-		boarda	  001,"Sang/C'T","Transputer Link",MSG_EXP_INTERFACE
+		boarda	  001,"Sang/C\'T","Transputer Link",MSG_EXP_INTERFACE
 		endmf	08704
 
 		manuf	08738,"ACT"
@@ -1875,7 +1875,7 @@ manuf_tab	tabinit
 		endmf	09512
 
 		manuf	09999,"QuikPak"
-		board	  022,"A40\xA760T 680\xA760",	MSG_EXP_TURBO
+		board	  022,"A40\24760T 680\24760",	MSG_EXP_TURBO
 		endmf	09999
 
 		manuf	10676,"Electronic Design"
@@ -1898,9 +1898,9 @@ manuf_tab	tabinit
 
 		manuf	16707,"At\xE9o Concepts"
 		board	  252,"At\xE9oBus (IO)",	MSG_EXP_BUSBRIDGE
-		board	  253,"\xA1At\xE9oBus (Memory)",MSG_EXP_BUSBRIDGE
+		board	  253,"\241At\xE9oBus (Memory)",MSG_EXP_BUSBRIDGE
 		board	  254,"Pixel64",		MSG_EXP_GFX
-		board	  255,"\xA1Pixel64",		MSG_EXP_GFXRAM
+		board	  255,"\241Pixel64",		MSG_EXP_GFXRAM
 		endmf	16707
 
 		manuf	16708,"ALiENDESiGN"
@@ -1915,7 +1915,7 @@ manuf_tab	tabinit
 		boarda	  001,"Elsat","E1204",		MSG_EXP_TURBOANDRAM
 		endmf	17440
 
-		manuf	18260,"MacroSystem Germany"
+		manuf	18260,"MacroSystem"
 		board	  003,"Maestro",		MSG_EXP_AUDIO
 		board	  004,"VLab",			MSG_EXP_VIDEO
 		board	  005,"MaestroPro",		MSG_EXP_AUDIO
@@ -1926,7 +1926,7 @@ manuf_tab	tabinit
 		board	  018,"VLab-Motion",		MSG_EXP_VIDEO
 		board	  019,"DraCo Altais",		MSG_EXP_GFX
 		board	  023,"DraCo Motion",		MSG_EXP_VIDEO
-		board	  253,"Falcon '040",		MSG_EXP_TURBO
+		board	  253,"Falcon \'040",		MSG_EXP_TURBO
 		endmf	18260
 
 		manuf	19796,"Markt & Technik"
@@ -2029,19 +2029,19 @@ manuf_tab	tabinit
 * GVP (02017) ID 11
 *
 gvpepclist	gvpinit
-		gvpepc	$20,"G-Force '040",	MSG_EXP_TURBO
-		gvpepc	$30,"G-Force '040",	MSG_EXP_TURBOSCSIHD
+		gvpepc	$20,"G-Force \'040",	MSG_EXP_TURBO
+		gvpepc	$30,"G-Force \'040",	MSG_EXP_TURBOSCSIHD
 		gvpepc	$40,"A1291",		MSG_EXP_SCSIHD
-		gvpepc	$60,"Combo '030 R4",	MSG_EXP_TURBO
-		gvpepc	$70,"Combo '030 R4",	MSG_EXP_TURBOSCSIHD
+		gvpepc	$60,"Combo \'030 R4",	MSG_EXP_TURBO
+		gvpepc	$70,"Combo \'030 R4",	MSG_EXP_TURBOSCSIHD
 		gvpepc	$78,"Phone Pak",	MSG_EXP_UNKNOWN
 		gvpepc	$98,"IO-Extender",	MSG_EXP_MULTIIO
-		gvpepc	$a0,"G-Force '030",	MSG_EXP_TURBO
-		gvpepc	$b0,"G-Force '030",	MSG_EXP_TURBOSCSIHD
+		gvpepc	$a0,"G-Force \'030",	MSG_EXP_TURBO
+		gvpepc	$b0,"G-Force \'030",	MSG_EXP_TURBOSCSIHD
 		gvpepc	$c0,"A530",		MSG_EXP_TURBO
 		gvpepc	$d0,"A530",		MSG_EXP_TURBOSCSIHD
-		gvpepc	$e0,"Combo '030 R3",	MSG_EXP_TURBO
-		gvpepc	$f0,"Combo '030 R3",	MSG_EXP_TURBOSCSIHD
+		gvpepc	$e0,"Combo \'030 R3",	MSG_EXP_TURBO
+		gvpepc	$f0,"Combo \'030 R3",	MSG_EXP_TURBOSCSIHD
 gvpepcfix	gvpepc	$f8,"Impact Series II",	MSG_EXP_SCSIHD
 		gvpend
 
@@ -2075,10 +2075,10 @@ f_gvp_011	move.l	a5,d0			; ConfigDev present?
 **
 * Phase 5 (08512) ID 011
 *
-		defstr	blizz1230ii,"\xA7Blizzard 1230-II", 	MSG_EXP_TURBO
+		defstr	blizz1230ii,"\247Blizzard 1230-II", 	MSG_EXP_TURBO
 		defstr	fastlane,"FastLane Z3",			MSG_EXP_SCSIHD
 		defstr	cyberscsi,"CyberSCSI",			MSG_EXP_SCSIHD
-		defstr	cyber040,"\xA7CyberStorm 0\xA740",	MSG_EXP_TURBO
+		defstr	cyber040,"\247CyberStorm 0\24740",	MSG_EXP_TURBO
 
 f_phase5_011	move.l	a5,d0			; ConfigDev present?
 		beq	.fastlane		;  no -> return a fixed board
@@ -2279,7 +2279,7 @@ f_dkb_023	move.l	a5,d0			; ConfigDev present?
 * Phase 5 (08512) ID 100
 *
 		defstr	cyberppc,"CyberStorm PPC",	MSG_EXP_TURBOSCSIHD
-		defstr	cybermk3,"\xA7CyberStorm '0\xA760 MK-III",MSG_EXP_TURBOSCSIHD
+		defstr	cybermk3,"\247CyberStorm \'0\24760 MK-III",MSG_EXP_TURBOSCSIHD
 
 f_phase5_100	move.l	a0,-(SP)		; is there a PowerPC?
 		moveq	#IDHW_POWERPC,d0
