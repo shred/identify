@@ -789,8 +789,12 @@ manuf_tab	tabinit
 		boarda	  000,"Prototype","General Prototype",MSG_EXP_MISC
 		boardf	  001,f_uae_001
 		boardf	  002,f_uae_002
-		boarda	  003,"UAE","emulated",		MSG_EXP_RAM
-		boarda	  096,"UAE","emulated",		MSG_EXP_GFX
+		boarda	  003,"UAE","Z3 Fast RAM",	MSG_EXP_RAM
+		boarda	  004,"UAE","Boot ROM",		MSG_EXP_MISC
+		boarda	  081,"UAE","Fast RAM",		MSG_EXP_RAM
+		boarda	  082,"UAE","Filesystem",	MSG_EXP_HD
+		boarda	  083,"UAE","Z3 Fast RAM",	MSG_EXP_RAM
+		boarda	  096,"UAE","UAEGFX",		MSG_EXP_GFX
 		boarda	  224,"Vector","Connection",	MSG_EXP_MULTIIO
 		boarda	  225,"Vector","Connection",	MSG_EXP_MULTIIO
 		boarda	  226,"Vector","Connection",	MSG_EXP_MULTIIO
@@ -2298,7 +2302,7 @@ f_phase5_100	move.l	a0,-(SP)		; is there a PowerPC?
 **
 * UAE (02011) ID 001
 *
-		defstr	uae001,"emulated",	MSG_EXP_RAM
+		defstr	uae001,"Fast RAM",	MSG_EXP_RAM
 		defstr2 uae001mf,"UAE"
 		defstr	hacker,"?",		MSG_EXP_SCSIHD
 		defstr2 hackermf,"Hacker Inc."
@@ -2355,7 +2359,7 @@ f_act_000	move.l	a5,d0			; ConfigDev present?
 **
 * UAE (02011) ID 002
 *
-		defstr	uae002,"emulated", 	MSG_EXP_HD
+		defstr	uae002,"Filesystem", 	MSG_EXP_HD
 		defstr2 uae002mf,"UAE"
 		defstr	rmf,"QuickNet QN2000", 	MSG_EXP_ETHERNET
 		defstr2 rmfmf,"Resource Management Force"
