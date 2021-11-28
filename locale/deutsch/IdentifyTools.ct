@@ -38,7 +38,7 @@ Format:\n\
   MID=MANUFID/K/N\tInformation über den Hersteller\n\
   PID=PRODID/K/N\tund sein Produkt\n\
 \n\
-Bitte lesen Sie die Anleitung für weitere Details.\n\
+Bitte lies die Anleitung für weitere Details.\n\
 
 ;
 MSG_LISTEXP_OVERFLOW
@@ -116,7 +116,7 @@ Format:\n\
   GURU\t\tzu analysierender Guru-Code\n\
   LASTALERT/S\tLetzten System-Alert analysieren\n\
 \n\
-Bitte lesen Sie die Anleitung für weitere Details.\n\
+Bitte lies die Anleitung für weitere Details.\n\
 
 ;
 MSG_GURU_BADCODE
@@ -149,7 +149,7 @@ Format:\n\
   LN=LIBNAME/A\tName der Library\n\
   O=OFFSET/N/A\tFunktionsoffset\n\
 \n\
-Bitte lesen Sie die Anleitung für weitere Details.\n\
+Bitte lies die Anleitung für weitere Details.\n\
 
 ;
 MSG_FUNC_RESULT

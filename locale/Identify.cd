@@ -94,20 +94,20 @@ Atari emulator
 MSG_EXP_GFX             (//49)
 graphics
 MSG_EXP_GFXRAM          (//49)
-graphics RAM
+graphics / RAM
 ;
 MSG_EXP_HD              (//49)
 HD controller
 MSG_EXP_HDRAM           (//49)
-HD controller RAM
+HD controller / RAM
 MSG_EXP_IDEHD           (//49)
 IDE controller
 MSG_EXP_IDEHDRAM        (//49)
-IDE controller RAM
+IDE controller / RAM
 MSG_EXP_SCSIHD          (//49)
 SCSI host adapter
 MSG_EXP_RAMSCSIHD       (//49)
-SCSI host adapter RAM
+SCSI host adapter / RAM
 MSG_EXP_CDROM           (//49)
 CD-ROM interface
 ;
@@ -123,9 +123,9 @@ multi serial
 MSG_EXP_PARALLEL        (//49)
 multi parallel
 MSG_EXP_SCANIF          (//49)
-scanner interface
+scanner
 MSG_EXP_TABLET          (//49)
-drawing tablet interface
+drawing tablet
 ;
 MSG_EXP_RAM             (//49)
 RAM expansion
@@ -145,7 +145,7 @@ KickStart
 MSG_EXP_RAM32           (//49)
 32bit RAM expansion
 MSG_EXP_TURBOANDRAM     (//49)
-accelerator / RAM exp.
+accelerator / RAM
 MSG_EXP_ACCESS          (//49)
 access control
 MSG_EXP_INTERFACE       (//49)
@@ -250,7 +250,7 @@ PMMU configuration
 MSG_ACPU_MMUILLEGAL     (//49)
 PMMU illegal configuration
 MSG_ACPU_NAN            (//49)
-FPCP signaling NAN
+FPCP signaling NaN
 MSG_ACPU_PRIVERR        (//49)
 Privilege violation error
 MSG_ACPU_SPURIOUS       (//49)

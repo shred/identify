@@ -91,28 +91,28 @@ MSG_EXP_ATARIEMU
 Atari-Emulator
 ;
 MSG_EXP_GFX
-Graphik
+Grafik
 ;
 MSG_EXP_GFXRAM
-Graphik-RAM
+Grafik / RAM
 ;
 MSG_EXP_HD
 HD-Kontroller
 ;
 MSG_EXP_HDRAM
-HD-Kontroller-RAM
+HD-Kontroller / RAM
 ;
 MSG_EXP_IDEHD
 IDE-Kontroller
 ;
 MSG_EXP_IDEHDRAM
-IDE-Kontroller-RAM
+IDE-Kontroller / RAM
 ;
 MSG_EXP_SCSIHD
 SCSI-Hostadapter
 ;
 MSG_EXP_RAMSCSIHD
-SCSI-Hostadapter-RAM
+SCSI-Hostadapter / RAM
 ;
 MSG_EXP_CDROM
 CD-ROM-Interface
@@ -133,10 +133,10 @@ MSG_EXP_PARALLEL
 Multiparallele
 ;
 MSG_EXP_SCANIF
-Scanner-Interface
+Scanner
 ;
 MSG_EXP_TABLET
-Zeichentablett-Interface
+Zeichentablett
 ;
 MSG_EXP_RAM
 RAM-Erweiterung
@@ -160,7 +160,7 @@ MSG_EXP_RAM32
 32bit RAM-Erweiterung
 ;
 MSG_EXP_TURBOANDRAM
-Turbo, RAM-Erweiterung
+Turbo / RAM
 ;
 MSG_EXP_ACCESS
 Zugangskontrolle
@@ -220,10 +220,10 @@ MSG_AG_OPENRES
 Kann Resource nicht öffnen
 ;
 MSG_AG_PROCCREATE
-Kann Prozeß nicht erstellen
+Kann Prozess nicht erstellen
 ;
 MSG_ACPU_ADDRESSERR
-Illegaler Adreßzugriff
+Illegaler Adresszugriff
 ;
 MSG_ACPU_AUTOVEC1
 AutoVektor Ebene 1 Interruptfehler
@@ -301,7 +301,7 @@ MSG_ACPU_MMUILLEGAL
 PMMU Illegale Einstellung
 ;
 MSG_ACPU_NAN
-FPCP signalisiert NAN
+FPCP signalisiert NaN
 ;
 MSG_ACPU_PRIVERR
 Privilegverletzung
