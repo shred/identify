@@ -90,7 +90,7 @@ Nr ID        Adresse  Größe Hersteller           Produkt\n\
 
 ;
 MSG_LISTEXP_BOARDLINE
-%2ld %04lx.%02lx %08lx %3ld%lcB %-20s %s %s\n
+%2ld %5ld/%3ld %08lx %3ld%lcB %-20s %s %s\n
 ;
 MSG_LISTEXP_CXTITLE
 \n\

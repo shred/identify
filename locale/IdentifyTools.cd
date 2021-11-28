@@ -87,11 +87,11 @@ Memory:\t\t   CHIP\t   FAST\t  TOTAL\tROM = %s\tSLOW = %s\n\
 ;
 MSG_LISTEXP_LISTTITLE (//)
 ** EXPANSIONS **\n\n\
-Nr ID      Address  Size Manufacturer         Product\n\
+Nr ID        Address  Size  Manufacturer         Product\n\
 ----------------------------------------------------------------------------\n
 ;
 MSG_LISTEXP_BOARDLINE (//)
-%2ld %04lx.%02lx %08lx %3ld%lc %-20s %s %s\n
+%2ld %5ld/%3ld %08lx %3ld%lcB %-20s %s %s\n
 ;
 MSG_LISTEXP_CXTITLE (//)
 \n\n** COMMODITIES **\n\n\
