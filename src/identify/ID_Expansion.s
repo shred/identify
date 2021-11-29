@@ -1336,6 +1336,7 @@ manuf_tab	tabinit
 		boarda	  128,"Kato","Melody MPEG",	MSG_EXP_AUDIO
 		boarda	  129,"E3B","Unity",		MSG_EXP_ETHERNET
 		boarda	  200,"E3B","Highway",		MSG_EXP_USB
+		boarda	  203,"E3B","Algor",		MSG_EXP_USB
 		endmf	02145
 
 		manuf	02146,"Atlantis"
@@ -1629,6 +1630,12 @@ manuf_tab	tabinit
 		endmf	03084
 
 		manuf	03643,"E3B"
+		board	  016,"Deneb",			MSG_EXP_USB
+		board	  018,"Deneb",			MSG_EXP_USB
+		board	  019,"Deneb",			MSG_EXP_USB
+		board	  020,"Deneb",			MSG_EXP_USB
+		board	  032,"ZorRAM",			MSG_EXP_RAM
+		board	  243,"Deneb",			MSG_EXP_USB
 		endmf	03643
 
 		manuf	03855,"Micronik"
