@@ -1952,7 +1952,7 @@ do_RAMBandwidth moveq	#1,d0			; default: 1x
 	defhws	tcp_genesis,	"genesis.library"	; Genesis
 	defhws	tcp_amitcp,	"bsdsocket.library"	; AmiTCP
 	defhws	tcp_miamidx,	"MiamiDx"		; Miami Deluxe
-	;; TODO: Roadshow
+	defhws	tcp_roadshow,	"C:RoadshowControl"	; Roadshow
 
 do_TCPIP	lea	buildflags,a0
 		sf	(IDHW_TCPIP,a0)		; do not cache result
@@ -1994,7 +1994,7 @@ do_TCPIP	lea	buildflags,a0
 		moveq	#0,d0
 		exec	OpenLibrary
 		tst.l	d0
-		bne	.found2
+		bne	.roadshow
 	;-- none or unknown
 		move.l	#IDTCP_NONE,d3
 		bra	.found
@@ -2002,6 +2002,19 @@ do_TCPIP	lea	buildflags,a0
 		exec.q	CloseLibrary
 .found		move.l	d3,d0
 		rts
+
+	;-- maybe roadshow?
+.roadshow	move.l	d0,a1			; first close the bsdsocket.library
+		exec.q	CloseLibrary
+		lea	(tcp_roadshow,a4),a0	; check for RoadshowControl
+		move.l	a0,d1
+		moveq	#ACCESS_READ,d2
+		dos	Lock
+		move.l	d0,d1
+		beq	.found			;  file not found -> AmiTCP
+		dos	UnLock
+		moveq	#IDTCP_ROADSHOW,d3	;  file found -> Roadshow
+		bra	.found
 
 **
 * What PowerPC operating system is used?

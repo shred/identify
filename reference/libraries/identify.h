@@ -286,6 +286,7 @@ struct IdentifyBase {
 #define IDTCP_TERMITE   (3)       /* TermiteTCP */
 #define IDTCP_GENESIS   (4)       /* GENESiS */
 #define IDTCP_MIAMIDX   (5)       /* MiamiDx */
+#define IDTCP_ROADSHOW  (6)       /* Roadshow */
 
 /*
  * IDHW_PPCOS numerical result codes

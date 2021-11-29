@@ -265,6 +265,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDTCP_TERMITE   = 3;     {  TermiteTCP }
        IDTCP_GENESIS   = 4;     {  GENESiS }
        IDTCP_MIAMIDX   = 5;     {  MiamiDx }
+       IDTCP_ROADSHOW  = 6;     {  Roadshow }
+
 
 { IDHW_PPCOS numerical result codes }
 
