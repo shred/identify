@@ -201,14 +201,27 @@ Specific	move.l	sp,d7
 **
 * Show hardware.
 *
-HardList	 move.l	sp,d7			; remember stack
+HardList	move.l	sp,d7			; remember stack
 	;-- first line
 		sub.l	a0,a0
 		lea	(.idtab1,PC),a1
 .putloop1	move.l	(a1)+,d0
 		bmi	.loopdone1
+		move.l	d0,d3
 		idfy	IdHardware
 		move.l	d0,-(sp)
+		cmp.l	#IDHW_CPUCLOCK,d3	; handle CPU/FPU clock
+		beq	.freqfix1
+		cmp.l	#IDHW_FPUCLOCK,d3
+		beq	.freqfix1
+		bra	.putloop1
+.freqfix1	move.l	d3,d0			; if clock is 0 (= invalid)...
+		sub.l	a0,a0
+		idfy	IdHardwareNum
+		tst.l	d0
+		bne	.putloop1
+		addq.l	#4,SP			; remove frequency string from stack
+		pea	(.emptystring,PC)	; use empty string instead
 		bra	.putloop1
 .loopdone1	move.l	SP,d2
 		move.l	#MSG_LISTEXP_HARDWARE,d0
@@ -226,8 +239,19 @@ HardList	 move.l	sp,d7			; remember stack
 		lea	(.idtab2,PC),a1
 .putloop2	move.l	(a1)+,d0
 		bmi	.loopdone2
+		move.l	d0,d3
 		idfy	IdHardware
 		move.l	d0,-(sp)
+		cmp.l	#IDHW_PPCCLOCK,d3	; handle PPC clock
+		beq	.freqfix2
+		bra	.putloop2
+.freqfix2	move.l	d3,d0			; if clock is 0 (= invalid)...
+		sub.l	a0,a0
+		idfy	IdHardwareNum
+		tst.l	d0
+		bne	.putloop2
+		addq.l	#4,SP			; remove frequency string from stack
+		pea	(.emptystring,PC)	; use empty string instead
 		bra	.putloop2
 .loopdone2	move.l	SP,d2
 		move.l	#MSG_LISTEXP_POWERPC,d0
@@ -270,6 +294,8 @@ HardList	 move.l	sp,d7			; remember stack
 .idtab1		dc.l	IDHW_MMU,IDHW_FPUCLOCK,IDHW_FPU
 		dc.l	IDHW_CPUREV,IDHW_CPUCLOCK,IDHW_CPU,IDHW_SYSTEM,-1
 
+.emptystring	dc.b	"",0
+		even
 
 **
 * List all expansions.

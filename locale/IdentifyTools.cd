@@ -65,10 +65,10 @@ MSG_LISTEXP_HARDWARE (//)
 ** HARDWARE **\n\
 \n\
 System:  %s\n\
-CPU:     %s/%s (Rev %s), FPU=%s/%s, MMU=%s\n
+CPU:     %s %s (Rev %s), FPU=%s %s, MMU=%s\n
 ;
 MSG_LISTEXP_POWERPC (//)
-PowerPC: %s/%s (running %s)\n
+PowerPC: %s %s (running %s)\n
 ;
 MSG_LISTEXP_HARDWARE2 (//)
 Chipset: %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\

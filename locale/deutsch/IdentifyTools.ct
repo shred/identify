@@ -57,11 +57,11 @@ MSG_LISTEXP_HARDWARE
 ** HARDWARE **\n\
 \n\
 System:  %s\n\
-CPU:     CPU=%s/%s (Rev %s), FPU=%s/%s, MMU=%s\n\
+CPU:     CPU=%s %s (Rev %s), FPU=%s %s, MMU=%s\n\
 
 ;
 MSG_LISTEXP_POWERPC
-PowerPC: %s/%s (unter %s)\n\
+PowerPC: %s %s (unter %s)\n\
 
 ;
 MSG_LISTEXP_HARDWARE2
