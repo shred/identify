@@ -2377,14 +2377,20 @@ GetRAMSize	movem.l d2-d4/a0-a1,-(SP)
 **
 * Fill CPU and FPU clock table.
 *
-CalcClock	lea	(flags_gotclock,PC),a1
+CalcClock	lea	(flags_gotclock,PC),a1	; Clock present?
 		tst.b	(a1)
-		bne	.done
+		bne	.done			;  yes -> done
+		lea	(flags_emulated,PC),a1	; Emulated Amiga?
+		tst.b	(a1)
+		bne	.emulated		;  yes -> don't measure the clock
 		bsr	GetClocks
-		move.l	d0,cpuclk
+.complete	move.l	d0,cpuclk
 		move.l	d1,fpuclk
 		st	(a1)
 .done		rts
+.emulated	moveq	#0,d0
+		moveq	#0,d1
+		bra	.complete
 
 **
 * Read last alert and last alert task.
