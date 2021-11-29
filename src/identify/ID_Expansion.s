@@ -236,7 +236,7 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		bne	.nodot
 		moveq	#0,d0			; then terminate
 .nodot		move.b	d0,(a2)+
-		dbeq	d1,.prodcopy
+		dbeq	d1,.proddotcopy
 		clr.b	-(a2)
 		move.l	#MSG_EXP_GUESS,d0	; tell that we could only guess
 		bra	.proddone
