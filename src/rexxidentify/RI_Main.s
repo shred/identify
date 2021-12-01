@@ -42,18 +42,18 @@
 		SECTION text,CODE
 
 VERSION		EQU	1		;<- Version
-REVISION	EQU	13		;<- Revision
+REVISION	EQU	14		;<- Revision
 
 SETRELEASE	MACRO
-		dc.b	"11"		;<- Command Release
+		dc.b	"14"		;<- Command Release
 		ENDM
 
 SETVER		MACRO			;<- Version String Macro
-		dc.b	"1.13"
+		dc.b	"1.14"
 		ENDM
 
 SETDATE		MACRO			;<- Date String Macro
-		dc.b	"20.11.2011"
+		dc.b	"30.11.2021"
 		ENDM
 
 
@@ -741,6 +741,7 @@ ID_Hardware	link	a4,#idh_LENGTH
 		dc.b	"HOSTCPU",0
 		dc.b	"HOSTSPEED",0
 		dc.b	"LASTALERTTASK",0
+		dc.b	"PAULA",0
 		dc.b	0		; end marker
 
 .options	dc.b	"EMPTYNA",0

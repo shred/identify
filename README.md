@@ -13,6 +13,7 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 * Tries to give at least a hint if the board name is not known yet
 * Fully FPGA, DraCo, and PowerPC compatible
 * Supports PowerUp and WarpOS
+* Supports Vampire boards (experimental)
 * The library is fully localized (catalogs included: deutsch)
 * ARexx interface library
 * English and German documentation (.guide and .dvi)

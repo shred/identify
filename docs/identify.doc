@@ -309,6 +309,7 @@ identify.library/IdHardwareUpdate
                 $HOSTCPU$
                 $HOSTSPEED$
                 $LASTALERTTASK$
+                $PAULA$
 
         For their meanings, see the include file.
 
@@ -569,13 +570,16 @@ identify.library/IdHardwareUpdate
                         (e.g. "PAL")
 
                 IDHW_DENISE     -- [V10] Denise chip type
-                        (e.g. "Lisa 8364")
+                        (e.g. "Lisa 4203")
 
                 IDHW_DENISEREV  -- [V10] Denise chip revision
                         (e.g. "0")
 
                 IDHW_LASTALERTTASK -- [V37] Task that caused the last alert
                         (e.g. "0x0003742A")
+
+                IDHW_PAULA      -- [V38] Paula chip type
+                        (e.g. "Paula 8364")
 
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.
@@ -770,6 +774,9 @@ identify.library/IdHardwareUpdate
 
                 IDHW_LASTALERTTASK -- [V37] Task that caused the last alert
                         (LONG, 0 means not available)
+
+                IDHW_PAULA      -- [V38] Paula chip type
+                        (include file: IDPL_...)
 
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.

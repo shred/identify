@@ -167,6 +167,7 @@ IdHardwareNum	movem.l d1-d3/a0-a6,-(SP)
 		dc.l	do_AgnusMode,	do_Denise,	do_DeniseRev,	do_BoingBag
 		dc.l	do_Emulated,	do_XLVersion,	do_HostOS,	do_HostVers
 		dc.l	do_HostMachine,	do_HostCPU,	do_HostSpeed,	do_LastAlertTask
+		dc.l	do_Paula
 
 
 **
@@ -236,6 +237,7 @@ IdHardware	movem.l d1-d3/a0-a3/a6,-(SP)
 		dc.l	cv_AgnusMode,	cv_Denise,	cv_DeniseRev,	cv_BoingBag
 		dc.l	cv_Emulated,	cv_XLVersion,	cv_HostOS,	cv_HostVers
 		dc.l	cv_HostMachine,	cv_HostCPU,	cv_HostSpeed,	cv_LastAlertTask
+		dc.l	cv_Paula
 
 
 *
@@ -496,6 +498,9 @@ cv_LastAlertTask lea	buf_LastAlertTask,a0
 		sf	(a0)			; no caching!
 		bra	quick_addr
 
+cv_Paula	add.l	#MSG_HW_PAULA_NONE,d0
+		bra	quick_loc
+
 
 *
 * ======== Quick Formatter Functions ========
@@ -716,6 +721,7 @@ buf_HostMachine		ds.b	STRSIZE
 buf_HostCPU		ds.b	STRSIZE
 buf_HostSpeed		ds.b	STRSIZE
 buf_LastAlertTask	ds.b	STRSIZE
+buf_Paula		ds.b	STRSIZE
 buf_ENDOFBUF		ds.b	0
 
 		SECTION text,CODE
@@ -848,6 +854,7 @@ fmtcommands	dc.b	"SYSTEM$CPU$FPU$MMU$"
 		dc.b	"AGNUSMODE$DENISE$DENISEREV$BOINGBAG$"
 		dc.b	"EMULATED$XLVERSION$HOSTOS$HOSTVERS$"
 		dc.b	"HOSTMACHINE$HOSTCPU$HOSTSPEED$LASTALERTTASK$"
+		dc.b	"PAULA$"
 		dc.b	0
 		even
 
@@ -2070,15 +2077,21 @@ do_PPCOS	move.l	4.w,a6
 		rts
 
 **
-* What Agnus version is present?
+* What Agnus/Alice/Anni version is present?
 *
 do_Agnus	moveq	#IDAG_NONE,d0
 		move.b	(flags_draco,PC),d1	; DraCo has no Agnus at all
 		bne	.done
+	;-- Anni (SAGA)
+		moveq	#IDAG_ANNI,d0
+		move	$dff016,d1
+		and	#$00FE,d1		; Paula revision (bits 7..1)
+		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
+		beq	.done
 	;-- 8361/8370
+		moveq	#IDAG_8361,d0
 		move	$dff004,d1		; VPOSR
 		and	#$7f00,d1		; mask
-		addq	#2,d0
 		cmp	#$1000,d1
 		beq	.tst_fat
 	;-- 8367/8371
@@ -2123,11 +2136,17 @@ do_AgnusMode	moveq	#IDAM_NONE,d0
 .done		rts
 
 **
-* What Denise/Lisa version is present?
+* What Denise/Lisa/Isabel version is present?
 *
 do_Denise	moveq	#IDDN_NONE,d0
 		move.b	(flags_draco,PC),d1	; DraCo has no Denise at all.
 		bne	.done
+	;-- Isabel (SAGA)
+		moveq	#IDDN_ISABEL,d0
+		move	$dff016,d1
+		and	#$00FE,d1		; Paula revision (bits 7..1)
+		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
+		beq	.done
 	;-- 8362
 		moveq	#IDDN_8362,d0
 		move	$dff07c,d1		; LISAID
@@ -2141,8 +2160,8 @@ do_Denise	moveq	#IDDN_NONE,d0
 		moveq	#IDDN_8373,d0
 		cmp	#$0C,d1
 		beq	.done
-	;-- 8364 (AGA/Lisa)
-		moveq	#IDDN_8364,d0
+	;-- 4203 (AGA/Lisa)
+		moveq	#IDDN_4203,d0		; wrongly called IDDN_8364 before
 		cmp	#$08,d1
 		beq	.done
 	;-- unknown, a new Amiga? :-)
@@ -2167,6 +2186,25 @@ do_DeniseRev	moveq	#-1,d0
 		and.l	#$000000F0,d0
 		eor	#$00F0,d0		; invert revision (F->0, E->1 ...)
 		lsr	#4,d0
+.done		rts
+
+**
+* What Paula/Arne version is present?
+*
+do_Paula	moveq	#IDPL_NONE,d0
+		move.b	(flags_draco,PC),d1	; DraCo has no Paula at all.
+		bne	.done
+	;-- Paula
+		moveq	#IDPL_8364,d0
+		move	$dff016,d1
+		and	#$00FE,d1		; Paula revision (bits 7..1)
+		beq	.done			;   0 = Paula
+	;-- Arne (SAGA)
+		moveq	#IDPL_ARNE,d0
+		cmp	#$0002,d1		;   1 = Arne
+		beq	.done
+	;-- unknown, a new Amiga? :-)
+.unknown	moveq	#IDPL_UNKNOWN,d0
 .done		rts
 
 **

@@ -145,7 +145,8 @@ IDHW_HOSTMACHINE EQU	52	; when emulated: Host Machine (see autodocs!)
 IDHW_HOSTCPU	EQU	53	; when emulated: Host CPU (see autodocs!)
 IDHW_HOSTSPEED	EQU	54	; when emulated: Host CPU speed (unit MHz, see autodocs!)
 IDHW_LASTALERTTASK EQU	55	; Task of last alert			[V37]
-IDHW_NUMBEROF	EQU	56	; Number of types, PRIVATE!
+IDHW_PAULA	EQU	56	; Paula chip revision			[V38]
+IDHW_NUMBEROF	EQU	57	; Number of types, PRIVATE!
 
 *
 * IDHW_SYSTEM numerical result codes
@@ -317,6 +318,7 @@ IDAG_8372_R4	EQU	6	; Agnus 8372 Rev. 1-4
 IDAG_8372_R5	EQU	7	; Agnus 8372 Rev. 5
 IDAG_8374_R2	EQU	8	; Alice 8374 Rev. 1-2
 IDAG_8374_R3	EQU	9	; Alice 8374 Rev. 3-4
+IDAG_ANNI	EQU	10	; Anni (SAGA)
 
 *
 * IDHW_DENISE numerical result codes
@@ -325,7 +327,16 @@ IDDN_NONE	EQU	0	; None
 IDDN_UNKNOWN	EQU	1	; Unknown Denise (new model?! :-)
 IDDN_8362	EQU	2	; Denise 8362
 IDDN_8373	EQU	3	; Denise 8373
-IDDN_8364	EQU	4	; Lisa 8364
+IDDN_4203	EQU	4	; Lisa 4203 (replaces IDDN_8364)
+IDDN_ISABEL	EQU	5	; Isabel (SAGA)
+
+*
+* IDHW_PAULA numerical result codes
+*
+IDPL_NONE	EQU	0	; None
+IDPL_UNKNOWN	EQU	1	; Unknown Paula
+IDPL_8364	EQU	2	; Paula 8364
+IDPL_ARNE	EQU	3	; Arne (SAGA)
 
 *
 * IDHW_AGNUSMODE numerical result codes

@@ -14,6 +14,7 @@ ________________________________________________________________________
 
  @{" 2. ARexx " Link "ARexx"}                       The ARexx interface
  @{" 3. InstallIfy " Link "InstallIfy"}                  InstallIfy
+ @{" 4. Migration " Link "Migration"}                  Migration Notes
 ________________________________________________________________________
 
 @EndNode
@@ -323,6 +324,10 @@ These functions are available since Release 1:
     @{b}LASTALERTTASK@{ub}
           (since Release 37) Task that was causing the last system alert.
 
+    @{b}PAULA@{ub}
+          (since Release 38) Returns the Paula chip version, if
+          available.
+
      These @{b}<options>@{ub} are allowed:
     @{b}EMPTYNA@{ub}
           Returns an empty string if the item is not available.
@@ -398,6 +403,7 @@ You will find some example programs in the @{b}arexx@{ub} drawer.
 
 @Node "InstallIfy" "Identify-Dev.guide/InstallIfy"
 @Prev "ARexx"
+@Next "Migration"
 @Toc "Main"
 
 InstallIfy
@@ -437,5 +443,25 @@ These options are available:
 
 There is an example Installer script in the developer packet. Just have a look
 at it and see how InstallIfy is used.
+
+@EndNode
+
+@Node "Migration" "Identify-Dev.guide/Migration"
+@Prev "InstallIfy"
+@Toc "Main"
+
+Migration Notes
+***************
+
+Here you will find some developer's notes about how to update your code to support
+a newer version of Identify. Usually we do our best to keep downward compatibility,
+but that's not always possible.
+
+@{i}V 38.0@{ui}
+        @{b}*@{ub} The constant IDDN_8364 was obviously wrong, as Lisa has the
+          chip ID 4203, while 8364 has always referred to Paula. For this reason,
+          the constant has been removed and replaced with IDDN_4203. Please use
+          this constant instead.
+
 
 @EndNode

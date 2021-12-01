@@ -66,8 +66,9 @@ PowerPC: %s %s (unter %s)\n\
 ;
 MSG_LISTEXP_HARDWARE2
 Chips:   %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
-Agnus:   %s (Modus: %s)\n\
-Denise:  %s (Revision: %s)\n\
+\t DMA:   %s (Modus: %s)\n\
+\t Video: %s (Revision: %s)\n\
+\t Audio: %s\n\
 AmigaOS: %s (%s, BoingBag %s, SetPatch %s)\n\
          Exec %s   Workbench %s\n\
 Sys-Erw: GrafikOS: %s, AudioOS: %s, TCP/IP: %s\n\

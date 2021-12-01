@@ -312,6 +312,7 @@ struct IdentifyBase {
 #define IDAG_8372_R5    (7)       /* Agnus 8372 Rev. 5 */
 #define IDAG_8374_R2    (8)       /* Alice 8374 Rev. 1-2 */
 #define IDAG_8374_R3    (9)       /* Alice 8374 Rev. 3-4 */
+#define IDAG_ANNI       (10)      /* Anni (SAGA) */
 
 /*
  * IDHW_DENISE numerical result codes
@@ -320,7 +321,16 @@ struct IdentifyBase {
 #define IDDN_UNKNOWN    (1)       /* Unknown Denise (new model?! :-) */
 #define IDDN_8362       (2)       /* Denise 8362 */
 #define IDDN_8373       (3)       /* Denise 8373 */
-#define IDDN_8364       (4)       /* Lisa 8364 */
+#define IDDN_4203       (4)       /* Lisa 4203 (replaces IDDN_8364) */
+#define IDDN_ISABEL	    (5)       /* Isabel (SAGA) */
+
+/*
+ * IDHW_PAULA numerical result codes
+ */
+#define IDPL_NONE       (0)       /* None */
+#define IDPL_UNKNOWN    (1)       /* Unknown Paula */
+#define IDPL_8364       (2)       /* Paula 8364 */
+#define IDPL_ARNE       (3)       /* Arne (SAGA) */
 
 /*
  * IDHW_AGNUSMODE numerical result codes

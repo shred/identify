@@ -72,8 +72,9 @@ PowerPC: %s %s (running %s)\n
 ;
 MSG_LISTEXP_HARDWARE2 (//)
 Chipset: %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
-Agnus:   %s (Mode: %s)\n\
-Denise:  %s (Rev: %s)\n\
+\t DMA:   %s (Mode: %s)\n\
+\t Video: %s (Rev: %s)\n\
+\t Audio: %s\n\
 AmigaOS: %s (%s, BoingBag %s, SetPatch %s)\n\
          Exec %s   Workbench %s\n\
 Support: GraphicOS: %s, AudioOS: %s, TCP/IP: %s\n\

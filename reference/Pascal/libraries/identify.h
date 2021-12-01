@@ -290,6 +290,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDAG_8372_R5    = 7;     {  Agnus 8372 Rev. 5 }
        IDAG_8374_R2    = 8;     {  Alice 8374 Rev. 1-2 }
        IDAG_8374_R3    = 9;     {  Alice 8374 Rev. 3-4 }
+       IDAG_ANNI       = 10;    {  Anni (SAGA) }
 
 { IDHW_DENISE numerical result codes }
 
@@ -297,7 +298,15 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDDN_UNKNOWN    = 1;     {  Unknown Denise (new model?! :-) }
        IDDN_8362       = 2;     {  Denise 8362 }
        IDDN_8373       = 3;     {  Denise 8373 }
-       IDDN_8364       = 4;     {  Lisa 8364 }
+       IDDN_4203       = 4;     {  Lisa 4203 (replaces IDDN_8364) }
+       IDDN_ISABEL     = 5;     {  Isabel (SAGA) }
+
+{ IDHW_PAULA numerical result codes }
+
+       IDPL_NONE       = 0;     {  None }
+       IDPL_UNKNOWN    = 1;     {  Unknown Paula }
+       IDPL_8364       = 2;     {  Paula 8364 }
+       IDPL_ARNE       = 3;     {  Arne (SAGA) }
 
 { IDHW_AGNUSMODE numerical result codes }
 
