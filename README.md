@@ -20,6 +20,10 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 * LGPLv3 licensed, open source
 * Source Code available at [GitHub](https://github.com/shred/identify)
 
+## Frequently Asked Questions
+
+If you have questions about identify, maybe you will find answers [here](docs/faq.md).
+
 ## Building from Source
 
 This project is mainly made to be build on Linux machines. However, with a few modifications it can also be built on AmigaOS and other operating systems.
