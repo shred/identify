@@ -30,13 +30,13 @@
 		INCLUDE lvo/dos.i
 		INCLUDE lvo/identify.i
 
-IDENTIFYVER	EQU	13
+IDENTIFYVER	EQU	38
 
 VERSION		MACRO
 		  dc.b	"1.5"
 		ENDM
 DATE		MACRO
-		  dc.b	"20.11.2021"
+		  dc.b	"30.11.2021"
 		ENDM
 
 		SECTION text,CODE

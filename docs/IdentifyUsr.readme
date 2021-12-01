@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      13.1
+Version:      38.0
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
@@ -18,22 +18,17 @@ expansions, system parameters, and other IDs.
 
 Features:
 
-  - Identify the manufacturer, product name, and board type of your
-    hardware expansions.
-  - Analyze your system, and get information about your Amiga model,
-    CPU, OS version, available memory, chipset, and much more.
-  - Translate cryptical Guru alert codes to a human readable form.
-  - Get the name of library functions at any offset, provided that
-    you have the .fd file at hand. :)
-  - Comes with four useful tooks: ListExp, Guru, Function, and
-    InstallIfy.
-  - Use the features in ARexx, with the included rexxidentify.library
-  - OS3.9 and BoingBag supported
-  - The complete expansion database consists of more than 420
-    expansion boards and 130 manufacturers.
-  - Fully DraCo and PowerPC compatible
+  - Identifies expansion card names, alerts, and function call names
+  - Gives information about your Amiga model, CPU, OS version,
+    available memory, chipset, and much more...
+  - Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2
+  - The expansion database contains 356 manufacturers and 498 boards
+  - Distinguishes between most GVP and Phase5 boards with unique ID
+  - Tries to give at least a hint if the board name is not known yet
+  - Fully FPGA, DraCo, and PowerPC compatible
   - Supports PowerUp and WarpOS
-  - The library is fully localized (catalogs included: deutsch)
+  - The library is fully localized (catalogs included: Deutsch)
+  - Use the features in ARexx, with the included rexxidentify.library
   - English and German documentation
 
 New in this release:
@@ -41,6 +36,8 @@ New in this release:
   - The source code has been completely reviewed and reworked.
   - More manufacturers and boards have been added.
   - Enhanced AmigaOS and BoingBag detection.
+  - FPGA based processor detection (e.g. 68080).
+  - SAGA chipset detection. (experimental)
   - Optimizations and bug fixes.
 
 Identify is Open Source Software. The source code is distributed under

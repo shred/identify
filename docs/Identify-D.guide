@@ -529,6 +529,15 @@ FAQ
 History
 *******
 
+@{i}V 38.0@{ui} (30.11.2021)
+        @{b}*@{ub} Offizielles Update, vollständig überarbeiteter Quelltext
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
+        @{b}*@{ub} Alle AmigaOS bis zum aktuellen 3.2 werden erkannt
+        @{b}*@{ub} AmigaOS 3.9 BoingBags werden erkannt
+        @{b}*@{ub} Paula-Erkennung hinzugefügt
+        @{b}*@{ub} Erkennt FPGA-Prozessoren, z.B. Apollo Core 68080
+        @{b}*@{ub} Erkennt den SAGA-Chipsatz
+
 @{i}V 37.1@{ui}
         @{b}*@{ub} Inoffizielle Release von Thore Böckelmann
         @{b}*@{ub} Weitere Karten hinzugefügt

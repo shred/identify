@@ -23,7 +23,8 @@
 (set MStartup
   (cat  "\nWelcome to the\n\n"
         "Identify installation\n\n\n"
-        "Please read the manual BEFORE you use the software!"
+        "This project is open source and distributed under LGPLv3 license.\n\n"
+        "https://identify.shredzone.org"
   )
 )
 
@@ -34,8 +35,8 @@
         "Tools: Small but useful tools.\n\n"
         "Documentation: The user documentation.\n\n"
         "Catalogs: Language catalogs (English is the built-in language)\n\n"
-        "If you are not sure what to install, I suggest you to use the default. "
-        "You can add further parts later, without problems."
+        "If you are not sure what to install, just use the default. "
+        "You can install the other parts any time later."
   )
 )
 (set SLibs    "Libraries")
@@ -54,8 +55,8 @@
 (set H68k
   (cat  "Please choose the processor version to be installed. "
         "The 68020 version does not work on a 68000 and 68010. The 68000 "
-        "version runs on any processor, but requires more memory. "
-        "If you are in doubt, choose the default."
+        "version runs on any processor, but requires a bit more memory. "
+        "Choose the default if in doubt."
   )
 )
 
@@ -71,8 +72,8 @@
 
 (set PDocDestDir "Where do you want to install the docs?\nA drawer will not be created.")
 (set HDocDestDir
-  (cat  "Choose a drawer where you put documentations into. You can also use "
-        "HELP:, if available."
+  (cat  "Choose a drawer for documentations. You can also use "
+        "HELP: if available."
   )
 )
 

@@ -24,19 +24,20 @@
 (set MStartup
   (cat  "\nWillkommen zur\n\n"
         "Identify Installation\n\n\n"
-        "Lesen Sie bitte unbedingt VOR dem ersten Start die Anleitung!"
+        "Dieses Projekt ist quelloffen unter LGPLv3-Lizenz.\n\n"
+        "https://identify.shredzone.org"
   )
 )
 
 (set POptions "Was soll installiert werden?")
 (set HOptions
-  (cat  "Wählen Sie aus, welche Teile des Pakets installiert werden sollen.\n\n"
+  (cat  "Wähle aus, welche Teile des Pakets installiert werden sollen.\n\n"
         "Libraries: Die eigentlichen Identify-Bibliotheken.\n\n"
         "Tools: Kleine Programme zum Betrieb.\n\n"
         "Dokumentation: Normale Benutzerdokumentation.\n\n"
         "Kataloge: Die Sprachkataloge.\n\n"
-        "Sollten Sie sich nicht sicher sein, wählen Sie einfach die Voreinstellung. "
-        "Später können weitere Teile problemlos hinzugefügt werden."
+        "Solltest du dir nicht sicher sein, wähle einfach die Voreinstellung. "
+        "Weitere Teile können später problemlos hinzugefügt werden."
   )
 )
 (set SLibs    "Libraries")
@@ -46,17 +47,17 @@
 
 (set PLibDestDir "Wohin sollen die Libraries installiert werden?")
 (set HLibDestDir
-  (cat  "Wählen Sie das Verzeichnis, in das Sie System-Libraries ablegen. "
+  (cat  "Wähle das Verzeichnis, in das System-Libraries abgelegt werden. "
         "Üblicherweise ist es \"LIBS:\"."
   )
 )
 
 (set P68k   "Welche Version soll installiert werden?")
 (set H68k
-  (cat  "Wählen Sie, welche Prozessorversion installiert werden soll. "
+  (cat  "Wähle nun, welche Prozessorversion installiert werden soll. "
         "Die 68020-Version läuft nicht auf 68000 und 68010. Die 68000 "
-        "läuft auf allen Versionen, aber benötigt mehr Speicher. "
-        "Im Zweifelsfall wählen Sie die Voreinstellung."
+        "läuft auf allen Versionen, aber benötigt etwas mehr Speicher. "
+        "Im Zweifelsfall wähle einfach die Voreinstellung."
   )
 )
 
@@ -65,22 +66,22 @@
 
 (set PToolDestDir "Wohin sollen die Tools installiert werden?")
 (set HToolDestDir
-  (cat  "Wählen Sie hier ein Verzeichnis, das im Suchpfad der Shell liegt. "
+  (cat  "Wähle hier ein Verzeichnis, das im Suchpfad der Shell liegt. "
         "Üblicherweise ist es \"C:\"."
   )
 )
 
 (set PDocDestDir "Wohin soll die Anleitung installiert werden?\nEine Schublade wird nicht angelegt.")
 (set HDocDestDir
-  (cat  "Wählen Sie hier ein Verzeichnis, in das die Anleitung abgelegt werden soll. "
-        "Dies kann ein Verzeichnis sein, wo sie alle Dokumentationen sammeln, oder "
+  (cat  "Wähle hier ein Verzeichnis, in das die Anleitung abgelegt werden soll. "
+        "Dies kann ein Verzeichnis sein, wo du alle Dokumentationen sammelst, oder "
         "auch HELP:, wenn vorhanden."
   )
 )
 
 (set PCatDestDir "Wohin sollen die Sprachkataloge installiert werden?")
 (set HCatDestDir
-  (cat  "Wählen Sie das Verzeichnis, in das Sie Sprachkataloge ablegen. "
+  (cat  "Wähle das Verzeichnis, in das Sprachkataloge abgelegt werden. "
         "Üblicherweise ist es \"LOCALE:Catalogs/\"."
   )
 )

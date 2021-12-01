@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      13.1
+Version:      38.0
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
@@ -18,10 +18,10 @@ projects:
 
   - AutoDocs
   - Assembler include files
-  - C header files (also protos, pragmas, GCC inlines)
+  - C header files
   - PASCAL include files
   - FD file
-  - cd file for language translations
+  - cd files for translations into your language
   - C example showing how to use identify with MUI
   - ARexx examples
   - Installer examples

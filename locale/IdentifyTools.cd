@@ -43,8 +43,7 @@ Needs identify.library V%ld or higher!\n
 ;================================================================
 ;
 MSG_LISTEXP_HAIL (1000//)
--- ListExp V%s -- Richard Koerber <%s>\n\
- (ListExp is a part of the Identify package, see AmiNet util/libs)\n\n
+-- ListExp V%s -- %s\n\n
 ;
 MSG_LISTEXP_HELP (//)
 Template:\n\n\
@@ -109,7 +108,7 @@ MSG_LISTEXP_CXLINE (//)
 ;================================================================
 ;
 MSG_GURU_HAIL (2000//)
--- Guru V%s -- Richard Koerber <%s>\n\n
+-- Guru V%s -- %s\n\n
 ;
 MSG_GURU_HELP (//)
 Template:\n\n\
@@ -137,7 +136,7 @@ No Guru occured yet...\n\n
 ;================================================================
 ;
 MSG_FUNC_HAIL (3000//)
--- Function V%s -- Richard Koerber <%s>\n\n
+-- Function V%s -- %s\n\n
 ;
 MSG_FUNC_HELP (//)
 Template:\n\n\

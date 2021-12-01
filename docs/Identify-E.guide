@@ -477,6 +477,15 @@ Frequently Asked Questions
 History
 *******
 
+@{i}V 38.0@{ui} (30.11.2021)
+        @{b}*@{ub} Official update, completely reworked source code
+        @{b}*@{ub} Added more manufacturers and boards
+        @{b}*@{ub} Detects all AmigaOS up to the current 3.2
+        @{b}*@{ub} Detects all AmigaOS 3.9 BoingBags
+        @{b}*@{ub} Added Paula detection
+        @{b}*@{ub} Detects FPGA processors like Apollo Core 68080
+        @{b}*@{ub} Detects the SAGA chipset
+
 @{i}V 37.1@{ui}
         @{b}*@{ub} Inofficial release by Thore Böckelmann
         @{b}*@{ub} Added further boards

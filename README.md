@@ -6,20 +6,19 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 
 ## Features
 
-* Identifies expansion card names, system parameters, alerts and function call names.
-* OS3.9 and BoingBag supported
-* The complete expansion database consists of more than 420 expansion boards and 130 manufacturers.
+* Identifies expansion card names, alerts, and function call names
+* Gives information about your Amiga model, CPU, OS version, available memory, chipset, and much more...
+* Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2
+* The expansion database contains 356 manufacturers and 498 boards
 * Distinguishes between most GVP and Phase5 boards with unique ID
 * Tries to give at least a hint if the board name is not known yet
 * Fully FPGA, DraCo, and PowerPC compatible
 * Supports PowerUp and WarpOS
-* Supports Vampire boards (experimental)
-* The library is fully localized (catalogs included: deutsch)
-* ARexx interface library
-* English and German documentation (.guide and .dvi)
-* Comes with example tools
+* The library is fully localized (catalogs included: Deutsch)
+* Use the features in ARexx, with the included rexxidentify.library
+* English and German documentation
 * LGPLv3 licensed, open source
-* Source Code available at [GitHub](https://github.com/shred/identify).
+* Source Code available at [GitHub](https://github.com/shred/identify)
 
 ## Building from Source
 

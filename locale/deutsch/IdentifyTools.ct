@@ -17,7 +17,7 @@
 ;* You should have received a copy of the GNU Lesser General Public License
 ;* along with this program. If not, see <http://www.gnu.org/licenses/>.
 ;*
-## version $VER: IdentifyTools.catalog 0.7 (9.9.1)
+## version $VER: IdentifyTools.catalog 38.0 (30.11.2021)
 ## codeset 0
 ## language deutsch
 ;
@@ -26,10 +26,7 @@ Benötigt identify.library V%ld oder höher!\n\
 
 ;
 MSG_LISTEXP_HAIL
--- ListExp V%s -- Richard Koerber <%s>\n\
- (ListExp gehört zum Identify-Paket, siehe AmiNet util/libs)\n\
-\n\
-
+-- ListExp V%s -- %s\n\n
 ;
 MSG_LISTEXP_HELP
 Format:\n\
@@ -38,7 +35,7 @@ Format:\n\
   MID=MANUFID/K/N\tInformation über den Hersteller\n\
   PID=PRODID/K/N\tund sein Produkt\n\
 \n\
-Bitte lies die Anleitung für weitere Details.\n\
+Weitere Details findest du in der Anleitung.\n\
 
 ;
 MSG_LISTEXP_OVERFLOW
@@ -107,9 +104,7 @@ MSG_LISTEXP_CXLINE
 
 ;
 MSG_GURU_HAIL
--- Guru V%s -- Richard Koerber <%s>\n\
-\n\
-
+-- Guru V%s -- %s\n\n
 ;
 MSG_GURU_HELP
 Format:\n\
@@ -117,7 +112,7 @@ Format:\n\
   GURU\t\tzu analysierender Guru-Code\n\
   LASTALERT/S\tLetzten System-Alert analysieren\n\
 \n\
-Bitte lies die Anleitung für weitere Details.\n\
+Weitere Details findest du in der Anleitung.\n\
 
 ;
 MSG_GURU_BADCODE
@@ -140,9 +135,7 @@ Bisher ist noch kein Guru aufgetreten...\n\
 
 ;
 MSG_FUNC_HAIL
--- Function V%s -- Richard Koerber <%s>\n\
-\n\
-
+-- Function V%s -- %s\n\n
 ;
 MSG_FUNC_HELP
 Format:\n\
@@ -150,7 +143,7 @@ Format:\n\
   LN=LIBNAME/A\tName der Library\n\
   O=OFFSET/N/A\tFunktionsoffset\n\
 \n\
-Bitte lies die Anleitung für weitere Details.\n\
+Weitere Details findest du in der Anleitung.\n\
 
 ;
 MSG_FUNC_RESULT
