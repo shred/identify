@@ -43,9 +43,8 @@ EX_OBJS   = $(OBJP)/EX_Main.o
 
 RI_OBJS   = $(OBJP)/RI_Main.o
 
-AOPTS_000 = -Fhunk -esc -sc \
+AOPTS     = -Fhunk -esc -sc \
 			-I $(INCP) -I $(REFP) -I ${AMIGA_NDK}/Include_I/ -I ${AMIGA_INCLUDES} -I ${OBJP}/locale
-AOPTS     = $(AOPTS_000) -D_MAKE_68020
 COPTS     = +aos68k -c99 -lauto -lamiga -cpu=68020 \
 			-I${VBCC}/targets/m68k-amigaos/include \
 			-I$(REFP) -I${AMIGA_NDK}/Include_H/ -I${AMIGA_INCLUDES} \
@@ -180,10 +179,10 @@ $(OBJP)/identify.library_000: $(ID_OBJS_000)
 	vlink $(LOPTS) -o $@ -s $(ID_OBJS_000)
 
 $(OBJP)/%.o: $(SRCP)/identify/%.s
-	vasmm68k_mot $(AOPTS) -L $@.lst -o $@ $<
+	vasmm68k_mot $(AOPTS) -D_MAKE_68020 -L $@.lst -o $@ $<
 
 $(OBJP)/000/%.o: $(SRCP)/identify/%.s
-	vasmm68k_mot $(AOPTS_000) -L $@.lst -o $@ $<
+	vasmm68k_mot $(AOPTS) -L $@.lst -o $@ $<
 
 $(OBJP)/%.o: $(SRCP)/identify/ppc/%.s
 	vasmppc_std -Fhunk -L $@.lst -o $@ $<
