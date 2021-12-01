@@ -1179,9 +1179,17 @@ do_MMU		move	d0,d2			;; TODO: MMU check for FPGA. 68080 has no MMU yet.
 * AmigaOS Version (e.g. 40.68).
 *
 do_OsVer	move.l	(execbase,PC),a0
+	;-- try to find ROM start address
 		move.l	(LIB_IDSTRING,a0),d0
 		and.l	#$FFFFFC00,d0
-		move.l	d0,a0
+	;-- check for valid ROM area
+		move.l	d0,d1
+		and.l	#$00F00000,d1
+		cmp.l	#$00F00000,d1
+		beq	.good
+		move.l	#$00F80000,d0		; nope, assume ROM is at F80000
+	;-- read ROM version and revision
+.good		move.l	d0,a0
 		move	(14,a0),d0		; Revision
 		swap	d0
 		move	(12,a0),d0		; Version
