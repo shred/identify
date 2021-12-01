@@ -37,10 +37,15 @@ Requirements:
 * [AmigaOS NDK 3.2](https://www.hyperion-entertainment.com/index.php/downloads?view=files&parent=40), unpacked on your build machine
 * [MUI](http://sasg.com/mui/download.html) by Stefan Stuntz, includes unpacked on your build machine
 * [lha](https://github.com/jca02266/lha)
+* [AmiTools](https://github.com/cnvogelg/amitools) (optional, for the `pack` target only)
 
 Set the `AMIGA_NDK` env variable to the location of the unpacked `NDK3.2` directory on your build machine. Also set `AMIGA_INCLUDES` to the location of 3rd party include files, where the MUI includes can be found.
 
-Then just invoke `make` to build the project. The compiled project can be found in the `build` directory. `make release` will compile a release version in the `release` directory.
+Then just invoke `make` to build the project. The compiled project can be found in the `build` directory.
+
+`make release` will compile a release version in the `release` directory.
+
+`make pack` will create adf files for `IdentifyDev` and `IdentifyUsr` in the `release` directory. These files may be useful to install Identify on disk based systems, but are not part of the official release.
 
 Today's standard encoding is UTF-8. Unfortunately AmigaOS does not support this encoding, so the files in this project have different encodings depending on their purpose. The assembler and C files must use plain ASCII encoding, so they can be edited on Linux and Amiga without encoding problems. For special characters in strings, always use escape sequences. Do not use special characters in comments. `make check` will test if these files contain illegal characters. All purely Amiga-related files (like AmigaGuide or Catalog files) are expected to be ISO-8859-1 encoded. Then again, `README.md` (and other files related to the open source release) are UTF-8 encoded. If you are in doubt, use plain ASCII.
 

@@ -53,7 +53,7 @@ COPTS     = +aos68k -c99 -lauto -lamiga -cpu=68020 \
 LOPTS     = -bamigahunk -mrel -s \
 			-L ${AMIGA_NDK}/lib/ -l debug -l amiga
 
-.PHONY : all clean source release check
+.PHONY : all clean source release check pack
 
 all: $(OBJP) \
 		$(REFP)/inline/identify_protos.h \
@@ -121,6 +121,10 @@ release: clean all
 	rm -f $(OBJP)/IdentifyDev.lha
 	cd $(RELP)/IdentifyDev ; lha c -q1 ../IdentifyDev.lha *
 	cp $(DOCP)/IdentifyDev.readme $(RELP)/
+
+pack: release
+	xdftool $(RELP)/IdentifyUsr.adf pack $(RELP)/IdentifyUsr
+	xdftool $(RELP)/IdentifyDev.adf pack $(RELP)/IdentifyDev
 
 check:
 	# Check for umlauts and other characters that are not platform neutral.
