@@ -174,6 +174,7 @@ struct IdentifyBase {
 #define IDCPU_68LC040   (6)       /*  68LC040 (without FPU) */
 #define IDCPU_68060     (7)       /*  68060 */
 #define IDCPU_68LC060   (8)       /*  68LC060 (without FPU) */
+#define IDCPU_FPGA      (9)       /*  FPGA based CPU */
 
 /*
  * IDHW_FPU numerical result codes
@@ -183,6 +184,7 @@ struct IdentifyBase {
 #define IDFPU_68882     (2)       /*  68882 */
 #define IDFPU_68040     (3)       /*  68040 */
 #define IDFPU_68060     (4)       /*  68060 */
+#define IDFPU_FPGA      (5)       /*  FPGA based FPU */
 
 /*
  * IDHW_MMU numerical result codes
@@ -192,6 +194,7 @@ struct IdentifyBase {
 #define IDMMU_68030     (2)       /*  68030 */
 #define IDMMU_68040     (3)       /*  68040 */
 #define IDMMU_68060     (4)       /*  68060 */
+#define IDMMU_FPGA      (5)       /*  FPGA based MMU */
 
 /*
  * IDHW_OSNR numerical result codes

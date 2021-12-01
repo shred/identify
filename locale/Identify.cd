@@ -539,6 +539,9 @@ MSG_HW_68882            (//49)
 MSG_HW_68851            (//49)
 68851
 ;
+MSG_HW_FPGA             (//49)
+FPGA
+;
 MSG_HW_AMIGAOS          (5500//49)
 AmigaOS
 MSG_HW_EGS              (//49)

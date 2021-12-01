@@ -96,6 +96,8 @@ GetClocks	movem.l d2-d7/a0-a4,-(SP)
 	;-- get CPU type
 		move.l	4.w,a0
 		move	(AttnFlags,a0),d0
+		btst	#AFB_FPGA,d0		; FPGA?
+		bne	.exit4			;   -> yes: no result, will be useless anyway
 		moveq	#5,d1			; 060?
 		btst	#AFB_68060,d0
 		bne	.cpu_ok

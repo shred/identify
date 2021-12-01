@@ -251,8 +251,21 @@ IdHardware	movem.l d1-d3/a0-a3/a6,-(SP)
 cv_System	add.l	#MSG_HW_AMIGA1000,d0
 		bra	quick_loc
 
-cv_CPU		add.l	#MSG_HW_68000,d0
+cv_CPU		lea	(.systab,PC),a0
+		move.b	(a0,d0.l),d0
+		add.l	#MSG_HW_68000,d0
 		bra	quick_loc
+.systab		dc.b	MSG_HW_68000-MSG_HW_68000
+		dc.b	MSG_HW_68010-MSG_HW_68000
+		dc.b	MSG_HW_68020-MSG_HW_68000
+		dc.b	MSG_HW_68030-MSG_HW_68000
+		dc.b	MSG_HW_68EC030-MSG_HW_68000
+		dc.b	MSG_HW_68040-MSG_HW_68000
+		dc.b	MSG_HW_68LC040-MSG_HW_68000
+		dc.b	MSG_HW_68060-MSG_HW_68000
+		dc.b	MSG_HW_68LC060-MSG_HW_68000
+		dc.b	MSG_HW_FPGA-MSG_HW_68000
+		even
 
 cv_FPU		subq.l	#1,d0
 		bcs	quick_none
@@ -264,6 +277,7 @@ cv_FPU		subq.l	#1,d0
 		dc.b	MSG_HW_68882-MSG_HW_68000
 		dc.b	MSG_HW_68040-MSG_HW_68000
 		dc.b	MSG_HW_68060-MSG_HW_68000
+		dc.b	MSG_HW_FPGA-MSG_HW_68000
 		even
 
 cv_MMU		subq.l	#1,d0
@@ -276,6 +290,7 @@ cv_MMU		subq.l	#1,d0
 		dc.b	MSG_HW_68030-MSG_HW_68000
 		dc.b	MSG_HW_68040-MSG_HW_68000
 		dc.b	MSG_HW_68060-MSG_HW_68000
+		dc.b	MSG_HW_FPGA-MSG_HW_68000
 		even
 
 cv_OsVer	lea	buf_OsVer,a0
@@ -1070,6 +1085,9 @@ do_System	move	d0,d7
 * What CPU is used?
 *
 do_CPU		move	d0,d2
+		moveq	#IDCPU_FPGA,d0
+		btst	#AFB_FPGA,d2
+		bne	.found
 		btst	#AFB_68060,d2
 		bne	.found060
 		btst	#AFB_68040,d2
@@ -1087,11 +1105,10 @@ do_CPU		move	d0,d2
 .found		rts
 
 	;; TODO: 68EC030?
-	;; TODO: Apollo 68080?
 
 	;-- 68060 or 68LC060?
 .found060	moveq	#IDCPU_68060,d0
-		btst	#AFB_FPU60,d2
+		btst	#AFB_FPU40,d2		; also set if 060 FPU is present
 		bne	.found
 		moveq	#IDCPU_68LC060,d0
 		rts
@@ -1106,12 +1123,16 @@ do_CPU		move	d0,d2
 **
 * What FPU is present?
 *
-	;; TODO: Apollo 68080 FPU?
 do_FPU		move	d0,d2
-		moveq	#IDFPU_68060,d0
+		moveq	#IDFPU_FPGA,d0
+		btst	#AFB_FPGA,d2
+		beq	.nofpga
+		btst	#AFB_FPU40,d2
+		bne	.found
+.nofpga		moveq	#IDFPU_68060,d0
 		btst	#AFB_68060,d2
 		beq	.no68060
-		btst	#AFB_FPU60,d2
+		btst	#AFB_FPU40,d2
 		bne	.found
 .no68060	moveq	#IDFPU_68040,d0
 		btst	#AFB_68040,d2
@@ -1130,7 +1151,7 @@ do_FPU		move	d0,d2
 **
 * Is there a MMU available?
 *
-do_MMU		move	d0,d2
+do_MMU		move	d0,d2			;; TODO: MMU check for FPGA. 68080 has no MMU yet.
 		moveq	#IDMMU_68060,d0
 		btst	#AFB_68060,d2
 		bne	.found

@@ -11,7 +11,7 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 * The complete expansion database consists of more than 420 expansion boards and 130 manufacturers.
 * Distinguishes between most GVP and Phase5 boards with unique ID
 * Tries to give at least a hint if the board name is not known yet
-* Fully DraCo and PowerPC compatible
+* Fully FPGA, DraCo, and PowerPC compatible
 * Supports PowerUp and WarpOS
 * The library is fully localized (catalogs included: deutsch)
 * ARexx interface library

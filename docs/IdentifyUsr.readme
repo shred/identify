@@ -6,7 +6,7 @@ Version:      13.1
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
-Keywords:     expansion board guru alert function system library check arexx ppc powerpc warpos installer OS3.5 OS3.9
+Keywords:     expansion board guru alert function system library check arexx ppc powerpc warpos installer OS3.5 OS3.9 OS3.2
 License:      GNU Lesser General Public License v3
 Source:       https://github.com/shred/identify
 Website:      https://identify.shredzone.org
@@ -34,12 +34,13 @@ Features:
   - Fully DraCo and PowerPC compatible
   - Supports PowerUp and WarpOS
   - The library is fully localized (catalogs included: deutsch)
-  - English and German documentation (.guide and .dvi)
+  - English and German documentation
 
 New in this release:
 
   - The source code has been completely reviewed and reworked.
-  - More boards have been added.
+  - More manufacturers and boards have been added.
+  - Enhanced AmigaOS and BoingBag detection.
   - Optimizations and bug fixes.
 
 Identify is Open Source Software. The source code is distributed under
