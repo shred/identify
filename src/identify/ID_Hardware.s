@@ -2454,8 +2454,8 @@ GetRAMSize	movem.l d2-d4/a0-a1,-(SP)
 CalcClock	lea	(flags_gotclock,PC),a1	; Clock present?
 		tst.b	(a1)
 		bne	.done			;  yes -> done
-		lea	(flags_emulated,PC),a1	; Emulated Amiga?
-		tst.b	(a1)
+		lea	(flags_emulated,PC),a0
+		tst.b	(a0)
 		bne	.emulated		;  yes -> don't measure the clock
 		bsr	GetClocks
 .complete	move.l	d0,cpuclk
