@@ -39,6 +39,7 @@ New in this release:
   - FPGA based processor detection (e.g. 68080).
   - SAGA chipset detection. (experimental)
   - Optimizations and bug fixes.
+  - Italian catalog file, translation by David Lo Buglio
 
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.

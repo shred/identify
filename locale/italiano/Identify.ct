@@ -1,0 +1,1299 @@
+;*
+;* identify.library
+;*
+;* Copyright (C) 2021 David Lo Buglio
+;*	http://identify.shredzone.org
+;*
+;* This program is free software: you can redistribute it and/or modify
+;* it under the terms of the GNU Lesser General Public License as published
+;* by the Free Software Foundation, either version 3 of the License, or
+;* (at your option) any later version.
+;*
+;* This program is distributed in the hope that it will be useful,
+;* but WITHOUT ANY WARRANTY; without even the implied warranty of
+;* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+;* GNU Lesser General Public License for more details.
+;*
+;* You should have received a copy of the GNU Lesser General Public License
+;* along with this program. If not, see <http://www.gnu.org/licenses/>.
+;*
+## version $VER: Identify.catalog 38.0 (30.11.2021) by David Lo Buglio
+## codeset 0
+## language italiano
+;
+MSG_BYTE
+%ld
+; %ld
+;
+MSG_KBYTE
+%ld.%cKB
+; %ld.%cKB
+;
+MSG_MBYTE
+%ld.%cMB
+; %ld.%cMB
+;
+MSG_GBYTE
+%ld.%cGB
+; %ld.%cGB
+;
+;================================================================
+;       BOARD CLASSES (100..)
+;================================================================
+;  Keep these strings as short as ever possible.
+;
+MSG_EXP_UNKNOWN
+(sconosciuto)
+; (unknown)
+;
+MSG_EXP_MISC
+espansione
+; expansion
+;
+MSG_EXP_TURBO
+acceleratrice
+; accelerator
+;
+MSG_EXP_TURBORAM
+acceleratrice RAM
+; accelerator RAM
+;
+MSG_EXP_TURBOHD
+acceleratrice controller HD
+; accelerator HD controller
+;
+MSG_EXP_TURBOIDE
+acceleratrice controller IDE
+; accelerator IDE controller
+;
+MSG_EXP_TURBOSCSIHD
+acceleratrice adattatore host SCSI
+; accelerator SCSI host adapter
+;
+MSG_EXP_NET
+Rete
+; network
+;
+MSG_EXP_ARCNET
+ArcNet
+; ArcNet
+;
+MSG_EXP_ETHERNET
+Ethernet
+; Ethernet
+;
+MSG_EXP_AUDIO
+audio
+; audio
+;
+MSG_EXP_VIDEO
+video
+; video
+;
+MSG_EXP_MULTIMEDIA
+multimedia
+; multimedia
+;
+MSG_EXP_DSP
+DSP
+; DSP
+;
+MSG_EXP_BUSBRIDGE
+ISA bus bridge
+; ISA bus bridge
+;
+MSG_EXP_BRIDGE
+PC bridge
+; PC bridge
+;
+MSG_EXP_EMULATOR
+emulatore
+; emulator
+;
+MSG_EXP_MACEMU
+Emulatore Macintosh
+; Macintosh emulator
+;
+MSG_EXP_ATARIEMU
+Emulatore Atari
+; Atari emulator
+;
+MSG_EXP_GFX
+grafica
+; graphics
+;
+MSG_EXP_GFXRAM
+RAM grafica
+; graphics RAM
+;
+MSG_EXP_HD
+Controller HD
+; HD controller
+;
+MSG_EXP_HDRAM
+RAM e controller HD
+; HD controller RAM
+;
+MSG_EXP_IDEHD
+Controller IDE
+; IDE controller
+;
+MSG_EXP_IDEHDRAM
+RAM e controller IDE
+; IDE controller RAM
+;
+MSG_EXP_SCSIHD
+Adattatore host SCSI
+; SCSI host adapter
+;
+MSG_EXP_RAMSCSIHD
+RAM e adattatore host SCSI
+; SCSI host adapter RAM
+;
+MSG_EXP_CDROM
+Interfaccia CD-ROM
+; CD-ROM interface
+;
+MSG_EXP_MODEM
+modem interno
+; internal modem
+;
+MSG_EXP_ISDN
+ISDN interno
+; internal ISDN
+;
+MSG_EXP_MULTIIO
+multi I/O
+; multi I/O
+;
+MSG_EXP_SERIAL
+multi seriale
+; multi serial
+;
+MSG_EXP_PARALLEL
+multi parallela
+; multi parallel
+;
+MSG_EXP_SCANIF
+interfaccia scanner
+; scanner interface
+;
+MSG_EXP_TABLET
+interfaccia della tavoletta grafica
+; drawing tablet interface
+;
+MSG_EXP_RAM
+Espansione RAM
+; RAM expansion
+;
+MSG_EXP_FLASHROM
+Flash ROM
+; Flash ROM
+;
+MSG_EXP_SCSIIDE
+Controller SCSI/IDE
+; SCSI/IDE controller
+;
+MSG_EXP_RAMFPU
+Espansione RAM/FPU
+; RAM expansion / FPU
+;
+MSG_EXP_GUESS
+(Indovinato)
+; (guessed)
+;
+MSG_EXP_KICKSTART
+KickStart
+; KickStart
+;
+MSG_EXP_RAM32
+Espansione RAM 32bit
+; 32bit RAM expansion
+;
+MSG_EXP_TURBOANDRAM
+acceleratore / esp. RAM
+; accelerator / RAM exp.
+;
+MSG_EXP_ACCESS
+controllo di accesso
+; access control
+;
+MSG_EXP_INTERFACE
+interfaccia
+; interface
+;
+MSG_EXP_MFMHD
+Controller MFM HD
+; MFM HD controller
+;
+MSG_EXP_FLOPPY
+interfaccia floppy disk
+; floppy disk interface
+;
+MSG_EXP_USB
+interfaccia USB
+; USB interface
+;
+;================================================================
+;       ALERT GENERAL ERROR (1024..)
+;================================================================
+;
+MSG_ALERT_RECOVERY
+Recuperabile
+; Recoverable
+;
+MSG_ALERT_DEADEND
+Senza uscita
+; Deadend
+;
+MSG_ALERT_UNKNOWN
+Sconosciuto
+; Unknown
+;
+MSG_AG_BADPARM
+Parametro errato
+; Bad parameter
+;
+MSG_AG_CLOSEDEV
+Impossibile chiudere il dispositivo
+; Cannot close device
+;
+MSG_AG_CLOSELIB
+Impossibile chiudere la libreria
+; Cannot close library
+;
+MSG_AG_GENERAL
+Errore generale
+; General fault
+;
+MSG_AG_IOERROR
+Errore I/O
+; I/O error
+;
+MSG_AG_MAKELIB
+Impossibile creare la libreria
+; Cannot make library
+;
+MSG_AG_NOMEMORY
+Nessuna memoria
+; No memory
+;
+MSG_AG_NOSIGNAL
+Nessun segnale
+; No signal
+;
+MSG_AG_OPENDEV
+Impossibile aprire il dispositivo
+; Cannot open device
+;
+MSG_AG_OPENLIB
+Impossibile aprire la libreria
+; Cannot open library
+;
+MSG_AG_OPENRES
+Impossibile aprire la risorsa
+; Cannot open resource
+;
+MSG_AG_PROCCREATE
+Creazione del processo non riuscita
+; Process creation failed
+;
+;================================================================
+;       ALERT ERROR (2048..)
+;================================================================
+;
+MSG_ACPU_ADDRESSERR
+Accesso agli indirizzi illegali
+; Illegal address access
+;
+MSG_ACPU_AUTOVEC1
+Errore di interruzione livello 1 di AutoVector
+; AutoVector Level 1 interrupt error
+;
+MSG_ACPU_AUTOVEC2
+Errore di interruzione livello 2 di AutoVector
+; AutoVector Level 2 interrupt error
+;
+MSG_ACPU_AUTOVEC3
+Errore di interruzione livello 3 di AutoVector
+; AutoVector Level 3 interrupt error
+;
+MSG_ACPU_AUTOVEC4
+Errore di interruzione livello 4 di AutoVector
+; AutoVector Level 4 interrupt error
+;
+MSG_ACPU_AUTOVEC5
+Errore di interruzione livello 5 di AutoVector
+; AutoVector Level 5 interrupt error
+;
+MSG_ACPU_AUTOVEC6
+Errore di interruzione livello 6 di AutoVector
+; AutoVector Level 6 interrupt error
+;
+MSG_ACPU_AUTOVEC7
+Errore di interruzione livello 7 di AutoVector
+; AutoVector Level 7 interrupt error
+;
+MSG_ACPU_BUSERR
+Errore bus hardware / errore di accesso
+; Hardware bus fault/access error
+;
+MSG_ACPU_CHK
+Controllare l'errore di istruzione
+; Check instruction error
+;
+MSG_ACPU_COPRVIOL
+Violazione del protocollo del coprocessore
+; Coprocessor protocol violation
+;
+MSG_ACPU_DIVZERO
+Divisione per zero
+; Divide by zero
+;
+MSG_ACPU_FORMAT
+Errore di formato del frame dello stack
+; Stack frame format error
+;
+MSG_ACPU_FPCPBRANCH
+FPCP branch su condizione non ordinata
+; FPCP branch or set on unordered condition
+;
+MSG_ACPU_FPCPDIVZERO
+FPCP divisione per zero
+; FPCP divide by zero
+;
+MSG_ACPU_FPCPINEXACT
+Risultato FPCP inesatto
+; FPCP inexact result
+;
+MSG_ACPU_FPCPOPERROR
+Errore dell'operando FPCP
+; FPCP operand error
+;
+MSG_ACPU_FPCPOVER
+Overflow FPCP
+; FPCP overflow
+;
+MSG_ACPU_FPCPUNDER
+Underflow FPCP
+; FPCP underflow
+;
+MSG_ACPU_UNIMPLDTYPE
+Tipo di dati non implementato FPCP
+; FPCP unimplemented data type
+;
+MSG_ACPU_INSTERR
+Istruzioni illegali
+; Illegal instruction
+;
+MSG_ACPU_LINEA
+Errore emulatore riga 1010
+; Line 1010 Emulator error
+;
+MSG_ACPU_LINEF
+Errore emulatore riga 1111
+; Line 1111 Emulator error
+;
+MSG_ACPU_MMUACCVIOL
+Violazione del livello di accesso PMMU
+; PMMU access level violation
+;
+MSG_ACPU_MMUCONFIG
+Configurazione PMMU
+; PMMU configuration
+;
+MSG_ACPU_MMUILLEGAL
+Configurazione illegale di PMMU
+; PMMU illegal configuration
+;
+MSG_ACPU_NAN
+FPCP segnalazione NAN
+; FPCP signaling NAN
+;
+MSG_ACPU_PRIVERR
+Errore di violazione del privilegio
+; Privilege violation error
+;
+MSG_ACPU_SPURIOUS
+Errore di interruzione spurio
+; Spurious interrupt error
+;
+MSG_ACPU_TRACE
+Errore di traccia
+; Trace error
+;
+MSG_ACPU_TRAPV
+Errore di istruzione TrapV
+; TrapV instruction error
+;
+MSG_AN_ADDSWGADGET
+Aggiungi gadget SW, senza memoria
+; Add SW gadgets, no memory
+;
+MSG_AN_ASYNCPKT
+Pacchetto inaspettato ricevuto
+; Unexpected packet received
+;
+MSG_AN_AUDIODEV
+Problema con il dispositivo audio
+; Audio device trouble
+;
+MSG_AN_BADCHKSUM
+Checkum non valido
+; Invalid checksum
+;
+MSG_AN_BADEXPANSIONFREE
+Regione libera liberata
+; Freeed free region
+;
+MSG_AN_BADFREEADDR
+header di memoria non trovato
+; Memory header not located
+;
+MSG_AN_BADGADGET
+Modulo di recupero di AN_GadgetType
+; Recovery form of AN_GadgetType
+;
+MSG_AN_BADINITFUNC
+Pacchetto init non valido per cli/shell
+; Invalid init packet for cli/shell
+;
+MSG_AN_BADMESSAGE
+Messaggio errato ricevuto da IDCMP
+; Bad Message received by IDCMP
+;
+MSG_AN_BADOVERLAY
+Overlay errato
+; Bad overlay
+;
+MSG_AN_BADQUICKINT
+Si è verificata un interruzione non inizializzata
+; An uninitialized quick interrupt has happened
+;
+MSG_AN_BADSEGLIST
+L'overlay è illegale per i segmenti di libreria
+; Overlays are illegal for library segments
+;
+MSG_AN_BADSEMAPHORE
+Effettuato un tentativo di util. vecchi semafori
+; An attempt was made to use old msg semaphores
+;
+MSG_AN_BADSTATE
+Ritorno dello stato errato inserendo Intuition
+; Bad State Return entering Intuition
+;
+MSG_AN_BASECHKSUM
+Checksum Execbase non valido
+; Execbase checksum bad
+;
+MSG_AN_BITMAP
+Bitmap corrotta
+; Bitmap corrupt
+;
+MSG_AN_BLTBITMAP
+BltBitMap, nessuna memoria
+; BltBitMap, no memory
+;
+MSG_AN_BOGUSEXCPT
+Eccezione illegale 68k presa
+; Illegal 68k exception taken
+;
+MSG_AN_BOOTERROR
+Il codice di avvio ha restituito un errore
+; Boot code returned an error
+;
+MSG_AN_BOOTSTRAP
+Problema Bootstrap
+; Bootstrap trouble
+;
+MSG_AN_CIARSRC
+Problema cia.resource
+; cia.resource trouble
+;
+MSG_AN_CONSOLEDEV
+Problema colsole.device
+; colsole.device trouble
+;
+MSG_AN_CREATEPORT
+Crea porta, nessuna memoria
+; Create port, no memory
+;
+MSG_AN_DISKBLKSEQ
+Errore sequenza blocco disco
+; Disk block sequence error
+;
+MSG_AN_DISKCOPY
+Problema DiskCopy
+; DiskCopy trouble
+;
+MSG_AN_DISKERROR
+Errore del disco
+; Disk Error
+;
+MSG_AN_DISKFONTLIB
+Problema diskfont.library
+; diskfont.library trouble
+;
+MSG_AN_DISKRSRC
+Problema disk.resource
+; disk.resource trouble
+;
+MSG_AN_DOSLIB
+Problema dos.library
+; dos.library trouble
+;
+MSG_AN_DRHASDISK
+Ottieni unità: ha già il disco
+; Get unit: already has disk
+;
+MSG_AN_DRINTNOACT
+Interruzione: nessuna unità attiva
+; Interrupt: no active unit
+;
+MSG_AN_ENDTASK
+EndTask non fatto
+; EndTask didn't
+;
+MSG_AN_EXCPTVECT
+68000 exception vector checksum
+; 68000 exception vector checksum
+;
+MSG_AN_EXECLIB
+Problema exec.library
+; exec.library trouble
+;
+MSG_AN_EXPANSIONLIB
+Problema expansion.library
+; expansion.library trouble
+;
+MSG_AN_FILERECLOSED
+Un filehandle è stato chiuso diverse volte
+; A filehandle was closed more than once
+;
+MSG_AN_FREETWICE
+Liberare memoria che è già libera
+; Freeing memory that is already free
+;
+MSG_AN_FREEVEC
+Freevec fallito
+; Freevec failed
+;
+MSG_AN_GADGETTYPE
+Tipo di gadget sconosciuto
+; Unknown gadget type
+;
+MSG_AN_GADTOOLS
+Problema gadtools.library
+; gadtools.library trouble
+;
+MSG_AN_GAMEPORTDEV
+Problema gameport.device
+; gameport.device trouble
+;
+MSG_AN_GFXFREEERROR
+Errore durante la liberazione della grafica
+; Error freeing graphics
+;
+MSG_AN_GFXNEWERROR
+Nuovo errore grafico
+; New graphics error
+;
+MSG_AN_GFXNOLCM
+Memoria di emergenza non disponibile
+; Emergency memory not available
+;
+MSG_AN_GFXNOMEM
+Memoria grafica esaurita
+; Graphics out of memory
+;
+MSG_AN_GFXNOMEMMSPC
+Allocazione MonitorSpec, nessuna memoria
+; MonitorSpec alloc, no memory
+;
+MSG_AN_GRAPHICSLIB
+Problema graphics.library
+; graphics.library trouble
+;
+MSG_AN_ICONLIB
+Problema icon.library
+; icon.library trouble
+;
+MSG_AN_INITAPTR
+InitStruct() di una sorgente APTR
+; InitStruct() of an APTR source
+;
+MSG_AN_INTRMEM
+Nessuna memoria per i server di interrupt
+; No memory for interrupt servers
+;
+MSG_AN_INTUITION
+Problema intuition.library
+; intuition.library trouble
+;
+MSG_AN_IOAFTERCLOSE
+IO tentato su IORequest chiuso
+; IO attempted on closed IORequest
+;
+MSG_AN_IOUSEDTWICE
+Tentativo di riutilizzare IORequest attivo
+; Attempt to reuse active IORequest
+;
+MSG_AN_ISEMORDER
+Intuition ha ottenuto una sem in cattivo ordine
+; Intuition obtained a sem in bad order
+;
+MSG_AN_ITEMALLOC
+Allocazione item plane, nessuna memoria
+; Item plane alloc, no memory
+;
+MSG_AN_ITEMBOXTOP
+Item box top < RelZero
+; Item box top < RelZero
+;
+MSG_AN_KEYBOARDDEV
+Problema keyboard.device
+; keyboard.device trouble
+;
+MSG_AN_KEYFREE
+Key già libera
+; Key already free
+;
+MSG_AN_KEYRANGE
+Key fuori range
+; Key out of range
+;
+MSG_AN_LAYERSLIB
+Problema layer.library
+; layers.library trouble
+;
+MSG_AN_LAYERSNOMEM
+fine memoria Layers
+; Layers out of memory
+;
+MSG_AN_LIBCHKSUM
+Errore del checksum della libreria
+; Library checksum failure
+;
+MSG_AN_LONGFRAME
+Long frame, fine memoria
+; Long frame, no memory
+;
+MSG_AN_MAKEVPORT
+MakeVPort, fine memoria
+; MakeVPort, no memory
+;
+MSG_AN_MATHLIB
+Problema math.library
+; math.library trouble
+;
+MSG_AN_MEMCORRUPT
+Elenco di memoria corrotto rilevato in FreeMem
+; Corrupt memory list detected in FreeMem
+;
+MSG_AN_MEMORYINSANE
+Controllo nell'elenco di memoria fallito
+; Sanity check on memory list failed
+;
+MSG_AN_MISCRSRC
+Problema misc.resource
+; misc.resource trouble
+;
+MSG_AN_NOCONSOLE
+Impossibile aprire il dispositivo console
+; Couldn't open the Console Device
+;
+MSG_AN_NOFONTS
+Nessun font disponibile
+; No fonts available
+;
+MSG_AN_NOISEM
+Intuition saltò ottenendo un semaforo
+; Intuition skipped obtaining a semaphore
+;
+MSG_AN_NOWINDOW
+La console non può aprire la finestra iniziale
+; Console can't open initial window
+;
+MSG_AN_OBSOLETEFONT
+Descrizione del font utilizzato non supportata
+; Unsupported font description used
+;
+MSG_AN_OPENSCREEN
+Apertura schermo, fine memoria
+; Open screen, no memory
+;
+MSG_AN_OPENSCRNRAST
+Apertura schermo, alloc. raster, fine memoria
+; Open screen, raster alloc, no memory
+;
+MSG_AN_OPENWINDOW
+Apertura finestra, fine memoria
+; Open window, no memory
+;
+MSG_AN_PLANEALLOC
+Allocazione piano, fine memoria
+; Plane alloc, no memory
+;
+MSG_AN_QPKTFAIL
+Errore Qpkt
+; Qpkt failure
+;
+MSG_AN_RAMLIB
+Problema ramlib
+; ramlib trouble
+;
+MSG_AN_REGIONMEMORY
+Regioni, memoria non disponibile
+; Regions, memory not available
+;
+MSG_AN_SEMCORRUPT
+Un semaforo è in uno stato illegale
+; A semaphore is in an illegal state
+;
+MSG_AN_SHORTFRAME
+Frame breve, fine memoria
+; Short frame, no memory
+;
+MSG_AN_STACKPROBE
+Lo stack sembra estendersi oltre l'intervallo
+; Stack appears to extend out of range
+;
+MSG_AN_STARTMEM
+Poca memoria all'avvio
+; No memory at startup
+;
+MSG_AN_SUBALLOC
+Sub allocazione, fine memoria
+; Sub alloc, no memory
+;
+MSG_AN_SYSSCRNTYPE
+Apertura schermo di sistema, tipo sconosciuto
+; Open sys screen, unknown type
+;
+MSG_AN_TDCALIBSEEK
+Calibra: seek errore
+; Calibrate: seek error
+;
+MSG_AN_TDDELAY
+Ritardo: errore nel timer di attesa
+; Delay: error on timer wait
+;
+MSG_AN_TEXTTMPRAS
+Testo, fine memoria per TmpRas
+; Text, no memory for TmpRas
+;
+MSG_AN_TIMERDEV
+Problema timer.device
+; timer.device trouble
+;
+MSG_AN_TMBADREQ
+Errata richiesta
+; Bad request
+;
+MSG_AN_TMBADSUPPLY
+Alimentazione - nessun segno 50/60hz
+; Power supply -- no 50/60hz ticks
+;
+MSG_AN_TRACKDISKDEV
+Problema trackdisk.device
+; trackdisk.device trouble
+;
+MSG_AN_UTILITYLIB
+Problema utility.library
+; utility.library trouble
+;
+MSG_AN_WBBADIOMSG
+Messaggio IO errato (hacker code?)
+; Bad IO message (hacker code?)
+;
+MSG_AN_WBBADSTARTUPMSG2
+Messaggio di avvio errato 2
+; Bad startup message 2
+;
+MSG_AN_WBRELAYOUTTOOLMENU
+GadTools danneggiato?
+; GadTools broke?
+;
+MSG_AN_WEIRDECHO
+Strana echo che causa incomprensione
+; Weird echo causing incomprehension
+;
+MSG_AN_WORKBENCH
+Problema Workbench
+; Workbench trouble
+;
+MSG_AN_LAWBREAKER
+Alert dimostrativo di LawBreaker
+; LawBreaker demonstration alert
+;
+MSG_AN_NOALERT
+Non si è verificato alcun alert
+; No alert occured
+;
+MSG_ACPU_EMUINTR
+Interruzione dell'emulatore
+; Emulator interrupt
+;
+MSG_ACPU_UNIMPLEA
+Indirizzo effettivo non implementato
+; Unimplemented effective address
+;
+MSG_ACPU_UNIMPLII
+Istruzione intera non implementata
+; Unimplemented integer instruction
+;
+;================================================================
+;       HARDWARE STRINGS (4096..)
+;================================================================
+;
+MSG_HW_VERSION
+V%ld.%ld
+; V%ld.%ld
+;
+MSG_HW_NOVERSION
+N/A
+; N/A
+;
+MSG_HW_NONE
+Nessuna
+; None
+;
+MSG_HW_FOUND
+Trovato
+; Found
+;
+MSG_HW_AMIGA1000
+Amiga 1000
+; Amiga 1000
+;
+MSG_HW_OCSAMIGA
+Amiga (OCS)
+; Amiga (OCS)
+;
+MSG_HW_ECSAMIGA
+Amiga (ECS)
+; Amiga (ECS)
+;
+MSG_HW_AMIGA500
+Amiga 500
+; Amiga 500
+;
+MSG_HW_AMIGA2000
+Amiga 2000
+; Amiga 2000
+;
+MSG_HW_AMIGA3000
+Amiga 3000
+; Amiga 3000
+;
+MSG_HW_CDTV
+CDTV
+; CDTV
+;
+MSG_HW_AMIGA600
+Amiga 600
+; Amiga 600
+;
+MSG_HW_CD32
+CD32
+; CD32
+;
+MSG_HW_AMIGA1200
+Amiga 1200
+; Amiga 1200
+;
+MSG_HW_AMIGA4000
+Amiga 4000
+; Amiga 4000
+;
+MSG_HW_DRACO
+DraCo
+; DraCo
+;
+MSG_HW_UAE
+UAE
+; UAE
+;
+MSG_HW_AMIGA4000T
+Amiga 4000 T
+; Amiga 4000 T
+;
+MSG_HW_AMIGAXL
+AmigaXL
+; AmigaXL
+;
+MSG_HW_68000
+68000
+; 68000
+;
+MSG_HW_68010
+68010
+; 68010
+;
+MSG_HW_68020
+68020
+; 68020
+;
+MSG_HW_68030
+68030
+; 68030
+;
+MSG_HW_68EC030
+68EC030
+; 68EC030
+;
+MSG_HW_68040
+68040
+; 68040
+;
+MSG_HW_68LC040
+68LC040
+; 68LC040
+;
+MSG_HW_68060
+68060
+; 68060
+;
+MSG_HW_68LC060
+68LC060
+; 68LC060
+;
+MSG_HW_68881
+68881
+; 68881
+;
+MSG_HW_68882
+68882
+; 68882
+;
+MSG_HW_68851
+68851
+; 68851
+;
+MSG_HW_FPGA
+FPGA
+; FPGA
+;
+MSG_HW_AMIGAOS
+AmigaOS
+; AmigaOS
+;
+MSG_HW_EGS
+EGS
+; EGS
+;
+MSG_HW_RETINA
+Retina
+; Retina
+;
+MSG_HW_GRAFFITI
+Graffiti
+; Graffiti
+;
+MSG_HW_TIGA
+TIGA
+; TIGA
+;
+MSG_HW_PROBENCH
+ProBench
+; ProBench
+;
+MSG_HW_PICASSO
+Picasso
+; Picasso
+;
+MSG_HW_CYBERGRAPHX
+CyberGraphX
+; CyberGraphX
+;
+MSG_HW_CGX3
+CyberGraphX 3
+; CyberGraphX 3
+;
+MSG_HW_PICASSO96
+Picasso96
+; Picasso96
+;
+MSG_HW_CGX4
+CyberGraphX 4
+; CyberGraphX 4
+;
+MSG_HW_AUDAMIGAOS
+AmigaOS
+; AmigaOS
+;
+MSG_HW_MAESTIX
+Maestix
+; Maestix
+;
+MSG_HW_TOCCATA
+Toccata
+; Toccata
+;
+MSG_HW_PRELUDE
+Prelude
+; Prelude
+;
+MSG_HW_AHI
+AHI
+; AHI
+;
+MSG_HW_MACROAUDIO
+MacroAudio
+; MacroAudio
+;
+MSG_HW_OS_UNKNOWN
+Bad OS
+; Bad OS
+;
+MSG_HW_OS_36
+2.0
+; 2.0
+;
+MSG_HW_OS_37
+2.04
+; 2.04
+;
+MSG_HW_OS_38
+2.1
+; 2.1
+;
+MSG_HW_OS_39
+3.0
+; 3.0
+;
+MSG_HW_OS_40
+3.1
+; 3.1
+;
+MSG_HW_OS_44
+3.5
+; 3.5
+;
+MSG_HW_OS_45
+3.9
+; 3.9
+;
+MSG_HW_OS_205
+2.05
+;
+MSG_HW_OS_32P
+3.2 (Walker)
+;
+MSG_HW_OS_314
+3.1.4
+;
+MSG_HW_OS_32
+3.2
+;
+;GARY
+MSG_HW_NORMAL
+Normale
+; Normal
+;
+MSG_HW_ENHANCED
+Migliorata
+; Enhanced
+;
+;RAMSEY
+MSG_HW_REVD
+D
+; D
+;
+MSG_HW_REVF
+F
+; F
+;
+MSG_HW_OCS
+OCS
+; OCS
+;
+MSG_HW_ECS
+ECS
+; ECS
+;
+MSG_HW_AGA
+AGA
+; AGA
+;
+MSG_HW_ALTAIS
+Altais
+; Altais
+;
+MSG_HW_NECS
+Quasi ECS
+; Nearly ECS
+;
+MSG_HW_SAGA
+SAGA
+;
+MSG_HW_PPCFOUND
+Trovato
+; Found
+;
+MSG_HW_602
+602
+; 602
+;
+MSG_HW_603
+603
+; 603
+;
+MSG_HW_603E
+603e
+; 603e
+;
+MSG_HW_603P
+603p
+; 603p
+;
+MSG_HW_604
+604
+; 604
+;
+MSG_HW_604E
+604e
+; 604e
+;
+MSG_HW_620
+620
+; 620
+;
+MSG_HW_RAMCAS_NORMAL
+Normale
+; Normal
+;
+MSG_HW_RAMCAS_DOUBLE
+Doppio
+; Double
+;
+MSG_HW_TCPIP_NONE
+Nessuno
+; None
+;
+MSG_HW_TCPIP_AMITCP
+AmiTCP/IP
+; AmiTCP/IP
+;
+MSG_HW_TCPIP_MIAMI
+Miami
+; Miami
+;
+MSG_HW_TCPIP_TERMITE
+TermiteTCP
+; TermiteTCP
+;
+MSG_HW_TCPIP_GENESIS
+GENESiS
+; GENESiS
+;
+MSG_HW_TCPIP_MIAMIDX
+MiamiDx
+; MiamiDx
+;
+MSG_HW_TCPIP_ROADSHOW
+Roadshow
+;
+MSG_HW_PPCOS_NONE
+Nessuno
+; None
+;
+MSG_HW_PPCOS_POWERUP
+PowerUp
+; PowerUp
+;
+MSG_HW_PPCOS_WARPOS
+WarpOS
+; WarpOS
+;
+MSG_HW_AGNUS_NONE
+Nessuno
+; None
+;
+MSG_HW_AGNUS_UNKNOWN
+Sconosciuto
+; Unknown
+;
+MSG_HW_AGNUS_8361
+Agnus 8361
+; Agnus 8361
+;
+MSG_HW_AGNUS_8367
+Agnus 8367
+; Agnus 8367
+;
+MSG_HW_AGNUS_8370
+Agnus 8370
+; Agnus 8370
+;
+MSG_HW_AGNUS_8371
+Agnus 8371
+; Agnus 8371
+;
+MSG_HW_AGNUS_8372_R4
+Agnus 8372 Rev. 1-4
+; Agnus 8372 Rev. 1-4
+;
+MSG_HW_AGNUS_8372_R5
+Agnus 8372 Rev. 5
+; Agnus 8372 Rev. 5
+;
+MSG_HW_AGNUS_8374_R2
+Alice 8374 Rev. 1-2
+; Alice 8374 Rev. 1-2
+;
+MSG_HW_AGNUS_8374_R3
+Alice 8374 Rev. 3-4
+; Alice 8374 Rev. 3-4
+;
+MSG_HW_AGNUS_ANNI
+Anni
+;
+MSG_HW_AMODE_NONE
+Nessuno
+; None
+;
+MSG_HW_AMODE_NTSC
+NTSC
+; NTSC
+;
+MSG_HW_AMODE_PAL
+PAL
+; PAL
+;
+MSG_HW_DENISE_NONE
+Nessuno
+; None
+;
+MSG_HW_DENISE_UNKNOWN
+Sconosciuto
+; Unknown
+;
+MSG_HW_DENISE_8362
+Denise 8362
+; Denise 8362
+;
+MSG_HW_DENISE_8373
+Denise 8373
+; Denise 8373
+;
+MSG_HW_DENISE_4203
+Lisa 4203
+;
+MSG_HW_DENISE_ISABEL
+Isabel
+;
+MSG_HW_PAULA_NONE
+Nessuno
+;
+MSG_HW_PAULA_UNKNOWN
+Sconosciuto
+;
+MSG_HW_PAULA_8364
+Paula 8364
+;
+MSG_HW_PAULA_ARNE
+Arne
+;
+;================================================================
+;

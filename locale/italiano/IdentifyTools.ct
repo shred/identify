@@ -1,0 +1,105 @@
+;*
+;* identify.library
+;*
+;* Copyright (C) 2021 David Lo Buglio
+;*	http://identify.shredzone.org
+;*
+;* This program is free software: you can redistribute it and/or modify
+;* it under the terms of the GNU Lesser General Public License as published
+;* by the Free Software Foundation, either version 3 of the License, or
+;* (at your option) any later version.
+;*
+;* This program is distributed in the hope that it will be useful,
+;* but WITHOUT ANY WARRANTY; without even the implied warranty of
+;* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+;* GNU Lesser General Public License for more details.
+;*
+;* You should have received a copy of the GNU Lesser General Public License
+;* along with this program. If not, see <http://www.gnu.org/licenses/>.
+;*
+## version $VER: Identify.catalog 38.0 (30.11.2021) by David Lo Buglio
+## codeset 0
+## language italiano
+;
+MSG_NOIDENTIFY
+Richiede identify.library V%ld o superiore!\n
+; 
+;
+MSG_LISTEXP_HAIL
+-- ListExp V%s -- %s\n\n
+; 
+;
+MSG_LISTEXP_HELP
+Modello:\n\n FULL/S\t\t\telenca tutte le commodities\n MID=MANUFID/K/N\tinformazioni sul produttore\n PID=PRODID/K/N\t\te il prodotto\n\nSi prega di leggere il file doc per ulteriori dettagli.\n
+; 
+;
+MSG_LISTEXP_OVERFLOW
+Gamma sbagliata! (ManufID=0..65535 ProdID=0..255)\n\n
+; 
+;
+MSG_LISTEXP_SPECBOARD
+Produttore: %s\nProdotto  : %s\nClasse    : %s\n\n
+; 
+;
+MSG_LISTEXP_HARDWARE
+** HARDWARE **\n\nSistema:  %s\nCPU:      %s %s (Rev %s), FPU=%s %s, MMU=%s\n
+; 
+;
+MSG_LISTEXP_POWERPC
+PowerPC:  %s %s (in esecuzione %s)\n
+; 
+;
+MSG_LISTEXP_HARDWARE2
+Chipset:  %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\t DMA:   %s (Mode: %s)\n\t Video: %s (Rev: %s)\n\t Audio: %s\nAmigaOS:  %s (%s, BoingBag %s, SetPatch %s)\n          Exec %s Workbench %s\nSupporto: GraphicOS: \
+%s, AudioOS: %s, TCP/IP: %s\nClock:    Rete %s, VBlank %s, EClock %s\nRAM:      Scheda madre %s bit, %s, %s CAS, %sx larghezza di banda\n\nMemoria:\t   CHIP\t   FAST\t   TOTAL\tROM = %s\tSLOW = %s\n\
+\t  PLAIN\t%7s\t%7s\t%7s\n\tVIRTUAL\t%7s\t%7s\t%7s\n\t  TOTAL\t%7s\t%7s\t%7s\n\n
+; 
+;
+MSG_LISTEXP_LISTTITLE
+** ESPANSIONI **\n\nNr ID        Indiriz. Dim. Produttore           Prodotto\n----------------------------------------------------------------------------\n
+; 
+;
+MSG_LISTEXP_BOARDLINE
+%2ld %5ld/%3ld %08lx %3ld%lc %-20s %s %s\n
+; 
+;
+MSG_LISTEXP_CXTITLE
+\n\n** COMMODITIES **\n\nNome                     Titolo\n----------------------------------------------------------------------------\n
+; 
+;
+MSG_LISTEXP_CXLINE
+%-24s %-40s\n
+; 
+;
+;
+MSG_GURU_HAIL
+-- Guru V%s -- %s\n\n
+; 
+;
+MSG_GURU_HELP
+Modello:\n\n GURU\t\tguru da analizzare\n LASTALERT/S\tanalizza l'ultimo alert di sistema\n\nPer ulteriori informazioni leggere il file doc.\n
+; 
+;
+MSG_GURU_BADCODE
+Questo non è un codice Guru valido...\n\n
+; 
+;
+MSG_GURU_RESULT
+ Codice alert: %08lx\n Tipo:         %s\n Sottosistema: %s\n Generale:     %s\n Specificato:  %s\n\n
+; 
+;
+MSG_GURU_NOLAST
+Nessun Guru si è ancora verificato...\n\n
+; 
+;
+MSG_FUNC_HAIL
+-- Function V%s -- %s\n\n
+; 
+;
+MSG_FUNC_HELP
+Modello:\n\n LN=LIBNAME/A\tnome della libreria\n O=OFFSET/N/A\toffset della funzione\n\nSi prega di leggere il file doc per ulteriori dettagli.\n
+; 
+;
+MSG_FUNC_RESULT
+ Libreria:   %s\n Offset:     %ld\n Funzione:   %s\n\n
+; 

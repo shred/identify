@@ -485,6 +485,7 @@ History
         @{b}*@{ub} Added Paula detection
         @{b}*@{ub} Detects FPGA processors like Apollo Core 68080
         @{b}*@{ub} Detects the SAGA chipset
+        @{b}*@{ub} Italian translation [David Lo Buglio]
 
 @{i}V 37.1@{ui}
         @{b}*@{ub} Inofficial release by Thore Böckelmann

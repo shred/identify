@@ -537,6 +537,7 @@ History
         @{b}*@{ub} Paula-Erkennung hinzugefügt
         @{b}*@{ub} Erkennt FPGA-Prozessoren, z.B. Apollo Core 68080
         @{b}*@{ub} Erkennt den SAGA-Chipsatz
+        @{b}*@{ub} Italienische Übersetzung [David Lo Buglio]
 
 @{i}V 37.1@{ui}
         @{b}*@{ub} Inoffizielle Release von Thore Böckelmann

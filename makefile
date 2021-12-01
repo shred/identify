@@ -64,6 +64,8 @@ all: $(OBJP) \
 		$(OBJP)/locale/IdentifyTools.ct \
 		$(OBJP)/locale/deutsch/Identify.catalog \
 		$(OBJP)/locale/deutsch/IdentifyTools.catalog \
+		$(OBJP)/locale/italiano/Identify.catalog \
+		$(OBJP)/locale/italiano/IdentifyTools.catalog \
 		$(OBJP)/identify.library \
 		$(OBJP)/identify.library_000 \
 		$(OBJP)/rexxidentify.library \
@@ -87,6 +89,7 @@ release: clean all
 	cp $(OBJP)/ListExp $(RELP)/IdentifyUsr/Identify/c/
 
 	cp -r $(OBJP)/locale/deutsch $(RELP)/IdentifyUsr/Identify/catalogs/	# Catalogs
+	cp -r $(OBJP)/locale/italiano $(RELP)/IdentifyUsr/Identify/catalogs/
 
 	cp $(DOCP)/Identify-D.guide $(RELP)/IdentifyUsr/Identify/docs/		# Docs
 	cp $(DOCP)/Identify-E.guide $(RELP)/IdentifyUsr/Identify/docs/
@@ -130,6 +133,7 @@ $(OBJP):
 	mkdir -p $(OBJP)/000
 	mkdir -p $(OBJP)/locale
 	mkdir -p $(OBJP)/locale/deutsch
+	mkdir -p $(OBJP)/locale/italiano
 
 #-- pragmas
 $(REFP)/inline/identify_protos.h: $(REFP)/fd/identify_lib.fd $(REFP)/clib/identify_protos.h
@@ -157,6 +161,12 @@ $(OBJP)/locale/deutsch/Identify.catalog: $(LOCP)/deutsch/Identify.ct $(LOCP)/Ide
 
 $(OBJP)/locale/deutsch/IdentifyTools.catalog: $(LOCP)/deutsch/IdentifyTools.ct $(LOCP)/IdentifyTools.cd
 	flexcat NOOPTIM $(LOCP)/IdentifyTools.cd $(LOCP)/deutsch/IdentifyTools.ct CATALOG $@
+
+$(OBJP)/locale/italiano/Identify.catalog: $(LOCP)/italiano/Identify.ct $(LOCP)/Identify.cd
+	flexcat NOOPTIM $(LOCP)/Identify.cd $(LOCP)/italiano/Identify.ct CATALOG $@
+
+$(OBJP)/locale/italiano/IdentifyTools.catalog: $(LOCP)/italiano/IdentifyTools.ct $(LOCP)/IdentifyTools.cd
+	flexcat NOOPTIM $(LOCP)/IdentifyTools.cd $(LOCP)/italiano/IdentifyTools.ct CATALOG $@
 
 #-- identify.library
 $(OBJP)/identify.library: $(ID_OBJS)

@@ -14,7 +14,7 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 * Tries to give at least a hint if the board name is not known yet
 * Fully FPGA, DraCo, and PowerPC compatible
 * Supports PowerUp and WarpOS
-* The library is fully localized (catalogs included: Deutsch)
+* The library is fully localized (catalogs included: Deutsch, Italiano)
 * Use the features in ARexx, with the included rexxidentify.library
 * English and German documentation
 * LGPLv3 licensed, open source
@@ -53,6 +53,15 @@ If you found a bug or have a feature request, feel free to [open an issue](https
 At the AmiNet, you will find [official binaries](http://aminet.net/package/util/libs/IdentifyUsr) and [development files](http://aminet.net/package/util/libs/IdentifyDev).
 
 **Please keep the "IdentifyDev" and "IdentifyUsr" package names reserved for official releases.** If you want to release a fork, use a different package name. But please consider contributing to the reference repository instead. This is better than having an unknown number of different versions circulating around.
+
+## Translation
+
+The identify tools are fully localizable. English is the built-in language. Available translations are (in alphabetical order):
+
+* Deutsch (by Richard Körber)
+* Italiano (by David Lo Buglio)
+
+If you want to provide other translations, please contact me for assistance.
 
 ## Sync with your own Board Database?
 
