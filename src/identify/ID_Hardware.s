@@ -1306,6 +1306,13 @@ do_Chipset
 		moveq	#IDCS_ALTAIS,d0
 		move.b	(flags_draco,PC),d1
 		bne	.done
+	;-- SAGA?
+	; see http://www.apollo-core.com/knowledge.php?b=3&note=29581&z=HDbIdQ
+		moveq	#IDCS_SAGA,d0
+		move	$dff016,d1
+		and	#$00FE,d1		; Paula revision (bits 7..1)
+		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
+		beq	.done
 	;-- read Amiga type bits
 		move	$dff07c,d1
 		and	#$000F,d1

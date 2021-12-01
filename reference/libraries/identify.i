@@ -224,6 +224,7 @@ IDCS_ECS	EQU	1	; ECS
 IDCS_AGA	EQU	2	; AGA
 IDCS_ALTAIS	EQU	3	; DraCo Altais
 IDCS_NECS	EQU	4	; Nearly ECS (no HR-Agnus or HR-Denise)
+IDCS_SAGA	EQU	5	; SAGA
 
 *
 * IDHW_GFXSYS numerical result codes

@@ -625,6 +625,8 @@ MSG_HW_ALTAIS           (//49)
 Altais
 MSG_HW_NECS             (//49)
 Nearly ECS
+MSG_HW_SAGA             (//49)
+SAGA
 ;
 MSG_HW_PPCFOUND         (7000//49)
 Found

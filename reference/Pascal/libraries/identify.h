@@ -206,6 +206,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDCS_AGA        = 2;     { AGA }
        IDCS_ALTAIS     = 3;     { DraCo Altais }
        IDCS_NECS       = 4;     { Nearly ECS (no HR-Agnus or HR-Denise) }
+       IDCS_SAGA       = 5;     { SAGA }
 
 { IDHW_GFXSYS numerical result codes }
 

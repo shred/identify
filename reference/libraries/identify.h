@@ -219,7 +219,8 @@ struct IdentifyBase {
 #define IDCS_ECS        (1)       /*  ECS */
 #define IDCS_AGA        (2)       /*  AGA */
 #define IDCS_ALTAIS     (3)       /*  DraCo Altais */
-#define IDCS_NECS       (4)       /* Nearly ECS (no HR-Agnus or HR-Denise) */
+#define IDCS_NECS       (4)       /*  Nearly ECS (no HR-Agnus or HR-Denise) */
+#define IDCS_SAGA       (5)       /*  SAGA */
 
 /*
  * IDHW_GFXSYS numerical result codes
