@@ -30,7 +30,9 @@
 		INCLUDE ID_Hardware.i
 		INCLUDE ID_Locale.i
 
-		MACHINE 68060
+		IFD	_MAKE_68020
+		  MACHINE 68020
+		ENDC
 		FPU
 
 		SECTION text,CODE
@@ -221,6 +223,7 @@ SetCache
 		move.l	(SP)+,a5
 .no_060		rts
 
+		MACHINE 68060
 		cnop	0,4
 .get_cacr	movec.l cacr,d1
 		bclr	#23,d1			; turn off EBC
@@ -229,6 +232,11 @@ SetCache
 .no_ebc		movec.l d1,cacr
 		nop
 		rte
+		IFD	_MAKE_68020
+		  MACHINE 68020
+		ELSE
+		  MACHINE 68000
+		ENDC
 
 
 **
@@ -251,11 +259,18 @@ RestoreCache	cmp.b	#5,(gcl_CPUType,a5)	; enable branch cache on 68060
 		exec	CacheControl
 		rts
 
+		MACHINE 68060
 .set_cacr	movec.l cacr,d1
 		or.l	#(1<<23)|(1<<22),d1
 		movec.l d1,cacr
 		nop
 		rte
+		IFD	_MAKE_68020
+		  MACHINE 68020
+		ELSE
+		  MACHINE 68000
+		ENDC
+
 
 **
 * Compute clock frequency from test result.

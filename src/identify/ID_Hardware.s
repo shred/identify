@@ -40,7 +40,9 @@
 		INCLUDE ID_Hardware.i
 		INCLUDE ID_Locale.i
 
-		MACHINE 68060
+		IFD	_MAKE_68020
+		  MACHINE 68020
+		ENDC
 
 		SECTION strings,DATA
 strbase		ds.w	0
@@ -1606,10 +1608,16 @@ do_VBR		lea	buildflags,a0
 .no_vbr		moveq	#0,d0			; base address always 0
 		rts
 	;-- read VBR register
+		MACHINE 68010
 		cnop	0,4
 .vbr_trap	movec.l vbr,d0
 		nop
 		rte
+		IFD	_MAKE_68020
+		  MACHINE 68020
+		ELSE
+		  MACHINE 68000
+		ENDC
 
 **
 * Read last alert code.
@@ -1914,10 +1922,16 @@ do_CPURev	btst	#AFB_68060,d0
 		and.l	#$FF,d0
 		rts
 
+		MACHINE 68060
 		cnop	0,4
 .getcpurev	movec.l pcr,d0
 		nop
 		rte
+		IFD	_MAKE_68020
+		  MACHINE 68020
+		ELSE
+		  MACHINE 68000
+		ENDC
 
 **
 * Find the CPU clock.
