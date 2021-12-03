@@ -75,7 +75,7 @@ Chipset: %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
 \t Video: %s (Rev: %s)\n\
 \t Audio: %s\n\
 AmigaOS: %s (%s, BoingBag %s, SetPatch %s)\n\
-         Exec %s   Workbench %s\n\
+         Exec %s   Workbench %s   ROM %s\n\
 Support: GraphicOS: %s, AudioOS: %s, TCP/IP: %s\n\
 Clock:   Power %s, VBlank %s, E-Clock %s\n\
 RAM:     Motherboard %s bit, %s, %s CAS, %sx Bandwidth\n\
