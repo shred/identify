@@ -38,7 +38,7 @@
 /*
  * Generic library information
  */
-#define IDENTIFYVERSION (37)
+#define IDENTIFYVERSION (38)
 
 struct IdentifyBase {
   struct  Library ifyb_LibNode;
@@ -141,7 +141,8 @@ struct IdentifyBase {
 #define IDHW_HOSTCPU      (53)    /*  when emulated: Host CPU (see autodocs!) */
 #define IDHW_HOSTSPEED    (54)    /*  when emulated: Host CPU speed (unit MHz, see autodocs!) */
 #define IDHW_LASTALERTTASK (55)   /*  Task of last alert                    [V37] */
-#define IDHW_NUMBEROF     (56)    /*  Number of types, PRIVATE! */
+#define IDHW_PAULA        (56)    /*  Paula chip revision                   [V38] */
+#define IDHW_NUMBEROF     (57)    /*  Number of types, PRIVATE! */
 
 /*
  * IDHW_SYSTEM numerical result codes

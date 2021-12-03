@@ -30,7 +30,7 @@ CONST  _IDTAGS      = $CD450000;
 
 { Generic library informations }
 
-CONST  IDENTIFYVERSION = 37;
+CONST  IDENTIFYVERSION = 38;
 
 TYPE   p_IdentifyBase = ^_IdentifyBase;
        _IdentifyBase  = Record
@@ -133,7 +133,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDHW_HOSTCPU     = 53;  { when emulated: Host CPU (see autodocs!) }
        IDHW_HOSTSPEED   = 54;  { when emulated: Host CPU speed (unit MHz, see autodocs!) }
        IDHW_LASTALERTTASK = 55; { Task of last alert                   [V37] }
-       IDHW_NUMBEROF    = 56;  { Number of types, PRIVATE! }
+       IDHW_PAULA       = 56;  { Paula chip revision                   [V38] }
+       IDHW_NUMBEROF    = 57;  { Number of types, PRIVATE! }
 
 { IDHW_SYSTEM numerical result codes }
 
