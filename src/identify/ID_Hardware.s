@@ -2173,10 +2173,12 @@ do_Denise	moveq	#IDDN_NONE,d0
 		moveq	#IDDN_8362,d0
 		move	$dff07c,d1		; LISAID
 		and	#$00FF,d1
-		move	$dff07c,d2
+		moveq	#32,d3
+.checkloop	move	$dff07c,d2
 		and	#$00FF,d2
 		cmp	d1,d2			; both reads must be equal
 		bne	.done			;  no -> very old 8362 Denise
+		dbra	d3,.checkloop
 	;-- 8373
 		and	#$000F,d1
 		moveq	#IDDN_8373,d0
