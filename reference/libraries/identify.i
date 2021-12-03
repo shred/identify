@@ -146,7 +146,8 @@ IDHW_HOSTCPU	EQU	53	; when emulated: Host CPU (see autodocs!)
 IDHW_HOSTSPEED	EQU	54	; when emulated: Host CPU speed (unit MHz, see autodocs!)
 IDHW_LASTALERTTASK EQU	55	; Task of last alert			[V37]
 IDHW_PAULA	EQU	56	; Paula chip revision			[V38]
-IDHW_NUMBEROF	EQU	57	; Number of types, PRIVATE!
+IDHW_ROMVER	EQU	57	; Physical ROM version
+IDHW_NUMBEROF	EQU	58	; Number of types, PRIVATE!
 
 *
 * IDHW_SYSTEM numerical result codes

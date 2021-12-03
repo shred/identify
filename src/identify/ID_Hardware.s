@@ -169,7 +169,7 @@ IdHardwareNum	movem.l d1-d3/a0-a6,-(SP)
 		dc.l	do_AgnusMode,	do_Denise,	do_DeniseRev,	do_BoingBag
 		dc.l	do_Emulated,	do_XLVersion,	do_HostOS,	do_HostVers
 		dc.l	do_HostMachine,	do_HostCPU,	do_HostSpeed,	do_LastAlertTask
-		dc.l	do_Paula
+		dc.l	do_Paula,       do_RomVer
 
 
 **
@@ -239,7 +239,7 @@ IdHardware	movem.l d1-d3/a0-a3/a6,-(SP)
 		dc.l	cv_AgnusMode,	cv_Denise,	cv_DeniseRev,	cv_BoingBag
 		dc.l	cv_Emulated,	cv_XLVersion,	cv_HostOS,	cv_HostVers
 		dc.l	cv_HostMachine,	cv_HostCPU,	cv_HostSpeed,	cv_LastAlertTask
-		dc.l	cv_Paula
+		dc.l	cv_Paula,       cv_RomVer
 
 
 *
@@ -503,6 +503,10 @@ cv_LastAlertTask lea	buf_LastAlertTask,a0
 cv_Paula	add.l	#MSG_HW_PAULA_NONE,d0
 		bra	quick_loc
 
+cv_RomVer	lea	buf_RomVer,a0
+		lea	buf_RomVerLoc,a1
+		bra	quick_ver
+
 
 *
 * ======== Quick Formatter Functions ========
@@ -724,6 +728,8 @@ buf_HostCPU		ds.b	STRSIZE
 buf_HostSpeed		ds.b	STRSIZE
 buf_LastAlertTask	ds.b	STRSIZE
 buf_Paula		ds.b	STRSIZE
+buf_RomVer		ds.b	STRSIZE
+buf_RomVerLoc		ds.b	STRSIZE
 buf_ENDOFBUF		ds.b	0
 
 		SECTION text,CODE
@@ -856,7 +862,7 @@ fmtcommands	dc.b	"SYSTEM$CPU$FPU$MMU$"
 		dc.b	"AGNUSMODE$DENISE$DENISEREV$BOINGBAG$"
 		dc.b	"EMULATED$XLVERSION$HOSTOS$HOSTVERS$"
 		dc.b	"HOSTMACHINE$HOSTCPU$HOSTSPEED$LASTALERTTASK$"
-		dc.b	"PAULA$"
+		dc.b	"PAULA$ROMVER$"
 		dc.b	0
 		even
 
@@ -1178,23 +1184,13 @@ do_MMU		move	d0,d2			;; TODO: MMU check for FPGA. 68080 has no MMU yet.
 .found		rts
 
 **
-* AmigaOS Version (e.g. 40.68).
+* Active AmigaOS Version (e.g. 40.68).
 *
 do_OsVer	move.l	(execbase,PC),a0
-	;-- try to find ROM start address
-		move.l	(LIB_IDSTRING,a0),d0
-		and.l	#$FFFFFC00,d0
-	;-- check for valid ROM area
-		move.l	d0,d1
-		and.l	#$00F00000,d1
-		cmp.l	#$00F00000,d1
-		beq	.good
-		move.l	#$00F80000,d0		; nope, assume ROM is at F80000
-	;-- read ROM version and revision
-.good		move.l	d0,a0
-		move	(14,a0),d0		; Revision
+		moveq	#0,d0
+		move	(SoftVer,a0),d0
 		swap	d0
-		move	(12,a0),d0		; Version
+		move	(LIB_VERSION,a0),d0
 		rts
 
 **
@@ -1232,18 +1228,14 @@ do_WbVer	lea	(versionname,a4),a1
 *
 do_OsNr;-- get versions
 		move.l	(execbase,PC),a0
-		move.l	(LIB_IDSTRING,a0),d0
-		and.l	#$FFFFFC00,d0
-		move.l	d0,a0
-		move	(12,a0),d1		; D1: ROM Version
-		move	(14,a0),d2		; D2: ROM Revision
-		bsr	.get_version		; D0: Workbench Version
+		move	(SoftVer,a0),d1		; D1: ROM Revision
+		move	(LIB_VERSION,a0),d0	; D0: Kickstart Version
 	;-- test AmigaOS versions
 		moveq	#IDOS_3_2,d3		; AmigaOS 3.2
-		cmp	#47,d1
+		cmp	#47,d0
 		beq	.found
 		moveq	#IDOS_3_1_4,d3		; AmigaOS 3.1.4
-		cmp	#46,d1
+		cmp	#46,d0
 		beq	.found
 		moveq	#IDOS_3_9,d3		; AmigaOS 3.9
 		cmp	#45,d0
@@ -1252,54 +1244,46 @@ do_OsNr;-- get versions
 		cmp	#44,d0
 		beq	.found
 		moveq	#IDOS_3_2_PROTO,d3	; AmigaOS 3.2 (Walker prototype)
-		cmp	#43,d1
+		cmp	#43,d0
 		beq	.found
 		moveq	#IDOS_3_1,d3		; AmigaOS 3.1
-		cmp	#40,d1
+		cmp	#40,d0
 		beq	.found
 		moveq	#IDOS_3_0,d3		; AmigaOS 3.0
-		cmp	#39,d1
+		cmp	#39,d0
 		beq	.found
 		moveq	#IDOS_2_1,d3		; AmigaOS 2.1
 		cmp	#38,d0
 		beq	.found
 		moveq	#IDOS_2_04,d3		; AmigaOS 2.04 (or 2.05)
-		cmp	#37,d1
+		cmp	#37,d0
 		bne	.not_37
-		cmp	#299,d2
+		cmp	#299,d1
 		blo	.found
 		moveq	#IDOS_2_05,d3		; AmigaOS 2.05
 		bra	.found
 .not_37		moveq	#IDOS_2_0,d3		; AmigaOS 2.0
-		cmp	#36,d1
+		cmp	#36,d0
 		beq	.found
 	;-- unknown OS
 		moveq	#IDOS_UNKNOWN,d3
 .found		move.l	d3,d0
 		rts
 
-	; Fetch the workbench version in D0
-.get_version	movem.l d1-d2/a0-a2,-(SP)
-		lea	(versionname,a4),a1
-		moveq	#0,d0
-		exec.q	OpenLibrary
-		move.l	d0,a1
-		tst.l	d0
-		beq	.none35
-		moveq	#0,d2
-		move	(LIB_VERSION,a1),d2
-		exec	CloseLibrary
-.none35		move.l	d2,d0
-		movem.l (SP)+,d1-d2/a0-a2
+**
+* Version of the ROM.
+*
+do_RomVer	bsr	RomStart
+		move	(14,a0),d0		; Revision
+		swap	d0
+		move	(12,a0),d0		; Version
 		rts
+
 
 **
 * Size of the ROM, in KB.
 *
-do_RomSize	move.l	(execbase,PC),a0
-		move.l	(LIB_IDSTRING,a0),d0
-		and.l	#$FFFFFC00,d0
-		move.l	d0,a0			; ROM starting address
+do_RomSize	bsr	RomStart
 		move	(a0),d0
 		cmp	#$1111,d0		; 256K ROM?
 		beq	.is256k
@@ -2530,6 +2514,40 @@ ReadLastAlert	move.b	(flags_draco,PC),d0	; DraCo has no Blitter
 		move.l	$104.w,d1		; read $104 immediately
 		rts
 
+**
+* Find the start address of the physical ROM.
+*
+* There are three steps to get the ROM base address:
+*  - Use the "romboot" resident address, as we assume it's always in ROM
+*  - Use the LIB_IDSTRING of execbase, as it should be in ROM (but not always)
+*  - Use fixed $F80000, and assume that an $FC0000 based ROM is mirrored there
+*
+*	-> A0.l	ROM address
+*
+RomStart	movem.l	d0-d3/a1-a3,-(SP)
+	;-- try to find via resident
+		lea	(.resident,PC),a1
+		exec	FindResident
+		tst.l	d0
+		bne	.found
+	;-- try to find via execbase name
+	; this one fails on heavily patched AmigaOS systems
+	; like AmigaOS 3.9.
+		move.l	(execbase,PC),a0
+		move.l	(LIB_IDSTRING,a0),d0
+	;-- locate start of ROM
+.found		and.l	#$FFFF0000,d0
+		move.l	d0,d1			; is it plausible?
+		and.l	#$FFF00000,d1
+		cmp.l	#$00F00000,d1
+		beq	.good
+		move.l	#$00F80000,d0           ; nope, assume ROM is at F80000
+.good		move.l	d0,a0
+		movem.l	(SP)+,d0-d3/a1-a3
+		rts
+
+.resident	dc.b	"alert.hook",0
+		even
 
 
 *

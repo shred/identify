@@ -142,7 +142,8 @@ struct IdentifyBase {
 #define IDHW_HOSTSPEED    (54)    /*  when emulated: Host CPU speed (unit MHz, see autodocs!) */
 #define IDHW_LASTALERTTASK (55)   /*  Task of last alert                    [V37] */
 #define IDHW_PAULA        (56)    /*  Paula chip revision                   [V38] */
-#define IDHW_NUMBEROF     (57)    /*  Number of types, PRIVATE! */
+#define IDHW_ROMVER       (57)    /*  Physical ROM version */
+#define IDHW_NUMBEROF     (58)    /*  Number of types, PRIVATE! */
 
 /*
  * IDHW_SYSTEM numerical result codes

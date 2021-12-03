@@ -742,6 +742,7 @@ ID_Hardware	link	a4,#idh_LENGTH
 		dc.b	"HOSTSPEED",0
 		dc.b	"LASTALERTTASK",0
 		dc.b	"PAULA",0
+		dc.b	"ROMVER",0
 		dc.b	0		; end marker
 
 .options	dc.b	"EMPTYNA",0

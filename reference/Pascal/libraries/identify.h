@@ -134,7 +134,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDHW_HOSTSPEED   = 54;  { when emulated: Host CPU speed (unit MHz, see autodocs!) }
        IDHW_LASTALERTTASK = 55; { Task of last alert                   [V37] }
        IDHW_PAULA       = 56;  { Paula chip revision                   [V38] }
-       IDHW_NUMBEROF    = 57;  { Number of types, PRIVATE! }
+       IDHW_ROMVER      = 57;  { Physical ROM version }
+       IDHW_NUMBEROF    = 58;  { Number of types, PRIVATE! }
 
 { IDHW_SYSTEM numerical result codes }
 

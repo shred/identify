@@ -310,6 +310,7 @@ identify.library/IdHardwareUpdate
                 $HOSTSPEED$
                 $LASTALERTTASK$
                 $PAULA$
+                $ROMVER$
 
         For their meanings, see the include file.
 
@@ -446,7 +447,7 @@ identify.library/IdHardwareUpdate
                 IDHW_MMU        -- What kind of MMU is available?
                         (e. g. "68060")
 
-                IDHW_OSVER      -- What OS version is used?
+                IDHW_OSVER      -- What AmigaOS version is active?
                         (e.g. "V39.106")
 
                 IDHW_EXECVER    -- What exec version is used?
@@ -581,6 +582,9 @@ identify.library/IdHardwareUpdate
                 IDHW_PAULA      -- [V38] Paula chip type
                         (e.g. "Paula 8364")
 
+                IDHW_ROMVER     -- [V38] Version of physical AmigaOS ROM
+                        (e.g. "V40.68")
+
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.
 
@@ -643,7 +647,7 @@ identify.library/IdHardwareUpdate
                 IDHW_MMU        -- What kind of MMU is available?
                         (include file: IDMMU_...)
 
-                IDHW_OSVER      -- What OS version is used?
+                IDHW_OSVER      -- What AmigaOS version is active?
                         (version, revision)
 
                 IDHW_EXECVER    -- What exec version is used?
@@ -777,6 +781,9 @@ identify.library/IdHardwareUpdate
 
                 IDHW_PAULA      -- [V38] Paula chip type
                         (include file: IDPL_...)
+
+                IDHW_ROMVER     -- [V38] Version of physical AmigaOS ROM
+                        (version, revision)
 
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.

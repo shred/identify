@@ -152,7 +152,7 @@ These functions are available since Release 1:
           Used MMU, if available
 
     @{b}OSVER@{ub}
-          AmigaOS ROM version
+          Active AmigaOS version
 
     @{b}EXECVER@{ub}
           exec.library version
@@ -327,6 +327,9 @@ These functions are available since Release 1:
     @{b}PAULA@{ub}
           (since Release 38) Returns the Paula chip version, if
           available.
+
+    @{b}ROMVER@{ub}
+          (since Release 38) Version of the physical AmigaOS ROM.
 
      These @{b}<options>@{ub} are allowed:
     @{b}EMPTYNA@{ub}
