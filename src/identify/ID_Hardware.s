@@ -1279,7 +1279,6 @@ do_RomVer	bsr	RomStart
 		move	(12,a0),d0		; Version
 		rts
 
-
 **
 * Size of the ROM, in KB.
 *
@@ -2517,37 +2516,20 @@ ReadLastAlert	move.b	(flags_draco,PC),d0	; DraCo has no Blitter
 **
 * Find the start address of the physical ROM.
 *
-* There are three steps to get the ROM base address:
-*  - Use the "romboot" resident address, as we assume it's always in ROM
-*  - Use the LIB_IDSTRING of execbase, as it should be in ROM (but not always)
-*  - Use fixed $F80000, and assume that an $FC0000 based ROM is mirrored there
-*
 *	-> A0.l	ROM address
 *
-RomStart	movem.l	d0-d3/a1-a3,-(SP)
-	;-- try to find via resident
-		lea	(.resident,PC),a1
-		exec	FindResident
-		tst.l	d0
-		bne	.found
-	;-- try to find via execbase name
-	; this one fails on heavily patched AmigaOS systems
-	; like AmigaOS 3.9.
-		move.l	(execbase,PC),a0
-		move.l	(LIB_IDSTRING,a0),d0
-	;-- locate start of ROM
-.found		and.l	#$FFFF0000,d0
-		move.l	d0,d1			; is it plausible?
-		and.l	#$FFF00000,d1
-		cmp.l	#$00F00000,d1
-		beq	.good
-		move.l	#$00F80000,d0           ; nope, assume ROM is at F80000
-.good		move.l	d0,a0
-		movem.l	(SP)+,d0-d3/a1-a3
+RomStart	lea	$FC0000,a0		; Assume FC0000 first
+		cmp	#$1111,(a0)		; verify there is a 256KB ROM structure
+		bne	.bad
+		cmp	#$4EF9,(2,a0)		; jmp instruction?
+		bne	.bad
+		move.l	(4,a0),d0		; read jmp target
+		and.l	#$FFFC0000,d0		; round down to actual ROM start
+		move.l	d0,a0
 		rts
-
-.resident	dc.b	"alert.hook",0
-		even
+	;-- must be a 512KB ROM
+.bad		lea	$F80000,a0
+		rts
 
 
 *
