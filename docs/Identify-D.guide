@@ -332,18 +332,21 @@ es bei ihnen zu beachten gibt:
      eine Vorrichtung hat.
 
 @{b}AGNUS@{ub}
-     Gibt an, welcher Agnus-Chip im Rechner eingebaut ist.
+     Gibt an, welcher Agnus/Alice-Chip im Rechner eingebaut ist.
 
 @{b}AGNUSMODE@{ub}
      Zeigt, in welchem Grundmodus (PAL oder NTSC) der Agnus-Chip
      betrieben wird.
 
 @{b}DENISE@{ub}
-     Gibt an, welcher Denise-Chip im Rechner eingebaut ist.
+     Gibt an, welcher Denise/Lisa-Chip im Rechner eingebaut ist.
 
 @{b}DENISEREV@{ub}
      Zeigt, welche Revision der Denise-Chip hat. (Üblicherweise ist es
      0 oder nicht bekannt.)
+
+@{b}PAULA@{ub}
+     Gibt an, welcher Paula-Chip im Rechner eingebaut ist.
 
 @{b}POWERPC@{ub}
      Liefert den eingebauten PowerPC-Typ zurück, wenn einer vorhanden
@@ -360,8 +363,7 @@ es bei ihnen zu beachten gibt:
      PowerUp (Phase 5) und WarpOS (Haage&Partner) erkannt.
 
 @{b}OSVER@{ub}
-     Die Version vom AmigaOS-ROM. Wenn du ein ROM nachgeladen hast,
-     wird dessen Version erkannt.
+     Die Version des aktuell laufenden AmigaOS.
 
 @{b}OSNR@{ub}
      Die geläufigere Versionsnummer des AmigaOS, z.B. @{b}3.0@{ub}.
@@ -377,6 +379,10 @@ es bei ihnen zu beachten gibt:
 
 @{b}SETPATCHVER@{ub}
      Die Version des SetPatch-Befehls, wenn verfügbar.
+
+@{b}ROMVER@{ub}
+     Die Version des hardwareseitig installierten AmigaOS-ROMs. Wenn du ein
+     ROM nachgeladen hast, wird eventuell dessen Version erkannt.
 
 @{b}GFXSYS@{ub}
      Das benutzte Grafik-System, z.B. @{b}CyberGraphX@{ub}. Wenn du mehrere
@@ -423,7 +429,7 @@ es bei ihnen zu beachten gibt:
 
 @{b}ROMSIZE@{ub}
      Die Größe des AmigaOS-ROMs. Wenn ein ROM nachgeladen wurde, wird
-     dessen Größe angezeigt.
+     möglicherweise dessen Größe angezeigt.
 
 @{b}VBLANKFREQ@{ub}
      Frequenz des VBlank-Interrupts. Bei Emulationen kann dies von dem
@@ -439,6 +445,9 @@ es bei ihnen zu beachten gibt:
 
 @{b}LASTALERT@{ub}
      Der zuletzt aufgetretene System-Alert.
+
+@{b}LASTALERTTASK@{ub}
+     Der Task, der den letzten System-Alert auslöste.
 
 @{b}RAMACCESS@{ub}
      Gibt die Zugriffszeit auf das Motherboard-RAM in ns zurück, wenn
@@ -492,32 +501,9 @@ es bei ihnen zu beachten gibt:
 FAQ
 ***
 
-@{i}Die Ausgaben von ListExp sind völlig durcheinander.@{ui}
-     Stelle sicher, dass der aktuelle Sprachkatalog installiert
-     ist und das System zurückgesetzt wurde.
+Eine FAQ in Englisch findest du online unter:
 
-@{i}Ich bekomme einen Enforcerhit, wenn ich das System analysiere.@{ui}
-     Der Enforcerhit ist auf einigen Systemen technisch notwendig, um
-     den letzten Alert-Code zu ermitteln. Er ist harmlos.
-
-@{i}Die Taktfrequenzanzeige ist falsch.@{ui}
-     Die Taktmessung erfordert echtes Fast-RAM für beste Ergebnisse,
-     ansonsten können zum Teil erhebliche Messfehler auftreten.
-
-@{i}Der PowerPC-Takt ist falsch.@{ui}
-     Dies ist ein Bug der @{b}ppc.library@{ub}.
-
-@{i}Der PowerPC-Takt wird nicht erkannt.@{ui}
-     Dies ist unter WarpOS bei einigen Prozessoren nicht möglich.
-
-@{i}Der Rechner stürzt bei einer System-Anfrage (z.B. ListExp) ab.@{ui}
-     Bitte stelle sicher, dass die @{b}ppc.library@{ub} @{i}nicht@{ui} installiert
-     ist, wenn du nicht tatsächlich einen PowerPC eingebaut hast.
-
-@{i}Der Emulator wird erkannt, ich bekomme aber keine Informationen über das Hostsystem@{ui}
-     Die Informationen werden nur von AmigaXL geliefert. Andere
-     Emulatoren wie UAE liefern keine Informationen über das
-     emulierende System.
+  https://github.com/shred/identify/blob/master/docs/faq.md
 
 @EndNode
 
@@ -529,7 +515,7 @@ FAQ
 History
 *******
 
-@{i}V 38.0@{ui} (30.11.2021)
+@{i}V 38.0@{ui} (04.12.2021)
         @{b}*@{ub} Offizielles Update, vollständig überarbeiteter Quelltext
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
         @{b}*@{ub} Alle AmigaOS bis zum aktuellen 3.2 werden erkannt
@@ -781,64 +767,43 @@ History
 @Prev "History"
 @Toc "Main"
 
-Credits
-*******
+Danksagungen
+************
 
-Ich möchte mich besonders bei folgenden Leuten bedanken (ohne Reihenfolge):
+Dieses Projekt hätte ohne die Hilfe der Amiga-Community niemals realisiert werden können!
 
-@{i}Andreas Gelhausen@{ui}
-     für Scout, seine Board-Liste und seine Ideen und Anregungen.
-
-@{i}Martin Wietfeld@{ui}
-     für seine riesige Board-Liste.
-
-@{i}Markus Pöllmann@{ui}
-     für die Informationen zu AmigaXL.
-
-@{i}Axel Dörfler@{ui}
-     für die Verwendung der Library in XOpa und für die PASCAL-Includes.
+Zuerst möchte ich allen danken, die aktiv zu diesem Projekt beigetragen haben:
 
 @{i}Frank Wille@{ui}
-     für den hervorragenden @{b}PhxAss@{ub}-Assembler, seine Tips, seine Hilfe
-     und für die PPC-Taktermittlung unter WarpOS.
+      für seine Ideen, seine Hilfe, den PPC-Code, die zahlreichen
+      Tests, und nicht zuletzt für den großartigen @{b}vasm@{ub}.
 
-@{i}Thomas Kessler@{ui}
-     für seine vielen Ideen.
-
-@{i}Geert Uytterhoeven@{ui}
-     für seine Board-Liste und die Beschreibung der GVP-Codes.
-
-@{i}Dietmar Lakotta@{ui}
-     dafür, dass er mir gezeigt hat, wie man MiamiDx erkennen kann.
+@{i}Axel Dörfler@{ui}
+      für die PASCAL-Includedateien.
 
 @{i}Roger Hågensen@{ui}
-     für die Amiga-E-Includedateien und seine Ideen.
+      für die Amiga-E-Includedateien und seine Tipps. (Leider
+      mussten die Includedateien entfernt werden, da es keinen
+      Linux-basierten E-Compiler gibt.)
 
 @{i}Dámaso D. Estévez@{ui}
-     für die HiSoft/Maxon-BASIC-Includes
+      für die HiSoft/Maxon-BASIC Includedateien.
 
-@{i}Atéo Concepts (M. Lagier)@{ui}
-     dafür, dass sie als erster Hersteller auf meine Anfrage
-     bezüglich der Manufacturer- und Product-IDs geantwortet haben.
+Ich möchte mich auch bei allen bedanken, die im größeren Umfang Erweiterungs-IDs
+beigetragen haben (in alphabetischer Reihenfolge):
 
-@{i}Andreas Schlick, Kai Schindelka und Thomas Schürger@{ui}
-     für ihre unermüdliche Hilfe.
-
-@{i}Timo Ronkko@{ui}
-     für seinen genialen Tip!
-
-@{i}Colin Thompson@{ui}
-     für seine field tests, Prüfung meiner Übersetzungen und seine
-     nützlichen Tips.
-
+@{i}Andreas Gelhausen@{ui}
 @{i}Kössi@{ui}
-     für seine vielen Karten, seiner Hilfestellung bei
-     TexInfo-Problemen und seinem Debugger-Talent.
+@{i}M. Lagier (Atéo Concepts)@{ui}
+@{i}Geert Uytterhoeven@{ui}
+@{i}Martin Wietfeld@{ui}
 
-@{i}Thore Böckelmann@{ui}
-     dafür, dass der das Identify-Projekt am Leben hielt.
+Wenn du Identify in deiner Landessprache verwenden kannst, spende deinen
+Applaus bitte deinem Übersetzer:
 
-@{i}...und alle, die ihre Boards bei mir gemeldet haben!@{ui}
+@{i}David Lo Buglio@{ui} - Italiano
+
+Und natürlich möchte ich allen danken, die ich vergessen habe zu erwähnen!
 
 Macht weiter so!
 

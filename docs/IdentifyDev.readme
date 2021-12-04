@@ -21,7 +21,7 @@ projects:
   - C header files
   - PASCAL include files
   - FD file
-  - cd files for translations into your language
+  - Catalog files for translations into your language
   - C example showing how to use identify with MUI
   - ARexx examples
   - Installer examples

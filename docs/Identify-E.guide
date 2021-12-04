@@ -301,16 +301,19 @@ programs. If you read the different results, please keep this in mind:
      planar feature.
 
 @{b}AGNUS@{ub}
-     What Agnus chip revision is mounted in your system?
+     What Agnus/Alice chip revision is mounted in your system?
 
 @{b}AGNUSMODE@{ub}
      What Agnus mode is selected (PAL or NTSC)?
 
 @{b}DENISE@{ub}
-     What Denise chip is mounted in your system?
+     What Denise/Lisa chip is mounted in your system?
 
 @{b}DENISEREV@{ub}
      What Denise revision is it? (Usually, this is not known, or 0).
+
+@{b}PAULA@{ub}
+     What Paula chip is mounted in your system?
 
 @{b}POWERPC@{ub}
      Which PowerPC is available?
@@ -326,8 +329,7 @@ programs. If you read the different results, please keep this in mind:
      recognized.
 
 @{b}OSVER@{ub}
-     The version of the AmigaOS ROM. If you mapped a ROM from a
-     kickstart file, this version will be used.
+     The version of the AmigaOS that is actually running.
 
 @{b}OSNR@{ub}
      The (usual) version of the AmigaOS, e.g. @{b}3.0@{ub}.
@@ -343,6 +345,10 @@ programs. If you read the different results, please keep this in mind:
 
 @{b}SETPATCHVER@{ub}
      Version of the SetPatch command, if available.
+
+@{b}ROMVER@{ub}
+     Version of the AmigaOS ROM that is installed on hardware side. If you
+     mapped a ROM from a kickstart file, this version might be shown instead.
 
 @{b}GFXSYS@{ub}
      The used Graphic system, e.g. @{b}CyberGraphX@{ub}. If you use multiple
@@ -380,7 +386,7 @@ programs. If you read the different results, please keep this in mind:
 
 @{b}ROMSIZE@{ub}
      The size of AmigaOS ROM. If you mapped a ROM file, the size of the
-     file will be returned.
+     file might be returned instead.
 
 @{b}VBLANKFREQ@{ub}
      Frequency of VBlank interrupt.
@@ -394,6 +400,9 @@ programs. If you read the different results, please keep this in mind:
 
 @{b}LASTALERT@{ub}
      The recent system alert.
+
+@{b}LASTALERTTASK@{ub}
+     Task that caused the recent system alert.
 
 @{b}RAMACCESS@{ub}
      Access time of the @{i}motherboard@{ui} RAM, if available. The access time
@@ -445,27 +454,9 @@ programs. If you read the different results, please keep this in mind:
 Frequently Asked Questions
 **************************
 
-@{i}An enforcer hit occurs while analysing the system.@{ui}
-     This hit is necessary on some systems to read the last alert code.
-     It is harmless.
+A FAQ can be found online here:
 
-@{i}The CPU/FPU clock isn't accurate.@{ui}
-     Measuring the clock requires real Fast RAM for best results, else
-     there may occur major faults.
-
-@{i}The PowerPC clock isn't accurate.@{ui}
-     This is a bug in the @{b}ppc.library@{ub}.
-
-@{i}The PowerPC clock isn't available.@{ui}
-     This occurs with some processors using WarpOS.
-
-@{i}The system crashes at system queries (e.g. ListExp).@{ui}
-     Make sure that you have @{i}not@{ui} installed the @{b}ppc.library@{ub} if you do
-     not really have a PowerPC.
-
-@{i}Emulation is detected properly, but I do not get information about the host system@{ui}
-     Only AmigaXL provides information about the emulation host. Other
-     emulators like UAE do not provide them.
+  https://github.com/shred/identify/blob/master/docs/faq.md
 
 @EndNode
 
@@ -477,7 +468,7 @@ Frequently Asked Questions
 History
 *******
 
-@{i}V 38.0@{ui} (30.11.2021)
+@{i}V 38.0@{ui} (2021-12-04)
         @{b}*@{ub} Official update, completely reworked source code
         @{b}*@{ub} Added more manufacturers and boards
         @{b}*@{ub} Detects all AmigaOS up to the current 3.2
@@ -719,60 +710,39 @@ History
 Credits
 *******
 
-I want to especially thank these people (in no special order):
+This project could have never been realized without the help of the Amiga community!
 
-@{i}Andreas Gelhausen@{ui}
-     for Scout, his board list and his ideas.
-
-@{i}Martin Wietfeld@{ui}
-     for his great board list!
-
-@{i}Markus Pöllmann@{ui}
-     for providing me information about AmigaXL
-
-@{i}Axel Dörfler@{ui}
-     for using Identify in XOpa, and the PASCAL includes.
+First of all, I'd like to thank everyone who actively contributed to this project:
 
 @{i}Frank Wille@{ui}
-     for his great @{b}PhxAss@{ub} assembler, his hints and all his help,
-     especially for the WarpOS PPC clock source.
+      for his hints, his help, his PPC code contribution, all
+      the testing, and last but not least for the great @{b}vasm@{ub}.
 
-@{i}Thomas Kessler@{ui}
-     for his many ideas.
-
-@{i}Dietmar Lakotta@{ui}
-     for showing me how to detect MiamiDx.
-
-@{i}Geert Uytterhoeven@{ui}
-     for his board list and the description of the GVP codes.
+@{i}Axel Dörfler@{ui}
+      for the PASCAL include files.
 
 @{i}Roger Hågensen@{ui}
-     for the Amiga-E include files and his hints.
+      for the Amiga-E include files and his hints. (Sadly these
+      files had to be removed because there is no Linux based
+      E compiler.)
 
 @{i}Dámaso D. Estévez@{ui}
-     for the HiSoft/Maxon-BASIC includes files
+      for the HiSoft/Maxon-BASIC includes files.
 
-@{i}Atéo Concepts (M. Lagier)@{ui}
-     for being the first manufacturer who actually replied to my mail
-     regarding their manufacturer and product IDs.
+I also like to thank all the people who contributed a bulk of extension IDs
+(in alphabetical order):
 
-@{i}Andreas Schlick, Kai Schindelka and Thomas Schürger@{ui}
-     for their untiring help.
-
-@{i}Timo Ronkko@{ui}
-     for his genious hint!
-
-@{i}Colin Thompson@{ui}
-     for his field tests, checking my translations and his useful hints.
-
+@{i}Andreas Gelhausen@{ui}
 @{i}Kössi@{ui}
-     for his many boards, his help for all my TexInfo problems, and his
-     debug skills.
+@{i}M. Lagier (Atéo Concepts)@{ui}
+@{i}Geert Uytterhoeven@{ui}
+@{i}Martin Wietfeld@{ui}
 
-@{i}Thore Böckelmann@{ui}
-     for his work on keeping the Identify project alive.
+If you can use Identify in your language, please applaud your translator:
 
-@{i}...and everyone who has reported their boards!@{ui}
+@{i}David Lo Buglio@{ui} - Italiano
+
+And of course, I want to thank everyone who I have forgotten to mention here!
 
 Keep on!
 
