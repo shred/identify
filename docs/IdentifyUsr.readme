@@ -4,6 +4,7 @@ Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
 Version:      38.0
 Requires:     AmigaOS 2.0 or higher
+Replaces:     util/libs/Identify.lha; util/libs/IdentifyLibraryItaCat.lha
 Architecture: m68k-amigaos >= 2.0.4
 
 Keywords:     expansion board guru alert function system library check arexx ppc powerpc warpos installer OS3.5 OS3.9 OS3.2
