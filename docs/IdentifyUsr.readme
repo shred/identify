@@ -27,7 +27,7 @@ Features:
   - Tries to give at least a hint if the board name is not known yet
   - Fully FPGA, DraCo, and PowerPC compatible
   - Supports PowerUp and WarpOS
-  - The library is fully localized (catalogs included: Deutsch)
+  - The library is fully localized (catalogs included: Deutsch, Italiano)
   - Use the features in ARexx, with the included rexxidentify.library
   - English and German documentation
 
