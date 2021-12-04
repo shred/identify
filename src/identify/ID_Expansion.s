@@ -1635,7 +1635,7 @@ manuf_tab	tabinit
 		board	  019,"Deneb",			MSG_EXP_USB
 		board	  020,"Deneb",			MSG_EXP_USB
 		board	  032,"ZorRAM",			MSG_EXP_RAM
-		board	  243,"Deneb",			MSG_EXP_USB
+		boarda	  048,"A-Eon","Prisma Megamix",	MSG_EXP_AUDIO
 		endmf	03643
 
 		manuf	03855,"Micronik"
