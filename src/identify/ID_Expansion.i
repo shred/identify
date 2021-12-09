@@ -87,6 +87,9 @@ manuf		MACRO
 		IFNE	\#-2
 		  FAIL	"manuf requires 2 arguments!"
 		ENDC
+		IFLE	\1-__CURRMANUF
+		  FAIL	"manuf not in ascending order!"
+		ENDC
 __GLBMANUF	SET	__GLBMANUF+1
 __BCOUNTER	SET	manuf_SIZEOF
 		dc.w	\1-__CURRMANUF,manuf\@-strbase,__BOARD_\1
@@ -112,6 +115,9 @@ manuf\@		dc.b	\2,0
 board		MACRO
 		IFNE	\#-3
 		  FAIL	"board requires 3 arguments!"
+		ENDC
+		IF	__CURRBOARD>0&&\1<=__CURRBOARD
+		  FAIL	"board not in ascending order!"
 		ENDC
 __GLBBOARD	SET	__GLBBOARD+1
 __BCOUNTER	SET	__BCOUNTER+board_SIZEOF
@@ -139,6 +145,9 @@ boardf		MACRO
 		IFNE	\#-2
 		  FAIL	"boardf requires 2 arguments!"
 		ENDC
+		IF	__CURRBOARD>0&&\1<=__CURRBOARD
+		  FAIL	"boardf not in ascending order!"
+		ENDC
 __BCOUNTER	SET	__BCOUNTER+board_SIZEOF
 		dc.b	\1-__CURRBOARD,0
 		dc.w	__FCODENR
@@ -162,6 +171,9 @@ __CURRBOARD	SET	\1
 boarda		MACRO
 		IFNE	\#-4
 		  FAIL	"boarda requires 4 arguments!"
+		ENDC
+		IF	__CURRBOARD>0&&\1<=__CURRBOARD
+		  FAIL	"boarda not in ascending order!"
 		ENDC
 __GLBBOARD	SET	__GLBBOARD+1
 __BCOUNTER	SET	__BCOUNTER+board_SIZEOF
