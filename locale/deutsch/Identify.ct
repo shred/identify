@@ -177,6 +177,15 @@ Floppy-Interface
 MSG_EXP_USB
 USB-Interface
 ;
+MSG_EXP_KEYBOARD
+Tastatur-Interface
+;
+MSG_EXP_MOUSE
+Mausinterface
+;
+MSG_EXP_SATAHD
+SATA-Kontroller
+;
 MSG_ALERT_RECOVERY
 Recoverable
 ;

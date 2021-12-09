@@ -1565,33 +1565,82 @@ manuf_tab	tabinit
 		manuf	02205,"Laserforum"
 		endmf	02205
 
-		manuf	02206,"Elbox"			; confirmed by Elbox
+		manuf	02206,"Elbox"			; http://www.elbox.com/products_id.html
 		board	  001,"Elbox 500/2MB",		MSG_EXP_RAM
+		board	  002,"Elbox 500/0.5MB",	MSG_EXP_RAM
 		board	  003,"Elbox CDTV/2MB",		MSG_EXP_RAM
 		board	  004,"Elbox CDTV/8MB",		MSG_EXP_RAM
 		board	  006,"Elbox 1200/4MB",		MSG_EXP_RAM
 		board	  007,"Elbox 1200/0-8",		MSG_EXP_RAM
-		board	  008,"FastATA 1200",		MSG_EXP_IDEHD
+		board	  008,"FastATA 1200 MK-I",	MSG_EXP_IDEHD
 		board	  009,"Elbox 1230",		MSG_EXP_TURBO
+		board	  010,"PC Key 1200",		MSG_EXP_KEYBOARD
 		board	  011,"E/Box 1200 Tower",	MSG_EXP_MISC
+		board	  012,"PC Key 600",		MSG_EXP_KEYBOARD
+		board	  013,"Allegro CDFS",		MSG_EXP_CDROM
 		board	  014,"Amiga 1200 E/Box",	MSG_EXP_MISC
 		board	  015,"ScanDoubler/Flickerfixer",MSG_EXP_MISC
 		board	  016,"FastATA 1200 Lite",	MSG_EXP_IDEHD
 		board	  017,"Buffered Interface 4xEIDE\'99",MSG_EXP_IDEHD
 		board	  018,"FastATA 1200",		MSG_EXP_IDEHD
-		board	  019,"FastATA 1200 MKII Gold",	MSG_EXP_IDEHD
-		board	  020,"E/Box 4000 + Zorro III/II busboard",MSG_EXP_MISC
-		board	  024,"FastATA 1200 MKII",	MSG_EXP_IDEHD
-		board	  025,"FastATA 4000",		MSG_EXP_IDEHD
-		board	  026,"Zorro IV busboard",	MSG_EXP_MISC
-		board	  028,"Mroocheck PC Mouse Interface",MSG_EXP_MISC
-		board	  029,"FastATA 4000 MKII",	MSG_EXP_IDEHD
+		board	  019,"FastATA 1200 MK-II Gold",MSG_EXP_IDEHD
+		board	  020,"E/Box 4000 + Zorro III/ISA",MSG_EXP_BUSBRIDGE
+		board	  024,"FastATA 1200 MK-II",	MSG_EXP_IDEHD
+		board	  025,"FastATA 4000 MK-I",	MSG_EXP_IDEHD
+		board	  026,"Zorro IV",		MSG_EXP_BUSBRIDGE
+		board	  027,"Hyperport",		MSG_EXP_INTERFACE
+		board	  028,"Mroocheck PC",		MSG_EXP_MOUSE
+		board	  029,"FastATA 4000 MK-II",	MSG_EXP_IDEHD
 		board	  030,"FastATA Zorro IV",	MSG_EXP_IDEHD
-		board	  031,"Mediator PCI/Zorro IV busboard",MSG_EXP_MISC
-		board	  032,"Mediator PCI 1200 busboard",MSG_EXP_MISC
-		board	  033,"Mediator PCI 4000 Zorro III bridge",MSG_EXP_MISC
-		board	  159,"Mediator PCI Zorro IV memory window",MSG_EXP_MISC
-		board	  160,"Mediator PCI 1200 memory window",MSG_EXP_MISC
+		board	  031,"Mediator Zorro IV PCI",	MSG_EXP_BUSBRIDGE
+		board	  032,"Mediator 1200 PCI",	MSG_EXP_BUSBRIDGE
+		board	  033,"Mediator PCI 4000 Core Logic",MSG_EXP_MISC
+		board	  034,"Elbox 4000 PCI",		MSG_EXP_BUSBRIDGE
+		board	  035,"Mirage 4000 PCI",	MSG_EXP_BUSBRIDGE
+		board	  036,"Elbox 3000 PCI",		MSG_EXP_BUSBRIDGE
+		board	  037,"Elbox Tower PCI",	MSG_EXP_BUSBRIDGE
+		board	  038,"Spider",			MSG_EXP_USB
+		board	  039,"Mirage 3000",		MSG_EXP_MISC
+		board	  040,"Mediator 1200 SX PCI",	MSG_EXP_BUSBRIDGE
+		board	  041,"Elbox 4000Di PCI",	MSG_EXP_BUSBRIDGE
+		board	  042,"Mirage 1200",		MSG_EXP_MISC
+		board	  043,"Spider II",		MSG_EXP_USB
+		board	  044,"eFlash 4000/1MB",	MSG_EXP_FLASHROM
+		board	  045,"eFlash 4000/2MB",	MSG_EXP_FLASHROM
+		board	  046,"Cocolino MK-I",		MSG_EXP_MOUSE
+		board	  047,"eFlash 1200/1MB",	MSG_EXP_FLASHROM
+		board	  048,"Mediator 1200 LT2 PCI",	MSG_EXP_BUSBRIDGE
+		board	  049,"Mediator 1200 LT4 PCI",	MSG_EXP_BUSBRIDGE
+		board	  050,"Cocolino MK-II",		MSG_EXP_MOUSE
+		board	  051,"Cocolino MK-III",	MSG_EXP_MOUSE
+		board	  052,"Elbox 500/8MB",		MSG_EXP_RAM
+		board	  053,"FastATA 1200 MK-III",	MSG_EXP_IDEHD
+		board	  054,"(AG4)",			MSG_EXP_UNKNOWN
+		board	  055,"D-Box 1200",		MSG_EXP_MISC
+		board	  056,"Dragon 1200 PCI/AGP",	MSG_EXP_BUSBRIDGE
+		board	  057,"Dragon 1200 ColdFire",	MSG_EXP_TURBO
+		board	  058,"(SL)",			MSG_EXP_UNKNOWN
+		board	  059,"(ME8)",			MSG_EXP_UNKNOWN
+		board	  060,"Mediator 1200 TX PCI",	MSG_EXP_BUSBRIDGE
+		board	  061,"(F44)",			MSG_EXP_UNKNOWN
+		board	  062,"FastATA 4000 MK-V",	MSG_EXP_IDEHD
+		board	  063,"Mediator PCI 4000 Core Logic",MSG_EXP_MISC
+		board	  064,"FastATA 1200 MK-IV",	MSG_EXP_IDEHD
+		board	  065,"FastATA 1200 MK-IV",	MSG_EXP_SATAHD
+		board	  066,"FastATA 1200 ZIV",	MSG_EXP_SATAHD
+		board	  067,"FastATA 4000 MK-VI/MK-VII",MSG_EXP_SATAHD ; MK6: BotROM 6.0-8.0, MK7: BotROM 9.0
+		board	  068,"Elbox 3000Di PCI",	MSG_EXP_BUSBRIDGE
+		board	  069,"FastATA 1200 MK-V",	MSG_EXP_SATAHD
+		board	  071,"BlackBOX 1200",		MSG_EXP_MISC
+		board	  072,"BlackBOX 1200 MK-II",	MSG_EXP_MISC
+		board	  159,"Mediator PCI Zorro IV",	MSG_EXP_RAM
+		board	  160,"Mediator PCI 1200",	MSG_EXP_RAM
+		board	  161,"Mediator PCI 4000",	MSG_EXP_RAM
+		board	  168,"Mediator PCI 1200 SX",	MSG_EXP_RAM
+		board	  176,"Mediator PCI 1200 LT2",	MSG_EXP_RAM
+		board	  177,"Mediator PCI 1200 LT4",	MSG_EXP_RAM
+		board	  188,"Mediator PCI 1200 TX",	MSG_EXP_RAM
+		board	  191,"Mediator PCI 4000",	MSG_EXP_RAM	; MK-II/MK-III
 		endmf	02206
 
 		manuf	02207,"Applied Magic"

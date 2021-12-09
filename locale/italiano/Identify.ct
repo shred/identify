@@ -223,7 +223,7 @@ interfaccia
 ; interface
 ;
 MSG_EXP_MFMHD
-Controller MFM HD
+controller MFM HD
 ; MFM HD controller
 ;
 MSG_EXP_FLOPPY
@@ -233,6 +233,18 @@ interfaccia floppy disk
 MSG_EXP_USB
 interfaccia USB
 ; USB interface
+;
+MSG_EXP_KEYBOARD
+interfaccia tastiera
+; Keyboard interface
+;
+MSG_EXP_MOUSE
+interfaccia mouse
+; Mouse interface
+;
+MSG_EXP_SATAHD
+controller SATA
+; SATA controller
 ;
 ;================================================================
 ;       ALERT GENERAL ERROR (1024..)
