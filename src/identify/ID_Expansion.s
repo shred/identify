@@ -1859,6 +1859,7 @@ manuf_tab	tabinit
 		board	  067,"CyberVision 3D",		MSG_EXP_GFX
 		board	  068,"CyberVision PPC",	MSG_EXP_GFX
 		boardf	  100,f_phase5_100
+		board	  101,"G-Rex 1200",		MSG_EXP_BUSBRIDGE
 		board	  110,"Blizzard PPC",		MSG_EXP_TURBOSCSIHD
 		endmf	08512
 
