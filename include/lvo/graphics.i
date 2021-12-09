@@ -161,6 +161,7 @@ _GFXFreeSpriteData		EQU	-1032
 _GFXSetRPAttrsA			EQU	-1038
 _GFXGetRPAttrsA			EQU	-1044
 _GFXBestModeIDA			EQU	-1050
+_GFXWriteChunkyPixels		EQU	-1056	;Kick 3.1
 
 gfx		MACRO
 		IFNC	"\0","q"
