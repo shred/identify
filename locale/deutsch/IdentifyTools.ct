@@ -115,6 +115,13 @@ MSG_LISTEXP_BOARDLINE_WIDE
              %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n\
 
 ;
+MSG_LISTEXP_UNKNOWN
+\n\
+Mindestens eine Erweiterung ist noch nicht bekannt. Bitte sende diese\n\
+Ausgabe an das Identify-Projekt, siehe: %s .\n\
+Vielen Dank für deine Hilfe!\n\n\
+
+;
 MSG_GURU_HAIL
 -- Guru V%s -- %s\n\n
 ;

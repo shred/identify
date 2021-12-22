@@ -523,6 +523,7 @@ History
         @{b}*@{ub} OSVER liefert nun auch das BoingBag. BOINGBAG ist veraltet.
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
         @{b}*@{ub} ListExp: WIDE-Option hinzugefügt
+        @{b}*@{ub} ListExp zeigt eine Nachricht bei unbekannten Boards
 
 @{i}V 38.0@{ui} (04.12.2021)
         @{b}*@{ub} Offizielles Update, vollständig überarbeiteter Quelltext

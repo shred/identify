@@ -103,6 +103,13 @@ MSG_LISTEXP_BOARDLINE_WIDE
              %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n\
 
 ;
+MSG_LISTEXP_UNKNOWN
+\n\
+Almeno un'estensione non è ancora nota. Si prega di inviare questo output\n\
+al progetto Identify, vedi: %s .\n\
+Grazie per il vostro aiuto!\n\n\
+
+;
 ;
 MSG_GURU_HAIL
 -- Guru V%s -- %s\n\n

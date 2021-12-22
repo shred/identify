@@ -81,6 +81,11 @@ struct IdentifyBase {
 #define IDTAG_NULL4NA     (_IDTAGS+0x10)  /* BOOL return NULL for not available */
                                           /*  else return a string (defaults to */
                                           /*  FALSE) [V8] */
+#define IDTAG_UnknownFlag (_IDTAGS+0x11)  /* UBYTE * A flag that will be set to */
+                                          /* TRUE if the current expansion was not */
+                                          /* found in the database. The content */
+                                          /* will not be changed if the expansion */
+                                          /* was found. [V39] */
 
 /*
  * Hardware description types

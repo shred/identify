@@ -476,6 +476,7 @@ History
         @{b}*@{ub} Supports AmigaOS 3.2.1
         @{b}*@{ub} Added more manufacturers and boards
         @{b}*@{ub} ListExp: Added WIDE option
+        @{b}*@{ub} ListExp shows a message on unknown boards
 
 @{i}V 38.0@{ui} (2021-12-04)
         @{b}*@{ub} Official update, completely reworked source code

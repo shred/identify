@@ -74,6 +74,11 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDTAG_NULL4NA     = _IDTAGS+$10; { BOOL return NULL for not available, }
                                         { else return a string (defaults to }
                                         { FALSE) [V8] }
+       IDTAG_UnknownFlag = _IDTAGS+$11; { UBYTE * A flag that will be set to }
+                                        { TRUE if the current expansion was not }
+                                        { found in the database. The content }
+                                        { will not be changed if the expansion }
+                                        { was found. [V39] }
 
 { Hardware description types }
 

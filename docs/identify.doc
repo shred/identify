@@ -187,6 +187,10 @@ identify.library/IdHardwareUpdate
                 only, TRUE for localized strings. This is useful for applications
                 with English as only language. Defaults to TRUE.
 
+        IDTAG_UnknownFlag       -- [V39] (UBYTE *) If the expansion is not
+                known to Identify, this flag is set to TRUE. Otherwise the
+                flag is not touched.
+
    EXAMPLE
         To check all expansion boards, you may use this code:
 

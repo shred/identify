@@ -111,6 +111,11 @@ MSG_LISTEXP_BOARDLINE_WIDE (//)
 %2ld %5ld/%3ld %-20s %-20s %s\n\
              %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n
 ;
+MSG_LISTEXP_UNKNOWN (//)
+\n\
+At least one expansion in your system is not known yet. Please send this\n\
+output to the Identify project, see: %s .\n\
+Your help is appreciated. Thank you!\n\n
 ;
 ;
 ;================================================================

@@ -128,8 +128,18 @@ Start	;-- open resources
 .nocx		lea	(msg_newline,PC),a0
 		move.l	a0,d1
 		dos	PutStr
+	;-- something unknwn?
+.done		move.b	(unkflag,PC),d0
+		beq	.cleanup
+		move.l	#MSG_LISTEXP_UNKNOWN,d0
+		bsr	GetLocString
+		move.l	a0,d1
+		pea	(url,PC)
+		move.l	SP,d2
+		dos	VPrintf
+		addq.l	#4,SP
 	;-- done
-.done		move.l	(identifybase,PC),a1
+.cleanup	move.l	(identifybase,PC),a1
 		exec	CloseLibrary
 		move.l	(args,PC),d1
 		dos	FreeArgs
@@ -311,6 +321,8 @@ ExpList		move.l	SP,d7			; remember stack
 		dos	PutStr
 	;-- iterate through list
 .loop		pea	TAG_DONE.w
+		pea	(unkflag,PC)
+		pea	IDTAG_UnknownFlag
 		pea	(buf_class,PC)
 		pea	IDTAG_ClassStr
 		pea	(buf_prod,PC)
@@ -533,6 +545,8 @@ identifybase	dc.l	0
 localebase	dc.l	0
 MyCatalog	dc.l	0
 args		dc.l	0
+unkflag		dc.b	0
+		even
 
 	;-- Arguments
 		rsreset

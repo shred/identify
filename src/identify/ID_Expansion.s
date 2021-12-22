@@ -93,6 +93,7 @@ exp_ProdStr	fo.l	1	; ^Product string
 exp_ClassStr	fo.l	1	; ^Class string
 exp_ClassID	fo.l	1	; ^Class ID string
 exp_ReturnCode	fo.l	1	; Return code
+exp_UnknownFlag	fo.l	1	; ^Flag if board is unknown
 exp_Secondary	fo.b	1	; Secondary warnings
 exp_GotID	fo.b	1	; Is it a valid ID for searching?
 exp_Localize	fo.b	1	; Is the result to be localized?
@@ -104,6 +105,7 @@ exp_SIZEOF	fo.w	0
 		public	IdExpansion
 IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		link	a4,#exp_SIZEOF
+	;-- clear the structure
 		moveq	#((exp_ConfigDev-exp_StrLength)/2)-1,d0
 		lea	(exp_ConfigDev,a4),a1
 .clear		clr	-(a1)
@@ -119,28 +121,30 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		move.l	d0,a0
 		move.l	(a0)+,d0		; tag key
 		move.l	(a0),d1			; tav value
-		sub.l	#IDTAG_ConfigDev,d0	; IDTAG_ConfigDev ?
+		sub.l	#IDTAG_ConfigDev,d0			; IDTAG_ConfigDev ?
 		beq	.configdev
-		subq.l	#1,d0			; IDTAG_ManufID ?
+		subq.l	#IDTAG_ManufID-IDTAG_ConfigDev,d0	; IDTAG_ManufID ?
 		beq	.manufid
-		subq.l	#1,d0			; IDTAG_ProdID ?
+		subq.l	#IDTAG_ProdID-IDTAG_ManufID,d0		; IDTAG_ProdID ?
 		beq	.prodid
-		subq.l	#1,d0			; IDTAG_StrLength ?
+		subq.l	#IDTAG_StrLength-IDTAG_ProdID,d0	; IDTAG_StrLength ?
 		beq	.strlength
-		subq.l	#1,d0			; IDTAG_ManufStr ?
+		subq.l	#IDTAG_ManufStr-IDTAG_StrLength,d0	; IDTAG_ManufStr ?
 		beq	.manufstr
-		subq.l	#1,d0			; IDTAG_ProdStr ?
+		subq.l	#IDTAG_ProdStr-IDTAG_ManufStr,d0	; IDTAG_ProdStr ?
 		beq	.prodstr
-		subq.l	#1,d0			; IDTAG_ClassStr ?
+		subq.l	#IDTAG_ClassStr-IDTAG_ProdStr,d0	; IDTAG_ClassStr ?
 		beq	.classstr
-		subq.l	#6,d0			; IDTAG_Expansion ?
+		subq.l	#IDTAG_Expansion-IDTAG_ClassStr,d0	; IDTAG_Expansion ?
 		beq	.expansion
-		subq.l	#1,d0			; IDTAG_Secondary ?
+		subq.l	#IDTAG_Secondary-IDTAG_Expansion,d0	; IDTAG_Secondary ?
 		beq	.secondary
-		subq.l	#1,d0			; IDTAG_ClassID ?
+		subq.l	#IDTAG_ClassID-IDTAG_Secondary,d0	; IDTAG_ClassID ?
 		beq	.classid
-		subq.l	#1,d0			; IDTAG_Localize ?
+		subq.l	#IDTAG_Localize-IDTAG_ClassID,d0	; IDTAG_Localize ?
 		beq	.localized
+		subq.l	#IDTAG_UnknownFlag-IDTAG_Localize,d0	; IDTAG_UnknownFlag ?
+		beq	.unkflag
 		bra	.tagloop		; unknown tag, ignore it
 	;-- set tags
 .configdev	move.l	d1,a5
@@ -189,6 +193,8 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 .localized	tst.l	d1
 		sne	(exp_Localize,a4)
 		bra	.tagloop
+.unkflag	move.l	d1,(exp_UnknownFlag,a4)
+		bra	.tagloop
 	;-- prepare search
 .tagdone	tst.b	(exp_GotID,a4)		; is there anything to search?
 		beq	.err_badid
@@ -197,8 +203,14 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		move	(exp_ManufID,a4),d0
 		move	(exp_ProdID,a4),d1
 		bsr	GetBoard
+		move.l	a1,d1			; do we know this expansion?
+		bne	.evaluate
+		move.l	(exp_UnknownFlag,a4),d1	; unknown flag present?
+		beq	.evaluate
+		move.l	d1,a3
+		st	(a3)			;   yes: set to true
 	;-- is the manufacturer ID unknown?
-		tst.l	(exp_ManufStr,a4)	; do we want to have a manuf. anyway?
+.evaluate	tst.l	(exp_ManufStr,a4)	; do we want to have a manuf. anyway?
 		beq	.manufdone
 		move.l	a0,d1
 		bne	.manufok
@@ -314,6 +326,7 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		bne	.divloop		; until value is zero
 		move.b	#"#",-(a0)		; prepend hash
 		rts
+
 
 **
 * Finds a board in the expansion database.
