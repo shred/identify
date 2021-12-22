@@ -29,13 +29,13 @@ DOCP      = docs
 
 ID_OBJS   = $(OBJP)/ID_Main.o $(OBJP)/ID_Support.o $(OBJP)/ID_Hardware.o \
 			$(OBJP)/ID_Locale.o $(OBJP)/ID_Functions.o $(OBJP)/ID_Expansion.o \
-			$(OBJP)/ID_Clockfreq.o $(OBJP)/ID_Alerts.o \
+			$(OBJP)/ID_Database.o $(OBJP)/ID_Clockfreq.o $(OBJP)/ID_Alerts.o \
 			$(OBJP)/ppcgetinfo.o $(OBJP)/ppccpuclock.o \
 			$(OBJP)/ID_EndCode.o
 
 ID_OBJS_000 = $(OBJP)/000/ID_Main.o $(OBJP)/000/ID_Support.o $(OBJP)/000/ID_Hardware.o \
 			$(OBJP)/000/ID_Locale.o $(OBJP)/000/ID_Functions.o $(OBJP)/000/ID_Expansion.o \
-			$(OBJP)/000/ID_Clockfreq.o $(OBJP)/000/ID_Alerts.o \
+			$(OBJP)/000/ID_Database.o $(OBJP)/000/ID_Clockfreq.o $(OBJP)/000/ID_Alerts.o \
 			$(OBJP)/ppcgetinfo.o $(OBJP)/ppccpuclock.o \
 			$(OBJP)/ID_EndCode.o
 
