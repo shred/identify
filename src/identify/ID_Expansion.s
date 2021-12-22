@@ -1671,7 +1671,7 @@ manuf_tab	tabinit
 		board	  003,"68030TK",		MSG_EXP_TURBO	; by Matze
 		board	  004,"68030TK IDE controller",	MSG_EXP_IDEHD	; by Matze
 		board	  005,"Nova-Thylacine Rev.1",	MSG_EXP_UNKNOWN	; by crasbe & ACT Australia
-		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_UNKNOWN	; by crasbe & ACR Australia
+		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_UNKNOWN	; by crasbe & ACT Australia
 		endmf	02588
 
 		manuf	02640,"Micronik"
