@@ -66,8 +66,8 @@ Chips:   %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
 \t DMA:   %s (Modus: %s)\n\
 \t Video: %s (Revision: %s)\n\
 \t Audio: %s\n\
-AmigaOS: %s (%s, BoingBag %s, SetPatch %s)\n\
-         Exec %s   Workbench %s   ROM %s\n\
+AmigaOS: %s (%s, SetPatch %s, ROM %s)\n\
+         Exec %s   Workbench %s   BoingBag %s\n\
 Sys-Erw: GrafikOS: %s, AudioOS: %s, TCP/IP: %s\n\
 Takte:   Netz %s, VBlank %s, E %s\n\
 RAM:     Motherboard %s bit, %s, %s CAS, %sfache Bandbreite\n\

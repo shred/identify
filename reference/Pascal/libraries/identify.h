@@ -199,7 +199,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDOS_2_05       = 8;     { OS2.05  (V37.299+) }
        IDOS_3_2_PROTO  = 9;     { OS3.2   (V43, Walker prototype) }
        IDOS_3_1_4      = 10;    { OS3.1.4 (V46 by Hyperion) }
-       IDOS_3_2        = 11;    { OS3.9   (V47 by Hyperion) }
+       IDOS_3_2        = 11;    { OS3.2   (V47.96 by Hyperion) }
+       IDOS_3_2_1      = 12;    { OS3.2.1 (V47.102 by Hyperion) }
 
 { IDHW_CHIPSET numerical result codes }
 

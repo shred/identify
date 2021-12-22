@@ -1226,15 +1226,38 @@ do_WbVer	lea	(versionname,a4),a1
 **
 * AmigaOS Version (e.g. OS 3.1).
 *
-do_OsNr;-- get versions
-		move.l	(execbase,PC),a0
-		move	(SoftVer,a0),d1		; D1: ROM Revision
-		move	(LIB_VERSION,a0),d0	; D0: Kickstart Version
-	;-- test AmigaOS versions
-		moveq	#IDOS_3_2,d3		; AmigaOS 3.2
+do_OsNr	;-- get version.library version
+		moveq	#0,d2
+		lea	(versionname,a4),a1
+		moveq	#0,d0
+		exec	OpenLibrary
+		tst.l	d0
+		beq	.noversion
+		move.l	d0,a1
+		move	(LIB_VERSION,a1),d3
+		move	(LIB_REVISION,a1),d2
+		exec.q	CloseLibrary
+	;-- get versions
+.noversion	move.l	(execbase,PC),a0
+		move	(SoftVer,a0),d1
+		move	(LIB_VERSION,a0),d0
+		cmp	d0,d3			; exec and version rev must match
+		beq	.match
+		moveq	#0,d2			; otherwise invalidate wb rev
+.match	;-- test AmigaOS versions
+	;  D0: Kickstart Version
+	;  D1: ROM Revision
+	;  D2: Workbench Revision
 		cmp	#47,d0
-		beq	.found
-		moveq	#IDOS_3_1_4,d3		; AmigaOS 3.1.4
+		bne	.not_47
+		moveq	#IDOS_3_2_1,d3		; AmigaOS 3.2.1 (>= 47.102)
+		cmp	#102,d1
+		bge	.found			;   (3.2.1 ROM was found)
+		cmp	#3,d2
+		bge	.found			;   (3.2.1 module was found)
+		moveq	#IDOS_3_2,d3		; AmigaOS 3.2
+		bra	.found
+.not_47		moveq	#IDOS_3_1_4,d3		; AmigaOS 3.1.4
 		cmp	#46,d0
 		beq	.found
 		moveq	#IDOS_3_9,d3		; AmigaOS 3.9

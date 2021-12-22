@@ -472,6 +472,7 @@ History
 *******
 
 @{i}V 38.1@{ui}
+        @{b}*@{ub} Supports AmigaOS 3.2.1
         @{b}*@{ub} Added more manufacturers and boards
         @{b}*@{ub} ListExp: Added WIDE option
 

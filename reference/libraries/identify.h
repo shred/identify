@@ -212,7 +212,8 @@ struct IdentifyBase {
 #define IDOS_2_05       (8)       /*  OS2.05  (V37.299+) */
 #define IDOS_3_2_PROTO  (9)       /*  OS3.2   (V43, Walker prototype) */
 #define IDOS_3_1_4      (10)      /*  OS3.1.4 (V46 by Hyperion) */
-#define IDOS_3_2        (11)      /*  OS3.9   (V47 by Hyperion) */
+#define IDOS_3_2        (11)      /*  OS3.2   (V47.96 by Hyperion) */
+#define IDOS_3_2_1      (12)      /*  OS3.2.1 (V47.102 by Hyperion) */
 
 /*
  * IDHW_CHIPSET numerical result codes

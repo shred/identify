@@ -216,7 +216,8 @@ IDOS_3_9	EQU	7	; OS3.9	  (V45 by Haage&Partner)
 IDOS_2_05	EQU	8	; OS2.05  (V37.299+)
 IDOS_3_2_PROTO	EQU	9	; OS3.2	  (V43, Walker prototype)
 IDOS_3_1_4	EQU 	10	; OS3.1.4 (V46 by Hyperion)
-IDOS_3_2	EQU	11	; OS3.2   (V47 by Hyperion)
+IDOS_3_2	EQU	11	; OS3.2   (V47.96 by Hyperion)
+IDOS_3_2_1	EQU	12	; OS3.2.1 (V47.102 by Hyperion)
 
 *
 * IDHW_CHIPSET numerical result codes

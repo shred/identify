@@ -519,6 +519,7 @@ History
 *******
 
 @{i}V 38.1@{ui}
+        @{b}*@{ub} Unterstützt AmigaOS 3.2.1
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
         @{b}*@{ub} ListExp: WIDE-Option hinzugefügt
 

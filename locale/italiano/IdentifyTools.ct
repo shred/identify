@@ -50,9 +50,23 @@ PowerPC:  %s %s (in esecuzione %s)\n
 ; 
 ;
 MSG_LISTEXP_HARDWARE2
-Chipset:  %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\t DMA:   %s (Mode: %s)\n\t Video: %s (Rev: %s)\n\t Audio: %s\nAmigaOS:  %s (%s, BoingBag %s, SetPatch %s)\n          Exec %s   Workbench %s   ROM %s\nSupporto: GraphicOS: \
-%s, AudioOS: %s, TCP/IP: %s\nClock:    Rete %s, VBlank %s, EClock %s\nRAM:      Scheda madre %s bit, %s, %s CAS, %sx larghezza di banda\n\nMemoria:\t   CHIP\t   FAST\t   TOTAL\tROM = %s\tSLOW = %s\n\
-\t  PLAIN\t%7s\t%7s\t%7s\n\tVIRTUAL\t%7s\t%7s\t%7s\n\t  TOTAL\t%7s\t%7s\t%7s\n\n
+Chipset:  %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
+\t DMA:    %s (Mode: %s)\n\
+\t Video:  %s (Rev: %s)\n\
+\t Audio:  %s\n\
+AmigaOS:  %s (%s, SetPatch %s, ROM %s)\n\
+          Exec %s   Workbench %s   BoingBag %s\n\
+Supporto: GraphicOS: %s, AudioOS: %s, TCP/IP: %s\n\
+Clock:    Rete %s, VBlank %s, EClock %s\n\
+RAM:      Scheda madre %s bit, %s, %s CAS, %sx larghezza di banda\n\
+\n\
+Memoria:\t   CHIP\t   FAST\t   TOTAL\tROM = %s\tSLOW = %s\n\
+\t  PLAIN\t%7s\t%7s\t%7s\n\
+\tVIRTUAL\t%7s\t%7s\t%7s\n\
+\t  TOTAL\t%7s\t%7s\t%7s\n\
+\n\
+\n\
+
 ; 
 ;
 MSG_LISTEXP_LISTTITLE
