@@ -1333,10 +1333,13 @@ manuf_tab	tabinit
 		manuf	02145,"Ingenieurb\xFCro Helfrich" ; Omega Datentechnik?
 		board	  032,"Rainbow II",		MSG_EXP_GFX
 		board	  033,"Rainbow III",		MSG_EXP_GFX
+		boarda	  052,"E3B","Algor (Pro)",	MSG_EXP_USB
 		boarda	  128,"Kato","Melody MPEG",	MSG_EXP_AUDIO
 		boarda	  129,"E3B","Unity",		MSG_EXP_ETHERNET
 		boarda	  200,"E3B","Highway",		MSG_EXP_USB
+		boarda	  201,"E3B","Mizar",		MSG_EXP_USB ; Algor Prototype
 		boarda	  203,"E3B","Algor",		MSG_EXP_USB
+		boarda	  232,"E3B","Highway",		MSG_EXP_USB
 		endmf	02145
 
 		manuf	02146,"Atlantis"
@@ -1679,12 +1682,15 @@ manuf_tab	tabinit
 		endmf	03084
 
 		manuf	03643,"E3B"
-		board	  016,"Deneb",			MSG_EXP_USB
-		board	  018,"Deneb",			MSG_EXP_USB
-		board	  019,"Deneb",			MSG_EXP_USB
-		board	  020,"Deneb",			MSG_EXP_USB
-		board	  032,"ZorRAM",			MSG_EXP_RAM
-		boarda	  048,"A-Eon","Prisma Megamix",	MSG_EXP_AUDIO
+		board	  016,"Deneb ZIII",		MSG_EXP_USB
+		board	  018,"Deneb ZII",		MSG_EXP_USB
+		board	  019,"Deneb ROM",		MSG_EXP_USB
+		board	  020,"Deneb ROM Rescue",	MSG_EXP_USB
+		board	  023,"Deneb ZII Clockport",	MSG_EXP_USB
+		board	  032,"BigRam+",		MSG_EXP_RAM
+		board	  033,"BigRam+",		MSG_EXP_RAM
+		board	  048,"Prisma Megamix",		MSG_EXP_AUDIO
+		board	  200,"Prometheus Firestorm Upgrade",MSG_EXP_BUSBRIDGE
 		endmf	03643
 
 		manuf	03855,"Micronik"
@@ -1768,6 +1774,7 @@ manuf_tab	tabinit
 		board	  006,"HyperCOM 4Z+",		MSG_EXP_MULTIIO
 		board	  007,"HyperCOM 3+",		MSG_EXP_MULTIIO
 		boarda	  015,"Michael B\xF6hmer","ICY",MSG_EXP_INTERFACE
+		boarda	  239,"E3B","Highway (Prototype)",MSG_EXP_USB
 		endmf	05001
 
 		manuf	05010,"Amibience Creation Tech"
