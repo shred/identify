@@ -1122,7 +1122,7 @@ manuf_tab	tabinit
 		boarda	  002,"AlfaData","ALF 2",	MSG_EXP_SCSIHD
 		boarda	  003,"AlfaData","ALF 3",	MSG_EXP_SCSIHD
 		boardf	  005,f_bsc_005
-		board	  006,"Tandem AT-2008/508",	MSG_EXP_IDEHD
+		boardf	  006,f_bsc_006
 		boarda	  007,"AlfaData","Alpha RAM 1200",MSG_EXP_RAM
 		board	  008,"Memory Master",		MSG_EXP_RAM
 		board	  016,"Multiface II",		MSG_EXP_MULTIIO
@@ -2459,6 +2459,32 @@ f_bsc_005	move.l	a5,d0			; ConfigDev present?
 	;-- Oktagon 4008
 .o4008		lea	(str_okt4008,a4),a1
 		move.l	#typ_okt4008,d0
+	;-- done
+.done		rts
+
+
+**
+* BSC (02092) ID 006
+*
+		defstr	tandem,"Tandem AT-2008/508",	MSG_EXP_IDEHD
+		defstr	ide68030tk,"68030TK IDE controller", MSG_EXP_IDEHD
+		defstr2 ide68030tkmf,"a1k.org Community"
+
+f_bsc_006	move.l	a5,d0			; ConfigDev present?
+		beq	.istandem		;  no -> return a fixed board
+	;-- 68030TK present?
+		move.l	#2588,d0		; a1k.org Community
+		move.l	#2,d1			; 68030TK RAM
+		bsr	tst_board
+		beq	.istandem
+	;-- 68030TK IDE controller (obsolete ID)
+		lea	(str_ide68030tkmf,a4),a0
+		lea	(str_ide68030tk,a4),a1
+		move.l	#typ_ide68030tk,d0
+		bra	.done
+	;-- Generic Expansion
+.istandem	lea	(str_tandem,a4),a1
+		move.l	#typ_tandem,d0
 	;-- done
 .done		rts
 
