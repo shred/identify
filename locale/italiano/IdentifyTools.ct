@@ -56,11 +56,16 @@ Chipset:  %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\t DMA:   %s (Mode: %s)\n\t
 ; 
 ;
 MSG_LISTEXP_LISTTITLE
-** ESPANSIONI **\n\nNr ID        Indiriz. Dim. Produttore           Prodotto\n----------------------------------------------------------------------------\n
+** ESPANSIONI **\n\
+\n\
+Nr ID        Produttore           Prodotto\n\
+----------------------------------------------------------------------------\n\
+
 ; 
 ;
 MSG_LISTEXP_BOARDLINE
-%2ld %5ld/%3ld %08lx %3ld%lc %-20s %s %s\n
+%2ld %5ld/%3ld %-20s %-20s %s\n\
+
 ; 
 ;
 MSG_LISTEXP_CXTITLE
@@ -70,6 +75,19 @@ MSG_LISTEXP_CXTITLE
 MSG_LISTEXP_CXLINE
 %-24s %-40s\n
 ; 
+;
+MSG_LISTEXP_LISTTITLE_WIDE
+** ESPANSIONI **\n\
+\n\
+Nr ID        Produttore           Prodotto\n\
+             Indirizzo   Dim.     Numero di serie      Zorro (Type/Flags)\n\
+----------------------------------------------------------------------------\n\
+
+;
+MSG_LISTEXP_BOARDLINE_WIDE
+%2ld %5ld/%3ld %-20s %-20s %s\n\
+             %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n\
+
 ;
 ;
 MSG_GURU_HAIL

@@ -39,10 +39,10 @@
 		INCLUDE lvo/locale.i
 
 VERSION		MACRO
-		  dc.b	"13.2"
+		  dc.b	"14.0"
 		ENDM
 DATE		MACRO
-		  dc.b	"30.11.2021"
+		  dc.b	"17.12.2021"
 		ENDM
 
 IDENTIFY_VER	EQU	38
@@ -84,7 +84,7 @@ Start	;-- open resources
 		dos	PutStr
 		bra	.error2
 	;-- open identify
-.parseok	 move.l	#MSG_LISTEXP_HAIL,d0
+.parseok	move.l	#MSG_LISTEXP_HAIL,d0
 		bsr	GetLocString
 		move.l	a0,d1
 		pea	(url,PC)
@@ -305,7 +305,10 @@ ExpList		move.l	SP,d7			; remember stack
 		moveq	#1,d6
 	;-- title row
 		move.l	#MSG_LISTEXP_LISTTITLE,d0
-		bsr	GetLocString
+		move.l	(ArgList+arg_Wide,PC),d1 ; Wide?
+		beq	.nowidetitle
+		move.l	#MSG_LISTEXP_LISTTITLE_WIDE,d0
+.nowidetitle	bsr	GetLocString
 		move.l	a0,d1
 		dos	PutStr
 	;-- iterate through list
@@ -325,9 +328,18 @@ ExpList		move.l	SP,d7			; remember stack
 		bne	.done
 	;-- output
 		move.l	(.expvar,PC),a4
-		pea	(buf_class,PC)		; board name
-		pea	(buf_prod,PC)
-		pea	(buf_manuf,PC)
+	;---- wide
+		moveq	#0,d0			; flags
+		move.b	(cd_Rom+er_Flags,a4),d0
+		move.l	d0,-(sp)
+		move.b	(cd_Rom+er_Type,a4),d0
+		move.l	d0,-(sp) 		; type
+		moveq	#2,d0			; zorro
+		btst.b	#ERFB_ZORRO_III,(cd_Rom+er_Flags,a4)
+		beq	.isz3
+		moveq	#3,d0
+.isz3		move.l	d0,-(sp)
+		move.l	(cd_Rom+er_SerialNumber,a4),-(sp) ; serial
 		move.l	(cd_BoardSize,a4),d0	; board size
 		moveq	#" ",d1
 		cmp.l	#1024,d0		; >1024
@@ -347,18 +359,24 @@ ExpList		move.l	SP,d7			; remember stack
 		moveq	#"G",d1
 .sizeok		move.l	d1,-(sp)
 		move.l	d0,-(sp)
-		move.l	(cd_BoardAddr,a4),-(sp)
+		move.l	(cd_BoardAddr,a4),-(sp) ; board address
+	;---- standard
+		pea	(buf_class,PC)		; board name
+		pea	(buf_prod,PC)
+		pea	(buf_manuf,PC)
 		moveq	#0,d0
 		move.b	(cd_Rom+er_Product,a4),d0
 		move.l	d0,-(sp)
-		moveq	#0,d0
 		move	(cd_Rom+er_Manufacturer,a4),d0
 		move.l	d0,-(sp)
 		move.l	d6,-(sp)
 		addq.l	#1,d6
 		move.l	sp,d2
 		move.l	#MSG_LISTEXP_BOARDLINE,d0
-		bsr	GetLocString
+		move.l	(ArgList+arg_Wide,PC),d1 ; Wide?
+		beq	.nowideline
+		move.l	#MSG_LISTEXP_BOARDLINE_WIDE,d0
+.nowideline	bsr	GetLocString
 		move.l	a0,d1
 		dos	VPrintf
 		bra	.loop
@@ -520,6 +538,7 @@ args		dc.l	0
 
 	;-- Arguments
 		rsreset
+arg_Wide	rs.l	1
 arg_Full	rs.l	1
 arg_Manuf	rs.l	1
 arg_Prod	rs.l	1
@@ -527,7 +546,7 @@ arg_Update	rs.l	1
 arg_SIZEOF	rs.w	0
 
 ArgList		ds.b	arg_SIZEOF
-template	dc.b	"FULL/S,MID=MANUFID/K/N,PID=PRODID/K/N,U=UPDATE/S",0
+template	dc.b	"WIDE/S,FULL/S,MID=MANUFID/K/N,PID=PRODID/K/N,U=UPDATE/S",0
 
 url		dc.b	"https://identify.shredzone.org",0
 versionstr	VERSION

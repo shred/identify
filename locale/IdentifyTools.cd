@@ -87,11 +87,11 @@ Memory:\t\t   CHIP\t   FAST\t  TOTAL\tROM = %s\tSLOW = %s\n\
 ;
 MSG_LISTEXP_LISTTITLE (//)
 ** EXPANSIONS **\n\n\
-Nr ID        Address  Size  Manufacturer         Product\n\
+Nr ID        Manufacturer         Product\n\
 ----------------------------------------------------------------------------\n
 ;
 MSG_LISTEXP_BOARDLINE (//)
-%2ld %5ld/%3ld %08lx %3ld%lcB %-20s %s %s\n
+%2ld %5ld/%3ld %-20s %-20s %s\n
 ;
 MSG_LISTEXP_CXTITLE (//)
 \n\n** COMMODITIES **\n\n\
@@ -100,6 +100,16 @@ Name                     Title\n\
 ;
 MSG_LISTEXP_CXLINE (//)
 %-24s %-40s\n
+;
+MSG_LISTEXP_LISTTITLE_WIDE (//)
+** EXPANSIONS **\n\n\
+Nr ID        Manufacturer         Product\n\
+             Address     Size     Serial               Zorro (Type/Flags)\n\
+----------------------------------------------------------------------------\n
+;
+MSG_LISTEXP_BOARDLINE_WIDE (//)
+%2ld %5ld/%3ld %-20s %-20s %s\n\
+             %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n
 ;
 ;
 ;

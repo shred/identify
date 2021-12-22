@@ -83,12 +83,12 @@ Speicher:\t   CHIP\t   FAST\t GESAMT\tROM = %s\tSLOW = %s\n\
 MSG_LISTEXP_LISTTITLE
 ** ERWEITERUNGEN **\n\
 \n\
-Nr ID        Adresse  Größe Hersteller           Produkt\n\
+Nr ID        Hersteller           Produkt\n\
 ----------------------------------------------------------------------------\n\
 
 ;
 MSG_LISTEXP_BOARDLINE
-%2ld %5ld/%3ld %08lx %3ld%lcB %-20s %s %s\n
+%2ld %5ld/%3ld %-20s %-20s %s\n
 ;
 MSG_LISTEXP_CXTITLE
 \n\
@@ -101,6 +101,18 @@ Name                     Title\n\
 ;
 MSG_LISTEXP_CXLINE
 %-24s %-40s\n\
+
+;
+MSG_LISTEXP_LISTTITLE_WIDE
+** EXPANSIONS **\n\n\
+Nr ID        Hersteller           Produkt\n\
+             Adresse     Größe    Seriennr.            Zorro (Type/Flags)\n\
+----------------------------------------------------------------------------\n\
+
+;
+MSG_LISTEXP_BOARDLINE_WIDE
+%2ld %5ld/%3ld %-20s %-20s %s\n\
+             %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n\
 
 ;
 MSG_GURU_HAIL

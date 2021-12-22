@@ -121,6 +121,9 @@ It describes the hardware components of the system. On the first line it will
 write some hardware parameters (like CPU, Memory). After that, all expansion
 boards will be listed (hopefully by name).
 
+The @{b}WIDE@{ub} option shows further information about each expansion,
+like its address, size, and serial number.
+
 By using the option @{b}FULL@{ub}, all currently used commodities are listed
 too. The output is then useable for bug reports and similar.
 
@@ -467,6 +470,10 @@ A FAQ can be found online here:
 
 History
 *******
+
+@{i}V 38.1@{ui}
+        @{b}*@{ub} Added more manufacturers and boards
+        @{b}*@{ub} ListExp: Added WIDE option
 
 @{i}V 38.0@{ui} (2021-12-04)
         @{b}*@{ub} Official update, completely reworked source code

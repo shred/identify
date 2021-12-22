@@ -128,6 +128,9 @@ wurde. Es werden zunächst einige Hardwareparameter angezeigt (CPU, Speicher
 usw.), anschließend werden alle Erweiterungskarten (hoffentlich namentlich)
 aufgelistet.
 
+Mit der Option @{b}WIDE@{ub} werden weitere Informationen zu jeder Erweiterung
+angezeigt, beispielsweise die Adresse, Größe und Seriennummer.
+
 Durch die Option @{b}FULL@{ub} werden auch alle momentan verwendeten
 Commodities aufgelistet. Diese Ausgabe eignet sich dann hervorragend
 für Bugreports und ähnliches, da das System sehr ausreichend beschrieben
@@ -514,6 +517,10 @@ Eine FAQ in Englisch findest du online unter:
 
 History
 *******
+
+@{i}V 38.1@{ui}
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
+        @{b}*@{ub} ListExp: WIDE-Option hinzugefügt
 
 @{i}V 38.0@{ui} (04.12.2021)
         @{b}*@{ub} Offizielles Update, vollständig überarbeiteter Quelltext
