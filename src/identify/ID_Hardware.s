@@ -1228,69 +1228,92 @@ do_WbVer	lea	(versionname,a4),a1
 *
 do_OsNr	;-- get version.library version
 		moveq	#0,d2
+		moveq	#0,d3
 		lea	(versionname,a4),a1
 		moveq	#0,d0
 		exec	OpenLibrary
 		tst.l	d0
 		beq	.noversion
 		move.l	d0,a1
-		move	(LIB_VERSION,a1),d3
-		move	(LIB_REVISION,a1),d2
+		move	(LIB_VERSION,a1),d2
+		move	(LIB_REVISION,a1),d3
 		exec.q	CloseLibrary
-	;-- get versions
 .noversion	move.l	(execbase,PC),a0
 		move	(SoftVer,a0),d1
 		move	(LIB_VERSION,a0),d0
-		cmp	d0,d3			; exec and version rev must match
-		beq	.match
-		moveq	#0,d2			; otherwise invalidate wb rev
-.match	;-- test AmigaOS versions
+	;-- test AmigaOS versions
 	;  D0: Kickstart Version
 	;  D1: ROM Revision
-	;  D2: Workbench Revision
+	;  D2: Workbench Version
+	;  D3: Workbench Revision
 		cmp	#47,d0
 		bne	.not_47
-		moveq	#IDOS_3_2_1,d3		; AmigaOS 3.2.1 (>= 47.102)
+		moveq	#IDOS_3_2_1,d4		; AmigaOS 3.2.1 (>= 47.102)
 		cmp	#102,d1
 		bge	.found			;   (3.2.1 ROM was found)
-		cmp	#3,d2
+		cmp	#3,d3
 		bge	.found			;   (3.2.1 module was found)
-		moveq	#IDOS_3_2,d3		; AmigaOS 3.2
+		moveq	#IDOS_3_2,d4		; AmigaOS 3.2
 		bra	.found
-.not_47		moveq	#IDOS_3_1_4,d3		; AmigaOS 3.1.4
+
+.not_47		moveq	#IDOS_3_1_4,d4		; AmigaOS 3.1.4
 		cmp	#46,d0
 		beq	.found
-		moveq	#IDOS_3_9,d3		; AmigaOS 3.9
-		cmp	#45,d0
-		beq	.found
-		moveq	#IDOS_3_5,d3		; AmigaOS 3.5
-		cmp	#44,d0
-		beq	.found
-		moveq	#IDOS_3_2_PROTO,d3	; AmigaOS 3.2 (Walker prototype)
+
+		moveq	#IDOS_3_2_PROTO,d4	; AmigaOS 3.2 (Walker prototype)
 		cmp	#43,d0
 		beq	.found
-		moveq	#IDOS_3_1,d3		; AmigaOS 3.1
-		cmp	#40,d0
+
+		cmp	#40,d0			; AmigaOS 3.1, 3.5 or 3.9?
+		bne	.not_40
+
+		moveq	#IDOS_3_9_BB2,d4	; AmigaOS 3.9 BB2
+		cmp	#45,d2
+		bne	.not_wb_45
+		cmp	#3,d3			;   (45.3)
 		beq	.found
-		moveq	#IDOS_3_0,d3		; AmigaOS 3.0
+		moveq	#IDOS_3_9_BB1,d4	; AmigaOS 3.9 BB1
+		cmp	#2,d3			;   (45.2)
+		beq	.found
+		moveq	#IDOS_3_9,d4		; AmigaOS 3.9
+		bra	.found
+
+.not_wb_45	moveq	#IDOS_3_5_BB2,d4	; AmigaOS 3.5 BB2
+		cmp	#44,d2
+		bne	.not_wb_44
+		cmp	#5,d3			;   (44.5)
+		beq	.found
+		moveq	#IDOS_3_5_BB1,d4	; AmigaOS 3.5 BB1
+		cmp	#4,d3			;   (44.4)
+		beq	.found
+		moveq	#IDOS_3_5,d4		; AmigaOS 3.5
+		bra	.found
+
+.not_wb_44	moveq	#IDOS_3_1,d4		; AmigaOS 3.1
+		bra	.found
+
+.not_40		moveq	#IDOS_3_0,d4		; AmigaOS 3.0
 		cmp	#39,d0
 		beq	.found
-		moveq	#IDOS_2_1,d3		; AmigaOS 2.1
+
+		moveq	#IDOS_2_1,d4		; AmigaOS 2.1
 		cmp	#38,d0
 		beq	.found
-		moveq	#IDOS_2_04,d3		; AmigaOS 2.04 (or 2.05)
+
+		moveq	#IDOS_2_04,d4		; AmigaOS 2.04 (or 2.05)
 		cmp	#37,d0
 		bne	.not_37
 		cmp	#299,d1
 		blo	.found
-		moveq	#IDOS_2_05,d3		; AmigaOS 2.05
+		moveq	#IDOS_2_05,d4		; AmigaOS 2.05
 		bra	.found
-.not_37		moveq	#IDOS_2_0,d3		; AmigaOS 2.0
+
+.not_37		moveq	#IDOS_2_0,d4		; AmigaOS 2.0
 		cmp	#36,d0
 		beq	.found
 	;-- unknown OS
-		moveq	#IDOS_UNKNOWN,d3
-.found		move.l	d3,d0
+		moveq	#IDOS_UNKNOWN,d4
+.found		move.l	d4,d0
 		rts
 
 **

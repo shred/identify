@@ -471,7 +471,8 @@ A FAQ can be found online here:
 History
 *******
 
-@{i}V 38.1@{ui}
+@{i}V 39.0@{ui}
+        @{b}*@{ub} OSVER now also gives BoingBag. BOINGBAG is deprecated.
         @{b}*@{ub} Supports AmigaOS 3.2.1
         @{b}*@{ub} Added more manufacturers and boards
         @{b}*@{ub} ListExp: Added WIDE option

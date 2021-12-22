@@ -42,7 +42,7 @@ IDENTIFYNAME	MACRO
 		dc.b	"identify.library",0
 		ENDM
 
-IDENTIFYVERSION EQU	38
+IDENTIFYVERSION EQU	39
 
 	STRUCTURE IdentifyBase,0
 	STRUCT	ifyb_LibNode,LIB_SIZE
@@ -136,8 +136,8 @@ IDHW_AGNUS	EQU	43	; Agnus chip revision
 IDHW_AGNUSMODE	EQU	44	; Agnus chip mode
 IDHW_DENISE	EQU	45	; Denise chip version			[V10]
 IDHW_DENISEREV	EQU	46	; Denise chip revision
-IDHW_BOINGBAG	EQU	47	; BoingBag Version			 [V12]
-IDHW_EMULATED	EQU	48	; Emulated Amiga				[V13]
+IDHW_BOINGBAG	EQU	47	; BoingBag Version (deprecated, part of IDHW_OSNR) [V12]
+IDHW_EMULATED	EQU	48	; Emulated Amiga			[V13]
 IDHW_XLVERSION	EQU	49	; AmigaXL version
 IDHW_HOSTOS	EQU	50	; when emulated: Host OS (see autodocs!)
 IDHW_HOSTVERS	EQU	51	; when emulated: Host Version (see autodocs!)
@@ -218,6 +218,10 @@ IDOS_3_2_PROTO	EQU	9	; OS3.2	  (V43, Walker prototype)
 IDOS_3_1_4	EQU 	10	; OS3.1.4 (V46 by Hyperion)
 IDOS_3_2	EQU	11	; OS3.2   (V47.96 by Hyperion)
 IDOS_3_2_1	EQU	12	; OS3.2.1 (V47.102 by Hyperion)
+IDOS_3_5_BB1	EQU	13	; OS3.5   (V44.4 "Boing Bag 1")
+IDOS_3_5_BB2	EQU	14	; OS3.5   (V44.5 "Boing Bag 2")
+IDOS_3_9_BB1	EQU	15	; OS3.9   (V45.2 "Boing Bag 1")
+IDOS_3_9_BB2	EQU	16	; OS3.9   (V45.3 "Boing Bag 2")
 
 *
 * IDHW_CHIPSET numerical result codes

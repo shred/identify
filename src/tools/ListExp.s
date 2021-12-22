@@ -45,8 +45,6 @@ DATE		MACRO
 		  dc.b	"17.12.2021"
 		ENDM
 
-IDENTIFY_VER	EQU	38
-
 		SECTION strings,DATA
 CATCOMP_BLOCK	SET	1
 		INCLUDE LocaleTools.i
@@ -93,14 +91,14 @@ Start	;-- open resources
 		dos	VPrintf
 		addq.l	#2*4,SP
 		lea	(identifyname,PC),a1
-		moveq	#IDENTIFY_VER,d0
+		moveq	#IDENTIFYVERSION,d0
 		exec	OpenLibrary
 		move.l	d0,identifybase
 		bne	.gotid
 		move.l	#MSG_NOIDENTIFY,d0
 		bsr	GetLocString
 		move.l	a0,d1
-		pea	IDENTIFY_VER.w
+		pea	IDENTIFYVERSION.w
 		move.l	SP,d2
 		dos	VPrintf
 		addq.l	#4,SP

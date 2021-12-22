@@ -518,8 +518,9 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
-@{i}V 38.1@{ui}
+@{i}V 39.0@{ui}
         @{b}*@{ub} Unterstützt AmigaOS 3.2.1
+        @{b}*@{ub} OSVER liefert nun auch das BoingBag. BOINGBAG ist veraltet.
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
         @{b}*@{ub} ListExp: WIDE-Option hinzugefügt
 

@@ -30,7 +30,7 @@ CONST  _IDTAGS      = $CD450000;
 
 { Generic library informations }
 
-CONST  IDENTIFYVERSION = 38;
+CONST  IDENTIFYVERSION = 39;
 
 TYPE   p_IdentifyBase = ^_IdentifyBase;
        _IdentifyBase  = Record
@@ -124,7 +124,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDHW_AGNUSMODE   = 44;  { Agnus chip mode }
        IDHW_DENISE      = 45;  { Denise chip version                   [V10] }
        IDHW_DENISEREV   = 46;  { Denise chip revision }
-       IDHW_BOINGBAG    = 47;  { BoingBag number                       [V12] }
+       IDHW_BOINGBAG    = 47;  { BoingBag Version (deprecated, part of IDHW_OSNR) [V12] }
        IDHW_EMULATED    = 48;  { Emulated Amiga                        [V13] }
        IDHW_XLVERSION   = 49;  { AmigaXL version }
        IDHW_HOSTOS      = 50;  { when emulated: Host OS (see autodocs!) }
@@ -201,6 +201,10 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDOS_3_1_4      = 10;    { OS3.1.4 (V46 by Hyperion) }
        IDOS_3_2        = 11;    { OS3.2   (V47.96 by Hyperion) }
        IDOS_3_2_1      = 12;    { OS3.2.1 (V47.102 by Hyperion) }
+       IDOS_3_5_BB1    = 13;    { OS3.5   (V44.4 "Boing Bag 1") }
+       IDOS_3_5_BB2    = 14;    { OS3.5   (V44.5 "Boing Bag 2") }
+       IDOS_3_9_BB1    = 15;	  { OS3.9   (V45.2 "Boing Bag 1") }
+       IDOS_3_9_BB2    = 16;	  { OS3.9   (V45.3 "Boing Bag 2") }
 
 { IDHW_CHIPSET numerical result codes }
 

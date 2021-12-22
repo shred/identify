@@ -610,6 +610,14 @@ MSG_HW_OS_32            (//49)
 3.2
 MSG_HW_OS_321           (//49)
 3.2.1
+MSG_HW_OS_44_BB1	(//49)
+3.5-BB1
+MSG_HW_OS_44_BB2	(//49)
+3.5-BB2
+MSG_HW_OS_45_BB1	(//49)
+3.9-BB1
+MSG_HW_OS_45_BB2	(//49)
+3.9-BB2
 ;
 ;GARY
 MSG_HW_NORMAL           (6500//49)

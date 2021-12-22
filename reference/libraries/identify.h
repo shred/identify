@@ -38,7 +38,7 @@
 /*
  * Generic library information
  */
-#define IDENTIFYVERSION (38)
+#define IDENTIFYVERSION (39)
 
 struct IdentifyBase {
   struct  Library ifyb_LibNode;
@@ -132,7 +132,7 @@ struct IdentifyBase {
 #define IDHW_AGNUSMODE    (44)    /*  Agnus chip mode */
 #define IDHW_DENISE       (45)    /*  Denise chip version                   [V10] */
 #define IDHW_DENISEREV    (46)    /*  Denise chip revision */
-#define IDHW_BOINGBAG     (47)    /*  BoingBag number                       [V12] */
+#define IDHW_BOINGBAG     (47)    /*  BoingBag Version (deprecated, part of IDHW_OSNR) [V12] */
 #define IDHW_EMULATED     (48)    /*  Emulated Amiga                        [V13] */
 #define IDHW_XLVERSION    (49)    /*  AmigaXL version */
 #define IDHW_HOSTOS       (50)    /*  when emulated: Host OS (see autodocs!) */
@@ -214,6 +214,10 @@ struct IdentifyBase {
 #define IDOS_3_1_4      (10)      /*  OS3.1.4 (V46 by Hyperion) */
 #define IDOS_3_2        (11)      /*  OS3.2   (V47.96 by Hyperion) */
 #define IDOS_3_2_1      (12)      /*  OS3.2.1 (V47.102 by Hyperion) */
+#define IDOS_3_5_BB1    (13)      /*  OS3.5   (V44.4 "Boing Bag 1") */
+#define IDOS_3_5_BB2    (14)      /*  OS3.5   (V44.5 "Boing Bag 2") */
+#define IDOS_3_9_BB1    (15)	    /*  OS3.9   (V45.2 "Boing Bag 1") */
+#define IDOS_3_9_BB2    (16)	    /*  OS3.9   (V45.3 "Boing Bag 2") */
 
 /*
  * IDHW_CHIPSET numerical result codes

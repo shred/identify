@@ -292,6 +292,8 @@ These functions are available since Release 1:
 
     @{b}BOINGBAG@{ub}
           (since Release 10) Returns the BoingBag number, if available.
+          Since Release 39 BoingBag is part of OSVER. This property is
+          now deprecated and should not be used in new code.
 
     @{b}EMULATED@{ub}
           (since Release 11) Returns 0 if this is a real Amiga. Any
