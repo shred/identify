@@ -79,6 +79,9 @@ board		MACRO
 		IF	__CURRBOARD>0&&\1<=__CURRBOARD
 		  FAIL	"board not in ascending order!"
 		ENDC
+		IFEQ	\3-MSG_EXP_UNKNOWN
+		  FAIL	"MSG_EXP_UNKNOWN is not permitted as type"
+		ENDC
 __GLBBOARD	SET	__GLBBOARD+1
 __BCOUNTER	SET	__BCOUNTER+board_SIZEOF
 		dc.b	\1-__CURRBOARD
@@ -134,6 +137,9 @@ boarda		MACRO
 		ENDC
 		IF	__CURRBOARD>0&&\1<=__CURRBOARD
 		  FAIL	"boarda not in ascending order!"
+		ENDC
+		IFEQ	\4-MSG_EXP_UNKNOWN
+		  FAIL	"MSG_EXP_UNKNOWN is not permitted as type"
 		ENDC
 __GLBBOARD	SET	__GLBBOARD+1
 __BCOUNTER	SET	__BCOUNTER+board_SIZEOF

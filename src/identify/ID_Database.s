@@ -134,7 +134,7 @@ manuf_tab	tabinit
 		board	  081,"A2630 68030",		MSG_EXP_TURBOANDRAM
 		board	  084,"A4091",			MSG_EXP_SCSIHD
 		board	  090,"A2065",			MSG_EXP_ETHERNET
-		board	  096,"Romulator",		MSG_EXP_UNKNOWN
+		board	  096,"Romulator",		MSG_EXP_MISC
 		board	  097,"A3000 Test Fixture",	MSG_EXP_MISC
 		board	  103,"A2386 SX",		MSG_EXP_BRIDGE
 		board	  106,"CD\xB3\xB2",		MSG_EXP_SCSIHD
@@ -401,7 +401,7 @@ manuf_tab	tabinit
 		endmf	02009
 
 		manuf	02010,"ByteBox"
-		board	  000,"A500",			MSG_EXP_UNKNOWN
+		board	  000,"A500",			MSG_EXP_MISC
 		endmf	02010
 
 		manuf	02011,"Prototype ID"
@@ -1002,7 +1002,7 @@ manuf_tab	tabinit
 		boarda	  000,"DCE","Viper 520 CD",	MSG_EXP_TURBO
 		board	  003,"MasterCard SC201",	MSG_EXP_RAM
 		board	  004,"MasterCard MC702",	MSG_EXP_SCSIIDE
-		board	  007,"MVD 819",		MSG_EXP_UNKNOWN
+		board	  007,"MVD 819",		MSG_EXP_MISC
 		endmf	02157
 
 		manuf	02158,"HAL"
@@ -1237,14 +1237,14 @@ manuf_tab	tabinit
 		board	  051,"Cocolino MK-III",	MSG_EXP_MOUSE
 		board	  052,"Elbox 500/8MB",		MSG_EXP_RAM
 		board	  053,"FastATA 1200 MK-III",	MSG_EXP_IDEHD
-		board	  054,"(AG4)",			MSG_EXP_UNKNOWN
+		board	  054,"(AG4)",			MSG_EXP_MISC
 		board	  055,"D-Box 1200",		MSG_EXP_MISC
 		board	  056,"Dragon 1200 PCI/AGP",	MSG_EXP_BUSBRIDGE
 		board	  057,"Dragon 1200 ColdFire",	MSG_EXP_TURBO
-		board	  058,"(SL)",			MSG_EXP_UNKNOWN
-		board	  059,"(ME8)",			MSG_EXP_UNKNOWN
+		board	  058,"(SL)",			MSG_EXP_MISC
+		board	  059,"(ME8)",			MSG_EXP_MISC
 		board	  060,"Mediator 1200 TX PCI",	MSG_EXP_BUSBRIDGE
-		board	  061,"(F44)",			MSG_EXP_UNKNOWN
+		board	  061,"(F44)",			MSG_EXP_MISC
 		board	  062,"FastATA 4000 MK-V",	MSG_EXP_IDEHD
 		board	  063,"Mediator PCI 4000 Core Logic",MSG_EXP_MISC
 		board	  064,"FastATA 1200 MK-IV",	MSG_EXP_IDEHD
@@ -1285,12 +1285,12 @@ manuf_tab	tabinit
 		endmf	02560
 
 		manuf	02588,"a1k.org Community"	; see https://www.a1k.org/forum/index.php?threads/40276/
-		board	  001,"Protein_1",		MSG_EXP_UNKNOWN	; by botfixer and crasbe
+		board	  001,"Protein_1",		MSG_EXP_MISC	; by botfixer and crasbe
 		board	  002,"68030TK 4MB 32bit SRAM",	MSG_EXP_RAM	; by Matze
 		board	  003,"68030TK",		MSG_EXP_TURBO	; by Matze
 		board	  004,"68030TK IDE controller",	MSG_EXP_IDEHD	; by Matze
-		board	  005,"Nova-Thylacine Rev.1",	MSG_EXP_UNKNOWN	; by crasbe & ACT Australia
-		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_UNKNOWN	; by crasbe & ACT Australia
+		board	  005,"Nova-Thylacine Rev.1",	MSG_EXP_MISC	; by crasbe & ACT Australia
+		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_MISC	; by crasbe & ACT Australia
 		endmf	02588
 
 		manuf	02640,"Micronik"
@@ -1482,7 +1482,7 @@ manuf_tab	tabinit
 		endmf	05500
 
 		manuf	05768,"Bio-Con"
-		board	  137,"BC-1208MA",		MSG_EXP_UNKNOWN
+		board	  137,"BC-1208MA",		MSG_EXP_MISC
 		endmf	05768
 
 		manuf	06148,"HK-Computer"
@@ -1548,7 +1548,7 @@ manuf_tab	tabinit
 		endmf	08704
 
 		manuf	08738,"ACT"
-		board	  034,"AT-Apollo",		MSG_EXP_UNKNOWN
+		board	  034,"AT-Apollo",		MSG_EXP_MISC
 		boardf	  035,f_apollo_035
 		endmf	08738
 
