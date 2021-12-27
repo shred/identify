@@ -252,7 +252,7 @@ manuf_tab	tabinit
 
 		manuf	01023,"ASDG"
 		board	  001,"2MB",			MSG_EXP_RAM
-		board	  002,"?",			MSG_EXP_RAM
+		board	  002,"8MB",			MSG_EXP_RAM
 		board	  254,"LanRover",		MSG_EXP_ETHERNET
 		board	  255,"GPIB / IEEE-488 / Twin-X (dual)",MSG_EXP_SERIAL
 		endmf	01023
@@ -366,9 +366,14 @@ manuf_tab	tabinit
 		endmf	01282
 
 		manuf	01337,"Thomas Stenzel"
+		board	  001,"PyRamIDE",		MSG_EXP_IDEHDRAM
 		endmf	01337
 
 		manuf	01576,"Boris Krizma"
+		board	  004,"Furia S628 (4MB)",	MSG_EXP_RAM
+		board	  008,"Furia S628 (8MB)",	MSG_EXP_RAM
+		board	  009,"Furia EC020",		MSG_EXP_TURBO
+		board	  019,"Furia EC020",		MSG_EXP_TURBO
 		endmf	01576
 
 		manuf	01761,"Great Valley Products"
@@ -376,10 +381,14 @@ manuf_tab	tabinit
 		endmf	01761
 
 		manuf	01803,"UAE"
-		board	  001,"emulated",		MSG_EXP_RAM
-		board	  002,"emulated",		MSG_EXP_HD
-		board	  003,"emulated",		MSG_EXP_RAM
-		board	  096,"emulated",		MSG_EXP_GFX
+		board	  001,"Fast RAM",		MSG_EXP_RAM
+		board	  002,"Filesystem",		MSG_EXP_HD
+		board	  003,"Z3 Fast RAM",		MSG_EXP_RAM
+		board	  004,"Boot ROM",		MSG_EXP_MISC
+		board	  081,"Fast RAM",		MSG_EXP_RAM
+		board	  082,"Filesystem",		MSG_EXP_HD
+		board	  083,"Z3 Fast RAM",		MSG_EXP_RAM
+		board	  096,"UAEGFX",			MSG_EXP_GFX
 		endmf	01803
 
 		manuf	02002,"Mimetics"
@@ -416,6 +425,7 @@ manuf_tab	tabinit
 		boardf	  002,f_uae_002
 		boarda	  003,"UAE","Z3 Fast RAM",	MSG_EXP_RAM
 		boarda	  004,"UAE","Boot ROM",		MSG_EXP_MISC
+		boarda	  032,"ATL","HDI 1000 Ultrasound",MSG_EXP_MISC	; http://jack.untergrund.net/2016/12/07/tekmagic-4060t-aka-ultrasound-accelerator-en/
 		boarda	  081,"UAE","Fast RAM",		MSG_EXP_RAM
 		boarda	  082,"UAE","Filesystem",	MSG_EXP_HD
 		boarda	  083,"UAE","Z3 Fast RAM",	MSG_EXP_RAM
@@ -584,6 +594,10 @@ manuf_tab	tabinit
 		board	  005,"Oktagon 2008",		MSG_EXP_SCSIHD
 		board	  006,"Tandem",			MSG_EXP_SCSIHD
 		board	  008,"Memory-Master",		MSG_EXP_RAM
+		board	  016,"Multiface",		MSG_EXP_MULTIIO
+		board	  032,"Frame Buffer",		MSG_EXP_VIDEO
+		board	  064,"ISDN Master",		MSG_EXP_ISDN
+		board	  065,"ISDN Master",		MSG_EXP_ISDN
 		endmf	02049
 
 		manuf	02050,"Cardco Ltd."	; MicroDyn (C'Ltd Successor)
@@ -596,6 +610,7 @@ manuf_tab	tabinit
 
 		manuf	02052,"Jochheim"
 		board	  001,"2/8 MB",			MSG_EXP_RAM
+		board	  032,"Access 32",		MSG_EXP_RAM
 		endmf	02052
 
 		manuf	02053,"Trans Data Systems"
@@ -694,6 +709,7 @@ manuf_tab	tabinit
 		endmf	02076
 
 		manuf	02077,"GVP"
+		boarda	  002,"Chartscreen Ltd","AGXQ-256 Architect",MSG_EXP_GFX
 		board	  009,"A2000-RAM8/2",		MSG_EXP_MISC
 		board	  010,"GVP Series II",		MSG_EXP_RAM
 		endmf	02077
@@ -902,8 +918,8 @@ manuf_tab	tabinit
 		manuf	02129,"Applied Magic Inc."
 		board	  001,"DMI Resolver (TI34010)",	MSG_EXP_GFX
 		board	  002,"Vivid-24",		MSG_EXP_GFX
-		board	  006,"Digital Broadcaster",	MSG_EXP_VIDEO
-		board	  009,"Digital Broadcaster",	MSG_EXP_VIDEO
+		board	  006,"Digital Broadcaster 32",	MSG_EXP_VIDEO
+		board	  009,"Digital Broadcaster Elite",MSG_EXP_VIDEO
 		endmf	02129
 
 		manuf	02130,"Alfa-Laval"
@@ -956,7 +972,7 @@ manuf_tab	tabinit
 		endmf	02144
 
 		manuf	02145,"Ingenieurb\xFCro Helfrich" ; Omega Datentechnik?
-		board	  032,"Rainbow II",		MSG_EXP_GFX
+		boarda	  032,"Hertz Elektronik","Rainbow II",MSG_EXP_GFX
 		board	  033,"Rainbow III",		MSG_EXP_GFX
 		boarda	  052,"E3B","Algor (Pro)",	MSG_EXP_USB
 		boarda	  128,"Kato","Melody MPEG",	MSG_EXP_AUDIO
@@ -1026,6 +1042,8 @@ manuf_tab	tabinit
 		endmf	02161
 
 		manuf	02162,"XPert"
+		board	  001,"Domino",			MSG_EXP_RAM
+		board	  002,"Domino",			MSG_EXP_MISC
 		endmf	02162
 
 		manuf	02164,"Superformance"
@@ -1044,12 +1062,23 @@ manuf_tab	tabinit
 		board	  011,"\241Picasso II / II+",	MSG_EXP_GFXRAM
 		board	  012,"Picasso II / II+",	MSG_EXP_GFX
 		board	  013,"Picasso II (Segmented Mode)",MSG_EXP_GFX
+		boarda	  016,"Georg Braun","GBAPII++",	MSG_EXP_RAM
+		boarda	  017,"Georg Braun","GBAPII++",	MSG_EXP_GFX
 		board	  021,"\241Picasso IV Z2",	MSG_EXP_GFXRAM
 		board	  022,"\241Picasso IV Z2",	MSG_EXP_GFXRAM
 		board	  023,"Picasso IV Z2",		MSG_EXP_GFX
 		board	  024,"Picasso IV Z3",		MSG_EXP_GFX
 		board	  201,"Ariadne",		MSG_EXP_ETHERNET
 		board	  202,"Ariadne II",		MSG_EXP_ETHERNET
+		board	  240,"Picasso II+",		MSG_EXP_RAM
+		board	  241,"Picasso II+",		MSG_EXP_GFX
+		board	  242,"Picasso IV ECS Flickerfixer",MSG_EXP_GFX
+		board	  243,"Picasso IV AGA Flickerfixer",MSG_EXP_GFX
+		board	  244,"Pablo II",		MSG_EXP_VIDEO
+		board	  245,"Picasso IV",		MSG_EXP_VIDEO
+		board	  246,"Paloma (PAL)",		MSG_EXP_VIDEO	; TV Tuner
+		board	  247,"Paloma (NTSC)",		MSG_EXP_VIDEO	; TV Tuner
+		board	  248,"Concierto",		MSG_EXP_AUDIO
 		endmf	02167
 
 		manuf	02168,"Toolbox Design"
@@ -1122,6 +1151,7 @@ manuf_tab	tabinit
 
 		manuf	02189,"ZEUS"
 		board	  001,"ConneXion",		MSG_EXP_ETHERNET
+		board	  002,"ConneXion (A2065 emulation)",MSG_EXP_ETHERNET
 		endmf	02189
 
 		manuf	02190,"Altatech"
@@ -1298,6 +1328,14 @@ manuf_tab	tabinit
 		board	  004,"68030TK IDE controller",	MSG_EXP_IDEHD	; by Matze
 		board	  005,"Nova-Thylacine Rev.1",	MSG_EXP_MISC	; by crasbe & ACT Australia
 		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_MISC	; by crasbe & ACT Australia
+		board	  012,"FPGA-TK",		MSG_EXP_RAM
+		board	  013,"FPGA-TK SD-Card",	MSG_EXP_MISC
+		board	  014,"68030-TK2",		MSG_EXP_RAM
+		board	  042,"BoardsLAB",		MSG_EXP_MISC	; by bubbob42
+		board	  060,"68060-TK",		MSG_EXP_TURBO
+		board	  123,"LAN Card",		MSG_EXP_ETHERNET; by buggs/Scrat/Matze
+		board	  124,"Matzes Clockport",	MSG_EXP_MISC	; by Matze
+		board	  125,"Matzes IDE-Controller",	MSG_EXP_IDEHD	; by Matze
 		endmf	02588
 
 		manuf	02640,"Micronik"
@@ -1305,6 +1343,7 @@ manuf_tab	tabinit
 		endmf	02640
 
 		manuf	03084,"Team 4"
+		board	  012,"Kasmin",			MSG_EXP_GFX
 		endmf	03084
 
 		manuf	03643,"E3B"
@@ -1404,12 +1443,24 @@ manuf_tab	tabinit
 		endmf	05001
 
 		manuf	05010,"Amibience Creation Tech"
+		board	  001,"Thylacine",		MSG_EXP_USB
 		endmf	05010
 
 		manuf	05011,"Creative Development"
 		endmf	05011
 
 		manuf	05012,"Georg Braun"
+		board	  011,"Phoenix Turbo-II",	MSG_EXP_TURBO
+		board	  012,"Phoenix Turbo-FE",	MSG_EXP_TURBO
+		board	  013,"Turbo IV / GBA1000 SRAM",MSG_EXP_TURBOANDRAM
+		board	  014,"GBA1000 SDRAM-1",	MSG_EXP_RAM
+		board	  015,"GBA1000 SDRAM-2",	MSG_EXP_RAM
+		board	  021,"Phoenix 4MB",		MSG_EXP_RAM
+		board	  022,"CDTV 4MB",		MSG_EXP_RAM
+		board	  023,"Phoenix 8MB",		MSG_EXP_RAM
+		board	  040,"GBA1000-60 SDRAM-1",	MSG_EXP_RAM
+		board	  041,"GBA1000-60 SDRAM-2",	MSG_EXP_RAM
+		board	  042,"GBA Mini-Thylacine USB Controller",MSG_EXP_USB
 		endmf	05012
 
 		manuf	05013,"Swedish UG"
@@ -1419,9 +1470,15 @@ manuf_tab	tabinit
 		endmf	05014
 
 		manuf	05015,"KryoFlux"
+		board	  006,"Zeus68k",		MSG_EXP_IDEHD
+		board	  008,"Zeus68k",		MSG_EXP_TURBO
 		endmf	05015
 
-		manuf	05016,"Igor Majstorovic"
+		manuf	05016,"Apollo Team"	; Igor Majstorovic?
+		board	  001,"Vampire 600",		MSG_EXP_TURBO
+		board	  002,"Vampire 500",		MSG_EXP_TURBO
+		board	  005,"Vampire V4",		MSG_EXP_TURBO
+		board	  006,"Vampire V1200",		MSG_EXP_TURBO
 		endmf	05016
 
 		manuf	05017,"Alastair M. Robinson"
@@ -1434,27 +1491,42 @@ manuf_tab	tabinit
 		endmf	05019
 
 		manuf	05020,"Rok Krajnc"
+		board	  000,"Minimig Z2 FastRAM",	MSG_EXP_RAM
+		board	  016,"Minimig Z3 FastRAM",	MSG_EXP_RAM
+		board	  032,"Minimig Z3 EthernetCard",MSG_EXP_ETHERNET
+		board	  048,"Minimig Z3 GraphicsCard",MSG_EXP_GFX
+		board	  064,"Minimig Z3 SoundCard",	MSG_EXP_AUDIO
 		endmf	05020
 
 		manuf	05030,"Tim Tashpulatov"
+		board	  023,"Z3SDRam",		MSG_EXP_RAM
+		board	  024,"dm9k",			MSG_EXP_ETHERNET
 		endmf	05030
 
 		manuf	05040,"7-bit"
+		board	  017,"Wicher 500I",		MSG_EXP_MISC
 		endmf	05040
 
 		manuf	05050,"Sakura IT"
 		endmf	05050
 
 		manuf	05060,"FPGA Arcade"
+		board	  010,"Replay",			MSG_EXP_AUDIO
+		board	  016,"Replay",			MSG_EXP_ETHERNET
+		board	  020,"Replay",			MSG_EXP_GFX
 		endmf	05060
 
 		manuf	05070,"CancerSoft"
 		endmf	05070
 
-		manuf	05080,"Stephen Leary"
+		manuf	05080,"TerribleFire"		; Stephen Leary?
+		board	  000,"A TerribleFire board",	MSG_EXP_TURBO
 		endmf	05080
 
-		manuf	05090,"DMA Softlab"
+		manuf	05090,"iRIX Labs"		; http://irixlabs.com/
+		board	  001,"HC 508",			MSG_EXP_TURBO
+		board	  002,"SD Drive",		MSG_EXP_HD	; Classic 520 & SD Drive Z2
+		board	  005,"Classic 520",		MSG_EXP_RAM
 		endmf	05090
 
 		manuf	05100,"Brookhouse Engineering"
@@ -1464,6 +1536,7 @@ manuf_tab	tabinit
 		endmf	05110
 
 		manuf	05120,"CS-LAB"
+		board	  001,"WARP",			MSG_EXP_TURBO
 		endmf	05120
 
 		manuf	05130,"Roert Miranda"
@@ -1473,6 +1546,8 @@ manuf_tab	tabinit
 		endmf	05140
 
 		manuf	05150,"Amiga Kit"
+		board	  001,"ZorRAM A2000",		MSG_EXP_RAM
+		board	  002,"A1200 8MB",		MSG_EXP_RAM
 		endmf	05150
 
 		manuf	05160,"Central Texas CUG"
@@ -1594,6 +1669,7 @@ manuf_tab	tabinit
 		endmf	16707
 
 		manuf	16708,"ALiENDESiGN"
+		board	  000,"RePulse",		MSG_EXP_AUDIO
 		endmf	16708
 
 		manuf	16945,"Albrecht Computer Technik"
@@ -1616,6 +1692,7 @@ manuf_tab	tabinit
 		board	  018,"VLab-Motion",		MSG_EXP_VIDEO
 		board	  019,"DraCo Altais",		MSG_EXP_GFX
 		board	  023,"DraCo Motion",		MSG_EXP_VIDEO
+		board	  024,"DraCo MachineControl",	MSG_EXP_MULTIIO
 		board	  253,"Falcon \'040",		MSG_EXP_TURBO
 		endmf	18260
 
@@ -1628,6 +1705,7 @@ manuf_tab	tabinit
 		endmf	22359
 
 		manuf	26464,"Combitec"
+		board	  018,"?",			MSG_EXP_RAM
 		endmf	26464
 
 		manuf	26470,"Combitec"
@@ -1636,7 +1714,8 @@ manuf_tab	tabinit
 		endmf	26470
 
 		manuf	28014,"MNT Research"
-		board	  001,"VA2000",			MSG_EXP_GFX
+		board	  001,"VA2000",			MSG_EXP_GFX	; Zorro III
+		board	  002,"VA2000",			MSG_EXP_GFX	; Zorro II
 		board	  003,"ZZ9000",			MSG_EXP_GFXRAM	; Zorro II
 		board	  004,"ZZ9000",			MSG_EXP_GFXRAM	; Zorro III
 		board	  005,"ZZ9000",			MSG_EXP_RAM	; Zorro III
@@ -1660,6 +1739,7 @@ manuf_tab	tabinit
 		endmf	43537
 
 		manuf	44359,"Matay"
+		board	  001,"Prometheus (Rev. E)",	MSG_EXP_BUSBRIDGE
 		endmf	44359
 
 		manuf	46504,"Phoenix"
@@ -1670,7 +1750,7 @@ manuf_tab	tabinit
 		endmf	46504
 
 		manuf	49160,"Combitec"
-		board	  042,"?",			MSG_EXP_HD
+		board	  042,"OMTI",			MSG_EXP_HD
 		board	  043,"SRAM Card",		MSG_EXP_RAM
 		endmf	49160
 
