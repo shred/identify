@@ -39,10 +39,10 @@
 		INCLUDE lvo/locale.i
 
 VERSION		MACRO
-		  dc.b	"14.0"
+		  dc.b	"14.1"
 		ENDM
 DATE		MACRO
-		  dc.b	"17.12.2021"
+		  dc.b	"27.12.2021"
 		ENDM
 
 		SECTION strings,DATA

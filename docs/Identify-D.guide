@@ -518,7 +518,7 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
-@{i}V 39.0@{ui}
+@{i}V 39.0@{ui} (27.12.2021)
         @{b}*@{ub} Unterstützt AmigaOS 3.2.1
         @{b}*@{ub} OSVER liefert nun auch das BoingBag. BOINGBAG ist veraltet.
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
@@ -808,6 +808,7 @@ beigetragen haben (in alphabetischer Reihenfolge):
 @{i}M. Lagier (Atéo Concepts)@{ui}
 @{i}Geert Uytterhoeven@{ui}
 @{i}Martin Wietfeld@{ui}
+@{i}Die boards.library-Entwickler@{ui}
 
 Wenn du Identify in deiner Landessprache verwenden kannst, spende deinen
 Applaus bitte deinem Übersetzer:

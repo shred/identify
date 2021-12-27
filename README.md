@@ -8,8 +8,8 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 
 * Identifies expansion card names, alerts, and function call names
 * Gives information about your Amiga model, CPU, OS version, available memory, chipset, and much more...
-* Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2
-* The expansion database contains 356 manufacturers and 498 boards
+* Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2.1
+* The expansion database contains 356 manufacturers and 637 boards
 * Distinguishes between most GVP and Phase5 boards with unique ID
 * Tries to give at least a hint if the board name is not known yet
 * Fully FPGA, DraCo, and PowerPC compatible
@@ -78,7 +78,7 @@ If you want to provide other translations, please contact me for assistance.
 
 ## Sync with your own Board Database?
 
-If you're managing an own board database in your project, feel invited to sync it with [this database](src/identify/ID_Expansion.s). However, it would only be fair if you then also share the boards that are missing here. Please open an issue, send a merge request, or just get in contact with me. Thank you!
+If you're managing an own board database in your project, feel invited to sync it with [this database](src/identify/ID_Database.s). However, it would only be fair if you then also share the boards that are missing here. Please open an issue, send a merge request, or just get in contact with me. Thank you!
 
 ## Licence
 

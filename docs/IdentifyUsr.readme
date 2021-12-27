@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      38.0
+Version:      39.0
 Requires:     AmigaOS 2.0 or higher
 Replaces:     util/libs/Identify.lha; util/libs/IdentifyLibraryItaCat.lha
 Architecture: m68k-amigaos >= 2.0.4
@@ -12,8 +12,6 @@ License:      GNU Lesser General Public License v3
 Source:       https://github.com/shred/identify
 Website:      https://identify.shredzone.org
 
-This is an official update! :-)
-
 Identify is a system shared library that identifies your hardware
 expansions, system parameters, and other IDs.
 
@@ -22,8 +20,8 @@ Features:
   - Identifies expansion card names, alerts, and function call names
   - Gives information about your Amiga model, CPU, OS version,
     available memory, chipset, and much more...
-  - Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2
-  - The expansion database contains 356 manufacturers and 498 boards
+  - Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2.1
+  - The expansion database contains 356 manufacturers and 637 boards
   - Distinguishes between most GVP and Phase5 boards with unique ID
   - Tries to give at least a hint if the board name is not known yet
   - Fully FPGA, DraCo, and PowerPC compatible
@@ -34,13 +32,11 @@ Features:
 
 New in this release:
 
-  - The source code has been completely reviewed and reworked.
+  - Support for AmigaOS 3.2.1 added.
+  - ListExp: Cleaned up expansion list, WIDE option gives more information.
+  - ListExp shows a message if there is at least one unknown board.
   - More manufacturers and boards have been added.
-  - Enhanced AmigaOS and BoingBag detection.
-  - FPGA based processor detection (e.g. 68080).
-  - SAGA chipset detection. (experimental)
-  - Optimizations and bug fixes.
-  - Italian catalog file, translation by David Lo Buglio
+  - OSVER now also gives the BoingBag number. BOINGBAG is deprecated.
 
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.

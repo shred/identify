@@ -2,15 +2,13 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      38.0
+Version:      39.0
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
 License:      GNU Lesser General Public License v3
 Source:       https://github.com/shred/identify
 Website:      https://identify.shredzone.org
-
-This is an official update! :-)
 
 This is the developer packet for IdentifyUsr. In this packet you will
 find everything you need to use the identify.library for your own

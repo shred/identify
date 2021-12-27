@@ -471,7 +471,7 @@ A FAQ can be found online here:
 History
 *******
 
-@{i}V 39.0@{ui}
+@{i}V 39.0@{ui} (2021-12-27)
         @{b}*@{ub} OSVER now also gives BoingBag. BOINGBAG is deprecated.
         @{b}*@{ub} Supports AmigaOS 3.2.1
         @{b}*@{ub} Added more manufacturers and boards
@@ -748,6 +748,7 @@ I also like to thank all the people who contributed a bulk of extension IDs
 @{i}M. Lagier (Atéo Concepts)@{ui}
 @{i}Geert Uytterhoeven@{ui}
 @{i}Martin Wietfeld@{ui}
+@{i}The boards.library developers@{ui}
 
 If you can use Identify in your language, please applaud your translator:
 
