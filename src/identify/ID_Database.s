@@ -51,6 +51,12 @@ mftab		ds.w	0			; Alternate MF base
 *
 * This is the expansion database of the library.
 *
+* IMPORTANT: THIS IS NOT AN OFFICIAL LIST OF AMIGA EXPANSIONS!
+* ---------  It has been collected and reported from numerous sources. Although
+*            this information has been compiled and processed with great care,
+*            it is impossible to verify each and every record. Thus, the Identify
+*            developers do not guaratee for its completeness or correctness.
+*
 * Each group starts with the manufacturer ID and manufacturer name, using the "manuf"
 * macro. The group ends with the "endmf" macro, giving the same manufacturer ID.
 *
