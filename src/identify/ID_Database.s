@@ -1192,6 +1192,7 @@ manuf_tab	tabinit
 		board	  002,"Elbox 500/0.5MB",	MSG_EXP_RAM
 		board	  003,"Elbox CDTV/2MB",		MSG_EXP_RAM
 		board	  004,"Elbox CDTV/8MB",		MSG_EXP_RAM
+		board	  005,"Elbox 600/1MB",		MSG_EXP_RAM
 		board	  006,"Elbox 1200/4MB",		MSG_EXP_RAM
 		board	  007,"Elbox 1200/0-8",		MSG_EXP_RAM
 		board	  008,"FastATA 1200 MK-I",	MSG_EXP_IDEHD
