@@ -22,11 +22,7 @@ The source code was closed, like almost all of my Amiga projects. I have now rev
 
 ## Missing Expansions
 
-If your `ListExp` output shows unknown expansions, please post the output of `ListExp WIDE` and a short explanation of what board is missing in that list.
-
-You can either [open an issue](https://github.com/shred/identify/issues) or [contact me](https://shredzone.org/contact.html) by e-mail.
-
-If you are a manufacturer of Amiga expansions, please get in contact with me. I would like to add all of your products to the database. Thank you!
+[See here](report-missing-boards.md) about how to report missing expansions.
 
 ## Frequently Asked Questions
 

@@ -134,7 +134,7 @@ Start	;-- open resources
 		move.l	#MSG_LISTEXP_UNKNOWN,d0
 		bsr	GetLocString
 		move.l	a0,d1
-		pea	(url,PC)
+		pea	(reporturl,PC)
 		move.l	SP,d2
 		dos	VPrintf
 		addq.l	#4,SP
@@ -561,6 +561,7 @@ ArgList		ds.b	arg_SIZEOF
 template	dc.b	"WIDE/S,FULL/S,MID=MANUFID/K/N,PID=PRODID/K/N,U=UPDATE/S",0
 
 url		dc.b	"https://identify.shredzone.org",0
+reporturl	dc.b	"https://identify.shredzone.org/missing",0
 versionstr	VERSION
 		dc.b	0
 msg_newline	dc.b	"\n",0
