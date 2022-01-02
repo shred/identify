@@ -618,9 +618,13 @@ quick_freq	tst.b	(a0)
 *
 quick_mhz	tst.b	(a0)
 		bne	.exit
+		tst.l	d0
+		beq	.notavailable
 		lea	(.mhz,PC),a1
 		bra	quick_sconv
 .exit		rts
+.notavailable	move.l	#MSG_HW_NOVERSION,d0
+		bra	quick_loc
 .mhz		dc.b	"%ld MHz",0
 		even
 
