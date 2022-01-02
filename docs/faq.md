@@ -4,7 +4,7 @@
 
 **My board is not found, or not described correctly.**
 
-Please open an issue, or get in contact with me. I will add your board to the internal Expansion database, so it will be decoded properly in the next release.
+[See here](https://identify.shredzone.org/missing) about how to report a missing or incorrect expansion.
 
 ## System Analyzer
 
