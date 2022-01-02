@@ -1559,6 +1559,10 @@ manuf_tab	tabinit
 		manuf	05180,"Solar Soyuz Zaibatsu"
 		endmf	05180
 
+		manuf	05191,"a1k.org Community"
+		board	  011,"Freeway Pro",		MSG_EXP_USB
+		endmf	05191
+
 		manuf	05500,"Inhouse Information"
 		board	  100,"ISDN Engine I",		MSG_EXP_ISDN
 		endmf	05500
