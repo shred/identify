@@ -57,6 +57,10 @@ mftab		ds.w	0			; Alternate MF base
 *            it is impossible to verify each and every record. Thus, the Identify
 *            developers do not guaratee for its completeness or correctness.
 *
+* This is an open list of expansions. It is okay if you sync it with your own
+* database of expansions. However, please be fair and also provide boards that
+* are missing here.
+*
 * Each group starts with the manufacturer ID and manufacturer name, using the "manuf"
 * macro. The group ends with the "endmf" macro, giving the same manufacturer ID.
 *
@@ -1692,7 +1696,7 @@ manuf_tab	tabinit
 		board	  006,"Retina",			MSG_EXP_GFX
 		board	  008,"MultiEvolution",		MSG_EXP_SCSIHD
 		board	  012,"Toccata",		MSG_EXP_AUDIO
-		board	  016,"Retina Z3",		MSG_EXP_GFX
+		board	  016,"Retina BLT Z3",		MSG_EXP_GFX
 		board	  018,"VLab-Motion",		MSG_EXP_VIDEO
 		board	  019,"DraCo Altais",		MSG_EXP_GFX
 		board	  023,"DraCo Motion",		MSG_EXP_VIDEO
