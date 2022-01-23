@@ -1332,14 +1332,20 @@ manuf_tab	tabinit
 		board	  004,"68030TK IDE controller",	MSG_EXP_IDEHD	; by Matze
 		board	  005,"Nova-Thylacine Rev.1",	MSG_EXP_MISC	; by crasbe & ACT Australia
 		board	  006,"Nova-Thylacine Rev.2",	MSG_EXP_MISC	; by crasbe & ACT Australia
+		board	  007,"Expansion for 68030TK",	MSG_EXP_MISC	; by Matze
+		board	  008,"68EC020TK",		MSG_EXP_RAM	; by Matze
+		board	  009,"68EC020TK",		MSG_EXP_RAM	; by Matze
+		board	  011,"romdisk",		MSG_EXP_MISC	; by cnvogelg/nospam2000
 		board	  012,"FPGA-TK",		MSG_EXP_RAM
 		board	  013,"FPGA-TK SD-Card",	MSG_EXP_MISC
 		board	  014,"68030-TK2",		MSG_EXP_RAM
+		board	  015,"68030TK2",		MSG_EXP_TURBO	; by Matze
 		board	  042,"BoardsLAB",		MSG_EXP_MISC	; by bubbob42
 		board	  060,"68060-TK",		MSG_EXP_TURBO
 		board	  123,"LAN Card",		MSG_EXP_ETHERNET; by buggs/Scrat/Matze
 		board	  124,"Matzes Clockport",	MSG_EXP_MISC	; by Matze
 		board	  125,"Matzes IDE-Controller",	MSG_EXP_IDEHD	; by Matze
+		board	  208,"Dicke Olga A2000-030TK",	MSG_EXP_TURBOIDE
 		endmf	02588
 
 		manuf	02640,"Micronik"
@@ -1552,6 +1558,10 @@ manuf_tab	tabinit
 		manuf	05150,"Amiga Kit"
 		board	  001,"ZorRAM A2000",		MSG_EXP_RAM
 		board	  002,"A1200 8MB",		MSG_EXP_RAM
+		board	  003,"A600 8MB",		MSG_EXP_RAM
+		board	  004,"A500 8MB",		MSG_EXP_RAM
+		board	  005,"A1200 8MB v2",		MSG_EXP_RAM
+		board	  006,"ZorRAM 8MB v2",		MSG_EXP_RAM
 		endmf	05150
 
 		manuf	05160,"Central Texas CUG"
@@ -1562,6 +1572,10 @@ manuf_tab	tabinit
 
 		manuf	05180,"Solar Soyuz Zaibatsu"
 		endmf	05180
+
+		manuf	05190,"Matthias Hampel"
+		board	  010,"Freeway",		MSG_EXP_USB
+		endmf	05190
 
 		manuf	05191,"a1k.org Community"
 		board	  011,"Freeway Pro",		MSG_EXP_USB
@@ -1586,6 +1600,7 @@ manuf_tab	tabinit
 		endmf	06520
 
 		manuf	07777,"Rafal Gabriel Chyla"
+		board	  034,"30t 68020",		MSG_EXP_TURBO
 		endmf	07777
 
 		manuf	08215,"Vortex"
@@ -1728,6 +1743,13 @@ manuf_tab	tabinit
 		board	  004,"ZZ9000",			MSG_EXP_GFXRAM	; Zorro III
 		board	  005,"ZZ9000",			MSG_EXP_RAM	; Zorro III
 		endmf	28014
+
+		manuf	28019,"Michal Schulz"
+		board	  001,"Emu68 Support",		MSG_EXP_MISC
+		board	  016,"RAM Expansion",		MSG_EXP_RAM
+		board	  033,"Device Tree",		MSG_EXP_MISC
+		board	  034,"Broadcom SDHC",		MSG_EXP_HD
+		endmf	28019
 
 		manuf	32768,"SKI Peripherals"
 		board	  008,"M.A.S.T. Fireball",	MSG_EXP_SCSIHD
