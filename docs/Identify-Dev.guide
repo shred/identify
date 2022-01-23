@@ -333,6 +333,9 @@ These functions are available since Release 1:
     @{b}ROMVER@{ub}
           (since Release 38) Version of the physical AmigaOS ROM.
 
+    @{b}RTC@{ub}
+          (since Release 40) Real-time Clock chip present in the system.
+
      These @{b}<options>@{ub} are allowed:
     @{b}EMPTYNA@{ub}
           Returns an empty string if the item is not available.

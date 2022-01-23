@@ -66,6 +66,7 @@ Chips:   %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
 \t DMA:   %s (Modus: %s)\n\
 \t Video: %s (Revision: %s)\n\
 \t Audio: %s\n\
+\t Uhr:   %s\n\
 AmigaOS: %s (%s, SetPatch %s, ROM %s)\n\
          Exec %s   Workbench %s\n\
 Sys-Erw: GrafikOS: %s, AudioOS: %s, TCP/IP: %s\n\

@@ -740,4 +740,11 @@ Paula 8364
 MSG_HW_PAULA_ARNE       (//49)
 Arne
 ;
+MSG_HW_RTC_NONE         (7900//49)
+None
+MSG_HW_RTC_OKI          (//49)
+OKI MSM6242B
+MSG_HW_RTC_RICOH        (//49)
+Ricoh RP5C01A
+;
 ;================================================================

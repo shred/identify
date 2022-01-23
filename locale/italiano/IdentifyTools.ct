@@ -54,6 +54,7 @@ Chipset:  %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
 \t DMA:    %s (Mode: %s)\n\
 \t Video:  %s (Rev: %s)\n\
 \t Audio:  %s\n\
+\t RTC:    %s\n\
 AmigaOS:  %s (%s, SetPatch %s, ROM %s)\n\
           Exec %s   Workbench %s\n\
 Supporto: GraphicOS: %s, AudioOS: %s, TCP/IP: %s\n\

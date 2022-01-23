@@ -518,6 +518,9 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+@{i}V 40.0@{ui}
+        @{b}*@{ub} Erkennung des verbauten Uhrenchips
+
 @{i}V 39.0@{ui} (27.12.2021)
         @{b}*@{ub} Unterstützt AmigaOS 3.2.1
         @{b}*@{ub} OSVER liefert nun auch das BoingBag. BOINGBAG ist veraltet.

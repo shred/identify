@@ -148,7 +148,8 @@ struct IdentifyBase {
 #define IDHW_LASTALERTTASK (55)   /*  Task of last alert                    [V37] */
 #define IDHW_PAULA        (56)    /*  Paula chip revision                   [V38] */
 #define IDHW_ROMVER       (57)    /*  Physical ROM version */
-#define IDHW_NUMBEROF     (58)    /*  Number of types, PRIVATE! */
+#define IDHW_RTC          (58)    /*  Realtime Clock                        [V40] */
+#define IDHW_NUMBEROF     (59)    /*  Number of types, PRIVATE! */
 
 /*
  * IDHW_SYSTEM numerical result codes
@@ -350,6 +351,13 @@ struct IdentifyBase {
 #define IDAM_NONE       (0)       /* None */
 #define IDAM_NTSC       (1)       /* NTSC Agnus */
 #define IDAM_PAL        (2)       /* PAL Agnus */
+
+/*
+ * IDHW_RTC numerical result codes
+ */
+#define IDRTC_NONE      (0)       /* None */
+#define IDRTC_OKI       (1)       /* OKI MSM6242B */
+#define IDRTC_RICOH     (2)       /* Ricoh RP5C01A */
 
 /*
  * IDTAG_ClassID numerical result codes

@@ -169,7 +169,7 @@ IdHardwareNum	movem.l d1-d3/a0-a6,-(SP)
 		dc.l	do_AgnusMode,	do_Denise,	do_DeniseRev,	do_BoingBag
 		dc.l	do_Emulated,	do_XLVersion,	do_HostOS,	do_HostVers
 		dc.l	do_HostMachine,	do_HostCPU,	do_HostSpeed,	do_LastAlertTask
-		dc.l	do_Paula,       do_RomVer
+		dc.l	do_Paula,       do_RomVer,	do_RTC
 
 
 **
@@ -239,7 +239,7 @@ IdHardware	movem.l d1-d3/a0-a3/a6,-(SP)
 		dc.l	cv_AgnusMode,	cv_Denise,	cv_DeniseRev,	cv_BoingBag
 		dc.l	cv_Emulated,	cv_XLVersion,	cv_HostOS,	cv_HostVers
 		dc.l	cv_HostMachine,	cv_HostCPU,	cv_HostSpeed,	cv_LastAlertTask
-		dc.l	cv_Paula,       cv_RomVer
+		dc.l	cv_Paula,       cv_RomVer,	cv_RTC
 
 
 *
@@ -507,6 +507,9 @@ cv_RomVer	lea	buf_RomVer,a0
 		lea	buf_RomVerLoc,a1
 		bra	quick_ver
 
+cv_RTC		add.l	#MSG_HW_RTC_NONE,d0
+		bra	quick_loc
+
 
 *
 * ======== Quick Formatter Functions ========
@@ -734,6 +737,7 @@ buf_LastAlertTask	ds.b	STRSIZE
 buf_Paula		ds.b	STRSIZE
 buf_RomVer		ds.b	STRSIZE
 buf_RomVerLoc		ds.b	STRSIZE
+buf_RTC			ds.b	STRSIZE
 buf_ENDOFBUF		ds.b	0
 
 		SECTION text,CODE
@@ -866,7 +870,7 @@ fmtcommands	dc.b	"SYSTEM$CPU$FPU$MMU$"
 		dc.b	"AGNUSMODE$DENISE$DENISEREV$BOINGBAG$"
 		dc.b	"EMULATED$XLVERSION$HOSTOS$HOSTVERS$"
 		dc.b	"HOSTMACHINE$HOSTCPU$HOSTSPEED$LASTALERTTASK$"
-		dc.b	"PAULA$ROMVER$"
+		dc.b	"PAULA$ROMVER$RTC$"
 		dc.b	0
 		even
 
@@ -2432,6 +2436,41 @@ do_HostSpeed	moveq	#0,d3
 		move.l	SP,d2
 		dos	StrToLong
 		move.l	(SP)+,d3
+.found		move.l	d3,d0
+		rts
+
+**
+* Get the hardware Realtime Clock.
+*
+do_RTC	; This code assumes that the battclock.resource has already
+	; initialized the RTC.
+		lea	$dc0000,a0		; RTC base address
+		moveq	#$f,d1			; mask for lower nibble
+	;-- check OKI
+		moveq	#IDRTC_OKI,d3
+		move.b	($3f,a0),d0		; read register F
+		and	d1,d0
+		cmp	#%0100,d0		;   only 24/12 bit must be set
+		beq	.found
+	;-- check Ricoh
+		moveq	#IDRTC_RICOH,d3
+		move.b	($37,a0),d0		; read mode register
+		and	d1,d0
+		cmp	#%1001,d0		; Mode 01?
+		beq	.fastRicoh
+	;-- check Ricoh in wrong mode
+		exec	Forbid
+		move	d0,d2			; remember current Mode register
+		move.b	#%1001,($37,a0)		; set TimerEN + Mode 01
+		move.b	($2b,a0),d0		; read 12/24 select register
+		move.b	d2,($37,a0)		; restore Mode register
+		exec.q	Permit
+		bra	.checkRicoh
+.fastRicoh	move.b	($2b,a0),d0		; read 12/24 select register
+.checkRicoh	btst	#0,d0
+		bne	.found
+	;-- unknown or not found
+.notRicoh	moveq	#IDRTC_NONE,d3
 .found		move.l	d3,d0
 		rts
 

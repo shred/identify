@@ -315,6 +315,7 @@ identify.library/IdHardwareUpdate
                 $LASTALERTTASK$
                 $PAULA$
                 $ROMVER$
+                $RTC$
 
         For their meanings, see the include file.
 
@@ -589,6 +590,9 @@ identify.library/IdHardwareUpdate
                 IDHW_ROMVER     -- [V38] Version of physical AmigaOS ROM
                         (e.g. "V40.68")
 
+                IDHW_RTC        -- [V40] Real-time Clock chip present
+                        (e.g. "OKI MSM6242B")
+
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.
 
@@ -788,6 +792,9 @@ identify.library/IdHardwareUpdate
 
                 IDHW_ROMVER     -- [V38] Version of physical AmigaOS ROM
                         (version, revision)
+
+                IDHW_RTC        -- [V40] Real-time Clock chip present
+                        (include file: IDRTC_...)
 
         TagList       -- (struct TagItem *) tags that describe further
                          options. You may provide NULL.

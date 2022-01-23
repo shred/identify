@@ -140,7 +140,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDHW_LASTALERTTASK = 55; { Task of last alert                   [V37] }
        IDHW_PAULA       = 56;  { Paula chip revision                   [V38] }
        IDHW_ROMVER      = 57;  { Physical ROM version }
-       IDHW_NUMBEROF    = 58;  { Number of types, PRIVATE! }
+       IDHW_RTC         = 58;  { Realtime Clock                        [V40] }
+       IDHW_NUMBEROF    = 59;  { Number of types, PRIVATE! }
 
 { IDHW_SYSTEM numerical result codes }
 
@@ -325,6 +326,12 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDAM_NONE       = 0;     {  None }
        IDAM_NTSC       = 1;     {  NTSC Agnus }
        IDAM_PAL        = 2;     {  PAL Agnus }
+
+{ IDHW_RTC numerical result codes }
+
+       IDRTC_NONE      = 0;     {  None }
+       IDRTC_OKI       = 1;     {  OKI MSM6242B }
+       IDRTC_RICOH     = 2;     {  Ricoh RP5C01A }
 
 { IDTAG_ClassID numerical result codes }
 

@@ -471,6 +471,9 @@ A FAQ can be found online here:
 History
 *******
 
+@{i}V 40.0@{ui}
+        @{b}*@{ub} Recognizes the Real-time Clock chip that is present.
+
 @{i}V 39.0@{ui} (2021-12-27)
         @{b}*@{ub} OSVER now also gives BoingBag. BOINGBAG is deprecated.
         @{b}*@{ub} Supports AmigaOS 3.2.1

@@ -152,7 +152,8 @@ IDHW_HOSTSPEED	EQU	54	; when emulated: Host CPU speed (unit MHz, see autodocs!)
 IDHW_LASTALERTTASK EQU	55	; Task of last alert			[V37]
 IDHW_PAULA	EQU	56	; Paula chip revision			[V38]
 IDHW_ROMVER	EQU	57	; Physical ROM version
-IDHW_NUMBEROF	EQU	58	; Number of types, PRIVATE!
+IDHW_RTC	EQU	58	; Realtime Clock			[V40]
+IDHW_NUMBEROF	EQU	59	; Number of types, PRIVATE!
 
 *
 * IDHW_SYSTEM numerical result codes
@@ -308,7 +309,6 @@ IDTCP_GENESIS	EQU	4	; GENESiS
 IDTCP_MIAMIDX	EQU	5	; MiamiDX
 IDTCP_ROADSHOW	EQU	6	; Roadshow
 
-
 *
 * IDHW_PPCOS numerical result codes
 *
@@ -355,6 +355,13 @@ IDPL_ARNE	EQU	3	; Arne (SAGA)
 IDAM_NONE	EQU	0	; None
 IDAM_NTSC	EQU	1	; NTSC Agnus
 IDAM_PAL	EQU	2	; PAL Agnus
+
+*
+* IDHW_RTC numerical result codes
+*
+IDRTC_NONE	EQU	0	; None
+IDRTC_OKI	EQU	1	; OKI MSM6242B
+IDRTC_RICOH	EQU	2	; Ricoh RP5C01A
 
 *
 * IDTAG_ClassID numerical result codes
