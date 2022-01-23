@@ -473,6 +473,8 @@ History
 
 @{i}V 40.0@{ui}
         @{b}*@{ub} Recognizes the Real-time Clock chip that is present.
+        @{b}*@{ub} Delegates unknown expansions to boards.lib if present
+        @{b}*@{ub} Added more manufacturers and boards
 
 @{i}V 39.0@{ui} (2021-12-27)
         @{b}*@{ub} OSVER now also gives BoingBag. BOINGBAG is deprecated.

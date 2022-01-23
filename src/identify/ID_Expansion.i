@@ -56,3 +56,9 @@ gvp_SIZEOF	rs.w	0
 
 
 GVP_EPCMASK	EQU	$F8	; EPC mask for GVP products
+
+**
+* boards.lib LVO and constants
+*
+GetBoardNameNew EQU	-60	; boards.lib LVO
+SB_BUS_NATIVE	EQU	1

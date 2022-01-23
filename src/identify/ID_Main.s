@@ -146,6 +146,10 @@ InitFct		movem.l d1-d7/a0-a6,-(SP)
 		exec	OpenLibrary
 		move.l	d0,gfxbase
 		beq	.error1
+		lea	(.boardsname,PC),a1
+		moveq	#3,d0
+		exec	OpenLibrary
+		move.l	d0,boardsbase		; OK if it was not found
 	;-- initialize modules
 		bsr	InitLocale
 		bsr	InitExpansion
@@ -164,6 +168,7 @@ InitFct		movem.l d1-d7/a0-a6,-(SP)
 .expname	dc.b	"expansion.library",0
 .dosname	dc.b	"dos.library",0
 .gfxname	dc.b	"graphics.library",0
+.boardsname	dc.b	"boards.library",0
 		even
 
 
@@ -219,7 +224,11 @@ LExpunge	movem.l d7/a5-a6,-(SP)
 		bsr	ExitExpansion
 		bsr	ExitLocale
 	;-- close resources
-		move.l	(gfxbase,PC),a1
+		move.l	(boardsbase,PC),d0
+		beq	.noBoards
+		move.l	d0,a1
+		exec	CloseLibrary
+.noBoards	move.l	(gfxbase,PC),a1
 		exec	CloseLibrary
 		move.l	(expbase,PC),a1
 		exec	CloseLibrary
@@ -249,7 +258,7 @@ LNull		moveq	#0,d0
 
 
 		public	identifybase, utilsbase, dosbase, expbase, execbase, gfxbase
-		public	_SysBase
+		public	boardsbase, _SysBase
 
 		even
 identifybase	dc.l	0
@@ -258,5 +267,6 @@ utilsbase	dc.l	0
 execbase	dc.l	0
 expbase		dc.l	0
 gfxbase		dc.l	0
+boardsbase	dc.l	0
 _SysBase	EQU	execbase
 		even

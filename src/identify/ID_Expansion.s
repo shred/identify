@@ -205,10 +205,35 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		bsr	GetBoard
 		move.l	a1,d1			; do we know this expansion?
 		bne	.evaluate
+	;-- check boards.lib for unknown boards
 		move.l	(exp_UnknownFlag,a4),d1	; unknown flag present?
-		beq	.evaluate
+		beq	.nounkflag
 		move.l	d1,a3
 		st	(a3)			;   yes: set to true
+.nounkflag	move.l	(boardsbase,PC),d1	; boards.lib not present?
+		beq	.evaluate		;   just go on with our check
+		cmp	#49,(exp_StrLength,a4)	; boards.lib requires a fixed
+		blt	.evaluate		;   50 char buffer
+		movem.l	d2-d7/a0-a6,-(sp)
+		move.l	d1,a6
+		move.l	(exp_ManufStr,a4),a0
+		move.l	a0,d0
+		bne	.bManufOk		; do we want the manufacturer string?
+		lea	(boardsDeadBuffer,PC),a0 ; use dead buffer if not requested
+.bManufOk	move.l	(exp_ProdStr,a4),a1
+		move.l	a1,d0
+		bne	.bProdOk		; do we want the product string?
+		lea	(boardsDeadBuffer,PC),a1 ; use dead buffer if not requested
+.bProdOk	move.l	(exp_ConfigDev,a4),a2
+		move	(exp_ManufID,a4),d0
+		move	(exp_ProdID,a4),d1
+		moveq	#SB_BUS_NATIVE,d2
+		jsr	(GetBoardNameNew,a6)
+		move	d0,d1
+		movem.l	(sp)+,d2-d7/a0-a6
+		move.l	#MSG_EXP_UNKNOWN,d0
+		tst	d1
+		bne	.proddone		; found something!
 	;-- is the manufacturer ID unknown?
 .evaluate	tst.l	(exp_ManufStr,a4)	; do we want to have a manuf. anyway?
 		beq	.manufdone
@@ -485,4 +510,5 @@ isA1200		movem.l d1/a0-a1,-(SP)
 * ======== VARIABLES ========
 *
 cpuchar		dc.b	"0"		; CPU type (680#0)
+boardsDeadBuffer ds.b	60		; dead space for boards.lib strings, write only
 		even
