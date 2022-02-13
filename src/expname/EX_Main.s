@@ -77,7 +77,7 @@ libidstring	dc.b	"expname.library "
 * Copyright note for hex reader
 *
 		dc.b	"Replacement for the old expname.library. Do not use in new code! ",$a
-		dc.b	"(C) 1996-2021 Richard 'Shred' K\xF6rber ",$a
+		dc.b	"(C) 1996-2022 Richard 'Shred' K\xF6rber ",$a
 		dc.b	"License: GNU Lesser General Public License v3 ",$a
 		dc.b	"Source: https://identify.shredzone.org",0
 		even

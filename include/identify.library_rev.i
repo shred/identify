@@ -18,11 +18,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 
-VERSION		EQU	39
+VERSION		EQU	40
 REVISION	EQU	0
 
 DATE		MACRO
-		dc.b	'27.12.2021'
+		dc.b	'13.02.2022'
 		ENDM
 
 PRGNAME 	MACRO
@@ -30,17 +30,17 @@ PRGNAME 	MACRO
 		ENDM
 
 VERS		MACRO
-		dc.b	'identify.library 39.0'
+		dc.b	'identify.library 40.0'
 		ENDM
 
 VSTRING 	MACRO
-		dc.b	'identify.library 39.0 (27.12.2021)',13,10,0
+		dc.b	'identify.library 40.0 (13.02.2022)',13,10,0
 		ENDM
 
 VERSTAG 	MACRO
-		dc.b	0,'$VER: identify.library 39.0 (27.12.2021)',0
+		dc.b	0,'$VER: identify.library 40.0 (13.02.2022)',0
 		ENDM
 
 VSTR		MACRO
-		dc.b	'identify.library 39.0 (27.12.2021)'
+		dc.b	'identify.library 40.0 (13.02.2022)'
 		ENDM

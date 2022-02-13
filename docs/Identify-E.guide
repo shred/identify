@@ -75,7 +75,7 @@ you want to see implemented in the library.
 Copyright
 *********
 
-Identify is © 1996-2021 Richard 'Shred' Körber and contributors.
+Identify is © 1996-2022 Richard 'Shred' Körber and contributors.
 
 
 LICENSE
@@ -471,7 +471,7 @@ A FAQ can be found online here:
 History
 *******
 
-@{i}V 40.0@{ui}
+@{i}V 40.0@{ui} (2022-02-13)
         @{b}*@{ub} Recognizes the Real-time Clock chip that is present.
         @{b}*@{ub} Delegates unknown expansions to boards.lib if present.
           Can be disabled via IDTAG_Delegate.

@@ -79,7 +79,7 @@ du in die Library eingebaut haben möchtest.
 Copyright
 *********
 
-Identify ist © 1996-2021 Richard 'Shred' Körber und weiteren Mitwirkenden.
+Identify ist © 1996-2022 Richard 'Shred' Körber und weiteren Mitwirkenden.
 
 
 LIZENZ
@@ -518,7 +518,7 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
-@{i}V 40.0@{ui}
+@{i}V 40.0@{ui} (13.02.2022)
         @{b}*@{ub} Erkennung des verbauten Uhrenchips
         @{b}*@{ub} Verwendet boards.lib für unbekannte Boards, wenn verfügbar.
           Abschaltbar über IDTAG_Delegate.
