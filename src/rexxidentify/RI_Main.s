@@ -42,18 +42,18 @@
 		SECTION text,CODE
 
 VERSION		EQU	1		;<- Version
-REVISION	EQU	14		;<- Revision
+REVISION	EQU	15		;<- Revision
 
 SETRELEASE	MACRO
-		dc.b	"14"		;<- Command Release
+		dc.b	"15"		;<- Command Release
 		ENDM
 
 SETVER		MACRO			;<- Version String Macro
-		dc.b	"1.14"
+		dc.b	"1.15"
 		ENDM
 
 SETDATE		MACRO			;<- Date String Macro
-		dc.b	"30.11.2021"
+		dc.b	"13.02.2022"
 		ENDM
 
 
@@ -84,7 +84,7 @@ libidstring	dc.b	"rexxidentify.library "
 * Copyright note for hex reader
 *
 		dc.b	"ARexx support for the identify.library ",$a
-		dc.b	"(C) 1997-2021 Richard 'Shred' K\xF6rber ",$a
+		dc.b	"(C) 1997-2022 Richard 'Shred' K\xF6rber ",$a
 		dc.b	"License: GNU Lesser General Public License v3 ",$a
 		dc.b	"Source: https://identify.shredzone.org",0
 		even
@@ -743,6 +743,7 @@ ID_Hardware	link	a4,#idh_LENGTH
 		dc.b	"LASTALERTTASK",0
 		dc.b	"PAULA",0
 		dc.b	"ROMVER",0
+		dc.b	"RTC",0
 		dc.b	0		; end marker
 
 .options	dc.b	"EMPTYNA",0
