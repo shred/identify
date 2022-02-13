@@ -97,7 +97,7 @@ exp_UnknownFlag	fo.l	1	; ^Flag if board is unknown
 exp_Secondary	fo.b	1	; Secondary warnings
 exp_GotID	fo.b	1	; Is it a valid ID for searching?
 exp_Localize	fo.b	1	; Is the result to be localized?
-exp_Pad		fo.b	1	; (padding)
+exp_Delegate	fo.b	1	; Delegate if unknown?
 exp_StrLength	fo.w	1	; String length -1 (i.e. prepared for dbra)
 exp_Buffer	fo.b	10	; Temporary buffer
 exp_SIZEOF	fo.w	0
@@ -113,6 +113,7 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		move.l	a0,(exp_TagItem,a4)
 		move	#49,(exp_StrLength,a4)
 		st	(exp_Localize,a4)
+		st	(exp_Delegate,a4)
 	;-- collect search parameters
 .tagloop	lea	(exp_TagItem,a4),a0
 		utils	NextTagItem
@@ -145,6 +146,8 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		beq	.localized
 		subq.l	#IDTAG_UnknownFlag-IDTAG_Localize,d0	; IDTAG_UnknownFlag ?
 		beq	.unkflag
+		subq.l	#IDTAG_Delegate-IDTAG_UnknownFlag,d0	; IDTAG_Delegate ?
+		beq	.delegate
 		bra	.tagloop		; unknown tag, ignore it
 	;-- set tags
 .configdev	move.l	d1,a5
@@ -193,6 +196,9 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 .localized	tst.l	d1
 		sne	(exp_Localize,a4)
 		bra	.tagloop
+.delegate	tst.l	d1
+		sne	(exp_Delegate,a4)
+		bra	.tagloop
 .unkflag	move.l	d1,(exp_UnknownFlag,a4)
 		bra	.tagloop
 	;-- prepare search
@@ -212,6 +218,8 @@ IdExpansion	movem.l d1-d7/a0-a3/a5-a6,-(sp)
 		st	(a3)			;   yes: set to true
 .nounkflag	move.l	(boardsbase,PC),d1	; boards.lib not present?
 		beq	.evaluate		;   just go on with our check
+		tst.b	(exp_Delegate,a4)	; do we want to delegate?
+		beq	.evaluate		;   no: do not check boards.lib
 		cmp	#49,(exp_StrLength,a4)	; boards.lib requires a fixed
 		blt	.evaluate		;   50 char buffer
 		movem.l	d2-d7/a0-a6,-(sp)

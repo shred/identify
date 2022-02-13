@@ -86,6 +86,10 @@ struct IdentifyBase {
                                           /* found in the database. The content */
                                           /* will not be changed if the expansion */
                                           /* was found. [V39] */
+#define IDTAG_Delegate    (_IDTAGS+0x12)  /* BOOL TRUE if unknown boards shall be */
+                                          /* delegated to other databases. FALSE */
+                                          /* to skip checking other databases */
+                                          /* (defaults to TRUE) [V40] */
 
 /*
  * Hardware description types

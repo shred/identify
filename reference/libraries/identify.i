@@ -90,6 +90,10 @@ IDTAG_UnknownFlag EQU	_IDTAGS+$11	;UBYTE * A flag that will be set to
 					; found in the database. The content
 					; will not be changed if the expansion
 					; was found. [V39]
+IDTAG_Delegate	EQU	_IDTAGS+$12	;BOOL TRUE if unknown boards shall be
+					; delegated to other databases. FALSE
+					; to skip checking other databases
+					; (defaults to TRUE) [V40]
 
 *
 * Hardware description types

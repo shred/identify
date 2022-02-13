@@ -191,6 +191,13 @@ identify.library/IdHardwareUpdate
                 known to Identify, this flag is set to TRUE. Otherwise the
                 flag is not touched.
 
+        IDTAG_Delegate          -- [V40] (BOOL) TRUE to delegate unknown boards
+                to other expansion databases (if present, e.g. boards.library).
+                FALSE to immediately report unknown boards as missing. Defaults
+                to TRUE. If your project delegates unknown boards to identify,
+                set this flag to FALSE to avoid circle delegation that will
+                eventually crash the system because of a stack overflow.
+
    EXAMPLE
         To check all expansion boards, you may use this code:
 

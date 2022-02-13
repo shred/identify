@@ -79,6 +79,10 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
                                         { found in the database. The content }
                                         { will not be changed if the expansion }
                                         { was found. [V39] }
+       IDTAG_Delegate    = _IDTAGS+$12; { BOOL TRUE if unknown boards shall be }
+                                        { delegated to other databases. FALSE }
+                                        { to skip checking other databases }
+                                        { (defaults to TRUE) [V40] }
 
 { Hardware description types }
 

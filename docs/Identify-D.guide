@@ -520,7 +520,8 @@ History
 
 @{i}V 40.0@{ui}
         @{b}*@{ub} Erkennung des verbauten Uhrenchips
-        @{b}*@{ub} Verwendet boards.lib für unbekannte Boards, wenn verfügbar
+        @{b}*@{ub} Verwendet boards.lib für unbekannte Boards, wenn verfügbar.
+          Abschaltbar über IDTAG_Delegate.
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
 
 @{i}V 39.0@{ui} (27.12.2021)
