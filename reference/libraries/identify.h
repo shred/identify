@@ -173,6 +173,17 @@ struct IdentifyBase {
 #define IDSYS_UAE         (12)    /*  Ubiquitous Amiga Emulator */
 #define IDSYS_AMIGA4000T  (13)    /*  Amiga 4000 Tower */
 #define IDSYS_AMIGAXL     (14)    /*  AmigaXL */
+#define IDSYS_AmigaONE_SE (15)
+#define IDSYS_AmigaONE_XE (15)
+#define IDSYS_AmigaONE_Micro (15)
+#define IDSYS_Sam440 (15)
+#define IDSYS_Sam460 (15)
+#define IDSYS_AmigaONE-X1000 (16)
+#define IDSYS_AmigaONE-X5000 (16)
+#define IDSYS_AmigaONE-X1222 (16)
+#define IDSYS_Pegasus_I (17)
+#define IDSYS_Pegasus_II (18)
+#define IDSYS_Efika (19)
 
 /*
  * IDHW_CPU numerical result codes
@@ -228,6 +239,8 @@ struct IdentifyBase {
 #define IDOS_3_5_BB2    (14)      /*  OS3.5   (V44.5 "Boing Bag 2") */
 #define IDOS_3_9_BB1    (15)	    /*  OS3.9   (V45.2 "Boing Bag 1") */
 #define IDOS_3_9_BB2    (16)	    /*  OS3.9   (V45.3 "Boing Bag 2") */
+#define IDOS_4_0		(17)	    /*  OS4.0   */
+#define IDOS_4_1		(18)	    /*  OS4.1   (V53.18 update2) */
 
 /*
  * IDHW_CHIPSET numerical result codes
@@ -290,6 +303,26 @@ struct IdentifyBase {
 #define IDPPC_604       (6)       /*  604 */
 #define IDPPC_604E      (7)       /*  604e */
 #define IDPPC_620       (8)       /*  620 */
+#define IDPPC_750CXE	(9)
+#define IDPPC_750FX 	(10)
+#define IDPPC_750GX 	(11)
+#define IDPPC_7410	(12)
+#define IDPPC_74XX_VGER	(13)
+#define IDPPC_74XX_APOLLO	(14)
+#define IDPPC_405LP 	(15)
+#define IDPPC_405EP	(16)
+#define IDPPC_405GP	(17)
+#define IDPPC_405GPR	(18)
+#define IDPPC_440EP	(19)
+#define IDPPC_440GP	(20)
+#define IDPPC_440GX	(21)
+#define IDPPC_440SX	(22)
+#define IDPPC_440SP	(23)
+#define IDPPC_PA6T_1682M	(24)
+#define IDPPC_460EX	(25)
+#define IDPPC_5121E	(26)
+#define IDPPC_P50XX	(27)
+
 
 /*
  * IDHW_RAMCAS numerical result codes
@@ -315,6 +348,8 @@ struct IdentifyBase {
 #define IDPOS_NONE      (0)       /* None */
 #define IDPOS_POWERUP   (1)       /* PowerUP (Phase 5) */
 #define IDPOS_WARPOS    (2)       /* WarpOS (Haage&Partner) */
+#define IDPOS_AmigaOS_PPC    (3) 
+#define IDPOS_MorphOS    (3) 
 
 /*
  * IDHW_AGNUS numerical result codes
