@@ -1578,6 +1578,7 @@ manuf_tab	tabinit
 		endmf	05190
 
 		manuf	05191,"a1k.org Community"
+		boarda	  010,"Matthias Hampel","Freeway",MSG_EXP_USB
 		board	  011,"Freeway Pro",		MSG_EXP_USB
 		endmf	05191
 
