@@ -1531,6 +1531,7 @@ manuf_tab	tabinit
 
 		manuf	05080,"TerribleFire"		; Stephen Leary?
 		board	  000,"A TerribleFire board",	MSG_EXP_TURBO
+		board	  130,"TF1260",			MSG_EXP_TURBO
 		endmf	05080
 
 		manuf	05090,"iRIX Labs"		; http://irixlabs.com/
