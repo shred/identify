@@ -1181,8 +1181,8 @@ manuf_tab	tabinit
 		board	  002,"EGS 28/24 Spectrum",	MSG_EXP_GFXRAM
 		endmf	02193
 
-		manuf	02194,"ACT"
-		board	  001,"Apollo A1200",		MSG_EXP_RAMFPU
+		manuf	02194,"Marpet Developments"
+		board	  001,"M1207",			MSG_EXP_RAMFPU
 		endmf	02194
 
 		manuf	02195,"Ingenieurb\xFCro Helfrich"
@@ -1341,7 +1341,7 @@ manuf_tab	tabinit
 		board	  014,"68030-TK2",		MSG_EXP_RAM
 		board	  015,"68030TK2",		MSG_EXP_TURBO	; by Matze
 		board	  042,"BoardsLAB",		MSG_EXP_MISC	; by bubbob42
-		board	  060,"68060-TK",		MSG_EXP_TURBO
+		board	  060,"68060-TK",		MSG_EXP_TURBO	; by Matze
 		board	  123,"LAN Card",		MSG_EXP_ETHERNET; by buggs/Scrat/Matze
 		board	  124,"Matzes Clockport",	MSG_EXP_MISC	; by Matze
 		board	  125,"Matzes IDE-Controller",	MSG_EXP_IDEHD	; by Matze
