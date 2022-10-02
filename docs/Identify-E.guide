@@ -94,7 +94,7 @@ You can find the reference source code at https://identify.shredzone.org .
 
 If you want to modify the source code, please consider contributing to
 the reference repository. This is better than having an unknown number
-of branches and different source codes versions circulating around.
+of forks and different source codes versions circulating around.
 
 
 DISCLAIMER
@@ -470,6 +470,9 @@ A FAQ can be found online here:
 
 History
 *******
+
+@{i}V 40.1@{ui} (2022-10-02)
+        @{b}*@{ub} Added more manufacturers and boards
 
 @{i}V 40.0@{ui} (2022-02-13)
         @{b}*@{ub} Recognizes the Real-time Clock chip that is present.

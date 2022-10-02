@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      40.0
+Version:      40.1
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
@@ -19,7 +19,7 @@ Features:
   - Gives information about your Amiga model, CPU, OS version,
     available memory, chipset, and much more...
   - Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2.1
-  - The expansion database contains 359 manufacturers and 654 boards
+  - The expansion database contains 359 manufacturers and 656 boards
   - Distinguishes between most GVP and Phase5 boards with unique ID
   - Tries to give at least a hint if the board name is not known yet
   - Fully FPGA, DraCo, and PowerPC compatible
@@ -30,9 +30,6 @@ Features:
 
 New in this release:
 
-  - The Real-Time Clock chip is detected and reported now.
-  - Unknown boards are delegated to boards.library now (if present).
-  - CPU/FPU clock gives "N/A" instead of "0 MHz" if unknown.
   - More manufacturers and boards have been added.
 
 Identify is Open Source Software. The source code is distributed under
@@ -42,5 +39,5 @@ The reference repository is at GitHub: https://github.com/shred/identify
 
 The source code is deliberately not part of this package. If you want to
 modify the source code, please consider contributing to the reference
-repository. This is better than having an unknown number of branches and
+repository. This is better than having an unknown number of forks and
 different source codes versions circulating around.

@@ -62,6 +62,6 @@ Well, you _can_ do that. But please consider to contribute to the official proje
 
 **What about Identify V37?**
 
-Identify V37 was released by Thore Böckelmann in 2003. This release added new boards and new features. He published it with good intentions, but unfortunately without my consent. I can only blame myself for that, because I haven't provided the infrastructure where a coordinated development was made possible.
+Identify V37 was released by Thore Böckelmann in 2003. This release added new boards and new features. He published it with good intentions, but unfortunately without my consent. I can only blame myself for that, because I hadn't provided the infrastructure where a coordinated development was made possible.
 
 All changes of Thore's release have been backported to this official repository. For archiving purposes, you will find my last official Amiga built release V13.0, and Thore's V37.1, in the [GitHub releases](https://github.com/shred/identify/releases). Note that the code at the `v37.1` tag does not actually correspond to his V37.1 release, as he had used a completely different code base that was never published (to my knowledge).

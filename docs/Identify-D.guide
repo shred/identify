@@ -98,7 +98,7 @@ Den Referenz-Quelltext findest du unter https://identify.shredzone.org .
 
 Wenn du den Quelltext verändern möchtest, überlege bitte, ob du nicht zum
 Referenz-Repository beitragen möchtest. Das ist besser, als eine unbekannte
-Anzahl an Branches und verschiedenen Softwareständen zirkulieren zu lassen.
+Anzahl an Forks und verschiedenen Softwareständen zirkulieren zu lassen.
 
 
 HAFTUNG
@@ -517,6 +517,9 @@ Eine FAQ in Englisch findest du online unter:
 
 History
 *******
+
+@{i}V 40.1@{ui} (02.10.2022)
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
 
 @{i}V 40.0@{ui} (13.02.2022)
         @{b}*@{ub} Erkennung des verbauten Uhrenchips
