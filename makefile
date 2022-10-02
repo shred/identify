@@ -49,7 +49,7 @@ COPTS     = +aos68k -c99 -lauto -lamiga -cpu=68020 \
 			-I${VBCC}/targets/m68k-amigaos/include \
 			-I$(REFP) -I${AMIGA_NDK}/Include_H/ -I${AMIGA_INCLUDES} \
 			-L=${AMIGA_NDK}/lib/
-LOPTS     = -bamigahunk -mrel -s \
+LOPTS     = -bamigahunk -Rshort -mrel -s \
 			-L ${AMIGA_NDK}/lib/ -l debug -l amiga
 
 .PHONY : all clean source release check pack
