@@ -1487,8 +1487,11 @@ manuf_tab	tabinit
 		manuf	05016,"Apollo Team"	; Igor Majstorovic?
 		board	  001,"Vampire 600",		MSG_EXP_TURBO
 		board	  002,"Vampire 500",		MSG_EXP_TURBO
-		board	  005,"Vampire V4",		MSG_EXP_TURBO
-		board	  006,"Vampire V1200",		MSG_EXP_TURBO
+		board	  003,"FireBird V4",		MSG_EXP_TURBO
+		board	  004,"IceDrake V4",		MSG_EXP_TURBO
+		board	  005,"V4 Standalone",		MSG_EXP_TURBO
+		board	  006,"Vampire 1200",		MSG_EXP_TURBO
+		board	  007,"Manticore V4",		MSG_EXP_TURBO
 		endmf	05016
 
 		manuf	05017,"Alastair M. Robinson"
