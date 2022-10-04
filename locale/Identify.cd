@@ -285,11 +285,11 @@ MSG_AN_BADMESSAGE       (//49)
 Bad Message received by IDCMP
 MSG_AN_BADOVERLAY       (//49)
 Bad overlay
-MSG_AN_BADQUICKINT      (//49)
+MSG_AN_BADQUICKINT      (//)
 An uninitialized quick interrupt has happened
-MSG_AN_BADSEGLIST       (//49)
+MSG_AN_BADSEGLIST       (//)
 Overlays are illegal for library segments
-MSG_AN_BADSEMAPHORE     (//49)
+MSG_AN_BADSEMAPHORE     (//)
 An attempt was made to use old msg semaphores
 MSG_AN_BADSTATE         (//49)
 Bad State Return entering Intuition
@@ -335,7 +335,7 @@ MSG_AN_EXECLIB          (//49)
 exec.library trouble
 MSG_AN_EXPANSIONLIB     (//49)
 expansion.library trouble
-MSG_AN_FILERECLOSED     (//49)
+MSG_AN_FILERECLOSED     (//)
 A filehandle was closed more than once
 MSG_AN_FREETWICE        (//49)
 Freeing memory that is already free
@@ -397,7 +397,7 @@ MSG_AN_MATHLIB          (//49)
 math.library trouble
 MSG_AN_MEMCORRUPT       (//49)
 Corrupt memory list detected in FreeMem
-MSG_AN_MEMORYINSANE     (//49)
+MSG_AN_MEMORYINSANE     (//)
 Sanity check on memory list failed
 MSG_AN_MISCRSRC         (//49)
 misc.resource trouble
@@ -413,7 +413,7 @@ MSG_AN_OBSOLETEFONT     (//49)
 Unsupported font description used
 MSG_AN_OPENSCREEN       (//49)
 Open screen, no memory
-MSG_AN_OPENSCRNRAST     (//49)
+MSG_AN_OPENSCRNRAST     (//)
 Open screen, raster alloc, no memory
 MSG_AN_OPENWINDOW       (//49)
 Open window, no memory
