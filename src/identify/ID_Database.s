@@ -1560,13 +1560,16 @@ manuf_tab	tabinit
 		manuf	05140,"RastPort"
 		endmf	05140
 
-		manuf	05150,"Amiga Kit"
-		board	  001,"ZorRAM A2000",		MSG_EXP_RAM
+		manuf	05150,"Amiga Kit"		; confirmed
+		board	  001,"ZorRam A2000",		MSG_EXP_RAM
 		board	  002,"A1200 8MB",		MSG_EXP_RAM
-		board	  003,"A600 8MB",		MSG_EXP_RAM
-		board	  004,"A500 8MB",		MSG_EXP_RAM
-		board	  005,"A1200 8MB v2",		MSG_EXP_RAM
-		board	  006,"ZorRAM 8MB v2",		MSG_EXP_RAM
+		board	  003,"A600 4MB",		MSG_EXP_RAM
+		board	  004,"A500 4MB",		MSG_EXP_RAM
+		board	  005,"Buffered 4xIDE splitter",MSG_EXP_MISC
+		board	  006,"FastIDE Gayle adapter",	MSG_EXP_MISC
+		board	  007,"A1200 8MB",		MSG_EXP_FLASHROM
+		board	  008,"ZorRam 8MB",		MSG_EXP_FLASHROM
+		board	  009,"CD32 8MB",		MSG_EXP_RAM
 		endmf	05150
 
 		manuf	05160,"Central Texas CUG"
