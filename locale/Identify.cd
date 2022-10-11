@@ -157,9 +157,9 @@ floppy disk interface
 MSG_EXP_USB             (//49)
 USB interface
 MSG_EXP_KEYBOARD        (//49)
-Keyboard interface
+keyboard interface
 MSG_EXP_MOUSE           (//49)
-Mouse interface
+mouse interface
 MSG_EXP_SATAHD          (//49)
 SATA controller
 ;

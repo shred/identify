@@ -1560,13 +1560,16 @@ manuf_tab	tabinit
 		manuf	05140,"RastPort"
 		endmf	05140
 
-		manuf	05150,"Amiga Kit"
-		board	  001,"ZorRAM A2000",		MSG_EXP_RAM
+		manuf	05150,"Amiga Kit"		; confirmed
+		board	  001,"ZorRam A2000",		MSG_EXP_RAM
 		board	  002,"A1200 8MB",		MSG_EXP_RAM
-		board	  003,"A600 8MB",		MSG_EXP_RAM
-		board	  004,"A500 8MB",		MSG_EXP_RAM
-		board	  005,"A1200 8MB v2",		MSG_EXP_RAM
-		board	  006,"ZorRAM 8MB v2",		MSG_EXP_RAM
+		board	  003,"A600 4MB",		MSG_EXP_RAM
+		board	  004,"A500 4MB",		MSG_EXP_RAM
+		board	  005,"Buffered 4xIDE splitter",MSG_EXP_MISC
+		board	  006,"FastIDE Gayle adapter",	MSG_EXP_MISC
+		board	  007,"A1200 8MB",		MSG_EXP_FLASHROM
+		board	  008,"ZorRam 8MB",		MSG_EXP_FLASHROM
+		board	  009,"CD32 8MB",		MSG_EXP_RAM
 		endmf	05150
 
 		manuf	05160,"Central Texas CUG"
@@ -1578,13 +1581,16 @@ manuf_tab	tabinit
 		manuf	05180,"Solar Soyuz Zaibatsu"
 		endmf	05180
 
-		manuf	05190,"Matthias Hampel"
+		manuf	05191,"Matthias Hampel"		; a1k.org Community, confirmed
 		board	  010,"Freeway",		MSG_EXP_USB
-		endmf	05190
-
-		manuf	05191,"a1k.org Community"
-		boarda	  010,"Matthias Hampel","Freeway",MSG_EXP_USB
 		board	  011,"Freeway Pro",		MSG_EXP_USB
+		board	  012,"Freeway Pro GBA",	MSG_EXP_USB
+		board	  020,"Freeway NG Z3",		MSG_EXP_USB
+		board	  021,"Freeway NG Z2",		MSG_EXP_USB
+		board	  022,"Freeway NG Flash",	MSG_EXP_FLASHROM
+		board	  030,"FreewayTriton Z3",	MSG_EXP_USB
+		board	  031,"FreewayTriton Z2",	MSG_EXP_USB
+		board	  032,"FreewayTriton Flash",	MSG_EXP_FLASHROM
 		endmf	05191
 
 		manuf	05500,"Inhouse Information"
