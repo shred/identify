@@ -1,0 +1,187 @@
+## version $VER: identifytools.catalog 40.0 (03-10-2022) - By Fil. BRANDAO
+## codeset 0
+## language français
+;
+MSG_NOIDENTIFY
+identify.library V%ld ou supérieure nécessaire!\n
+; Needs identify.library V%ld or higher!\n
+;
+MSG_LISTEXP_HAIL
+ -- ListExp V%s -- %s\n\n
+; -- ListExp V%s -- %s\n\n
+;
+MSG_LISTEXP_HELP
+Exemple:\n\
+   FULL/S\t\t lister toutes les commodités courantes\n\
+   MID=MANUFID/K/N\t information à propos du fabriquant\n\
+   PID=PRODID/K/N\t et son produit\n\n\
+Merci de lire la documentation pour plus de détails.\n
+; Template:\n\n\
+;   FULL/S\t\tlist all current commodities\n\
+;   MID=MANUFID/K/N\tinformation about manufacturer\n\
+;   PID=PRODID/K/N\tand it's product\n\n\
+; Please read the doc file for further details.\n
+;
+MSG_LISTEXP_OVERFLOW
+Hors limite! (ManufID=0..65535 ProdID=0..255)\n\n
+; Bad range! (ManufID=0..65535 ProdID=0..255)\n\n
+;
+MSG_LISTEXP_SPECBOARD
+  Fabriquant: %s\n\
+  Produit:    %s\n\
+  Classe:     %s\n\n
+;  Manufacturer: %s\n\
+;  Product:      %s\n\
+;  Class:        %s\n\n
+;
+MSG_LISTEXP_HARDWARE
+ ** MATÉRIEL **\n\n\
+ Système:  %s\n\
+ CPU:      %s %s (Rév %s), FPU=%s %s, MMU=%s\n
+; ** HARDWARE **\n\
+; \n\
+; System:  %s\n\
+; CPU:     %s %s (Rev %s), FPU=%s %s, MMU=%s\n
+;
+MSG_LISTEXP_POWERPC
+ PowerPC: %s %s (exécutant %s)\n
+; PowerPC: %s %s (running %s)\n
+;
+MSG_LISTEXP_HARDWARE2
+ Chipset: %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
+ \t DMA:   %s (Mode: %s)\n\
+ \t Vidéo: %s (Rév: %s)\n\
+ \t Audio: %s\n\
+ \t RTC:   %s\n\
+ AmigaOS: %s (%s, SetPatch %s, ROM %s)\n\
+          Exec %s   Workbench %s\n\n\
+ Support: GraphicOS: %s, AudioOS: %s, TCP/IP: %s\n\
+ Horloge: Power %s, VBlank %s, E-Clock %s\n\
+ RAM:     Carte mère %s bit, %s, %s CAS, %sx bande passante\n\n\
+ Mémoire:\t\t   CHIP\t   FAST\t  TOTAL\tROM = %s\tSLOW = %s\n\
+ \t  RÉELLE\t%7s\t%7s\t%7s\n\
+ \t VIRTUEL\t%7s\t%7s\t%7s\n\
+ \t   TOTAL\t%7s\t%7s\t%7s\n
+; Chipset: %s (RAMSEY %s, GARY %s, CHUNKY %s) VBR=%s\n\
+; \t DMA:   %s (Mode: %s)\n\
+; \t Video: %s (Rev: %s)\n\
+; \t Audio: %s\n\
+; \t RTC:   %s\n\
+; AmigaOS: %s (%s, SetPatch %s, ROM %s)\n\
+;          Exec %s   Workbench %s\n\
+; Support: GraphicOS: %s, AudioOS: %s, TCP/IP: %s\n\
+; Clock:   Power %s, VBlank %s, E-Clock %s\n\
+; RAM:     Motherboard %s bit, %s, %s CAS, %sx Bandwidth\n\
+; \n\
+; Memory:\t\t   CHIP\t   FAST\t  TOTAL\tROM = %s\tSLOW = %s\n\
+; \t  PLAIN\t%7s\t%7s\t%7s\n\
+; \tVIRTUAL\t%7s\t%7s\t%7s\n\
+; \t  TOTAL\t%7s\t%7s\t%7s\n\n\n
+;
+MSG_LISTEXP_LISTTITLE
+ ** EXTENSIONS **\n\n\
+ N°  ID       Fabriquant           Produit\n\
+ ----------------------------------------------------------------------------\n
+; ** EXPANSIONS **\n\n\
+; Nr ID        Manufacturer         Product\n\
+; ----------------------------------------------------------------------------\n
+;
+MSG_LISTEXP_BOARDLINE
+ %2ld %5ld/%3ld %-20s %-20s %s\n
+; %2ld %5ld/%3ld %-20s %-20s %s\n
+;
+MSG_LISTEXP_CXTITLE
+ \n\n\
+** COMMODITÉS **\n\n\
+ Nom                      Titre\n\
+ ----------------------------------------------------------------------------\n
+; \n\n** COMMODITIES **\n\n\
+; Name                     Title\n\
+; ----------------------------------------------------------------------------\n
+;
+MSG_LISTEXP_CXLINE
+ %-24s %-40s\n
+; %-24s %-40s\n
+;
+MSG_LISTEXP_LISTTITLE_WIDE
+ ** EXTENSIONS **\n\n\
+ N°  ID       Fabriquant           Produit\n\
+              Addresse    Taille   N° de série          Zorro (Type/Drapeaux)\n\
+ ----------------------------------------------------------------------------\n
+; ** EXPANSIONS **\n\n\
+; Nr ID        Manufacturer         Product\n\
+;              Address     Size     Serial               Zorro (Type/Flags)\n\
+; ----------------------------------------------------------------------------\n
+;
+MSG_LISTEXP_BOARDLINE_WIDE
+ %2ld %5ld/%3ld %-20s %-20s %s\n\
+\              %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n
+; %2ld %5ld/%3ld %-20s %-20s %s\n\
+;              %08lx    %3ld%lcB    %08lx             Z%ld    (%02lx/%02lx)\n\n
+;
+MSG_LISTEXP_UNKNOWN
+ \n\
+ Au moins une extension de votre système n'est pas encore connue. Merci d'envoyer cette\n\
+ sortie au projet Identify, regarder: %s .\n\
+ Votre aide est appréciée. Merci!\n\n
+; \n\
+; At least one expansion in your system is not known yet. Please send this\n\
+; output to the Identify project, see: %s .\n\
+; Your help is appreciated. Thank you!\n\n
+;
+MSG_GURU_HAIL
+ -- Guru V%s -- %s\n\n
+; -- Guru V%s -- %s\n\n
+;
+MSG_GURU_HELP
+ Exemple:\n\n\
+   GURU\t\tcode guru a analyser\n\
+   LASTALERT/S\tanalyser la dernière alerte système\n\n\
+ Merci de lire la documentation pour plus de détails.\n
+; Template:\n\n\
+;   GURU\t\tguru code to be analyzed\n\
+;   LASTALERT/S\tanalyze last system alert\n\n\
+; Please read the doc file for further details.\n
+;
+MSG_GURU_BADCODE
+Ce n'est pas un code Guru valide...\n\n
+; This is not a valid Guru code...\n\n
+;
+MSG_GURU_RESULT
+  Code alerte:   %08lx\n\
+  Type:          %s\n\
+  Sous-système:  %s\n\
+  Général:       %s\n\
+  Spécifique:    %s\n\n
+;  Alert Code: %08lx\n\
+;  Type:       %s\n\
+;  Subsystem:  %s\n\
+;  General:    %s\n\
+;  Specified:  %s\n\n
+;
+MSG_GURU_NOLAST
+Aucun guru n'est encore survenu...\n\n
+; No Guru occured yet...\n\n
+;
+MSG_FUNC_HAIL
+ -- Fonction V%s -- %s\n\n
+; -- Function V%s -- %s\n\n
+;
+MSG_FUNC_HELP
+ Exemple:\n\n\
+   LN=LIBNAME/A\tnom de la library\n\
+   O=OFFSET/N/A\toffset de la fonction\n\n\
+ Merci de lire la documentation pour plus de détails.\n
+; Template:\n\n\
+;   LN=LIBNAME/A\tname of the library\n\
+;   O=OFFSET/N/A\toffset of the function\n\n\
+; Please read the doc file for further details.\n
+;
+MSG_FUNC_RESULT
+  Library:    %s\n\
+  Offset:     %ld\n\
+  Fonction:   %s\n\n
+;  Library:    %s\n\
+;  Offset:     %ld\n\
+;  Function:   %s\n\n
+;

@@ -40,14 +40,14 @@ Requirements:
 * [FlexCat](https://github.com/adtools/flexcat/releases/tag/2.18)
 * [AmigaOS NDK 3.2](https://www.hyperion-entertainment.com/index.php/downloads?view=files&parent=40), unpacked on your build machine
 * [MUI](http://sasg.com/mui/download.html) by Stefan Stuntz, includes unpacked on your build machine
-* [lha](https://github.com/jca02266/lha)
+* [lha](https://github.com/jca02266/lha) (compiled with `--enable-multibyte-filename=auto` option, which is the default)
 * [AmiTools](https://github.com/cnvogelg/amitools) (optional, for the `pack` target only)
 
 Set the `AMIGA_NDK` env variable to the location of the unpacked `NDK3.2` directory on your build machine. Also set `AMIGA_INCLUDES` to the location of 3rd party include files, where the MUI includes can be found.
 
 Then just invoke `make` to build the project. The compiled project can be found in the `build` directory.
 
-`make release` will compile a release version in the `release` directory.
+`make release` will compile a release version in the `release` directory. This target is optimized for Linux, and might not run on other operating systems.
 
 `make pack` will create adf files for `IdentifyDev` and `IdentifyUsr` in the `release` directory. These files may be useful to install Identify on disk based systems, but are not part of the official release.
 
@@ -68,6 +68,7 @@ At the AmiNet, you will find [official binaries](http://aminet.net/package/util/
 The identify tools are fully localizable. English is the built-in language. Available translations are (in alphabetical order):
 
 * Deutsch (by Richard Körber)
+* Français (by Filipe Brandão)
 * Italiano (by David Lo Buglio)
 
 If you want to provide other translations, please contact me for assistance.

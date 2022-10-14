@@ -24,13 +24,14 @@ Features:
   - Tries to give at least a hint if the board name is not known yet
   - Fully FPGA, DraCo, and PowerPC compatible
   - Supports PowerUp and WarpOS
-  - Fully localized (catalogs included: Deutsch, Italiano)
+  - Fully localized (catalogs included: Deutsch, Français, Italiano)
   - Use the features in ARexx, with the included rexxidentify.library
   - English and German documentation
 
 New in this release:
 
   - More manufacturers and boards have been added.
+  - French translation by Filipe Brandão
 
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.

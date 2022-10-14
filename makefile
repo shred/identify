@@ -63,6 +63,8 @@ all: $(OBJP) \
 		$(OBJP)/locale/IdentifyTools.ct \
 		$(OBJP)/locale/deutsch/Identify.catalog \
 		$(OBJP)/locale/deutsch/IdentifyTools.catalog \
+		$(OBJP)/locale/français/Identify.catalog \
+		$(OBJP)/locale/français/IdentifyTools.catalog \
 		$(OBJP)/locale/italiano/Identify.catalog \
 		$(OBJP)/locale/italiano/IdentifyTools.catalog \
 		$(OBJP)/identify.library \
@@ -88,7 +90,9 @@ release: clean all
 	cp $(OBJP)/ListExp $(RELP)/IdentifyUsr/Identify/c/
 
 	cp -r $(OBJP)/locale/deutsch $(RELP)/IdentifyUsr/Identify/catalogs/	# Catalogs
+	cp -r $(OBJP)/locale/français $(RELP)/IdentifyUsr/Identify/catalogs/
 	cp -r $(OBJP)/locale/italiano $(RELP)/IdentifyUsr/Identify/catalogs/
+	mv $(RELP)/IdentifyUsr/Identify/catalogs/français $(RELP)/IdentifyUsr/Identify/catalogs/fran:e7ais
 
 	cp $(DOCP)/Identify-D.guide $(RELP)/IdentifyUsr/Identify/docs/		# Docs
 	cp $(DOCP)/Identify-E.guide $(RELP)/IdentifyUsr/Identify/docs/
@@ -115,10 +119,10 @@ release: clean all
 	cp $(OBJP)/MyExp $(RELP)/IdentifyDev/Identify/examples/
 
 	rm -f $(OBJP)/IdentifyUsr.lha							# Package
-	cd $(RELP)/IdentifyUsr ; lha c -q1 ../IdentifyUsr.lha *
+	cd $(RELP)/IdentifyUsr ; lha c --system-kanji-code=cap -q1 ../IdentifyUsr.lha *
 	cp $(DOCP)/IdentifyUsr.readme $(RELP)/
 	rm -f $(OBJP)/IdentifyDev.lha
-	cd $(RELP)/IdentifyDev ; lha c -q1 ../IdentifyDev.lha *
+	cd $(RELP)/IdentifyDev ; lha c --system-kanji-code=cap -q1 ../IdentifyDev.lha *
 	cp $(DOCP)/IdentifyDev.readme $(RELP)/
 
 pack: release
@@ -136,6 +140,7 @@ $(OBJP):
 	mkdir -p $(OBJP)/000
 	mkdir -p $(OBJP)/locale
 	mkdir -p $(OBJP)/locale/deutsch
+	mkdir -p $(OBJP)/locale/français
 	mkdir -p $(OBJP)/locale/italiano
 
 #-- pragmas
@@ -164,6 +169,12 @@ $(OBJP)/locale/deutsch/Identify.catalog: $(LOCP)/deutsch/Identify.ct $(LOCP)/Ide
 
 $(OBJP)/locale/deutsch/IdentifyTools.catalog: $(LOCP)/deutsch/IdentifyTools.ct $(LOCP)/IdentifyTools.cd
 	flexcat NOOPTIM $(LOCP)/IdentifyTools.cd $(LOCP)/deutsch/IdentifyTools.ct CATALOG $@
+
+$(OBJP)/locale/français/Identify.catalog: $(LOCP)/français/Identify.ct $(LOCP)/Identify.cd
+	flexcat NOOPTIM $(LOCP)/Identify.cd $(LOCP)/français/Identify.ct CATALOG $@
+
+$(OBJP)/locale/français/IdentifyTools.catalog: $(LOCP)/français/IdentifyTools.ct $(LOCP)/IdentifyTools.cd
+	flexcat NOOPTIM $(LOCP)/IdentifyTools.cd $(LOCP)/français/IdentifyTools.ct CATALOG $@
 
 $(OBJP)/locale/italiano/Identify.catalog: $(LOCP)/italiano/Identify.ct $(LOCP)/Identify.cd
 	flexcat NOOPTIM $(LOCP)/Identify.cd $(LOCP)/italiano/Identify.ct CATALOG $@

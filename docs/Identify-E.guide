@@ -471,6 +471,10 @@ A FAQ can be found online here:
 History
 *******
 
+@{i}V 40.2@{ui} ()
+        @{b}*@{ub} Added more manufacturers and boards
+        @{b}*@{ub} Added french translation, provided by Filipe Brandão
+
 @{i}V 40.1@{ui} (2022-10-02)
         @{b}*@{ub} Added more manufacturers and boards
 
@@ -761,6 +765,7 @@ I also like to thank all the people who contributed a bulk of extension IDs
 
 If you can use Identify in your language, please applaud your translator:
 
+@{i}Filipe Brandão@{ui} - Français
 @{i}David Lo Buglio@{ui} - Italiano
 
 And of course, I want to thank everyone who I have forgotten to mention here!
