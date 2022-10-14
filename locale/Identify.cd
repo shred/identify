@@ -167,311 +167,311 @@ SATA controller
 ;       ALERT GENERAL ERROR (1024..)
 ;================================================================
 ;
-MSG_ALERT_RECOVERY      (1024//49)
+MSG_ALERT_RECOVERY      (1024//99)
 Recoverable
-MSG_ALERT_DEADEND       (//49)
+MSG_ALERT_DEADEND       (//99)
 Deadend
-MSG_ALERT_UNKNOWN       (//49)
+MSG_ALERT_UNKNOWN       (//99)
 Unknown
 ;
-MSG_AG_BADPARM          (//49)
+MSG_AG_BADPARM          (//99)
 Bad parameter
-MSG_AG_CLOSEDEV         (//49)
+MSG_AG_CLOSEDEV         (//99)
 Cannot close device
-MSG_AG_CLOSELIB         (//49)
+MSG_AG_CLOSELIB         (//99)
 Cannot close library
-MSG_AG_GENERAL          (//49)
+MSG_AG_GENERAL          (//99)
 General fault
-MSG_AG_IOERROR          (//49)
+MSG_AG_IOERROR          (//99)
 I/O error
-MSG_AG_MAKELIB          (//49)
+MSG_AG_MAKELIB          (//99)
 Cannot make library
-MSG_AG_NOMEMORY         (//49)
+MSG_AG_NOMEMORY         (//99)
 No memory
-MSG_AG_NOSIGNAL         (//49)
+MSG_AG_NOSIGNAL         (//99)
 No signal
-MSG_AG_OPENDEV          (//49)
+MSG_AG_OPENDEV          (//99)
 Cannot open device
-MSG_AG_OPENLIB          (//49)
+MSG_AG_OPENLIB          (//99)
 Cannot open library
-MSG_AG_OPENRES          (//49)
+MSG_AG_OPENRES          (//99)
 Cannot open resource
-MSG_AG_PROCCREATE       (//49)
+MSG_AG_PROCCREATE       (//99)
 Process creation failed
 ;
 ;================================================================
 ;       ALERT ERROR (2048..)
 ;================================================================
 ;
-MSG_ACPU_ADDRESSERR     (2048//49)
+MSG_ACPU_ADDRESSERR     (2048//99)
 Illegal address access
-MSG_ACPU_AUTOVEC1       (//49)
+MSG_ACPU_AUTOVEC1       (//99)
 AutoVector Level 1 interrupt error
-MSG_ACPU_AUTOVEC2       (//49)
+MSG_ACPU_AUTOVEC2       (//99)
 AutoVector Level 2 interrupt error
-MSG_ACPU_AUTOVEC3       (//49)
+MSG_ACPU_AUTOVEC3       (//99)
 AutoVector Level 3 interrupt error
-MSG_ACPU_AUTOVEC4       (//49)
+MSG_ACPU_AUTOVEC4       (//99)
 AutoVector Level 4 interrupt error
-MSG_ACPU_AUTOVEC5       (//49)
+MSG_ACPU_AUTOVEC5       (//99)
 AutoVector Level 5 interrupt error
-MSG_ACPU_AUTOVEC6       (//49)
+MSG_ACPU_AUTOVEC6       (//99)
 AutoVector Level 6 interrupt error
-MSG_ACPU_AUTOVEC7       (//49)
+MSG_ACPU_AUTOVEC7       (//99)
 AutoVector Level 7 interrupt error
-MSG_ACPU_BUSERR         (//49)
+MSG_ACPU_BUSERR         (//99)
 Hardware bus fault/access error
-MSG_ACPU_CHK            (//49)
+MSG_ACPU_CHK            (//99)
 Check instruction error
-MSG_ACPU_COPRVIOL       (//49)
+MSG_ACPU_COPRVIOL       (//99)
 Coprocessor protocol violation
-MSG_ACPU_DIVZERO        (//49)
+MSG_ACPU_DIVZERO        (//99)
 Divide by zero
-MSG_ACPU_FORMAT         (//49)
+MSG_ACPU_FORMAT         (//99)
 Stack frame format error
-MSG_ACPU_FPCPBRANCH     (//49)
+MSG_ACPU_FPCPBRANCH     (//99)
 FPCP branch or set on unordered condition
-MSG_ACPU_FPCPDIVZERO    (//49)
+MSG_ACPU_FPCPDIVZERO    (//99)
 FPCP divide by zero
-MSG_ACPU_FPCPINEXACT    (//49)
+MSG_ACPU_FPCPINEXACT    (//99)
 FPCP inexact result
-MSG_ACPU_FPCPOPERROR    (//49)
+MSG_ACPU_FPCPOPERROR    (//99)
 FPCP operand error
-MSG_ACPU_FPCPOVER       (//49)
+MSG_ACPU_FPCPOVER       (//99)
 FPCP overflow
-MSG_ACPU_FPCPUNDER      (//49)
+MSG_ACPU_FPCPUNDER      (//99)
 FPCP underflow
-MSG_ACPU_UNIMPLDTYPE    (//49)
+MSG_ACPU_UNIMPLDTYPE    (//99)
 FPCP unimplemented data type
-MSG_ACPU_INSTERR        (//49)
+MSG_ACPU_INSTERR        (//99)
 Illegal instruction
-MSG_ACPU_LINEA          (//49)
+MSG_ACPU_LINEA          (//99)
 Line 1010 Emulator error
-MSG_ACPU_LINEF          (//49)
+MSG_ACPU_LINEF          (//99)
 Line 1111 Emulator error
-MSG_ACPU_MMUACCVIOL     (//49)
+MSG_ACPU_MMUACCVIOL     (//99)
 PMMU access level violation
-MSG_ACPU_MMUCONFIG      (//49)
+MSG_ACPU_MMUCONFIG      (//99)
 PMMU configuration
-MSG_ACPU_MMUILLEGAL     (//49)
+MSG_ACPU_MMUILLEGAL     (//99)
 PMMU illegal configuration
-MSG_ACPU_NAN            (//49)
+MSG_ACPU_NAN            (//99)
 FPCP signaling NaN
-MSG_ACPU_PRIVERR        (//49)
+MSG_ACPU_PRIVERR        (//99)
 Privilege violation error
-MSG_ACPU_SPURIOUS       (//49)
+MSG_ACPU_SPURIOUS       (//99)
 Spurious interrupt error
-MSG_ACPU_TRACE          (//49)
+MSG_ACPU_TRACE          (//99)
 Trace error
-MSG_ACPU_TRAPV          (//49)
+MSG_ACPU_TRAPV          (//99)
 TrapV instruction error
-MSG_AN_ADDSWGADGET      (//49)
+MSG_AN_ADDSWGADGET      (//99)
 Add SW gadgets, no memory
-MSG_AN_ASYNCPKT         (//49)
+MSG_AN_ASYNCPKT         (//99)
 Unexpected packet received
-MSG_AN_AUDIODEV         (//49)
+MSG_AN_AUDIODEV         (//99)
 Audio device trouble
-MSG_AN_BADCHKSUM        (//49)
+MSG_AN_BADCHKSUM        (//99)
 Invalid checksum
-MSG_AN_BADEXPANSIONFREE (//49)
+MSG_AN_BADEXPANSIONFREE (//99)
 Freeed free region
-MSG_AN_BADFREEADDR      (//49)
+MSG_AN_BADFREEADDR      (//99)
 Memory header not located
-MSG_AN_BADGADGET        (//49)
+MSG_AN_BADGADGET        (//99)
 Recovery form of AN_GadgetType
-MSG_AN_BADINITFUNC      (//49)
+MSG_AN_BADINITFUNC      (//99)
 Invalid init packet for cli/shell
-MSG_AN_BADMESSAGE       (//49)
+MSG_AN_BADMESSAGE       (//99)
 Bad Message received by IDCMP
-MSG_AN_BADOVERLAY       (//49)
+MSG_AN_BADOVERLAY       (//99)
 Bad overlay
-MSG_AN_BADQUICKINT      (//49)
+MSG_AN_BADQUICKINT      (//99)
 An uninitialized quick interrupt has happened
-MSG_AN_BADSEGLIST       (//49)
+MSG_AN_BADSEGLIST       (//99)
 Overlays are illegal for library segments
-MSG_AN_BADSEMAPHORE     (//49)
+MSG_AN_BADSEMAPHORE     (//99)
 An attempt was made to use old msg semaphores
-MSG_AN_BADSTATE         (//49)
+MSG_AN_BADSTATE         (//99)
 Bad State Return entering Intuition
-MSG_AN_BASECHKSUM       (//49)
+MSG_AN_BASECHKSUM       (//99)
 Execbase checksum bad
-MSG_AN_BITMAP           (//49)
+MSG_AN_BITMAP           (//99)
 Bitmap corrupt
-MSG_AN_BLTBITMAP        (//49)
+MSG_AN_BLTBITMAP        (//99)
 BltBitMap, no memory
-MSG_AN_BOGUSEXCPT       (//49)
+MSG_AN_BOGUSEXCPT       (//99)
 Illegal 68k exception taken
-MSG_AN_BOOTERROR        (//49)
+MSG_AN_BOOTERROR        (//99)
 Boot code returned an error
-MSG_AN_BOOTSTRAP        (//49)
+MSG_AN_BOOTSTRAP        (//99)
 Bootstrap trouble
-MSG_AN_CIARSRC          (//49)
+MSG_AN_CIARSRC          (//99)
 cia.resource trouble
-MSG_AN_CONSOLEDEV       (//49)
+MSG_AN_CONSOLEDEV       (//99)
 colsole.device trouble
-MSG_AN_CREATEPORT       (//49)
+MSG_AN_CREATEPORT       (//99)
 Create port, no memory
-MSG_AN_DISKBLKSEQ       (//49)
+MSG_AN_DISKBLKSEQ       (//99)
 Disk block sequence error
-MSG_AN_DISKCOPY         (//49)
+MSG_AN_DISKCOPY         (//99)
 DiskCopy trouble
-MSG_AN_DISKERROR        (//49)
+MSG_AN_DISKERROR        (//99)
 Disk Error
-MSG_AN_DISKFONTLIB      (//49)
+MSG_AN_DISKFONTLIB      (//99)
 diskfont.library trouble
-MSG_AN_DISKRSRC         (//49)
+MSG_AN_DISKRSRC         (//99)
 disk.resource trouble
-MSG_AN_DOSLIB           (//49)
+MSG_AN_DOSLIB           (//99)
 dos.library trouble
-MSG_AN_DRHASDISK        (//49)
+MSG_AN_DRHASDISK        (//99)
 Get unit: already has disk
-MSG_AN_DRINTNOACT       (//49)
+MSG_AN_DRINTNOACT       (//99)
 Interrupt: no active unit
-MSG_AN_ENDTASK          (//49)
+MSG_AN_ENDTASK          (//99)
 EndTask didn't
-MSG_AN_EXCPTVECT        (//49)
+MSG_AN_EXCPTVECT        (//99)
 68000 exception vector checksum
-MSG_AN_EXECLIB          (//49)
+MSG_AN_EXECLIB          (//99)
 exec.library trouble
-MSG_AN_EXPANSIONLIB     (//49)
+MSG_AN_EXPANSIONLIB     (//99)
 expansion.library trouble
-MSG_AN_FILERECLOSED     (//49)
+MSG_AN_FILERECLOSED     (//99)
 A filehandle was closed more than once
-MSG_AN_FREETWICE        (//49)
+MSG_AN_FREETWICE        (//99)
 Freeing memory that is already free
-MSG_AN_FREEVEC          (//49)
+MSG_AN_FREEVEC          (//99)
 Freevec failed
-MSG_AN_GADGETTYPE       (//49)
+MSG_AN_GADGETTYPE       (//99)
 Unknown gadget type
-MSG_AN_GADTOOLS         (//49)
+MSG_AN_GADTOOLS         (//99)
 gadtools.library trouble
-MSG_AN_GAMEPORTDEV      (//49)
+MSG_AN_GAMEPORTDEV      (//99)
 gameport.device trouble
-MSG_AN_GFXFREEERROR     (//49)
+MSG_AN_GFXFREEERROR     (//99)
 Error freeing graphics
-MSG_AN_GFXNEWERROR      (//49)
+MSG_AN_GFXNEWERROR      (//99)
 New graphics error
-MSG_AN_GFXNOLCM         (//49)
+MSG_AN_GFXNOLCM         (//99)
 Emergency memory not available
-MSG_AN_GFXNOMEM         (//49)
+MSG_AN_GFXNOMEM         (//99)
 Graphics out of memory
-MSG_AN_GFXNOMEMMSPC     (//49)
+MSG_AN_GFXNOMEMMSPC     (//99)
 MonitorSpec alloc, no memory
-MSG_AN_GRAPHICSLIB      (//49)
+MSG_AN_GRAPHICSLIB      (//99)
 graphics.library trouble
-MSG_AN_ICONLIB          (//49)
+MSG_AN_ICONLIB          (//99)
 icon.library trouble
-MSG_AN_INITAPTR         (//49)
+MSG_AN_INITAPTR         (//99)
 InitStruct() of an APTR source
-MSG_AN_INTRMEM          (//49)
+MSG_AN_INTRMEM          (//99)
 No memory for interrupt servers
-MSG_AN_INTUITION        (//49)
+MSG_AN_INTUITION        (//99)
 intuition.library trouble
-MSG_AN_IOAFTERCLOSE     (//49)
+MSG_AN_IOAFTERCLOSE     (//99)
 IO attempted on closed IORequest
-MSG_AN_IOUSEDTWICE      (//49)
+MSG_AN_IOUSEDTWICE      (//99)
 Attempt to reuse active IORequest
-MSG_AN_ISEMORDER        (//49)
+MSG_AN_ISEMORDER        (//99)
 Intuition obtained a sem in bad order
-MSG_AN_ITEMALLOC        (//49)
+MSG_AN_ITEMALLOC        (//99)
 Item plane alloc, no memory
-MSG_AN_ITEMBOXTOP       (//49)
+MSG_AN_ITEMBOXTOP       (//99)
 Item box top < RelZero
-MSG_AN_KEYBOARDDEV      (//49)
+MSG_AN_KEYBOARDDEV      (//99)
 keyboard.device trouble
-MSG_AN_KEYFREE          (//49)
+MSG_AN_KEYFREE          (//99)
 Key already free
-MSG_AN_KEYRANGE         (//49)
+MSG_AN_KEYRANGE         (//99)
 Key out of range
-MSG_AN_LAYERSLIB        (//49)
+MSG_AN_LAYERSLIB        (//99)
 layers.library trouble
-MSG_AN_LAYERSNOMEM      (//49)
+MSG_AN_LAYERSNOMEM      (//99)
 Layers out of memory
-MSG_AN_LIBCHKSUM        (//49)
+MSG_AN_LIBCHKSUM        (//99)
 Library checksum failure
-MSG_AN_LONGFRAME        (//49)
+MSG_AN_LONGFRAME        (//99)
 Long frame, no memory
-MSG_AN_MAKEVPORT        (//49)
+MSG_AN_MAKEVPORT        (//99)
 MakeVPort, no memory
-MSG_AN_MATHLIB          (//49)
+MSG_AN_MATHLIB          (//99)
 math.library trouble
-MSG_AN_MEMCORRUPT       (//49)
+MSG_AN_MEMCORRUPT       (//99)
 Corrupt memory list detected in FreeMem
-MSG_AN_MEMORYINSANE     (//49)
+MSG_AN_MEMORYINSANE     (//99)
 Sanity check on memory list failed
-MSG_AN_MISCRSRC         (//49)
+MSG_AN_MISCRSRC         (//99)
 misc.resource trouble
-MSG_AN_NOCONSOLE        (//49)
+MSG_AN_NOCONSOLE        (//99)
 Couldn't open the Console Device
-MSG_AN_NOFONTS          (//49)
+MSG_AN_NOFONTS          (//99)
 No fonts available
-MSG_AN_NOISEM           (//49)
+MSG_AN_NOISEM           (//99)
 Intuition skipped obtaining a semaphore
-MSG_AN_NOWINDOW         (//49)
+MSG_AN_NOWINDOW         (//99)
 Console can't open initial window
-MSG_AN_OBSOLETEFONT     (//49)
+MSG_AN_OBSOLETEFONT     (//99)
 Unsupported font description used
-MSG_AN_OPENSCREEN       (//49)
+MSG_AN_OPENSCREEN       (//99)
 Open screen, no memory
-MSG_AN_OPENSCRNRAST     (//49)
+MSG_AN_OPENSCRNRAST     (//99)
 Open screen, raster alloc, no memory
-MSG_AN_OPENWINDOW       (//49)
+MSG_AN_OPENWINDOW       (//99)
 Open window, no memory
-MSG_AN_PLANEALLOC       (//49)
+MSG_AN_PLANEALLOC       (//99)
 Plane alloc, no memory
-MSG_AN_QPKTFAIL         (//49)
+MSG_AN_QPKTFAIL         (//99)
 Qpkt failure
-MSG_AN_RAMLIB           (//49)
+MSG_AN_RAMLIB           (//99)
 ramlib trouble
-MSG_AN_REGIONMEMORY     (//49)
+MSG_AN_REGIONMEMORY     (//99)
 Regions, memory not available
-MSG_AN_SEMCORRUPT       (//49)
+MSG_AN_SEMCORRUPT       (//99)
 A semaphore is in an illegal state
-MSG_AN_SHORTFRAME       (//49)
+MSG_AN_SHORTFRAME       (//99)
 Short frame, no memory
-MSG_AN_STACKPROBE       (//49)
+MSG_AN_STACKPROBE       (//99)
 Stack appears to extend out of range
-MSG_AN_STARTMEM         (//49)
+MSG_AN_STARTMEM         (//99)
 No memory at startup
-MSG_AN_SUBALLOC         (//49)
+MSG_AN_SUBALLOC         (//99)
 Sub alloc, no memory
-MSG_AN_SYSSCRNTYPE      (//49)
+MSG_AN_SYSSCRNTYPE      (//99)
 Open sys screen, unknown type
-MSG_AN_TDCALIBSEEK      (//49)
+MSG_AN_TDCALIBSEEK      (//99)
 Calibrate: seek error
-MSG_AN_TDDELAY          (//49)
+MSG_AN_TDDELAY          (//99)
 Delay: error on timer wait
-MSG_AN_TEXTTMPRAS       (//49)
+MSG_AN_TEXTTMPRAS       (//99)
 Text, no memory for TmpRas
-MSG_AN_TIMERDEV         (//49)
+MSG_AN_TIMERDEV         (//99)
 timer.device trouble
-MSG_AN_TMBADREQ         (//49)
+MSG_AN_TMBADREQ         (//99)
 Bad request
-MSG_AN_TMBADSUPPLY      (//49)
+MSG_AN_TMBADSUPPLY      (//99)
 Power supply -- no 50/60hz ticks
-MSG_AN_TRACKDISKDEV     (//49)
+MSG_AN_TRACKDISKDEV     (//99)
 trackdisk.device trouble
-MSG_AN_UTILITYLIB       (//49)
+MSG_AN_UTILITYLIB       (//99)
 utility.library trouble
-MSG_AN_WBBADIOMSG       (//49)
+MSG_AN_WBBADIOMSG       (//99)
 Bad IO message (hacker code?)
-MSG_AN_WBBADSTARTUPMSG2 (//49)
+MSG_AN_WBBADSTARTUPMSG2 (//99)
 Bad startup message 2
-MSG_AN_WBRELAYOUTTOOLMENU (//49)
+MSG_AN_WBRELAYOUTTOOLMENU (//99)
 GadTools broke?
-MSG_AN_WEIRDECHO        (//49)
+MSG_AN_WEIRDECHO        (//99)
 Weird echo causing incomprehension
-MSG_AN_WORKBENCH        (//49)
+MSG_AN_WORKBENCH        (//99)
 Workbench trouble
-MSG_AN_LAWBREAKER       (//49)
+MSG_AN_LAWBREAKER       (//99)
 LawBreaker demonstration alert
-MSG_AN_NOALERT          (//49)
+MSG_AN_NOALERT          (//99)
 No alert occured
-MSG_ACPU_EMUINTR        (//49)
+MSG_ACPU_EMUINTR        (//99)
 Emulator interrupt
-MSG_ACPU_UNIMPLEA       (//49)
+MSG_ACPU_UNIMPLEA       (//99)
 Unimplemented effective address
-MSG_ACPU_UNIMPLII       (//49)
+MSG_ACPU_UNIMPLII       (//99)
 Unimplemented integer instruction
 ;
 ;================================================================
@@ -610,13 +610,13 @@ MSG_HW_OS_32            (//49)
 3.2
 MSG_HW_OS_321           (//49)
 3.2.1
-MSG_HW_OS_44_BB1	(//49)
+MSG_HW_OS_44_BB1        (//49)
 3.5-BB1
-MSG_HW_OS_44_BB2	(//49)
+MSG_HW_OS_44_BB2        (//49)
 3.5-BB2
-MSG_HW_OS_45_BB1	(//49)
+MSG_HW_OS_45_BB1        (//49)
 3.9-BB1
-MSG_HW_OS_45_BB2	(//49)
+MSG_HW_OS_45_BB2        (//49)
 3.9-BB2
 ;
 ;GARY
@@ -708,7 +708,7 @@ MSG_HW_AGNUS_8374_R2    (//49)
 Alice 8374 Rev. 1-2
 MSG_HW_AGNUS_8374_R3    (//49)
 Alice 8374 Rev. 3-4
-MSG_HW_AGNUS_ANNI	(//49)
+MSG_HW_AGNUS_ANNI       (//49)
 Anni
 ;
 MSG_HW_AMODE_NONE       (7600//49)
@@ -733,7 +733,7 @@ Isabel
 ;
 MSG_HW_PAULA_NONE       (7800//49)
 None
-MSG_HW_PAULA_UNKNOWN   	(//49)
+MSG_HW_PAULA_UNKNOWN    (//49)
 Unknown
 MSG_HW_PAULA_8364       (//49)
 Paula 8364

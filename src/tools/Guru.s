@@ -33,10 +33,10 @@
 		INCLUDE lvo/locale.i
 
 VERSION		MACRO
-		  dc.b	"1.5"
+		  dc.b	"1.6"
 		ENDM
 DATE		MACRO
-		  dc.b	"30.11.2021"
+		  dc.b	"14.10.2022"
 		ENDM
 
 		SECTION strings,DATA
@@ -143,6 +143,8 @@ Start	;-- open resources
 	;-- generate Guru message
 .getguru	move.l	sp,d7
 		pea	TAG_DONE.w
+		pea	100.w
+		pea	IDTAG_StrLength
 		pea	(buf_dead,PC)
 		pea	IDTAG_DeadStr
 		pea	(buf_subsys,PC)
@@ -306,10 +308,10 @@ url		dc.b	"https://identify.shredzone.org",0
 versionstr	VERSION
 		dc.b	0
 
-buf_dead	ds.b	50
-buf_subsys	ds.b	50
-buf_general	ds.b	50
-buf_spec	ds.b	50
+buf_dead	ds.b	100
+buf_subsys	ds.b	100
+buf_general	ds.b	100
+buf_spec	ds.b	100
 
 dosname		dc.b	"dos.library",0
 identifyname	dc.b	"identify.library",0

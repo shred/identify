@@ -52,7 +52,11 @@ identify.library/IdHardwareUpdate
                 this tag if you do not want to get the string.
 
         IDTAG_StrLength         -- (UWORD) Maximum length of the string buffer,
-                including termination. Defaults to 50.
+                including termination. If the actual string is longer than that,
+                it is truncated, but always terminated. Defaults to 50 bytes for
+                compatibility. It is recommended to provide a string buffer of
+                100 bytes though, because the alert descriptions exceed the
+                default limit on some languages.
 
         IDTAG_Localize          -- [V8] (BOOL) FALSE to get English strings
                 only, TRUE for localized strings. This is useful for applications
