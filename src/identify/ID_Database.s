@@ -1485,12 +1485,12 @@ manuf_tab	tabinit
 		endmf	05015
 
 		manuf	05016,"Apollo Team"	; Igor Majstorovic?
-		board	  001,"Vampire 600",		MSG_EXP_TURBO
-		board	  002,"Vampire 500",		MSG_EXP_TURBO
+		board	  001,"Vampire 600 V2",		MSG_EXP_TURBO
+		board	  002,"Vampire 500 V2",		MSG_EXP_TURBO
 		board	  003,"FireBird V4",		MSG_EXP_TURBO
 		board	  004,"IceDrake V4",		MSG_EXP_TURBO
-		board	  005,"V4 Standalone",		MSG_EXP_TURBO
-		board	  006,"Vampire 1200",		MSG_EXP_TURBO
+		board	  005,"V4 Standalone",		MSG_HW_FPGA
+		board	  006,"Vampire 1200 V2",	MSG_EXP_TURBO
 		board	  007,"Manticore V4",		MSG_EXP_TURBO
 		endmf	05016
 
