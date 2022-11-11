@@ -39,10 +39,10 @@
 		INCLUDE lvo/locale.i
 
 VERSION		MACRO
-		  dc.b	"14.1"
+		  dc.b	"14.2"
 		ENDM
 DATE		MACRO
-		  dc.b	"27.12.2021"
+		  dc.b	"11.11.2022"
 		ENDM
 
 		SECTION strings,DATA
@@ -143,6 +143,7 @@ Start	;-- open resources
 		exec	CloseLibrary
 		move.l	(args,PC),d1
 		dos	FreeArgs
+		move.l	(dosbase,PC),a1
 		exec	CloseLibrary
 		moveq	#0,d0
 .exit		bsr	ExitLocale

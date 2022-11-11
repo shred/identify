@@ -33,10 +33,10 @@
 IDENTIFYVER	EQU	38
 
 VERSION		MACRO
-		  dc.b	"1.5"
+		  dc.b	"1.6"
 		ENDM
 DATE		MACRO
-		  dc.b	"30.11.2021"
+		  dc.b	"11.11.2022"
 		ENDM
 
 		SECTION text,CODE
@@ -103,6 +103,7 @@ Start	;-- open resources
 		exec	CloseLibrary
 		move.l	(args,PC),d1
 		dos	FreeArgs
+		move.l	(dosbase,PC),a1
 		exec	CloseLibrary
 		move.l	d7,d0
 .exit		rts
