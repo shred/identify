@@ -1550,8 +1550,12 @@ manuf_tab	tabinit
 		manuf	05110,"Eduardo Arana"
 		endmf	05110
 
-		manuf	05120,"CS-LAB"
-		board	  001,"WARP",			MSG_EXP_TURBO
+		manuf	05120,"CS-Lab"
+		board	  001,"Warp",			MSG_EXP_TURBO
+		board	  060,"\247Warp 12\24740",	MSG_EXP_TURBO
+		board	  100,"Warp RTG",		MSG_EXP_GFX
+		board	  101,"Warp SD",		MSG_EXP_HD
+		board	  102,"Warp USB",		MSG_EXP_USB
 		endmf	05120
 
 		manuf	05130,"Roert Miranda"
