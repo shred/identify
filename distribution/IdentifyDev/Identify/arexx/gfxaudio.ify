@@ -23,16 +23,16 @@ number = ID_NumBoards()
 SAY "These Graphics boards were found:"
 DO i=0 TO number-1
   classid = ID_Expansion(i,"CLASSID")
-  IF (classid=19 | classid=20) & (ID_Expansion(i,"SECONDARY")~="Secondary")
-    THEN SAY "  ï¿½" ID_Expansion(i,"PROD")
+  IF (classid=19 | classid=20)
+    THEN SAY "  ·" ID_Expansion(i,"PROD")
 END
 SAY ""
 
 SAY "These Sound boards were found:"
 DO i=0 TO number-1
   classid = ID_Expansion(i,"CLASSID")
-  IF (classid=10) & (ID_Expansion(i,"SECONDARY")~="Secondary")
-    THEN SAY "  ï¿½" ID_Expansion(i,"PROD")
+  IF (classid=10)
+    THEN SAY "  ·" ID_Expansion(i,"PROD")
 END
 SAY ""
 

@@ -65,8 +65,6 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
                                         { complete expansion check. Init }
                                         { the variable with NULL and pass }
                                         { a pointer to it using this tag. }
-       IDTAG_Secondary   = _IDTAGS+$0D; { BOOL warn for secondary expansion }
-                                        { boards (defaults to FALSE) }
        IDTAG_ClassID     = _IDTAGS+$0E; { ULONG * class ID of the provided }
                                         { expansion board (see below) [V8] }
        IDTAG_Localize    = _IDTAGS+$0F; { BOOL return localized strings }
@@ -400,6 +398,6 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDERR_NOFD = -4;      { No fitting FD file found }
        IDERR_OFFSET = -5;    { Function offset not found }
        IDERR_DONE = -6;      { Done with traversing (not an error) }
-       IDERR_SECONDARY = -7; { Secondary expansion board (not an error) }
+                             { -7 is obsolete }
 
 {$endif}

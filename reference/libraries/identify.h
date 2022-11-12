@@ -72,8 +72,6 @@ struct IdentifyBase {
 #define IDTAG_Expansion   (_IDTAGS+0x0C)  /* (struct ConfigDev **) for a */
                                           /*  complete expansion check. Init */
                                           /*  the variable with NULL. */
-#define IDTAG_Secondary   (_IDTAGS+0x0D)  /* BOOL warn for secondary expansion */
-                                          /*  boards (defaults to FALSE) */
 #define IDTAG_ClassID     (_IDTAGS+0x0E)  /* ULONG * class ID of the provided */
                                           /*  expansion board (see below) [V8] */
 #define IDTAG_Localize    (_IDTAGS+0x0F)  /* BOOL return localized strings */
@@ -428,6 +426,6 @@ struct IdentifyBase {
 #define IDERR_NOFD      (-4)    /* No fitting FD file found */
 #define IDERR_OFFSET    (-5)    /* Function offset not found */
 #define IDERR_DONE      (-6)    /* Done with traversing (not an error) */
-#define IDERR_SECONDARY (-7)    /* Secondary expansion board (not an error) */
+                                /* -7 is obsolete */
 
 #endif

@@ -76,8 +76,6 @@ IDTAG_FuncNameStr EQU	_IDTAGS+$0B	;STRPTR function name
 IDTAG_Expansion EQU	_IDTAGS+$0C	;(struct ConfigDev **) for a
 					; complete expansion check. Init
 					; the variable with NULL.
-IDTAG_Secondary EQU	_IDTAGS+$0D	;BOOL warn for secondary expansion
-					; boards (defaults to FALSE) [V7]
 IDTAG_ClassID	EQU	_IDTAGS+$0E	;ULONG * class ID of the provided
 					; expansion board (see below) [V8]
 IDTAG_Localize	EQU	_IDTAGS+$0F	;BOOL return localized strings
@@ -432,6 +430,6 @@ IDERR_NOMEM	EQU	-3	;Not enough memory
 IDERR_NOFD	EQU	-4	;No fitting FD file found
 IDERR_OFFSET	EQU	-5	;Function offset not found
 IDERR_DONE	EQU	-6	;Done with traversing (not an error)
-IDERR_SECONDARY EQU	-7	;Secondary expansion board (not an error)
+				;-7 is obsolete
 
 	ENDC

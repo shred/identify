@@ -137,8 +137,6 @@ identify.library/IdHardwareUpdate
                         out of range or one of them was missing.
                 IDERR_DONE      -- Checked all expansions using the
                         IDTAG_Expansion tag. This is not really an error.
-                IDERR_SECONDARY -- This expansion is secondary to a primary
-                        expansion entry.
 
    TAGS
         IDTAG_ConfigDev         -- (struct ConfigDev *) ConfigDev structure
@@ -173,13 +171,6 @@ identify.library/IdHardwareUpdate
                 the current ConfigDev pointer in this variable. If you are
                 done, this function returns IDERR_DONE and the variable is set
                 to NULL. See example.
-
-        IDTAG_Secondary         -- [V7] (BOOL) If set to TRUE, identify will
-                warn about secondary expansions. E.g. some graphic boards
-                create more than one entry in the expansion list. Then, one
-                entry is the primary entry, and any additional are secondary.
-                This tag does only make sense when checking all mounted
-                expansions. Defaults to FALSE. (See Bugs)
 
         IDTAG_ClassID           -- [V8] (ULONG *) The ULONG field will be filled
                 with a numerical class ID of the expansion (see include file:
@@ -233,11 +224,8 @@ identify.library/IdHardwareUpdate
         This call is guaranteed to preserve all registers except D0.
 
    BUGS
-        You must also provide IDTAG_ProdStr if you want to use IDTAG_Secondary.
-
-        There are by far not all existing boards implemented. If your board
-        is missing or not correctly detected, please open an issue at
-        https://identify.shredzone.org, or send me an e-mail.
+        If your board is missing or not correctly detected, please open an
+        issue at https://identify.shredzone.org, or send me an e-mail.
 
    SEE ALSO
  

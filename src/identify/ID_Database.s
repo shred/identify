@@ -82,11 +82,6 @@ mftab		ds.w	0			; Alternate MF base
 * "\247G-Force \'0\24740" would give "G-Force \'060" if there is a 68060 present, and
 * "G-Force \'040" if there is a 68040 present, or on a general board query.
 *
-* The "\241" marker at the very beginning of the string marks that for expansions that
-* always come as a pair, this one is the secondary board. If present, IDERR_SECONDARY
-* will be returned by the query as a warning. This feature is not used consequently
-* though, and may become deprecated.
-*
 * All manufacturer IDs and board IDs MUST be given in ascending order!
 *
 * Take care that there is no space before a comma, otherwise the following parameters
@@ -468,7 +463,7 @@ manuf_tab	tabinit
 		board	  002,"Impact Series I (16K/2)",MSG_EXP_SCSIHD
 		board	  003,"Impact Series I (16K/3)",MSG_EXP_SCSIHD	; Rev 3.5
 		board	  008,"Impact 3001",		MSG_EXP_TURBOIDE; Rev 3, 68030
-		board	  009,"\241Impact 3001",	MSG_EXP_RAM	; TurboIDE? 1-16MB 32bit
+		board	  009,"Impact 3001",		MSG_EXP_RAM	; TurboIDE? 1-16MB 32bit
 		board	  010,"Impact Series II",	MSG_EXP_RAM	; 2-8MB
 		boardf	  011,f_gvp_011
 		board	  013,"Impact 3001",		MSG_EXP_TURBOIDE ; GForce 040 with SCSI ; GVP A2000 68030 Turbo Board
@@ -775,7 +770,7 @@ manuf_tab	tabinit
 		board	  018,"Multiface III",		MSG_EXP_MULTIIO
 		board	  024,"Tandem AT-2008 CD",	MSG_EXP_IDEHD
 		board	  032,"Framebuffer",		MSG_EXP_GFX
-		board	  033,"\241Graffiti",		MSG_EXP_GFXRAM
+		board	  033,"Graffiti",		MSG_EXP_GFXRAM
 		board	  034,"Graffiti",		MSG_EXP_GFX
 		board	  064,"ISDN MasterCard",	MSG_EXP_ISDN
 		board	  065,"ISDN MasterCard II",	MSG_EXP_ISDN
@@ -873,9 +868,9 @@ manuf_tab	tabinit
 		endmf	02116
 
 		manuf	02117,"XPert"
-		board	  001,"\241Visiona",		MSG_EXP_GFXRAM
+		board	  001,"Visiona",		MSG_EXP_GFXRAM
 		board	  002,"Visiona",		MSG_EXP_GFX
-		board	  003,"\241Merlin",		MSG_EXP_GFXRAM
+		board	  003,"Merlin",			MSG_EXP_GFXRAM
 		board	  004,"Merlin",			MSG_EXP_GFX
 		board	  201,"Merlin",			MSG_EXP_GFX
 		endmf	02117
@@ -1060,16 +1055,16 @@ manuf_tab	tabinit
 		endmf	02166
 
 		manuf	02167,"VillageTronic"
-		board	  001,"\241Domino",		MSG_EXP_GFXRAM
+		board	  001,"Domino",			MSG_EXP_GFXRAM
 		board	  002,"Domino",			MSG_EXP_GFX
 		board	  003,"Domino 16M Prototype",	MSG_EXP_GFX
-		board	  011,"\241Picasso II / II+",	MSG_EXP_GFXRAM
+		board	  011,"Picasso II / II+",	MSG_EXP_GFXRAM
 		board	  012,"Picasso II / II+",	MSG_EXP_GFX
 		board	  013,"Picasso II (Segmented Mode)",MSG_EXP_GFX
 		boarda	  016,"Georg Braun","GBAPII++",	MSG_EXP_RAM
 		boarda	  017,"Georg Braun","GBAPII++",	MSG_EXP_GFX
-		board	  021,"\241Picasso IV Z2",	MSG_EXP_GFXRAM
-		board	  022,"\241Picasso IV Z2",	MSG_EXP_GFXRAM
+		board	  021,"Picasso IV Z2",		MSG_EXP_GFXRAM
+		board	  022,"Picasso IV Z2",		MSG_EXP_GFXRAM
 		board	  023,"Picasso IV Z2",		MSG_EXP_GFX
 		board	  024,"Picasso IV Z3",		MSG_EXP_GFX
 		board	  201,"Ariadne",		MSG_EXP_ETHERNET
@@ -1632,7 +1627,7 @@ manuf_tab	tabinit
 
 		manuf	08290,"Expansion Systems"
 		board	  001,"DataFlyer",		MSG_EXP_SCSIHD
-		board	  002,"\241DataFlyer",		MSG_EXP_RAM
+		board	  002,"DataFlyer",		MSG_EXP_RAM
 		endmf	08290
 
 		manuf	08448,"ReadySoft"
@@ -1702,9 +1697,9 @@ manuf_tab	tabinit
 
 		manuf	16707,"At\xE9o Concepts"
 		board	  252,"At\xE9oBus (IO)",	MSG_EXP_BUSBRIDGE
-		board	  253,"\241At\xE9oBus (Memory)",MSG_EXP_BUSBRIDGE
+		board	  253,"At\xE9oBus (Memory)",	MSG_EXP_BUSBRIDGE
 		board	  254,"Pixel64",		MSG_EXP_GFX
-		board	  255,"\241Pixel64",		MSG_EXP_GFXRAM
+		board	  255,"Pixel64",		MSG_EXP_GFXRAM
 		endmf	16707
 
 		manuf	16708,"ALiENDESiGN"

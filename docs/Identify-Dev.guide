@@ -110,10 +110,6 @@ These functions are available since Release 1:
     @{b}SHUTUP@{ub}
           Has the expansion been shut up? (0:No, 1:Yes)
 
-    @{b}SECONDARY@{ub}
-          (since Release 4) Checks if the entry is primary (Result:
-          @{b}Primary@{ub}) or secondary (Result: @{b}Secondary@{ub}).
-
     @{b}CLASSID@{ub}
           (since Release 5) Returns the Class ID of the expansion
           board, see include files (decimal).

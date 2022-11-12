@@ -42,18 +42,18 @@
 		SECTION text,CODE
 
 VERSION		EQU	1		;<- Version
-REVISION	EQU	15		;<- Revision
+REVISION	EQU	16		;<- Revision
 
 SETRELEASE	MACRO
-		dc.b	"15"		;<- Command Release
+		dc.b	"16"		;<- Command Release
 		ENDM
 
 SETVER		MACRO			;<- Version String Macro
-		dc.b	"1.15"
+		dc.b	"1.16"
 		ENDM
 
 SETDATE		MACRO			;<- Date String Macro
-		dc.b	"13.02.2022"
+		dc.b	"12.11.2022"
 		ENDM
 
 
@@ -365,7 +365,7 @@ ID_Boards	link	a4,#idb_LENGTH
 **
 * Evaluate an expansion.
 *
-* Arexx:	IDExpansion(BoardNr,[MANUF|PROD|CLASS|ADDRESS|SIZE|VALID|SECONDARY|
+* Arexx:	IDExpansion(BoardNr,[MANUF|PROD|CLASS|ADDRESS|SIZE|VALID|
 *			CLASSID|MANUFID|PRODID])
 *
 		clrfo
@@ -408,8 +408,6 @@ ID_Expansion	link	a4,#ide_LENGTH
 		bcs	.size
 		subq.l	#1,d0
 		bcs	.shutup
-		subq.l	#1,d0
-		bcs	.secondary
 		subq.l	#1,d0
 		bcs	.classid
 		subq.l	#1,d0
@@ -469,25 +467,6 @@ ID_Expansion	link	a4,#ide_LENGTH
 		lea	(ide_Buffer,a4),a0
 		bsr	numtostr
 		bra	.result
-	;---- secondary
-.secondary	move.l	SP,d7
-		pea	TAG_DONE.w
-		move.l	(ide_ConfigDev,a4),-(SP)
-		pea	IDTAG_ConfigDev		; IDTAG_ConfigDev,cdev
-		pea	(ide_Buffer,a4)
-		pea	IDTAG_ProdStr
-		pea	-1.w
-		pea	IDTAG_Secondary
-		move.l	SP,a0
-		idfy	IdExpansion
-		move.l	d7,SP
-		lea	(.txt_secondary,PC),a0	; secondary?
-		cmp.l	#IDERR_SECONDARY,d0
-		beq	.result
-		lea	(.txt_primary,PC),a0	; Primary?
-		tst.l	d0
-		beq	.result
-		bra	.error
 	;---- identify result
 .identify	move.l	SP,d7
 		pea	TAG_DONE.w
@@ -515,17 +494,12 @@ ID_Expansion	link	a4,#ide_LENGTH
 		sub.l	a0,a0
 		bra	.exit
 
-.txt_primary	dc.b	"Primary",0
-.txt_secondary	dc.b	"Secondary",0
-		even
-
 .results	dc.b	"MANUF",0
 		dc.b	"PROD",0
 		dc.b	"CLASS",0
 		dc.b	"ADDRESS",0
 		dc.b	"SIZE",0
 		dc.b	"SHUTUP",0
-		dc.b	"SECONDARY",0
 		dc.b	"CLASSID",0
 		dc.b	"MANUFID",0
 		dc.b	"PRODID",0
