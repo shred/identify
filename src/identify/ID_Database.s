@@ -443,7 +443,7 @@ manuf_tab	tabinit
 		manuf	02012,"DKB / Power Computing"
 		board	  001,"BattDisk",		MSG_EXP_MISC	; RAM disk
 		board	  009,"SecureKey",		MSG_EXP_ACCESS
-		board	  014,"DKM 3128",		MSG_EXP_RAM
+		board	  014,"DKB 3128",		MSG_EXP_RAM
 		board	  015,"Rapid Fire",		MSG_EXP_SCSIHD
 		board	  016,"DKM 1202",		MSG_EXP_RAMFPU
 		board	  018,"Cobra/Viper II 68EC030",	MSG_EXP_TURBO
