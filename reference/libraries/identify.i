@@ -175,6 +175,7 @@ IDSYS_DRACO	EQU	11	; DraCo
 IDSYS_UAE	EQU	12	; Ubiquitous Amiga Emulator
 IDSYS_AMIGA4000T EQU	13	; Amiga 4000 Tower
 IDSYS_AMIGAXL	EQU	14	; AmigaXL
+IDSYS_AMITHLON	EQU	15	; Amithlon
 
 *
 * IDHW_CPU numerical result codes

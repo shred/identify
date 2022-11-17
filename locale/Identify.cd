@@ -517,6 +517,8 @@ MSG_HW_AMIGA4000T       (//49)
 Amiga 4000 T
 MSG_HW_AMIGAXL          (//49)
 AmigaXL
+MSG_HW_AMITHLON         (//49)
+Amithlon
 ;
 MSG_HW_68000            (5000//49)
 68000

@@ -520,6 +520,7 @@ History
 
 @{i}V 41.0@{ui}
         @{b}*@{ub} IDTAG_Secondary entfernt (wurde nie richtig umgesetzt)
+        @{b}*@{ub} VMC Amithlon wird jetzt erkannt [Falke34]
 
 @{i}V 40.3@{ui}
         @{b}*@{ub} dos.library wurde in allen Tools fehlerhaft geschlossen

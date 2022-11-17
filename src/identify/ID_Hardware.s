@@ -67,6 +67,7 @@ InitHardware	movem.l d0-d3/a0-a6,-(sp)
 		bsr	BuildRAMtab
 	;-- check hardware type
 		moveq	#IDHW_SYSTEM,d0
+		sub.l	a0,a0
 		bsr	IdHardwareNum		; set emulation flag
 	;-- done
 		movem.l (sp)+,d0-d3/a0-a6
@@ -967,6 +968,13 @@ do_System	move	d0,d7
 		expans	FindConfigDev
 		tst.l	d0
 		bne	.uae
+	;-- Amithlon emulator?
+		sub.l	a0,a0
+		move	#5001,d0		; Amithlon (5001/200)
+		move	#200,d1
+		expans	FindConfigDev
+		tst.l	d0
+		bne	.amithlon
 	;-- Amiga 4000, OS 3.1
 		lea	(a4000bonus,a4),a1
 		exec	FindResident
@@ -1096,6 +1104,10 @@ do_System	move	d0,d7
 .amigaxl	lea	(flags_emulated,PC),a0
 		st	(a0)
 		moveq	#IDSYS_AMIGAXL,d0
+		rts
+.amithlon	lea	(flags_emulated,PC),a0
+		st	(a0)
+		moveq	#IDSYS_AMITHLON,d0
 		rts
 
 		cnop	0,4

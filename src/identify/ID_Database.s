@@ -1444,6 +1444,7 @@ manuf_tab	tabinit
 		board	  006,"HyperCOM 4Z+",		MSG_EXP_MULTIIO
 		board	  007,"HyperCOM 3+",		MSG_EXP_MULTIIO
 		boarda	  015,"Michael B\xF6hmer","ICY",MSG_EXP_INTERFACE
+		board	  200,"Amithlon",		MSG_EXP_EMULATOR
 		boarda	  239,"E3B","Highway (Prototype)",MSG_EXP_USB
 		endmf	05001
 

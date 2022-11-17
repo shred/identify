@@ -171,6 +171,7 @@ struct IdentifyBase {
 #define IDSYS_UAE         (12)    /*  Ubiquitous Amiga Emulator */
 #define IDSYS_AMIGA4000T  (13)    /*  Amiga 4000 Tower */
 #define IDSYS_AMIGAXL     (14)    /*  AmigaXL */
+#define IDSYS_AMITHLON    (15)    /*  Amithlon */
 
 /*
  * IDHW_CPU numerical result codes

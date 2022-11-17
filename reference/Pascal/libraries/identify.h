@@ -162,6 +162,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDSYS_UAE        = 12;   { Ubiquitous Amiga Emulator }
        IDSYS_AMIGA4000T = 13;   { Amiga 4000 Tower }
        IDSYS_AMIGAXL    = 14;   { AmigaXL }
+       IDSYS_AMITHLON   = 15;   { Amithlon }
 
 { IDHW_CPU numerical result codes }
 
