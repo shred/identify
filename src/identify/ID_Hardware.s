@@ -2218,17 +2218,17 @@ do_Denise	moveq	#IDDN_NONE,d0
 		and	#$00FE,d1		; Paula revision (bits 7..1)
 		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
 		beq	.done
-	;-- 8362
+	;-- 8362 (OCS)
 		moveq	#IDDN_8362,d0
-		move	$dff07c,d1		; LISAID
-		and	#$00FF,d1
-		moveq	#32,d3
-.checkloop	move	$dff07c,d2
-		and	#$00FF,d2
-		cmp	d1,d2			; both reads must be equal
+		move	$dff07c,d2		; LISAID
+		movem.l d0/d2,-(SP)
+		moveq	#1,d0
+		dos	Delay
+		movem.l	(SP)+,d0/d2
+		move	$dff07c,d1
+		cmp	d2,d1			; both reads must be equal
 		bne	.done			;  no -> very old 8362 Denise
-		dbra	d3,.checkloop
-	;-- 8373
+	;-- 8373 (ECS)
 		and	#$000F,d1
 		moveq	#IDDN_8373,d0
 		cmp	#$0C,d1
