@@ -519,11 +519,13 @@ History
 *******
 
 @{i}V 41.0@{ui}
-        @{b}*@{ub} IDTAG_Secondary entfernt (wurde nie richtig umgesetzt)
-        @{b}*@{ub} VMC Amithlon wird jetzt erkannt [Falke34]
-
-@{i}V 40.3@{ui}
+        @{b}*@{ub} IDTAG_Secondary entfernt (war nie wirklich funktional)
+        @{b}*@{ub} VMC Amithlon wird erkannt [Falke34]
+        @{b}*@{ub} Vampire-Namen aktualisiert [TuKo1982]
+        @{b}*@{ub} Warp1240/1260 wird erkannt [Mallet]
+        @{b}*@{ub} OCS wurde auf sehr schnellen Maschinen nicht erkannt, (hoffentlich) behoben
         @{b}*@{ub} dos.library wurde in allen Tools fehlerhaft geschlossen
+        @{b}*@{ub} Weitere kleine Bugfixes
 
 @{i}V 40.2@{ui} (15.10.2022)
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt

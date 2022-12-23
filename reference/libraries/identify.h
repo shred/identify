@@ -38,7 +38,7 @@
 /*
  * Generic library information
  */
-#define IDENTIFYVERSION (39)
+#define IDENTIFYVERSION (41)
 
 struct IdentifyBase {
   struct  Library ifyb_LibNode;

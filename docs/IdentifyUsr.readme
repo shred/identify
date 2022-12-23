@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      40.2
+Version:      41.0
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
@@ -19,7 +19,7 @@ Features:
   - Gives information about your Amiga model, CPU, OS version,
     available memory, chipset, and much more...
   - Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2.1
-  - The expansion database contains 358 manufacturers and 669 boards
+  - The expansion database contains 358 manufacturers and 675 boards
   - Distinguishes between most GVP and Phase5 boards with unique ID
   - Tries to give at least a hint if the board name is not known yet
   - Fully FPGA, DraCo, and PowerPC compatible
@@ -30,8 +30,9 @@ Features:
 
 New in this release:
 
-  - More manufacturers and boards have been added.
-  - French translation by Filipe Brandão
+  - Many bugfixes
+  - Many new and corrected expansions
+  - IDTAG_Secondary was never properly implemented, and is removed now
 
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.

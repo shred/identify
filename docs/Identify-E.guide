@@ -473,10 +473,12 @@ History
 
 @{i}V 41.0@{ui}
         @{b}*@{ub} Removed IDTAG_Secondary (has never been fully realized anyway)
-        @{b}*@{ub} VMC Amithlon is now detected [Falke34]
-
-@{i}V 40.3@{ui}
-        @{b}*@{ub} dos.library was closed wrong in all tools, fixed
+        @{b}*@{ub} VMC Amithlon is detected [Falke34]
+        @{b}*@{ub} Updated Vampire names [TuKo1982]
+        @{b}*@{ub} Warp1240/1260 is detected [Mallet]
+        @{b}*@{ub} OCS was not correctly detected on very fast machines, (hopefully) fixed
+        @{b}*@{ub} dos.library was closed incorrectly in all tools, fixed
+        @{b}*@{ub} Other minor bugfixes
 
 @{i}V 40.2@{ui} (2022-10-15)
         @{b}*@{ub} Added more manufacturers and boards
