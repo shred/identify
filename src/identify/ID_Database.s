@@ -692,7 +692,7 @@ manuf_tab	tabinit
 		manuf	02073,"Kupke"
 		board	  001,"Omti",			MSG_EXP_MFMHD	; Golem
 		board	  002,"SCSI-II",		MSG_EXP_SCSIHD	; Golem
-		board	  003,"Golem Box",		MSG_EXP_RAM	; a2x00 2-8MB
+		board	  003,"GOLEM RAM Card 2-8MB",	MSG_EXP_RAM	; a2x00 2-8MB
 		board	  004,"030/882 (synchronous)",	MSG_EXP_TURBO
 		board	  005,"030/882 (asynchronous)",	MSG_EXP_TURBO
 		endmf	02073
@@ -1598,6 +1598,7 @@ manuf_tab	tabinit
 		endmf	05500
 
 		manuf	05768,"Bio-Con"
+		board	  136,"PCB0012D",		MSG_EXP_RAM	; correct name?
 		board	  137,"BC-1208MA",		MSG_EXP_MISC
 		endmf	05768
 
