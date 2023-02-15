@@ -1529,8 +1529,10 @@ manuf_tab	tabinit
 		manuf	05070,"CancerSoft"
 		endmf	05070
 
-		manuf	05080,"TerribleFire"		; Stephen Leary?
+		manuf	05080,"TerribleFire"		; Stephen Leary
 		board	  000,"A TerribleFire board",	MSG_EXP_TURBO
+		board	  001,"TF534",			MSG_EXP_RAM
+		board	  129,"TF534",			MSG_EXP_TURBOIDE
 		board	  130,"TF1260",			MSG_EXP_TURBO
 		endmf	05080
 
