@@ -1268,6 +1268,9 @@ do_OsNr	;-- get version.library version
 	;  D3: Workbench Revision
 		cmp	#47,d0
 		bne	.not_47
+		moveq	#IDOS_3_2_2,d4		; AmigaOS 3.2.2 (>= 47.111)
+		cmp	#111,d1
+		bge	.found
 		moveq	#IDOS_3_2_1,d4		; AmigaOS 3.2.1 (>= 47.102)
 		cmp	#102,d1
 		bge	.found			;   (3.2.1 ROM was found)

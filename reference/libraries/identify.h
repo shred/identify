@@ -227,6 +227,7 @@ struct IdentifyBase {
 #define IDOS_3_5_BB2    (14)      /*  OS3.5   (V44.5 "Boing Bag 2") */
 #define IDOS_3_9_BB1    (15)	    /*  OS3.9   (V45.2 "Boing Bag 1") */
 #define IDOS_3_9_BB2    (16)	    /*  OS3.9   (V45.3 "Boing Bag 2") */
+#define IDOS_3_2_2      (17)      /*  OS3.2.2 (V47.111 by Hyperion) */
 
 /*
  * IDHW_CHIPSET numerical result codes
