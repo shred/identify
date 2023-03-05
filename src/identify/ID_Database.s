@@ -1891,7 +1891,7 @@ f_gvp_011	move.l	a5,d0			; ConfigDev present?
 **
 * Phase 5 (08512) ID 011
 *
-		defstr	blizz1230ii,"\247Blizzard 12\24730-II",	MSG_EXP_TURBO
+		defstr	blizz1230ii,"Blizzard 1230-II",		MSG_EXP_TURBO
 		defstr	fastlane,"FastLane Z3",			MSG_EXP_SCSIHD
 		defstr	cyberscsi,"CyberSCSI",			MSG_EXP_SCSIHD
 		defstr	cyber040,"\247CyberStorm 0\24740",	MSG_EXP_TURBO
