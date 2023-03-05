@@ -340,6 +340,7 @@ struct IdentifyBase {
 #define IDDN_8373       (3)       /* Denise 8373 */
 #define IDDN_4203       (4)       /* Lisa 4203 (replaces IDDN_8364) */
 #define IDDN_ISABEL	    (5)       /* Isabel (SAGA) */
+#define IDDN_8369       (6)       /* Denise 8369 (prototype) */
 
 /*
  * IDHW_PAULA numerical result codes

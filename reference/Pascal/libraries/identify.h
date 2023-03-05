@@ -317,6 +317,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDDN_8373       = 3;     {  Denise 8373 }
        IDDN_4203       = 4;     {  Lisa 4203 (replaces IDDN_8364) }
        IDDN_ISABEL     = 5;     {  Isabel (SAGA) }
+       IDDN_8369       = 6;     {  Denise 8369 (prototype) }
 
 { IDHW_PAULA numerical result codes }
 

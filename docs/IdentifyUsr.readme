@@ -30,7 +30,8 @@ Features:
 
 New in this release:
 
-  - Added support for AmigaOS 3.2.2
+  - Identifies AmigaOS 3.2.2
+  - Identifies MOS 8369 (a rare Denise prototype)
 
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.

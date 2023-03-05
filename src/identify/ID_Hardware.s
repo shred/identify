@@ -2236,6 +2236,10 @@ do_Denise	moveq	#IDDN_NONE,d0
 		moveq	#IDDN_8373,d0
 		cmp	#$0C,d1
 		beq	.done
+	;-- 8369 (ECS Prototype)
+		moveq	#IDDN_8369,d0
+		cmp	#$0E,d1
+		beq	.done
 	;-- 4203 (AGA/Lisa)
 		moveq	#IDDN_4203,d0		; wrongly called IDDN_8364 before
 		cmp	#$08,d1

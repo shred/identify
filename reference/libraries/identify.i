@@ -344,6 +344,7 @@ IDDN_8362	EQU	2	; Denise 8362
 IDDN_8373	EQU	3	; Denise 8373
 IDDN_4203	EQU	4	; Lisa 4203 (replaces IDDN_8364)
 IDDN_ISABEL	EQU	5	; Isabel (SAGA)
+IDDN_8369	EQU	6	; Denise 8369 (prototype)
 
 *
 * IDHW_PAULA numerical result codes
