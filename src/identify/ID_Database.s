@@ -1021,6 +1021,7 @@ manuf_tab	tabinit
 
 		manuf	02157,"Masoboshi"
 		boarda	  000,"DCE","Viper 520 CD",	MSG_EXP_TURBO
+		board	  001,"FastRAM 2000",		MSG_EXP_RAM
 		board	  003,"MasterCard SC201",	MSG_EXP_RAM
 		board	  004,"MasterCard MC702",	MSG_EXP_SCSIIDE
 		board	  007,"MVD 819",		MSG_EXP_MISC
@@ -1552,8 +1553,8 @@ manuf_tab	tabinit
 		board	  001,"Warp",			MSG_EXP_TURBO
 		board	  060,"\247Warp 12\24740",	MSG_EXP_TURBO
 		board	  100,"Warp RTG",		MSG_EXP_GFX
-		board	  101,"Warp SD",		MSG_EXP_HD
-		board	  102,"Warp USB",		MSG_EXP_USB
+		board	  101,"Warp Registers",		MSG_EXP_MISC
+		board	  102,"Warp QSPI",		MSG_EXP_FLASHROM
 		endmf	05120
 
 		manuf	05130,"Roert Miranda"
@@ -1593,7 +1594,14 @@ manuf_tab	tabinit
 		board	  030,"FreewayTriton Z3",	MSG_EXP_USB
 		board	  031,"FreewayTriton Z2",	MSG_EXP_USB
 		board	  032,"FreewayTriton Flash",	MSG_EXP_FLASHROM
+		board	  033,"FreewayTriton Rescue",	MSG_EXP_MISC
+		board	  065,"Amiblaster",		MSG_EXP_AUDIO
+		board	  066,"Amiblaster MP3",		MSG_EXP_DSP
 		endmf	05191
+
+		manuf	05192,"dec0de Consulting"
+		board	  001,"ROMulus",		MSG_EXP_FLASHROM
+		endmf	05192
 
 		manuf	05500,"Inhouse Information"
 		board	  100,"ISDN Engine I",		MSG_EXP_ISDN
