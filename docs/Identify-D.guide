@@ -518,6 +518,11 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+@{i}V 42.0@{ui}
+        @{b}*@{ub} Unterstützt AmigaOS 3.2.2
+        @{b}*@{ub} Erkennt Denise 8369 (ECS Prototyp)
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
+
 @{i}V 41.0@{ui}
         @{b}*@{ub} IDTAG_Secondary entfernt (war nie wirklich funktional)
         @{b}*@{ub} VMC Amithlon wird erkannt [Falke34]

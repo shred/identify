@@ -471,6 +471,11 @@ A FAQ can be found online here:
 History
 *******
 
+@{i}V 42.0@{ui}
+        @{b}*@{ub} Supports AmigaOS 3.2.2
+        @{b}*@{ub} Detects Denise 8369 (ECS prototype)
+        @{b}*@{ub} Added more manufacturers and boards
+
 @{i}V 41.0@{ui}
         @{b}*@{ub} Removed IDTAG_Secondary (has never been fully realized anyway)
         @{b}*@{ub} VMC Amithlon is detected [Falke34]
