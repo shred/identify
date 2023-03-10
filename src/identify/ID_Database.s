@@ -966,7 +966,7 @@ manuf_tab	tabinit
 		endmf	02143
 
 		manuf	02144,"RocTec"
-		board	  001,"RH 800C",		MSG_EXP_HD
+		board	  001,"RH 800C",		MSG_EXP_HD	; RocHard
 		board	  002,"RH 800C",		MSG_EXP_RAM
 		endmf	02144
 
@@ -1557,7 +1557,7 @@ manuf_tab	tabinit
 		board	  102,"Warp QSPI",		MSG_EXP_FLASHROM
 		endmf	05120
 
-		manuf	05130,"Roert Miranda"
+		manuf	05130,"Robert Miranda"
 		endmf	05130
 
 		manuf	05140,"RastPort"
