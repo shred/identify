@@ -458,7 +458,7 @@ manuf_tab	tabinit
 		manuf	02016,"Akron Systems"
 		endmf	02016
 
-		manuf	02017,"GVP"
+		manuf	02017,"Great Valley Products"
 		board	  001,"Impact Series I (4K)",	MSG_EXP_SCSIHD
 		board	  002,"Impact Series I (16K/2)",MSG_EXP_SCSIHD
 		board	  003,"Impact Series I (16K/3)",MSG_EXP_SCSIHD	; Rev 3.5
