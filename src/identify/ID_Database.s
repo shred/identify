@@ -425,6 +425,7 @@ manuf_tab	tabinit
 		boarda	  003,"UAE","Z3 Fast RAM",	MSG_EXP_RAM
 		boarda	  004,"UAE","Boot ROM",		MSG_EXP_MISC
 		boarda	  032,"ATL","HDI 1000 Ultrasound",MSG_EXP_MISC	; http://jack.untergrund.net/2016/12/07/tekmagic-4060t-aka-ultrasound-accelerator-en/
+		boarda	  072,"Matt Harlum","GottaGoFaZt3r",	MSG_EXP_RAM	; https://github.com/LIV2/GottaGoFaZt3r
 		boarda	  081,"UAE","Fast RAM",		MSG_EXP_RAM
 		boarda	  082,"UAE","Filesystem",	MSG_EXP_HD
 		boarda	  083,"UAE","Z3 Fast RAM",	MSG_EXP_RAM
