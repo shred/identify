@@ -75,7 +75,7 @@ you want to see implemented in the library.
 Copyright
 *********
 
-Identify is © 1996-2022 Richard 'Shred' Körber and contributors.
+Identify is © 1996-2023 Richard 'Shred' Körber and contributors.
 
 
 LICENSE
@@ -470,6 +470,9 @@ A FAQ can be found online here:
 
 History
 *******
+
+@{i}V 42.1@{ui}
+        @{b}*@{ub} Added more manufacturers and boards
 
 @{i}V 42.0@{ui}
         @{b}*@{ub} Supports AmigaOS 3.2.2
