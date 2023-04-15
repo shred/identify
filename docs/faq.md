@@ -6,6 +6,16 @@
 
 [See here](https://identify.shredzone.org/missing) about how to report a missing or incorrect expansion.
 
+**I have made a new Amiga expansion. Can I register a manufacturer/product ID with you?**
+
+Unfortunately, no. The identify database isn't the official registry of manufacturer and product IDs, so I'm not permitted to assign new manufacturer IDs.
+
+This is what you can do now:
+
+* If your hardware project is **fully open source**, you can apply for a product ID at the [Amiga Open Hardware Repository](https://oahr.github.io/oahr/). As an additional benefit, your hardware will be added to the identify database automatically.
+* If you are a **member of the a1k.org Amiga board**, you can [apply for a product ID there](https://www.a1k.org/forum/index.php?threads/40276/) (German page, English posts are accepted). Your hardware will automatically be added to the identify database as soon as it is added to the boards.library.
+* If none of these options are acceptable for you, you can still [obtain your own Manufacturer ID](https://wiki.amigaos.net/wiki/Amiga_Hardware_Manufacturer_ID_Registry) at Hyperion Entertainment CVBA. Your new hardware won't be added to the identify database automatically, so please remember to [send a report](https://identify.shredzone.org/missing) once you have your manufacturer and product ID.
+
 ## System Analyzer
 
 **Why is there no CPU/FPU clock shown?**
