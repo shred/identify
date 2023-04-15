@@ -24,6 +24,7 @@ For a successful Merge Request, make sure that these preconditions are met:
 - [ ] You tested your changes.
 - [ ] You keep the Assembler, C and Pascal include files in sync if you made changes to any files in the `reference` directory.
 - [ ] You document your changes (if applicable).
+- [ ] You confirm that you did not use AI based code generators (e.g. GitHub Copilot, ChatGPT) for your contribution.
 
 ## Translations
 
