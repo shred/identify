@@ -1604,6 +1604,12 @@ manuf_tab	tabinit
 		board	  001,"ROMulus",		MSG_EXP_FLASHROM
 		endmf	05192
 
+		manuf	05194,"Open Hardware Repository" ; https://oahr.github.io/oahr/
+		boarda	  001,"Matt Harlum","GottaGoFastRAM",MSG_EXP_RAM
+		boarda	  002,"Matt Harlum","GottaGoFastRAM2000",MSG_EXP_RAM
+		boarda	  003,"Matt Harlum","GottaGoFaZt3r",MSG_EXP_RAM
+		endmf	05194
+
 		manuf	05500,"Inhouse Information"
 		board	  100,"ISDN Engine I",		MSG_EXP_ISDN
 		endmf	05500
