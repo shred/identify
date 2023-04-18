@@ -24,6 +24,7 @@
 		INCLUDE exec/nodes.i
 		INCLUDE dos/dos.i
 		INCLUDE dos/rdargs.i
+		INCLUDE dos/var.i
 		INCLUDE utility/tagitem.i
 		INCLUDE libraries/identify.i
 		INCLUDE lvo/exec.i
@@ -33,10 +34,10 @@
 IDENTIFYVER	EQU	38
 
 VERSION		MACRO
-		  dc.b	"1.6"
+		  dc.b	"2.0"
 		ENDM
 DATE		MACRO
-		  dc.b	"11.11.2022"
+		  dc.b	"18.04.2023"
 		ENDM
 
 		SECTION text,CODE
@@ -95,9 +96,47 @@ Start	;-- open resources
 		dos	VPrintf
 		addq.l	#4,SP
 		bra	.error4
-.field_ok	sub.l	a0,a0
+	;-- which mode?
+	; D0.l: the desired hardware field
+.field_ok	move.l	(ArgList+arg_Env,PC),d6
+		bne	.env_mode
+	;-- classic: return as return code
+		sub.l	a0,a0
 		idfy	IdHardwareNum
 		move.l	d0,d7
+		bra	.done
+	;-- env mode: return as env variable
+	; D0.l: the desired hardware field
+.env_mode	move.l	(ArgList+arg_Numerical,PC),d1
+		beq	.env_string
+	;-- env mode as numerical
+		sub.l	a0,a0
+		idfy	IdHardwareNum
+		move.l	d0,-(sp)
+		lea	(numformat,PC),a0
+		move.l	sp,a1
+		lea	(.rawdoproc,PC),a2
+		lea	(numformatbuf,PC),a3
+		exec	RawDoFmt
+		addq.l	#4,sp
+		lea	(numformatbuf,PC),a0
+		move.l	a0,d2
+		move.l	d6,d1
+		moveq	#-1,d3				; null terminated
+		move.l	#GVF_LOCAL_ONLY,d4
+		dos	SetVar
+		moveq	#0,d7				; rc = 0
+		bra	.done
+	;-- env mode as string
+	; D0.l: the desired hardware field
+.env_string	lea	(.envstringtags),a0
+		idfy	IdHardware
+		move.l	d0,d2
+		move.l	d6,d1
+		moveq	#-1,d3				; null terminated
+		move.l	#GVF_LOCAL_ONLY,d4
+		dos	SetVar
+		moveq	#0,d7				; rc = 0
 	;-- done
 .done		move.l	(identifybase,PC),a1
 		exec	CloseLibrary
@@ -107,6 +146,9 @@ Start	;-- open resources
 		exec	CloseLibrary
 		move.l	d7,d0
 .exit		rts
+	;-- rawdofmt
+.rawdoproc	move.b	d0,(a3)+
+		rts
 
 	;-- error
 .error4		move.l	(identifybase,PC),a1
@@ -117,6 +159,9 @@ Start	;-- open resources
 		exec	CloseLibrary
 .error1		moveq	#0,d0
 		bra.b	.exit
+
+.envstringtags	dc.l	IDTAG_Localize, 0		; always English
+		dc.l	TAG_DONE
 
 	;-- show help
 help		lea	(msg_help,PC),a0
@@ -249,12 +294,17 @@ args		dc.l	0
 	;-- Arguments
 		rsreset
 arg_Field	rs.l	1
+arg_Env		rs.l	1
+arg_Numerical	rs.l	1
 arg_Update	rs.l	1
 arg_Help	rs.l	1
 arg_SIZEOF	rs.w	0
 
 ArgList		ds.b	arg_SIZEOF
-template	 dc.b	"FIELD,U=UPDATE/S,H=HELP/S",0
+template	dc.b	"FIELD,E=ENV/K,N=NUMERICAL/S,U=UPDATE/S,H=HELP/S",0
+
+numformat	dc.b	"%lu",0
+numformatbuf	ds.b	30
 
 versionstr	VERSION
 		dc.b	0
@@ -266,9 +316,14 @@ msg_unknownfield dc.b	"** unknown field name '%s'\n",0
 
 msg_help	dc.b	"InstallIfy V"
 		VERSION
-		dc.b	" (C) 1999-2021 Richard K\xF6rber - https://identify.shredzone.org\n\n"
+		dc.b	" (C) 1999-2023 Richard K\xF6rber - https://identify.shredzone.org\n\n"
 		dc.b	"  FIELD     One of the IdHardwareNum fields, see AutoDocs.\n"
 		dc.b	"            Example: ""CPU"", ""System"", ""mmu"".\n"
+		dc.b	"  ENV       Set the given ENV variable name instead of the\n"
+		dc.b	"            return code. Use this if you want to use\n"
+		dc.b	"            InstallIfy in CLI scripts.\n"
+		dc.b	"  NUMERICAL Set the ENV variable with a numerical result\n"
+		dc.b	"            (identical to the return code).\n"
 		dc.b	"  UPDATE    Update the information database.\n"
 		dc.b	"  HELP      Show this page\n\n"
 		dc.b	"The result is returned as DOS return code. See the INCLUDE file\n"

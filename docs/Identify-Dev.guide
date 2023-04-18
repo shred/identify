@@ -27,7 +27,7 @@ ________________________________________________________________________
 Copyright
 *********
 
-Identify is © 1996-2022 Richard 'Shred' Körber and contributors.
+Identify is © 1996-2023 Richard 'Shred' Körber and contributors.
 
 
 LICENSE
@@ -431,12 +431,31 @@ example:
        (message "A PowerPC is available!")
      )
 
+You can also use InstallIfy in CLI scripts. However, make sure to use the
+@{b}ENV@{ub} option there, otherwise the script will fail because of the
+return code:
+
+     InstallIfy ENV=MYCPU CPU
+     echo "Your system has a $MYCPU CPU"
+
 These options are available:
 
 @{b}FIELD@{ub}
      Here, the name of the desired hardware field is passed. This are
      the same as for the ARexx @{b}ID_Hardware@{ub} command. See the include
      files to find out how the return code has to be interpreted.
+
+@{b}ENV@{ub}
+     If this option is set, the result will be put into a local environment
+     variable of the given name. The DOS return code is then always 0.
+     Use this option if you want to use InstallIfy in CLI scripts instead
+     of installer scripts. The result is a human readable string, and always
+     in English (irregarding of the system's locale).
+
+@{b}NUMERICAL@{ub}
+     If the @{b}ENV@{ub} option above is used, the value put into the
+     environment variable is human readable. Set this option to get a purely
+     numerical result that identical to the return code for installer scripts.
 
 @{b}UPDATE@{ub}
      If this option is set, the @{b}identify.library@{ub} hardware information
