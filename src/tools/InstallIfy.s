@@ -31,7 +31,7 @@
 		INCLUDE lvo/dos.i
 		INCLUDE lvo/identify.i
 
-IDENTIFYVER	EQU	38
+IDENTIFYVER	EQU	40
 
 VERSION		MACRO
 		  dc.b	"2.0"
@@ -226,6 +226,9 @@ str_table	dc.b	"SYSTEM",0
 		dc.b	"HOSTCPU",0
 		dc.b	"HOSTSPEED",0
 		dc.b	"LASTALERTTASK",0
+		dc.b	"PAULA",0
+		dc.b	"ROMVER",0
+		dc.b	"RTC",0
 		dc.b	0
 		even
 
