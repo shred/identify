@@ -452,6 +452,12 @@ These options are available:
      of installer scripts. The result is a human readable string, and always
      in English (irregarding of the system's locale).
 
+@{b}GLOBAL@{ub}
+     If the @{b}ENV@{ub} option above is used, the variable is set in a local
+     scope, so it is only available in the current CLI. By adding the @{b}GLOBAL@{ub}
+     option, the variable will be set globally instead, so it is also available
+     for other tasks.
+
 @{b}NUMERICAL@{ub}
      If the @{b}ENV@{ub} option above is used, the value put into the
      environment variable is human readable. Set this option to get a purely

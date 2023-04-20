@@ -133,8 +133,11 @@ Start	;-- open resources
 		idfy	IdHardware
 		move.l	d0,d2
 		move.l	d6,d1
-		moveq	#-1,d3				; null terminated
 		move.l	#GVF_LOCAL_ONLY,d4
+		move.l	(ArgList+arg_Global,PC),d3
+		beq	.not_global
+		move.l	#GVF_GLOBAL_ONLY,d4
+.not_global	moveq	#-1,d3				; null terminated
 		dos	SetVar
 		moveq	#0,d7				; rc = 0
 	;-- done
@@ -299,12 +302,13 @@ args		dc.l	0
 arg_Field	rs.l	1
 arg_Env		rs.l	1
 arg_Numerical	rs.l	1
+arg_Global	rs.l	1
 arg_Update	rs.l	1
 arg_Help	rs.l	1
 arg_SIZEOF	rs.w	0
 
 ArgList		ds.b	arg_SIZEOF
-template	dc.b	"FIELD,E=ENV/K,N=NUMERICAL/S,U=UPDATE/S,H=HELP/S",0
+template	dc.b	"FIELD,E=ENV/K,N=NUMERICAL/S,G=GLOBAL/S,U=UPDATE/S,H=HELP/S",0
 
 numformat	dc.b	"%lu",0
 numformatbuf	ds.b	30
@@ -327,6 +331,9 @@ msg_help	dc.b	"InstallIfy V"
 		dc.b	"            InstallIfy in CLI scripts.\n"
 		dc.b	"  NUMERICAL Set the ENV variable with a numerical result\n"
 		dc.b	"            (identical to the return code).\n"
+		dc.b	"  GLOBAL    If ENV is used, the variable will be set globally\n"
+		dc.b	"            if this option is set. Otherwise it is local and\n"
+		dc.b	"            only available in the current script.\n"
 		dc.b	"  UPDATE    Update the information database.\n"
 		dc.b	"  HELP      Show this page\n\n"
 		dc.b	"The result is returned as DOS return code. See the INCLUDE file\n"
