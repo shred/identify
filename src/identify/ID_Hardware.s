@@ -983,6 +983,10 @@ do_System	move	d0,d7
 
 	;-- Check for AGA machines in general
 		move	$dff07c,d1
+		cmp.b	#$f0,d1
+		beq	.aaa_lowend
+		cmp.b	#$f1,d1
+		beq	.aaa_highend
 		cmp.b	#$f8,d1
 		bne	.no_aga
 	;---- Amiga 4000 (OS 3.0)
@@ -1096,6 +1100,10 @@ do_System	move	d0,d7
 .cd32		moveq	#IDSYS_CD32,d0
 		rts
 .draco		moveq	#IDSYS_DRACO,d0
+		rts
+.aaa_lowend	moveq	#IDSYS_AAA,d0		; low-end AAA machine (single graphic chip)
+		rts
+.aaa_highend	moveq	#IDSYS_AAA_DUAL,d0	; high-end AAA machine (dual graphic chips)
 		rts
 .uae		lea	(flags_emulated,PC),a0
 		st	(a0)
@@ -1384,8 +1392,15 @@ do_Chipset
 		beq	.done
 	;-- read Amiga type bits
 		move	$dff07c,d1
-		and	#$000F,d1
+	;-- AAA?
+		moveq	#IDCS_AAA,d0
+		cmp.b	#$F0,d1
+		beq	.done
+		moveq	#IDCS_AAA_DUAL,d0
+		cmp.b	#$F1,d1
+		beq	.done
 	;-- AGA?
+		and	#$000F,d1
 		moveq	#IDCS_AGA,d0
 		cmp	#$0008,d1		; Lisa?
 		beq	.done
@@ -2151,7 +2166,7 @@ do_PPCOS	move.l	4.w,a6
 		rts
 
 **
-* What Agnus/Alice/Anni version is present?
+* What Agnus/Alice/Anni/Andrea version is present?
 *
 do_Agnus	moveq	#IDAG_NONE,d0
 		move.b	(flags_draco,PC),d1	; DraCo has no Agnus at all
@@ -2169,11 +2184,17 @@ do_Agnus	moveq	#IDAG_NONE,d0
 		cmp	#$1000,d1
 		beq	.tst_fat
 	;-- 8367/8371
-		addq	#1,d0
+		moveq	#IDAG_8367,d0
 		tst	d1
 		beq	.tst_fat
+	;-- Andrea
+		moveq	#IDAG_ANDREA,d0
+		cmp	#$4000,d1		; single graphics chipset
+		beq	.done
+		cmp	#$6000,d1		; dual graphics chipset
+		beq	.done
 	;-- 8372/8374
-		addq	#3,d0
+		moveq	#IDAG_8372_R4,d0
 		bclr	#12,d1			; ignore PAL/NTSC flag
 		sub	#$2000,d1		; bring revision number in range
 		bcs	.unknown
@@ -2193,7 +2214,7 @@ do_Agnus	moveq	#IDAG_NONE,d0
 		exec.q	Enable
 		cmp	d2,d3
 		beq	.is_old
-		addq	#2,d0
+		addq	#2,d0			; Add 2 for the Fat Agnus variants
 .is_old		rts
 
 **
@@ -2231,6 +2252,12 @@ do_Denise	moveq	#IDDN_NONE,d0
 		move	$dff07c,d1
 		cmp	d2,d1			; both reads must be equal
 		bne	.done			;  no -> very old 8362 Denise
+	;-- Monica (AAA)
+		moveq	#IDDN_MONICA,d0
+		cmp.b	#$F0,d1			; single graphics chipset
+		beq	.done
+		cmp.b	#$F1,d1			; dual graphics chipset
+		beq	.done
 	;-- 8373 (ECS)
 		and	#$000F,d1
 		moveq	#IDDN_8373,d0
@@ -2282,6 +2309,11 @@ do_Paula	moveq	#IDPL_NONE,d0
 	;-- Arne (SAGA)
 		moveq	#IDPL_ARNE,d0
 		cmp	#$0002,d1		;   1 = Arne
+		beq	.done
+	;-- Mary (AAA)
+		moveq	#IDPL_MARY,d0
+		and	#$00F0,d1		; Mary ID (bits 7..4)
+		cmp	#$0010,d1		;   1 = Mary
 		beq	.done
 	;-- unknown, a new Amiga? :-)
 .unknown	moveq	#IDPL_UNKNOWN,d0

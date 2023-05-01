@@ -176,6 +176,8 @@ IDSYS_UAE	EQU	12	; Ubiquitous Amiga Emulator
 IDSYS_AMIGA4000T EQU	13	; Amiga 4000 Tower
 IDSYS_AMIGAXL	EQU	14	; AmigaXL
 IDSYS_AMITHLON	EQU	15	; Amithlon
+IDSYS_AAA	EQU	16	; Amiga AAA (single graphics)
+IDSYS_AAA_DUAL	EQU	17	; Amiga AAA (dual graphics)
 
 *
 * IDHW_CPU numerical result codes
@@ -242,6 +244,8 @@ IDCS_AGA	EQU	2	; AGA
 IDCS_ALTAIS	EQU	3	; DraCo Altais
 IDCS_NECS	EQU	4	; Nearly ECS (no HR-Agnus or HR-Denise)
 IDCS_SAGA	EQU	5	; SAGA
+IDCS_AAA	EQU	6	; AAA (single graphics)
+IDCS_AAA_DUAL	EQU	7	; AAA (dual graphics)
 
 *
 * IDHW_GFXSYS numerical result codes
@@ -334,6 +338,7 @@ IDAG_8372_R5	EQU	7	; Agnus 8372 Rev. 5
 IDAG_8374_R2	EQU	8	; Alice 8374 Rev. 1-2
 IDAG_8374_R3	EQU	9	; Alice 8374 Rev. 3-4
 IDAG_ANNI	EQU	10	; Anni (SAGA)
+IDAG_ANDREA	EQU	11	; Andrea 1200 (AAA)
 
 *
 * IDHW_DENISE numerical result codes
@@ -345,6 +350,7 @@ IDDN_8373	EQU	3	; Denise 8373
 IDDN_4203	EQU	4	; Lisa 4203 (replaces IDDN_8364)
 IDDN_ISABEL	EQU	5	; Isabel (SAGA)
 IDDN_8369	EQU	6	; Denise 8369 (prototype)
+IDDN_MONICA	EQU	7	; Monica 1201 (AAA)
 
 *
 * IDHW_PAULA numerical result codes
@@ -353,6 +359,7 @@ IDPL_NONE	EQU	0	; None
 IDPL_UNKNOWN	EQU	1	; Unknown Paula
 IDPL_8364	EQU	2	; Paula 8364
 IDPL_ARNE	EQU	3	; Arne (SAGA)
+IDPL_MARY	EQU	4	; Mary 1203 (AAA)
 
 *
 * IDHW_AGNUSMODE numerical result codes

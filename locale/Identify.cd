@@ -519,6 +519,10 @@ MSG_HW_AMIGAXL          (//49)
 AmigaXL
 MSG_HW_AMITHLON         (//49)
 Amithlon
+MSG_HW_SYS_AAA          (//49)
+Amiga AAA
+MSG_HW_SYS_AAA_DUAL     (//49)
+Amiga AAA Dual
 ;
 MSG_HW_68000            (5000//49)
 68000
@@ -647,6 +651,10 @@ MSG_HW_NECS             (//49)
 Nearly ECS
 MSG_HW_SAGA             (//49)
 SAGA
+MSG_HW_AAA              (//49)
+AAA
+MSG_HW_AAA_DUAL         (//49)
+AAA Dual
 ;
 MSG_HW_PPCFOUND         (7000//49)
 Found
@@ -714,6 +722,8 @@ MSG_HW_AGNUS_8374_R3    (//49)
 Alice 8374 Rev. 3-4
 MSG_HW_AGNUS_ANNI       (//49)
 Anni
+MSG_HW_AGNUS_ANDREA     (//49)
+Andrea 1200
 ;
 MSG_HW_AMODE_NONE       (7600//49)
 None
@@ -736,6 +746,8 @@ MSG_HW_DENISE_ISABEL    (//49)
 Isabel
 MSG_HW_DENISE_8369      (//49)
 Denise 8369
+MSG_HW_DENISE_MONICA    (//49)
+Monica 1201
 ;
 MSG_HW_PAULA_NONE       (7800//49)
 None
@@ -745,6 +757,8 @@ MSG_HW_PAULA_8364       (//49)
 Paula 8364
 MSG_HW_PAULA_ARNE       (//49)
 Arne
+MSG_HW_PAULA_MARY       (//49)
+Mary 1203
 ;
 MSG_HW_RTC_NONE         (7900//49)
 None

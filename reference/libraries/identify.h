@@ -172,6 +172,8 @@ struct IdentifyBase {
 #define IDSYS_AMIGA4000T  (13)    /*  Amiga 4000 Tower */
 #define IDSYS_AMIGAXL     (14)    /*  AmigaXL */
 #define IDSYS_AMITHLON    (15)    /*  Amithlon */
+#define IDSYS_AAA         (16)    /*  Amiga AAA (single graphics) */
+#define IDSYS_AAA_DUAL    (17)    /*  Amiga AAA (dual graphics) */
 
 /*
  * IDHW_CPU numerical result codes
@@ -238,6 +240,8 @@ struct IdentifyBase {
 #define IDCS_ALTAIS     (3)       /*  DraCo Altais */
 #define IDCS_NECS       (4)       /*  Nearly ECS (no HR-Agnus or HR-Denise) */
 #define IDCS_SAGA       (5)       /*  SAGA */
+#define IDCS_AAA        (6)       /*  AAA (single graphics) */
+#define IDCS_AAA_DUAL   (7)       /*  AAA (dual graphics )*/
 
 /*
  * IDHW_GFXSYS numerical result codes
@@ -330,6 +334,7 @@ struct IdentifyBase {
 #define IDAG_8374_R2    (8)       /* Alice 8374 Rev. 1-2 */
 #define IDAG_8374_R3    (9)       /* Alice 8374 Rev. 3-4 */
 #define IDAG_ANNI       (10)      /* Anni (SAGA) */
+#define IDAG_ANDREA     (11)      /* Andrea 1200 (AAA) */
 
 /*
  * IDHW_DENISE numerical result codes
@@ -339,8 +344,9 @@ struct IdentifyBase {
 #define IDDN_8362       (2)       /* Denise 8362 */
 #define IDDN_8373       (3)       /* Denise 8373 */
 #define IDDN_4203       (4)       /* Lisa 4203 (replaces IDDN_8364) */
-#define IDDN_ISABEL	    (5)       /* Isabel (SAGA) */
+#define IDDN_ISABEL     (5)       /* Isabel (SAGA) */
 #define IDDN_8369       (6)       /* Denise 8369 (prototype) */
+#define IDDN_MONICA     (7)       /* Monica 1201 (AAA) */
 
 /*
  * IDHW_PAULA numerical result codes
@@ -349,6 +355,7 @@ struct IdentifyBase {
 #define IDPL_UNKNOWN    (1)       /* Unknown Paula */
 #define IDPL_8364       (2)       /* Paula 8364 */
 #define IDPL_ARNE       (3)       /* Arne (SAGA) */
+#define IDPL_MARY       (4)       /* Mary 1203 (AAA) */
 
 /*
  * IDHW_AGNUSMODE numerical result codes

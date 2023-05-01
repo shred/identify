@@ -902,6 +902,12 @@ MSG_HW_AMITHLON
 Amithlon
 ; Amithlon
 ;
+MSG_HW_SYS_AAA
+Amiga AAA
+;
+MSG_HW_SYS_AAA_DUAL
+Amiga AAA Dual
+;
 MSG_HW_68000
 68000
 ; 68000
@@ -1134,6 +1140,12 @@ MSG_HW_SAGA
 SAGA
 ; SAGA
 ;
+MSG_HW_AAA
+AAA
+;
+MSG_HW_AAA_DUAL
+AAA Dual
+;
 MSG_HW_PPCFOUND
 Détecté
 ; Found
@@ -1258,6 +1270,9 @@ MSG_HW_AGNUS_ANNI
 Anni
 ; Anni
 ;
+MSG_HW_AGNUS_ANDREA
+Andrea 1200
+;
 MSG_HW_AMODE_NONE
 Aucun
 ; None
@@ -1298,6 +1313,9 @@ MSG_HW_DENISE_8369
 Denise 8369
 ; Denise 8369
 ;
+MSG_HW_DENISE_MONICA
+Monica 1201
+;
 MSG_HW_PAULA_NONE
 Aucun
 ; None
@@ -1313,6 +1331,9 @@ Paula 8364
 MSG_HW_PAULA_ARNE
 Arne
 ; Arne
+;
+MSG_HW_PAULA_MARY
+Mary 1203
 ;
 MSG_HW_RTC_NONE
 Aucun

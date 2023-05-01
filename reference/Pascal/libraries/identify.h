@@ -163,6 +163,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDSYS_AMIGA4000T = 13;   { Amiga 4000 Tower }
        IDSYS_AMIGAXL    = 14;   { AmigaXL }
        IDSYS_AMITHLON   = 15;   { Amithlon }
+       IDSYS_AAA        = 16;   { Amiga AAA (single graphics) }
+       IDSYS_AAA_DUAL   = 17;   { Amiga AAA (dual graphics) }
 
 { IDHW_CPU numerical result codes }
 
@@ -224,6 +226,8 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDCS_ALTAIS     = 3;     { DraCo Altais }
        IDCS_NECS       = 4;     { Nearly ECS (no HR-Agnus or HR-Denise) }
        IDCS_SAGA       = 5;     { SAGA }
+       IDCS_AAA        = 6;     { AAA (single graphics) }
+       IDCS_AAA_DUAL   = 7;     { AAA (dual graphics) }
 
 { IDHW_GFXSYS numerical result codes }
 
@@ -308,6 +312,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDAG_8374_R2    = 8;     {  Alice 8374 Rev. 1-2 }
        IDAG_8374_R3    = 9;     {  Alice 8374 Rev. 3-4 }
        IDAG_ANNI       = 10;    {  Anni (SAGA) }
+       IDAG_ANDREA     = 11;    {  Andrea 1200 (AAA) }
 
 { IDHW_DENISE numerical result codes }
 
@@ -318,6 +323,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDDN_4203       = 4;     {  Lisa 4203 (replaces IDDN_8364) }
        IDDN_ISABEL     = 5;     {  Isabel (SAGA) }
        IDDN_8369       = 6;     {  Denise 8369 (prototype) }
+       IDDN_MONICA     = 7;     {  Monica 1201 (AAA) }
 
 { IDHW_PAULA numerical result codes }
 
@@ -325,6 +331,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDPL_UNKNOWN    = 1;     {  Unknown Paula }
        IDPL_8364       = 2;     {  Paula 8364 }
        IDPL_ARNE       = 3;     {  Arne (SAGA) }
+       IDPL_MARY       = 4;     {  Mary 1203 (AAA) }
 
 { IDHW_AGNUSMODE numerical result codes }
 
