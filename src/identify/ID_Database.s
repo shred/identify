@@ -1781,9 +1781,9 @@ manuf_tab	tabinit
 		board	  034,"Broadcom SDHC",		MSG_EXP_HD
 		endmf	28019
 
-		manuf	32768,"SKI Peripherals"
-		board	  008,"M.A.S.T. Fireball",	MSG_EXP_SCSIHD
-		board	  128,"SCSI / Dual Serial",	MSG_EXP_MISC
+		manuf	32768,"M.A.S.T."	; Memory And Storage Technology
+		board	  008,"Fireball",		MSG_EXP_SCSIHD
+		boarda	  128,"SKI Peripherals","SCSI / Dual Serial",MSG_EXP_MISC
 		endmf	32768
 
 		manuf	43437,"Reis-Ware"
