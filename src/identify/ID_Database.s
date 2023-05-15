@@ -150,6 +150,11 @@ manuf_tab	tabinit
 		board	  003,"A2090-A Combitec/MacroSystem",MSG_EXP_HD
 		endmf	00515
 
+		manuf	00600,"jasonsbeer"		; https://github.com/jasonsbeer/Amiga-N2630
+		board	  000,"N2630",			MSG_EXP_TURBOANDRAM
+		board	  001,"N2630 Z3 RAM",		MSG_EXP_RAM
+		endmf	00600
+
 		manuf	00756,"Progressive Periph.&Systems"
 		board	  002,"EXP8000",		MSG_EXP_RAM
 		endmf	00756
