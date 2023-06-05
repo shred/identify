@@ -848,6 +848,7 @@ manuf_tab	tabinit
 		manuf	02112,"Interactive Video Systems"	; IVS (Pacific Peripherals)
 		board	  002,"GrandSlam PIC 2",	MSG_EXP_SCSIHD
 		board	  004,"GrandSlam PIC 1",	MSG_EXP_SCSIHD
+		board	  007,"Perisound 16",		MSG_EXP_AUDIO ; Wavetools prototype?
 		board	  016,"OverDrive",		MSG_EXP_SCSIHD
 		board	  048,"TrumpCard Classic",	MSG_EXP_SCSIHD
 		board	  052,"TrumpCard Pro / Grand Slam",MSG_EXP_SCSIHD
@@ -1366,7 +1367,7 @@ manuf_tab	tabinit
 		board	  023,"Deneb ZII Clockport",	MSG_EXP_USB
 		board	  032,"BigRam+",		MSG_EXP_RAM
 		board	  033,"BigRam+",		MSG_EXP_RAM
-		board	  048,"Prisma Megamix",		MSG_EXP_AUDIO
+		board	  048,"Prisma Megamix",		MSG_EXP_AUDIO	; A-EON
 		board	  200,"Prometheus Firestorm Upgrade",MSG_EXP_BUSBRIDGE
 		endmf	03643
 
