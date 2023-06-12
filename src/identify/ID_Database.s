@@ -1614,6 +1614,9 @@ manuf_tab	tabinit
 		boarda	  001,"Matt Harlum","GottaGoFastRAM",MSG_EXP_RAM
 		boarda	  002,"Matt Harlum","GottaGoFastRAM2000",MSG_EXP_RAM
 		boarda	  003,"Matt Harlum","GottaGoFaZt3r",MSG_EXP_RAM
+		boarda	  004,"Matt Harlum","CIDER",	MSG_EXP_RAM
+		boarda	  005,"Matt Harlum","CIDER",	MSG_EXP_IDEHD
+		boarda	  006,"Matt Harlum","CIDER",	MSG_EXP_MISC
 		endmf	05194
 
 		manuf	05500,"Inhouse Information"
