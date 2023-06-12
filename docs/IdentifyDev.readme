@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      42.1
+Version:      43.0
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 

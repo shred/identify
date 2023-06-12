@@ -30,7 +30,7 @@ CONST  _IDTAGS      = $CD450000;
 
 { Generic library informations }
 
-CONST  IDENTIFYVERSION = 42;
+CONST  IDENTIFYVERSION = 43;
 
 TYPE   p_IdentifyBase = ^_IdentifyBase;
        _IdentifyBase  = Record

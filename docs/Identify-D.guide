@@ -519,7 +519,10 @@ History
 *******
 
 @{i}V 43.0@{ui}
-        @{b}*@{ub} AAA Chipsatz wird erkannt (man darf nie aufhören zu träumen)
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt, Schreibfehler korrigiert
+        @{b}*@{ub} AAA Chipsatz wird erkannt (man sollte nie aufhören zu träumen)
+        @{b}*@{ub} InstallIfy hat neue ENV- und GLOBAL-Optionen zum Ablegen der Werte
+          in Env-Variablen.
 
 @{i}V 42.1@{ui}
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt

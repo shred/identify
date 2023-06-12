@@ -472,7 +472,10 @@ History
 *******
 
 @{i}V 43.0@{ui}
-        @{b}*@{ub} AAA chipset detected (never stop dreaming)
+        @{b}*@{ub} Added more manufacturers and boards, fixed typos
+        @{b}*@{ub} AAA chipset detected (you should never stop dreaming)
+        @{b}*@{ub} InstallIfy has new ENV and GLOBAL options which store the values
+          in ENV variables
 
 @{i}V 42.1@{ui}
         @{b}*@{ub} Added more manufacturers and boards
