@@ -1423,6 +1423,7 @@ manuf_tab	tabinit
 		board	  072,"ACA1233n (2016.0, 020 mode)", MSG_EXP_RAM 	; Serial = MHz
 		board	  073,"ACA500plus virtual autoconfig", MSG_EXP_MISC
 		board	  100,"X-Surf-100",		MSG_EXP_ETHERNET
+		board	  134,"BigRamPlus",		MSG_EXP_RAM	; missing in icomp's wiki
 		endmf	04626
 
 		manuf	04648,"Flesch Hornemann"
