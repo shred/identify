@@ -471,6 +471,8 @@ A FAQ can be found online here:
 History
 *******
 
+        @{b}*@{ub} AmigaOS 3.9 wasn't detected under certain circumstances
+
 @{i}V 43.0@{ui}
         @{b}*@{ub} Added more manufacturers and boards, fixed typos
         @{b}*@{ub} AAA chipset detected (you should never stop dreaming)

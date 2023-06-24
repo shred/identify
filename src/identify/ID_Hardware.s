@@ -1295,10 +1295,16 @@ do_OsNr	;-- get version.library version
 		cmp	#43,d0
 		beq	.found
 
+		cmp	#44,d0			; AmigaOS 3.5 (with patched exec)
+		beq	.is_boingbag
+
+		cmp	#45,d0			; AmigaOS 3.9 (with patched exec)
+		beq	.is_boingbag
+
 		cmp	#40,d0			; AmigaOS 3.1, 3.5 or 3.9?
 		bne	.not_40
 
-		moveq	#IDOS_3_9_BB2,d4	; AmigaOS 3.9 BB2
+.is_boingbag	moveq	#IDOS_3_9_BB2,d4	; AmigaOS 3.9 BB2
 		cmp	#45,d2
 		bne	.not_wb_45
 		cmp	#3,d3			;   (45.3)

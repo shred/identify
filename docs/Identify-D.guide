@@ -518,6 +518,8 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+        @{b}*@{ub} AmigaOS 3.9 wurde unter bestimmten Umständen nicht erkannt
+
 @{i}V 43.0@{ui}
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt, Schreibfehler korrigiert
         @{b}*@{ub} AAA Chipsatz wird erkannt (man sollte nie aufhören zu träumen)
