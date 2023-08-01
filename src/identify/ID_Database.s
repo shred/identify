@@ -1620,6 +1620,11 @@ manuf_tab	tabinit
 		boarda	  006,"Matt Harlum","CIDER",	MSG_EXP_MISC
 		endmf	05194
 
+		manuf	05195,"Double H Tech"		; https://github.com/shanshe
+		board	  001,"Z3660",			MSG_EXP_TURBO	; Turbo, RTG, Audio, SD-SCSI
+		board	  002,"Z3660 RAM",		MSG_EXP_RAM
+		endmf	05195
+
 		manuf	05500,"Inhouse Information"
 		board	  100,"ISDN Engine I",		MSG_EXP_ISDN
 		endmf	05500
