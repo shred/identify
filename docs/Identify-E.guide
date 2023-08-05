@@ -471,7 +471,10 @@ A FAQ can be found online here:
 History
 *******
 
+@{i}V 43.1@{ui}
+        @{b}*@{ub} Added more manufacturers and boards
         @{b}*@{ub} AmigaOS 3.9 wasn't detected under certain circumstances
+        @{b}*@{ub} Fixed a crash on ACT Apollo A620 detection
 
 @{i}V 43.0@{ui}
         @{b}*@{ub} Added more manufacturers and boards, fixed typos

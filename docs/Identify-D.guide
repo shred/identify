@@ -518,7 +518,10 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+@{i}V 43.1@{ui}
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
         @{b}*@{ub} AmigaOS 3.9 wurde unter bestimmten Umständen nicht erkannt
+        @{b}*@{ub} Crash bei ACT Apollo A620-Erkennung behoben
 
 @{i}V 43.0@{ui}
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt, Schreibfehler korrigiert
