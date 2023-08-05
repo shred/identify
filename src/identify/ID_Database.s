@@ -1829,6 +1829,11 @@ manuf_tab	tabinit
 		board	  043,"SRAM Card",		MSG_EXP_RAM
 		endmf	49160
 
+		manuf	56797,"David Dunklee"
+		board	  221,"Parceiro",		MSG_EXP_RAM
+		board	  238,"Parceiro",		MSG_EXP_MISC
+		endmf   56797
+
 		manuf	61453,"Forefront Technologies"
 		endmf	61453
 
