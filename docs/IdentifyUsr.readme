@@ -39,7 +39,7 @@ the LGPLv3 Lesser Gnu Public License.
 
 The reference repository is at GitHub: https://github.com/shred/identify
 
-The source code is deliberately not part of this package. If you want to
-modify the source code, please consider contributing to the reference
+The source code is intentionally not part of this package. If you want
+to modify the code, please consider contributing to the reference
 repository. This is better than having an unknown number of forks and
-different source codes versions circulating around.
+different versions of the code floating around.

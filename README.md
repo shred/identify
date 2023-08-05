@@ -61,7 +61,7 @@ If you found a bug or have a feature request, feel free to [open an issue](https
 
 At the AmiNet, you will find [official binaries](http://aminet.net/package/util/libs/IdentifyUsr) and [development files](http://aminet.net/package/util/libs/IdentifyDev).
 
-**Please keep the "IdentifyDev" and "IdentifyUsr" package names reserved for official releases.** If you want to release a fork, use a different package name. But please consider contributing to the reference repository instead. This is better than having an unknown number of different versions circulating around.
+**Please keep the "IdentifyDev" and "IdentifyUsr" package names reserved for official releases.** If you want to release a fork, use a different package name. But please consider contributing to the reference repository instead. This is better than having an unknown number of forks and different versions of the code floating around.
 
 ## Translation
 
