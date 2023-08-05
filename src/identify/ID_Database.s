@@ -2181,6 +2181,7 @@ f_act_000	move.l	a5,d0			; ConfigDev present?
 		beq	.hacker			;  no -> return a fixed board
 	;-- find out type
 		move.l	a0,a2			; is there a cdui.library?
+		lea	(.cduiname,PC),a1
 		moveq	#0,d0
 		exec	OpenLibrary
 		move.l	a2,a0
