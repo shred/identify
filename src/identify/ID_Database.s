@@ -362,6 +362,10 @@ manuf_tab	tabinit
 		manuf	01081,"Marc Michael Groth"
 		endmf	01081
 
+		manuf	01234,"Archi-TECH"
+		board	  000,"A630",			MSG_EXP_TURBOANDRAM
+		endmf	01234
+
 		manuf	01267,"RBM Digitaltechnik"
 		endmf	01267
 
