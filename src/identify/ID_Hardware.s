@@ -1270,15 +1270,17 @@ do_OsNr	;-- get version.library version
 		move	(SoftVer,a0),d1
 		move	(LIB_VERSION,a0),d0
 	;-- test AmigaOS versions
-	;  D0: Kickstart Version
+	;  D0: exec.library Version
 	;  D1: ROM Revision
-	;  D2: Workbench Version
-	;  D3: Workbench Revision
+	;  D2: version.library Version
+	;  D3: version.library Revision
 		cmp	#47,d0
 		bne	.not_47
 		moveq	#IDOS_3_2_2,d4		; AmigaOS 3.2.2 (>= 47.111)
 		cmp	#111,d1
-		bge	.found
+		bge	.found			;   (3.2.2 ROM was found
+		cmp	#4,d3
+		bge	.found			;   (3.2.2 module was found)
 		moveq	#IDOS_3_2_1,d4		; AmigaOS 3.2.1 (>= 47.102)
 		cmp	#102,d1
 		bge	.found			;   (3.2.1 ROM was found)

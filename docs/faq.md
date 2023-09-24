@@ -18,6 +18,12 @@ This is what you can do now:
 
 ## System Analyzer
 
+**AmigaOS 3.2.2.1 is not detected properly.**
+
+AmigaOS 3.2.2.1 is reported as AmigaOS 3.2.2. This is because AmigaOS 3.2.2.1 is a hotfix version of AmigaOS 3.2.2 which only updates a very small number of system files, so it is even less of an update than a BoingBag. For this reason, I have decided not to support sub-sub-minor version numbers, and instead to keep the version number "AmigaOS 3.2.2".
+
+If Hyperion releases more hotfixes like this in the future, I may reconsider this decision.
+
 **Why is there no CPU/FPU clock shown?**
 
 On emulated Amigas, and systems with an FPGA processor, Identify won't give a CPU or FPU clock. This is because these systems work very differently than traditional processors, so the clock measurement would give a useless random number that does not truely correspond to the computing power.
