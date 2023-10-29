@@ -518,6 +518,10 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+@{i}V 43.2@{ui}
+        @{b}*@{ub} AmigaOS 3.2.2 wurde bei einer Modules-Installation nicht erkannt
+        @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
+
 @{i}V 43.1@{ui}
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
         @{b}*@{ub} AmigaOS 3.9 wurde unter bestimmten Umständen nicht erkannt

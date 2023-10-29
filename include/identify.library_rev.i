@@ -19,10 +19,10 @@
 *
 
 VERSION		EQU	43
-REVISION	EQU	1
+REVISION	EQU	2
 
 DATE		MACRO
-		dc.b	'5.8.2023'
+		dc.b	'29.10.2023'
 		ENDM
 
 PRGNAME 	MACRO
@@ -30,17 +30,17 @@ PRGNAME 	MACRO
 		ENDM
 
 VERS		MACRO
-		dc.b	'identify.library 43.1'
+		dc.b	'identify.library 43.2'
 		ENDM
 
 VSTRING 	MACRO
-		dc.b	'identify.library 43.1 (5.8.2023)',13,10,0
+		dc.b	'identify.library 43.2 (29.10.2023)',13,10,0
 		ENDM
 
 VERSTAG 	MACRO
-		dc.b	0,'$VER: identify.library 43.1 (5.8.2023)',0
+		dc.b	0,'$VER: identify.library 43.2 (29.10.2023)',0
 		ENDM
 
 VSTR		MACRO
-		dc.b	'identify.library 43.1 (5.8.2023)'
+		dc.b	'identify.library 43.2 (29.10.2023)'
 		ENDM
