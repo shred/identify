@@ -197,11 +197,11 @@ manuf_tab	tabinit
 		board	  001,"Easyl",			MSG_EXP_TABLET
 		endmf	01009
 
-		manuf	01010,"Microbotics"
+		manuf	01010,"MicroBotics"
 		board	  000,"StarBoard II",		MSG_EXP_RAM	; MB1230 XA Accelerator?
 		board	  002,"StarBoard II M.F.M.",	MSG_EXP_HD	; StarDrive?
-		board	  003,"8-Up! (PIC A)",		MSG_EXP_RAM
-		board	  004,"8-Up! (PIC B)",		MSG_EXP_RAM
+		board	  003,"8UP! (PIC A)",		MSG_EXP_RAM
+		board	  004,"8UP! (PIC B)",		MSG_EXP_RAM
 		board	  018,"Modem 19",		MSG_EXP_MODEM
 		board	  032,"Delta Card",		MSG_EXP_RAM
 		board	  064,"8-Star!",		MSG_EXP_RAM
