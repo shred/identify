@@ -471,6 +471,10 @@ A FAQ can be found online here:
 History
 *******
 
+@{i}V 44.0@{ui}
+        @{b}*@{ub} Emu68 (PiStorm lite) is detected as CPU/FPU/MMU
+        @{b}*@{ub} Added more boards
+
 @{i}V 43.2@{ui}
         @{b}*@{ub} AmigaOS 3.2.2 wasn't detected if installed as module
         @{b}*@{ub} Added more manufacturers and boards

@@ -518,6 +518,10 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+@{i}V 44.0@{ui}
+        @{b}*@{ub} Emu68 (PiStorm lite) wird erkannt und als CPU/FPU/MMU angezeigt
+        @{b}*@{ub} Weitere Karten hinzugefügt
+
 @{i}V 43.2@{ui}
         @{b}*@{ub} AmigaOS 3.2.2 wurde bei einer Modules-Installation nicht erkannt
         @{b}*@{ub} Weitere Hersteller und Karten hinzugefügt
