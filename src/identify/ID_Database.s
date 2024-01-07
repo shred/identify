@@ -1795,10 +1795,11 @@ manuf_tab	tabinit
 		endmf	28014
 
 		manuf	28019,"Michal Schulz"
-		board	  001,"Emu68 Support",		MSG_EXP_MISC
-		board	  016,"RAM Expansion",		MSG_EXP_RAM
-		board	  033,"Device Tree",		MSG_EXP_MISC
-		board	  034,"Broadcom SDHC",		MSG_EXP_HD
+		board	  001,"Emu68 Support",		MSG_EXP_MISC	; i2c.library / 68040.library
+		board	  016,"Emu68 RAM Expansion",	MSG_EXP_RAM	; Emu68K RAM
+		board	  033,"Emu68 Device Tree",	MSG_EXP_MISC	; devicetree.resource
+		board	  034,"Emu68 SD Card",		MSG_EXP_HD	; sdcard.device
+		board	  036,"Emu68 eMMC",		MSG_EXP_HD	; emmc.device
 		endmf	28019
 
 		manuf	32768,"M.A.S.T."	; Memory And Storage Technology

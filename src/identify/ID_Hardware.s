@@ -63,6 +63,14 @@ InitHardware	movem.l d0-d3/a0-a6,-(sp)
 		lea	(flags_draco,PC),a0	; set DraCo flag
 		tst.l	d0
 		sne	(a0)
+	;-- check for emu68
+		sub.l	a0,a0
+		move	#28019,d0		; Emu68 Support?
+		moveq	#001,d1
+		expans	FindConfigDev
+		lea	(flags_emu68,PC),a0	; set emu68 flag
+		tst.l	d0
+		sne	(a0)
 	;-- build RAM table
 		bsr	BuildRAMtab
 	;-- check hardware type
@@ -270,6 +278,7 @@ cv_CPU		lea	(.systab,PC),a0
 		dc.b	MSG_HW_68060-MSG_HW_68000
 		dc.b	MSG_HW_68LC060-MSG_HW_68000
 		dc.b	MSG_HW_FPGA-MSG_HW_68000
+		dc.b	MSG_HW_EMU68-MSG_HW_68000
 		even
 
 cv_FPU		subq.l	#1,d0
@@ -283,6 +292,7 @@ cv_FPU		subq.l	#1,d0
 		dc.b	MSG_HW_68040-MSG_HW_68000
 		dc.b	MSG_HW_68060-MSG_HW_68000
 		dc.b	MSG_HW_FPGA-MSG_HW_68000
+		dc.b	MSG_HW_EMU68-MSG_HW_68000
 		even
 
 cv_MMU		subq.l	#1,d0
@@ -296,6 +306,7 @@ cv_MMU		subq.l	#1,d0
 		dc.b	MSG_HW_68040-MSG_HW_68000
 		dc.b	MSG_HW_68060-MSG_HW_68000
 		dc.b	MSG_HW_FPGA-MSG_HW_68000
+		dc.b	MSG_HW_EMU68-MSG_HW_68000
 		even
 
 cv_OsVer	lea	buf_OsVer,a0
@@ -1128,6 +1139,9 @@ do_System	move	d0,d7
 * What CPU is used?
 *
 do_CPU		move	d0,d2
+		moveq	#IDCPU_EMU68,d0
+		move.b	(flags_emu68,PC),d1
+		bne	.found
 		moveq	#IDCPU_FPGA,d0
 		btst	#AFB_FPGA,d2
 		bne	.found
@@ -1167,7 +1181,12 @@ do_CPU		move	d0,d2
 * What FPU is present?
 *
 do_FPU		move	d0,d2
-		moveq	#IDFPU_FPGA,d0
+		moveq	#IDFPU_EMU68,d0
+		move.b	(flags_emu68,PC),d1
+		beq	.noemu
+		btst	#AFB_FPU40,d2
+		bne	.found
+.noemu		moveq	#IDFPU_FPGA,d0
 		btst	#AFB_FPGA,d2
 		beq	.nofpga
 		btst	#AFB_FPU40,d2
@@ -1195,6 +1214,9 @@ do_FPU		move	d0,d2
 * Is there a MMU available?
 *
 do_MMU		move	d0,d2			;; TODO: MMU check for FPGA. 68080 has no MMU yet.
+		moveq	#IDMMU_EMU68,d0
+		move.b	(flags_emu68,PC),d1
+		bne	.found
 		moveq	#IDMMU_68060,d0
 		btst	#AFB_68060,d2
 		bne	.found
@@ -2698,7 +2720,8 @@ cpuclk		dc.l	0		; CPU clock
 fpuclk		dc.l	0		; FPU clock
 flags_draco	dc.b	0		; -1 on DraCo systems
 flags_gotclock	dc.b	0		; -1 when CPU/FPU clock is evaluated
-flags_emulated	dc.b	0		; -1 if sytem is emulated
+flags_emulated	dc.b	0		; -1 if system is emulated
+flags_emu68	dc.b	0		; -1 if emu68 (PiStorm)
 		even
 
 		SECTION blank,BSS

@@ -178,6 +178,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDCPU_68060     = 7;     { 68060 }
        IDCPU_68LC060   = 8;     { 68LC060 (without FPU) }
        IDCPU_FPGA      = 9;     { FPGA based CPU }
+       IDCPU_EMU68     = 10;    { Emu68 based CPU emulation }
 
 { IDHW_FPU numerical result codes }
 
@@ -187,6 +188,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDFPU_68040     = 3;     { 68040 }
        IDFPU_68060     = 4;     { 68060 }
        IDFPU_FPGA      = 5;     { FPGA based FPU }
+       IDFPU_EMU68     = 6;     { Emu68 based FPU emulation }
 
 { IDHW_MMU numerical result codes }
 
@@ -196,6 +198,7 @@ CONST  IDENTIFYBUFLEN = 50;  { default buffer length }
        IDMMU_68040     = 3;     { 68040 }
        IDMMU_68060     = 4;     { 68060 }
        IDMMU_FPGA      = 5;     { FPGA based MMU }
+       IDMMU_EMU68     = 6;     { Emu68 based MMU emulation }
 
 { IDHW_OSNR numerical result codes }
 
