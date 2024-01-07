@@ -609,6 +609,11 @@ identify.library/IdHardwareUpdate
                 all strings are READ ONLY!
 
    NOTE
+        IDHW_MMU needs the mmu.library in order to return accurate MMU values.
+        If the mmu.library is not present (or before identify.library v44.0)
+        the MMU is only estimated based on the detected CPU, and may return
+        wrong values especially on 68030 and on some accelerator boards.
+
         This call is guaranteed to preserve all registers except D0.
 
    BUGS
@@ -814,10 +819,16 @@ identify.library/IdHardwareUpdate
 
         Boolean results are ==0 for FALSE, !=0 for TRUE.
 
-        If you have to look up the result in the include file, you might
-        also get a numerical result that is beyond the maximum value you'll
-        find there. Be prepared for it! In this case, just print "not known"
-        or anything similar, or use the IdHardware() result.
+        If you look up the result in the include file, you should be prepared
+        to get a numerical result that is higher than the maximum value you'll
+        find there. In this case, just print "not known" or anything similar,
+        or use the IdHardware() result. This makes sure that your code is also
+        working with newer versions of identify.library.
+
+        IDHW_MMU needs the mmu.library in order to return accurate MMU values.
+        If the mmu.library is not present (or before identify.library v44.0)
+        the MMU is only estimated based on the detected CPU, and may return
+        wrong values especially on 68030 and on some accelerator boards.
 
         This call is guaranteed to preserve all registers except D0.
 
