@@ -520,6 +520,8 @@ History
 
 @{i}V 44.0@{ui}
         @{b}*@{ub} Emu68 (PiStorm lite) wird erkannt und als CPU/FPU/MMU angezeigt
+        @{b}*@{ub} MMU wird über mmu.library erkannt (vorher wurde die Präsenz einer
+          MMU nur geschätzt)
         @{b}*@{ub} Weitere Karten hinzugefügt
 
 @{i}V 43.2@{ui}

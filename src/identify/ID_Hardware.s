@@ -29,11 +29,13 @@
 		INCLUDE exec/semaphores.i
 		INCLUDE dos/dos.i
 		INCLUDE graphics/gfxbase.i
+		INCLUDE	mmu/mmubase.i
 		INCLUDE lvo/exec.i
 		INCLUDE lvo/utility.i
 		INCLUDE lvo/expansion.i
 		INCLUDE lvo/dos.i
 		INCLUDE lvo/graphics.i
+		INCLUDE	lvo/mmu.i
 
 		INCLUDE libraries/identify.i
 
@@ -178,7 +180,7 @@ IdHardwareNum	movem.l d1-d3/a0-a6,-(SP)
 		dc.l	do_AgnusMode,	do_Denise,	do_DeniseRev,	do_BoingBag
 		dc.l	do_Emulated,	do_XLVersion,	do_HostOS,	do_HostVers
 		dc.l	do_HostMachine,	do_HostCPU,	do_HostSpeed,	do_LastAlertTask
-		dc.l	do_Paula,       do_RomVer,	do_RTC
+		dc.l	do_Paula,	do_RomVer,	do_RTC
 
 
 **
@@ -991,7 +993,6 @@ do_System	move	d0,d7
 		exec	FindResident
 		tst.l	d0
 		bne	.amiga4000
-
 	;-- Check for AGA machines in general
 		move	$dff07c,d1
 		cmp.b	#$f0,d1
@@ -1213,25 +1214,46 @@ do_FPU		move	d0,d2
 **
 * Is there a MMU available?
 *
-do_MMU		move	d0,d2			;; TODO: MMU check for FPGA. 68080 has no MMU yet.
-		moveq	#IDMMU_EMU68,d0
-		move.b	(flags_emu68,PC),d1
-		bne	.found
-		moveq	#IDMMU_68060,d0
+do_MMU		move.l	(mmubase,PC),d1		; Is mmu.library available?
+		bne	.useMmuLib
+	;-- Simple estimation by CPU type
+		move	d0,d2
+		moveq	#IDMMU_68060,d0		; 68060 always has MMU
 		btst	#AFB_68060,d2
 		bne	.found
-		moveq	#IDMMU_68040,d0
-		btst	#AFB_68040,d2
+		moveq	#IDMMU_68040,d0		; 68040 usually has MMU
+		btst	#AFB_68040,d2		; (68EC040 is rarely used)
 		bne	.found
-		moveq	#IDMMU_68030,d0
-		btst	#AFB_68030,d2		;; TODO: What about 68EC030?
+		lea	(a4000bonus,a4),a1	; A4000 usually has 68EC030 without MMU
+		exec	FindResident
+		tst.l	d0
+		bne	.isAmiga4000
+		moveq	#IDMMU_68030,d0		; A3000 has 68030 with MMU
+		btst	#AFB_68030,d2		; Accelerated Amiga's usually have 68030
 		bne	.found
-	;; TODO: Are there Amigas with 68851 MMU?
-	;	moveq	#IDMMU_68851,d0
+.isAmiga4000	;moveq	#IDMMU_68851,d0		; 68020 machines usually have no 68851 MMU
 	;	btst	#AFB_68020,d2
 	;	bne	.found
 		moveq	#IDMMU_NONE,d0
 .found		rts
+
+	;-- mmu.lib true MMU detection
+.useMmuLib	mmu	GetMMUType		; Get the system's MMU
+		move.b	d0,d2			; and convert to identify constants
+		moveq	#IDMMU_68060,d0
+		cmp.b	#MUTYPE_68060,d2
+		beq	.found
+		moveq	#IDMMU_68040,d0
+		cmp.b	#MUTYPE_68040,d2
+		beq	.found
+		moveq	#IDMMU_68030,d0
+		cmp.b	#MUTYPE_68030,d2
+		beq	.found
+		moveq	#IDMMU_68851,d0
+		cmp.b	#MUTYPE_68851,d2
+		beq	.found
+		moveq	#IDMMU_NONE,d0
+		bra	.found
 
 **
 * Active AmigaOS Version (e.g. 40.68).

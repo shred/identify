@@ -40,6 +40,7 @@ Requirements:
 * [FlexCat](https://github.com/adtools/flexcat/releases/tag/2.18)
 * [AmigaOS NDK 3.2](https://www.hyperion-entertainment.com/index.php/downloads?view=files&parent=40), unpacked on your build machine
 * [MUI](http://sasg.com/mui/download.html) by Stefan Stuntz, includes unpacked on your build machine
+* [mmu.library](http://aminet.net/package/docs/misc/MuManual) by Thomas Richter, includes unpacked on your build machine
 * [lha](https://github.com/jca02266/lha) (compiled with `--enable-multibyte-filename=auto` option, which is the default)
 * [AmiTools](https://github.com/cnvogelg/amitools) (optional, for the `pack` target only)
 

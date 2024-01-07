@@ -473,6 +473,7 @@ History
 
 @{i}V 44.0@{ui}
         @{b}*@{ub} Emu68 (PiStorm lite) is detected as CPU/FPU/MMU
+        @{b}*@{ub} MMU is detected via mmu.library (it was only guessed before)
         @{b}*@{ub} Added more boards
 
 @{i}V 43.2@{ui}

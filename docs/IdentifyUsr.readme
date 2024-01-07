@@ -31,6 +31,8 @@ Features:
 New in this release:
 
   - More boards
+  - mmu.library is now used for MMU detection. It was only guessed by
+    the CPU type before, but did not detect 68EC030 correctly.
   - Emu68 is detected and shown as CPU/FPU/MMU
 
 Identify is Open Source Software. The source code is distributed under
