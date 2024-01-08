@@ -1150,9 +1150,8 @@ do_CPU		move	d0,d2
 		bne	.found060
 		btst	#AFB_68040,d2
 		bne	.found040
-		moveq	#IDCPU_68030,d0
 		btst	#AFB_68030,d2
-		bne	.found
+		bne	.found030
 		moveq	#IDCPU_68020,d0
 		btst	#AFB_68020,d2
 		bne	.found
@@ -1161,8 +1160,6 @@ do_CPU		move	d0,d2
 		bne	.found
 		moveq	#IDCPU_68000,d0
 .found		rts
-
-	;; TODO: 68EC030?
 
 	;-- 68060 or 68LC060?
 .found060	moveq	#IDCPU_68060,d0
@@ -1177,6 +1174,18 @@ do_CPU		move	d0,d2
 		bne	.found
 		moveq	#IDCPU_68LC040,d0
 		rts
+
+	;-- 68030 or 68EC030?
+.found030	moveq	#IDCPU_68030,d0
+		move.l	(mmubase,PC),d1		; only works if mmu.lib is available
+		beq	.found
+		mmu	GetMMUType
+		move.b	d0,d1
+		moveq	#IDCPU_68030,d0		; 68030 if MMU is there
+		cmp.b	#MUTYPE_68030,d1
+		beq	.found
+		moveq	#IDCPU_68EC030,d0	; 68EC030 if MMU is not there
+		bra	.found
 
 **
 * What FPU is present?
