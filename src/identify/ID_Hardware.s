@@ -1218,6 +1218,9 @@ do_MMU		move.l	(mmubase,PC),d1		; Is mmu.library available?
 		bne	.useMmuLib
 	;-- Simple estimation by CPU type
 		move	d0,d2
+		moveq	#IDMMU_NONE,d0		; Emu68 has MMU, but it is turned off
+		move.b	(flags_emu68,PC),d1	;   for performance reasons, see
+		bne	.found			;   https://linuxjedi.co.uk/2021/09/26/this-week-in-pistorm-2021-09-26/
 		moveq	#IDMMU_68060,d0		; 68060 always has MMU
 		btst	#AFB_68060,d2
 		bne	.found
@@ -1242,18 +1245,23 @@ do_MMU		move.l	(mmubase,PC),d1		; Is mmu.library available?
 		move.b	d0,d2			; and convert to identify constants
 		moveq	#IDMMU_68060,d0
 		cmp.b	#MUTYPE_68060,d2
-		beq	.found
+		beq	.checkEmu68
 		moveq	#IDMMU_68040,d0
 		cmp.b	#MUTYPE_68040,d2
-		beq	.found
+		beq	.checkEmu68
 		moveq	#IDMMU_68030,d0
 		cmp.b	#MUTYPE_68030,d2
-		beq	.found
+		beq	.checkEmu68
 		moveq	#IDMMU_68851,d0
 		cmp.b	#MUTYPE_68851,d2
-		beq	.found
+		beq	.checkEmu68
 		moveq	#IDMMU_NONE,d0
 		bra	.found
+.checkEmu68	move.b	(flags_emu68,PC),d1	; Replace with "Emu68" if applicable
+		beq	.found
+		moveq	#IDMMU_EMU68,d0		; If mmu.lib says there is MMU, there _is_ MMU
+		bra	.found
+
 
 **
 * Active AmigaOS Version (e.g. 40.68).
