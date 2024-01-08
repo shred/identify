@@ -2078,9 +2078,11 @@ f_apollo_035	move.l	a5,d0			; ConfigDev present?
 		btst	#AFB_68040,d1		; 040 present?
 		bne	.app1240		;  check 040 boards
 	;-- check for AGA chipset
-		move	$dff07c,d1
-		cmp.b	#$f8,d1
-		beq	.app1230		; AGA -> Apollo 1230
+		bsr	ReadDeniseID
+		or.b	#$f0,d0
+		cmp.b	#$f8,d0
+		bne	.app2030		; No AGA -> Apollo 2030
+		bra	.app1230		; AGA -> Apollo 1230
 	;-- check 040 boards
 .app1240	bsr	isA1200			; Amiga 1200?
 		beq	.is_app1240
