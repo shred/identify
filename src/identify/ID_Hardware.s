@@ -994,7 +994,8 @@ do_System	move	d0,d7
 		tst.l	d0
 		bne	.amiga4000
 	;-- Check for AGA machines in general
-		move	$dff07c,d1
+		bsr	ReadDeniseID
+		move.b	d0,d1
 		cmp.b	#$f0,d1
 		beq	.aaa_lowend
 		cmp.b	#$f1,d1
@@ -1460,7 +1461,8 @@ do_Chipset
 		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
 		beq	.done
 	;-- read Amiga type bits
-		move	$dff07c,d1
+		bsr	ReadDeniseID
+		move	d0,d1
 	;-- AAA?
 		moveq	#IDCS_AAA,d0
 		cmp.b	#$F0,d1
@@ -2312,15 +2314,13 @@ do_Denise	moveq	#IDDN_NONE,d0
 		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
 		beq	.done
 	;-- 8362 (OCS)
+		bsr	ReadDeniseID
+		move.l	d0,d1
 		moveq	#IDDN_8362,d0
-		move	$dff07c,d2		; LISAID
-		movem.l d0/d2,-(SP)
-		moveq	#1,d0
-		dos	Delay
-		movem.l	(SP)+,d0/d2
-		move	$dff07c,d1
-		cmp	d2,d1			; both reads must be equal
-		bne	.done			;  no -> very old 8362 Denise
+		tst.l	d1			; missing register -> OCS
+		bmi	.done
+		cmp.b	#$FF,d1			; register contains FF -> OCS
+		beq	.done
 	;-- Monica (AAA)
 		moveq	#IDDN_MONICA,d0
 		cmp.b	#$F0,d1			; single graphics chipset
@@ -2347,22 +2347,19 @@ do_Denise	moveq	#IDDN_NONE,d0
 **
 * What Denise Revision is present?
 *
-do_DeniseRev	moveq	#-1,d0
-		move.b	(flags_draco,PC),d1	; DraCo has no Denise at all.
-		bne	.done
+do_DeniseRev	move.b	(flags_draco,PC),d1	; DraCo has no Denise at all.
+		bne	.unknown
 	;-- 8362
-		move	$dff07c,d1		; LISAID
-		and	#$00FF,d1
-		move	$dff07c,d2
-		and	#$00FF,d2
-		cmp	d1,d2			; both reads must be equal
-		bne	.done			;   no -> very old Denise without rev
+		bsr	ReadDeniseID
+		tst.l	d0
+		bmi	.unknown		; very old OCS Denise without revision
 	;-- 8373/8364
-		move	$dff07c,d0
 		and.l	#$000000F0,d0
 		eor	#$00F0,d0		; invert revision (F->0, E->1 ...)
 		lsr	#4,d0
 .done		rts
+.unknown	moveq	#-1,d0
+		rts
 
 **
 * What Paula/Arne version is present?
@@ -2738,6 +2735,25 @@ RomStart	lea	$FC0000,a0		; Assume FC0000 first
 		rts
 	;-- must be a 512KB ROM
 .bad		lea	$F80000,a0
+		rts
+
+**
+* Read the DeniseID register.
+*
+*	<- D0.l DeniseID register, or -1.l if OCS Denise without that register
+*
+		public	ReadDeniseID
+ReadDeniseID	movem.l	d1-d2,-(sp)
+		move	$dff07c,d1
+		moveq	#31,d2
+		moveq	#0,d0
+.loop		move	$dff07c,d0
+		cmp.b	d0,d1
+		bne	.ocsDenise
+		dbra	d2,.loop
+		bra	.done
+.ocsDenise	moveq	#-1,d0
+.done		movem.l	(sp)+,d1-d2
 		rts
 
 
