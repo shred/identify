@@ -19,14 +19,14 @@
 *
 
 VERSION		EQU	44
-REVISION	EQU	0
+REVISION	EQU	1
 
 VERSNR		MACRO
-		dc.b	'44.0'
+		dc.b	'44.1'
 		ENDM
 
 DATE		MACRO
-		dc.b	'7.1.2024'
+		dc.b	'14.1.2024'
 		ENDM
 
 PRGNAME 	MACRO

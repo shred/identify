@@ -2,7 +2,7 @@ Short:        Identify hardware and more
 Author:       Richard 'Shred' Koerber
 Uploader:     aminet@shredzone.de (Richard Koerber)
 Type:         util/libs
-Version:      44.0
+Version:      44.1
 Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
@@ -19,7 +19,7 @@ Features:
   - Gives information about your Amiga model, CPU, OS version,
     available memory, chipset, and much more...
   - Supports from AmigaOS 2.0 up to the latest AmigaOS 3.2.2
-  - The expansion database contains 363 manufacturers and 700 boards
+  - The expansion database contains 363 manufacturers and 701 boards
   - Distinguishes between most GVP and Phase5 boards with unique ID
   - Tries to give at least a hint if the board name is not known yet
   - Fully FPGA, DraCo, and PowerPC compatible
@@ -30,10 +30,8 @@ Features:
 
 New in this release:
 
-  - More boards
-  - mmu.library is now used for MMU detection. It was only guessed by
-    the CPU type before, but did not detect 68EC030 correctly.
-  - Emu68 is detected and shown as CPU/FPU/MMU
+  - Some bugfixes
+  - Emu68 1.0RC3 is supported
 
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.

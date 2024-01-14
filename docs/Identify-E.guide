@@ -471,6 +471,13 @@ A FAQ can be found online here:
 History
 *******
 
+@{i}V 44.1@{ui}
+        @{b}*@{ub} Bugfix: Emu68 MMU was not detected correctly
+        @{b}*@{ub} Bugfix: OCS Denise was not detected
+        @{b}*@{ub} Bugfix: Apollo 2030 was not detected
+        @{b}*@{ub} 68EC030 is recognized now (if mmu.library is present)
+        @{b}*@{ub} Added Emu68 Unicam Board
+
 @{i}V 44.0@{ui}
         @{b}*@{ub} Emu68 (PiStorm lite) is detected as CPU/FPU/MMU
         @{b}*@{ub} MMU is detected via mmu.library (it was only guessed before)

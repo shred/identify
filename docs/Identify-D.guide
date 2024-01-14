@@ -518,6 +518,13 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+@{i}V 44.1@{ui}
+        @{b}*@{ub} Bugfix: Emu68 MMU wurde fehlerhaft angezeigt
+        @{b}*@{ub} Bugfix: OCS Denise wurde nicht erkannt
+        @{b}*@{ub} Bugfix: Apollo 2030 wurde nicht erkannt
+        @{b}*@{ub} 68EC030 wird nun erkannt (falls mmu.library installiert ist)
+        @{b}*@{ub} Emu68 Unicam Board hinzugefügt
+
 @{i}V 44.0@{ui}
         @{b}*@{ub} Emu68 (PiStorm lite) wird erkannt und als CPU/FPU/MMU angezeigt
         @{b}*@{ub} MMU wird über mmu.library erkannt (vorher wurde die Präsenz einer
