@@ -26,13 +26,27 @@ If Hyperion releases more hotfixes like this in the future, I may reconsider thi
 
 **Why is there no CPU/FPU clock shown?**
 
-On emulated Amigas, and systems with an FPGA processor, Identify won't give a CPU or FPU clock. This is because these systems work very differently than traditional processors, so the clock measurement would give a useless random number that does not truely correspond to the computing power.
+On emulated Amigas, Emu68 systems, and systems with an FPGA processor, Identify won't give a CPU or FPU clock. This is because these systems work very differently than traditional processors, so the clock measurement would give a useless random number that does not truely correspond to the computing power.
 
 The intention of Identify is to show your true CPU clock. If you need a benchmark test, you can use tools like [SysInfo](https://aminet.net/package/util/moni/SysInfo), which give a more realistic result.
 
 **The CPU/FPU clock isn't accurate.**
 
 Measuring the clock requires real Fast RAM for best results. If there is only Chip RAM, the results may be wrong. This is a technical limitation that cannot be compensated easily.
+
+**My 68030 is detected as 68EC030 (or vice versa).**
+
+Please install the [mmu.library](https://aminet.net/package/util/libs/MMULib) by Thomas Richter. If your CPU is still detected as 68EC030, and you are _sure_ you own a full-fledged 68030, please file a [bug report](https://github.com/shred/identify/issues/new).
+
+**The CPU/FPU/MMU of my new accelerator board is shown incorrectly. Have I been victim of a scam?**
+
+Not necessarily! Identify relies on the results of a number of other libraries. It is also possible that your system has not been set up correctly. _The output of Identify is not suitable as an evidence!_
+
+Also note that 68EC040 and 68EC060 CPUs are not currently detected by Identify, but will be reported as their LC counterparts.
+
+**My Agnus 8375 is reported as Agnus 8372.**
+
+Yes, unfortunately the chips cannot be distinguished on software side.
 
 **The PowerPC clock isn't accurate.**
 
