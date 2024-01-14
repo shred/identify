@@ -1800,6 +1800,7 @@ manuf_tab	tabinit
 		board	  033,"Emu68 Device Tree",	MSG_EXP_MISC	; devicetree.resource
 		board	  034,"Emu68 SD Card",		MSG_EXP_HD	; sdcard.device
 		board	  036,"Emu68 eMMC",		MSG_EXP_HD	; emmc.device
+		board	  112,"Emu68 Unicam",		MSG_EXP_GFX	; unicam.resource
 		endmf	28019
 
 		manuf	32768,"M.A.S.T."	; Memory And Storage Technology
