@@ -471,6 +471,8 @@ A FAQ can be found online here:
 History
 *******
 
+        @{b}*@{ub} UAE/DraCo was not detected as emulator
+
 @{i}V 44.1@{ui}
         @{b}*@{ub} Bugfix: Emu68 MMU was not detected correctly
         @{b}*@{ub} Bugfix: OCS Denise was not detected

@@ -976,9 +976,9 @@ do_System	move	d0,d7
 		tst.l	d0
 		bne	.uae
 		sub.l	a0,a0
-		move	#2011,d0		; UAE 2 (2011/4)
-		moveq	#4,d1
-		expans	FindConfigDev
+		move	#2011,d0		; UAE 2 (2011/82)
+		moveq	#82,d1			;  82 is the only available expansion
+		expans	FindConfigDev		;  on UAE's DraCo emulation
 		tst.l	d0
 		bne	.uae
 	;-- Amithlon emulator?

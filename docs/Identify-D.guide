@@ -518,6 +518,8 @@ Eine FAQ in Englisch findest du online unter:
 History
 *******
 
+        @{b}*@{ub} UAE/DraCo wurde nicht als Emulator erkannt
+
 @{i}V 44.1@{ui}
         @{b}*@{ub} Bugfix: Emu68 MMU wurde fehlerhaft angezeigt
         @{b}*@{ub} Bugfix: OCS Denise wurde nicht erkannt
