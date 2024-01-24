@@ -1597,6 +1597,7 @@ manuf_tab	tabinit
 		endmf	05180
 
 		manuf	05191,"Matthias Hampel"		; a1k.org Community, confirmed
+		boarda	  005,"Transi Productions","half GIG Zorro III",MSG_EXP_RAM
 		board	  010,"Freeway",		MSG_EXP_USB
 		board	  011,"Freeway Pro",		MSG_EXP_USB
 		board	  012,"Freeway Pro GBA",	MSG_EXP_USB
