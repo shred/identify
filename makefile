@@ -56,6 +56,7 @@ LOPTS     = -bamigahunk -Rshort -mrel -s \
 
 all: $(OBJP) \
 		$(REFP)/inline/identify_protos.h \
+		$(REFP)/inline/identify.h \
 		$(REFP)/proto/identify.h \
 		$(OBJP)/locale/ID_Locale.i \
 		$(OBJP)/locale/LocaleTools.i \
@@ -75,7 +76,7 @@ all: $(OBJP) \
 		$(OBJP)/ExpansionMUI $(OBJP)/MyExp
 
 clean:
-	rm -rf $(OBJP) $(RELP) $(REFP)/inline/identify_protos.h $(REFP)/proto/identify.h
+	rm -rf $(OBJP) $(RELP) $(REFP)/inline/identify_protos.h $(REFP)/inline/identify.h $(REFP)/proto/identify.h
 
 release: clean all
 	cp -r $(DSTP) $(RELP)				# Create base structure and static files
@@ -148,6 +149,11 @@ $(REFP)/inline/identify_protos.h: $(REFP)/fd/identify_lib.fd $(REFP)/clib/identi
 	mkdir -p $(REFP)/inline/
 	fd2pragma --infile $(REFP)/fd/identify_lib.fd --clib $(REFP)/clib/identify_protos.h \
 		--to $(REFP)/inline/ --special 70 --autoheader --comment
+
+$(REFP)/inline/identify.h: $(REFP)/fd/identify_lib.fd $(REFP)/clib/identify_protos.h
+	mkdir -p $(REFP)/inline/
+	fd2pragma --infile $(REFP)/fd/identify_lib.fd --clib $(REFP)/clib/identify_protos.h \
+		--to $(REFP)/inline/ --special 40 --autoheader --comment
 
 $(REFP)/proto/identify.h: $(REFP)/fd/identify_lib.fd $(REFP)/clib/identify_protos.h
 	mkdir -p $(REFP)/proto/
