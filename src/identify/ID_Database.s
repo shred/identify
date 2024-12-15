@@ -119,7 +119,7 @@ manuf_tab	tabinit
 		endmf	00512
 
 		manuf	00513,"Commodore Braunschweig"
-		board	  001,"A2088 XT / A2286 AT",	MSG_EXP_BRIDGE
+		board	  001,"A2088 XT / A1060",	MSG_EXP_BRIDGE
 		board	  002,"A2286 AT",		MSG_EXP_BRIDGE
 		board	  084,"A4091",			MSG_EXP_SCSIHD
 		board	  103,"A2386 SX",		MSG_EXP_BRIDGE
@@ -982,7 +982,7 @@ manuf_tab	tabinit
 		endmf	02144
 
 		manuf	02145,"Ingenieurb\xFCro Helfrich" ; Omega Datentechnik?
-		boarda	  032,"Hertz Elektronik","Rainbow II",MSG_EXP_GFX
+		boarda	  032,"Hertz Elektronik","Rainbow II",MSG_EXP_GFX ; Alias ADV7120
 		board	  033,"Rainbow III",		MSG_EXP_GFX
 		boarda	  052,"E3B","Algor (Pro)",	MSG_EXP_USB
 		boarda	  128,"Kato","Melody MPEG",	MSG_EXP_AUDIO
@@ -1766,7 +1766,7 @@ manuf_tab	tabinit
 		board	  018,"VLab-Motion",		MSG_EXP_VIDEO
 		board	  019,"DraCo Altais",		MSG_EXP_GFX
 		board	  023,"DraCo Motion",		MSG_EXP_VIDEO
-		board	  024,"DraCo MachineControl",	MSG_EXP_MULTIIO
+		board	  024,"DraCo Machinecontrol",	MSG_EXP_MULTIIO ; controls external professional video machine
 		board	  253,"Falcon \'040",		MSG_EXP_TURBO
 		endmf	18260
 
@@ -2271,8 +2271,8 @@ f_bsc_005	move.l	a5,d0			; ConfigDev present?
 **
 * BSC (02092) ID 006
 *
-		defstr	tandem,"Tandem AT-2008/508",	MSG_EXP_IDEHD
-		defstr	ide68030tk,"68030TK IDE controller", MSG_EXP_IDEHD
+		defstr	tandem,"AT-Bus 2008/508/AlfaPower",	MSG_EXP_IDEHD
+		defstr	ide68030tk,"68030TK IDE controller", 	MSG_EXP_IDEHD
 		defstr2 ide68030tkmf,"a1k.org Community"
 
 f_bsc_006	move.l	a5,d0			; ConfigDev present?
