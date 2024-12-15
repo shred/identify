@@ -1347,6 +1347,7 @@ manuf_tab	tabinit
 		board	  013,"FPGA-TK SD-Card",	MSG_EXP_MISC
 		board	  014,"68030-TK2",		MSG_EXP_RAM
 		board	  015,"68030TK2",		MSG_EXP_TURBO	; by Matze
+		board	  028,"ICY for Liberator", 	MSG_EXP_MISC	; by buggs and torsti76
 		board	  042,"BoardsLAB",		MSG_EXP_MISC	; by bubbob42
 		board	  060,"68060-TK",		MSG_EXP_TURBO	; by Matze
 		board	  123,"LAN Card",		MSG_EXP_ETHERNET; by buggs/Scrat/Matze
