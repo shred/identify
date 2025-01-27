@@ -1506,6 +1506,7 @@ manuf_tab	tabinit
 
 		manuf	05017,"Alastair M. Robinson"
 		board	  017,"Minimig Z3 FastRAM",	MSG_EXP_RAM
+		board	  018,"Minimig Control Board",	MSG_EXP_MISC
 		endmf	05017
 
 		manuf	05018,"Austex Software"
