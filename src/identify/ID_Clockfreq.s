@@ -275,21 +275,22 @@ RestoreCache	cmp.b	#5,(gcl_CPUType,a5)	; enable branch cache on 68060
 **
 * Compute clock frequency from test result.
 *
-*	-> D0.l	Test result, in number of E clock ticks
-*	-> D1.l E clock of this machine
-*	-> D2.l CPU/FPU related performance constant
+*	-> D0.l	Test result, in number of E clock ticks (R)
+*	-> D1.l E clock of this machine (E)
+*	-> D2.l CPU/FPU related performance constant (F)
 *	<- D0.l Clock im MHz, or 0 if error
 *
 ComputeClk	movem.l d1-d3/a0-a1,-(SP)
 		IFD	_MAKE_68020
-		 divu.l	d0,d1
-		 divu.l	d2,d1
-		 move.l	d1,d0
+		 mulu.l d2,d0			; D0: R*F
+		 divu.l	d0,d1			; D1: E/(R*F)
+		 move.l	d1,d0			; D0: E/(R*F)
 		ELSE
-		 exg.l	d0,d1
-		 utils	UDivMod32
-		 move.l	d2,d1
-		 utils.q UDivMod32
+		 exg.l	d1,d2			; D0:R, D1:F, D2:E
+		 utils	UMult32			; D0: R*F
+		 move.l	d0,d1			; D1: R*F
+		 move.l	d2,d0			; D0: E
+		 utils.q UDivMod32		; D0: E/(R*F)
 		 tst.l	d0
 		ENDC
 		beq	.exit			; 0 result -> error
@@ -315,10 +316,10 @@ ComputeClk	movem.l d1-d3/a0-a1,-(SP)
 		bra	.exit
 
 	;-- upper boundaries, in MHz, null-terminated
-.limittab	dc.b	9,12,15,19,22,27,30,35,38,45,57,63,78,90,0
+.limittab	dc.b	9,12,15,19,22,27,32,35,38,45,57,63,72,78,87,92,105,115,125,135,0
 
 	;-- related common quartz frequencies, in MHz
-.quarztab	dc.b	7,10,14,16,20,25,28,33,37,40,50,60,66,80
+.quarztab	dc.b	7,10,14,16,20,25,30,33,37,40,50,60,66,75,80,90,100,110,120,133
 		even
 
 
