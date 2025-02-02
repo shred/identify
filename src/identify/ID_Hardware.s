@@ -73,8 +73,16 @@ InitHardware	movem.l d0-d3/a0-a6,-(sp)
 		lea	(flags_emu68,PC),a0	; set emu68 flag
 		tst.l	d0
 		sne	(a0)
+	;-- check for SAGA/Apollo		; see http://www.apollo-core.com/knowledge.php?b=3&note=29581&z=HDbIdQ
+		move.b	(flags_draco,PC),d0	; Draco definitely has no SAGA chipset
+		bne	.nosaga
+		lea	(flags_saga,PC),a0	; set SAGA flag
+		move	$dff016,d0
+		and	#$00FE,d0		; Paula revision (bits 7..1)
+		cmp	#$0002,d0		;   0 for classic Amiga, 1 for SAGA
+		seq	(a0)
 	;-- build RAM table
-		bsr	BuildRAMtab
+.nosaga		bsr	BuildRAMtab
 	;-- check hardware type
 		moveq	#IDHW_SYSTEM,d0
 		sub.l	a0,a0
@@ -281,6 +289,7 @@ cv_CPU		lea	(.systab,PC),a0
 		dc.b	MSG_HW_68LC060-MSG_HW_68000
 		dc.b	MSG_HW_FPGA-MSG_HW_68000
 		dc.b	MSG_HW_EMU68-MSG_HW_68000
+		dc.b	MSG_HW_68080-MSG_HW_68000
 		even
 
 cv_FPU		subq.l	#1,d0
@@ -295,6 +304,7 @@ cv_FPU		subq.l	#1,d0
 		dc.b	MSG_HW_68060-MSG_HW_68000
 		dc.b	MSG_HW_FPGA-MSG_HW_68000
 		dc.b	MSG_HW_EMU68-MSG_HW_68000
+		dc.b	MSG_HW_68080-MSG_HW_68000
 		even
 
 cv_MMU		subq.l	#1,d0
@@ -309,6 +319,7 @@ cv_MMU		subq.l	#1,d0
 		dc.b	MSG_HW_68060-MSG_HW_68000
 		dc.b	MSG_HW_FPGA-MSG_HW_68000
 		dc.b	MSG_HW_EMU68-MSG_HW_68000
+		dc.b	MSG_HW_68080-MSG_HW_68000
 		even
 
 cv_OsVer	lea	buf_OsVer,a0
@@ -1144,9 +1155,8 @@ do_CPU		move	d0,d2
 		moveq	#IDCPU_EMU68,d0
 		move.b	(flags_emu68,PC),d1
 		bne	.found
-		moveq	#IDCPU_FPGA,d0
 		btst	#AFB_FPGA,d2
-		bne	.found
+		bne	.foundfpga
 		btst	#AFB_68060,d2
 		bne	.found060
 		btst	#AFB_68040,d2
@@ -1161,6 +1171,13 @@ do_CPU		move	d0,d2
 		bne	.found
 		moveq	#IDCPU_68000,d0
 .found		rts
+
+	;-- 68080 or general FPGA?
+.foundfpga	moveq	#IDCPU_68080,d0
+		move.b	(flags_saga,PC),d1
+		bne	.found
+		moveq	#IDCPU_FPGA,d0
+		rts
 
 	;-- 68060 or 68LC060?
 .found060	moveq	#IDCPU_68060,d0
@@ -1197,11 +1214,17 @@ do_FPU		move	d0,d2
 		beq	.noemu
 		btst	#AFB_FPU40,d2
 		bne	.found
-.noemu		moveq	#IDFPU_FPGA,d0
-		btst	#AFB_FPGA,d2
+.noemu		btst	#AFB_FPGA,d2
 		beq	.nofpga
+		moveq	#IDFPU_68080,d0
+		move.b	(flags_saga,PC),d1
+		bne	.found
+		moveq	#IDFPU_FPGA,d0
 		btst	#AFB_FPU40,d2
 		bne	.found
+		btst	#AFB_68882,d2
+		bne	.found
+		bra	.none
 .nofpga		moveq	#IDFPU_68060,d0
 		btst	#AFB_68060,d2
 		beq	.no68060
@@ -1218,7 +1241,7 @@ do_FPU		move	d0,d2
 		moveq	#IDFPU_68881,d0
 		btst	#AFB_68881,d2
 		bne	.found
-		moveq	#IDFPU_NONE,d0
+.none		moveq	#IDFPU_NONE,d0
 .found		rts
 
 **
@@ -1247,7 +1270,7 @@ do_MMU		move.l	(mmubase,PC),d1		; Is mmu.library available?
 .isAmiga4000	;moveq	#IDMMU_68851,d0		; 68020 machines usually have no 68851 MMU
 	;	btst	#AFB_68020,d2
 	;	bne	.found
-		moveq	#IDMMU_NONE,d0
+		moveq	#IDMMU_NONE,d0		; For FPGA we assume no MMU
 .found		rts
 
 	;-- mmu.lib true MMU detection
@@ -1255,17 +1278,21 @@ do_MMU		move.l	(mmubase,PC),d1		; Is mmu.library available?
 		move.b	d0,d2			; and convert to identify constants
 		moveq	#IDMMU_68060,d0
 		cmp.b	#MUTYPE_68060,d2
-		beq	.checkEmu68
+		beq	.checkEmuFpga
 		moveq	#IDMMU_68040,d0
 		cmp.b	#MUTYPE_68040,d2
-		beq	.checkEmu68
+		beq	.checkEmuFpga
 		moveq	#IDMMU_68030,d0
 		cmp.b	#MUTYPE_68030,d2
-		beq	.checkEmu68
+		beq	.checkEmuFpga
 		moveq	#IDMMU_68851,d0
 		cmp.b	#MUTYPE_68851,d2
-		beq	.checkEmu68
+		beq	.checkEmuFpga
 		moveq	#IDMMU_NONE,d0
+		bra	.found
+.checkEmuFpga	move.b	(flags_saga,PC),d1	; Replace with 68080 if applicable
+		beq	.checkEmu68
+		moveq	#IDMMU_68080,d0		; If mmu.lib says there is MMU, there _is_ MMU
 		bra	.found
 .checkEmu68	move.b	(flags_emu68,PC),d1	; Replace with "Emu68" if applicable
 		beq	.found
@@ -1454,12 +1481,9 @@ do_Chipset
 		move.b	(flags_draco,PC),d1
 		bne	.done
 	;-- SAGA?
-	; see http://www.apollo-core.com/knowledge.php?b=3&note=29581&z=HDbIdQ
 		moveq	#IDCS_SAGA,d0
-		move	$dff016,d1
-		and	#$00FE,d1		; Paula revision (bits 7..1)
-		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
-		beq	.done
+		move.b	(flags_saga,PC),d1
+		bne	.done
 	;-- read Amiga type bits
 		bsr	ReadDeniseID
 		move	d0,d1
@@ -2244,10 +2268,8 @@ do_Agnus	moveq	#IDAG_NONE,d0
 		bne	.done
 	;-- Anni (SAGA)
 		moveq	#IDAG_ANNI,d0
-		move	$dff016,d1
-		and	#$00FE,d1		; Paula revision (bits 7..1)
-		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
-		beq	.done
+		move.b	(flags_saga,PC),d1
+		bne	.done
 	;-- 8361/8370
 		moveq	#IDAG_8361,d0
 		move	$dff004,d1		; VPOSR
@@ -2309,10 +2331,8 @@ do_Denise	moveq	#IDDN_NONE,d0
 		bne	.done
 	;-- Isabel (SAGA)
 		moveq	#IDDN_ISABEL,d0
-		move	$dff016,d1
-		and	#$00FE,d1		; Paula revision (bits 7..1)
-		cmp	#$0002,d1		;   0 for classic Amiga, 1 for SAGA
-		beq	.done
+		move.b	(flags_saga,PC),d1
+		bne	.done
 	;-- 8362 (OCS)
 		bsr	ReadDeniseID
 		move.l	d0,d1
@@ -2777,6 +2797,7 @@ flags_draco	dc.b	0		; -1 on DraCo systems
 flags_gotclock	dc.b	0		; -1 when CPU/FPU clock is evaluated
 flags_emulated	dc.b	0		; -1 if system is emulated
 flags_emu68	dc.b	0		; -1 if emu68 (PiStorm)
+flags_saga	dc.b	0		; -1 if SAGA/Apollo
 		even
 
 		SECTION blank,BSS

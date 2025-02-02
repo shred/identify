@@ -193,6 +193,7 @@ IDCPU_68060	EQU	7	; 68060
 IDCPU_68LC060	EQU	8	; 68LC060 (without FPU)
 IDCPU_FPGA	EQU	9	; FPGA based CPU
 IDCPU_EMU68	EQU	10	; Emu68 based CPU emulation
+IDCPU_68080	EQU	11	; 68080 (SAGA, FPGA based)
 
 *
 * IDHW_FPU numerical result codes
@@ -204,6 +205,7 @@ IDFPU_68040	EQU	3	; 68040
 IDFPU_68060	EQU	4	; 68060
 IDFPU_FPGA	EQU	5	; FPGA based FPU
 IDFPU_EMU68	EQU	6	; Emu68 based FPU emulation
+IDFPU_68080	EQU	7	; 68080 (SAGA, FPGA based)
 
 *
 * IDHW_MMU numerical result codes
@@ -215,6 +217,7 @@ IDMMU_68040	EQU	3	; 68040
 IDMMU_68060	EQU	4	; 68060
 IDMMU_FPGA	EQU	5	; FPGA based MMU
 IDMMU_EMU68	EQU	6	; Emu68 based MMU emulation
+IDMMU_68080	EQU	7	; 68080 (SAGA, FPGA based)
 
 *
 * IDHW_OSNR numerical result codes
