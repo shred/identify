@@ -1626,6 +1626,8 @@ manuf_tab	tabinit
 		boarda	  005,"Matt Harlum","CIDER",	MSG_EXP_IDEHD
 		boarda	  006,"Matt Harlum","CIDER",	MSG_EXP_MISC
 		boarda	  007,"Matt Harlum","RIPPLE",	MSG_EXP_IDEHD
+		boarda	  008,"Matt Harlum","RIDE",	MSG_EXP_RAM
+		boarda	  009,"Matt Harlum","RIDE",	MSG_EXP_IDEHD
 		endmf	05194
 
 		manuf	05195,"Double H Tech"		; https://github.com/shanshe
