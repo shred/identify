@@ -154,7 +154,12 @@ GetClocks	movem.l d2-d7/a0-a4,-(SP)
 	;-- test FPU
 		tst.b	(gcl_FPUType,a5)	; is there an FPU anyway?
 		beq	.no_fpu
-		exec	Forbid			; make sure caches stay active
+		cmp.b	#3,(gcl_FPUType,a5)	; 68040 / 68060?
+		blt	.ext_fpu_clk
+		move.l	(gcl_CPUClk,a5),d0	; yes: internal FPU, always the same clock as CPU
+		move.l	d0,(gcl_FPUClk,a5)
+		bra	.no_fpu
+.ext_fpu_clk	exec	Forbid			; make sure caches stay active
 		bsr	SetCache		; emable code/data cache, disable branch prediction
 		move.l	d0,d1
 		bsr	TestFPU			; time FPU
