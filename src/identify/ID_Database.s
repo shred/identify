@@ -1370,7 +1370,7 @@ manuf_tab	tabinit
 		board	  019,"Deneb ROM",		MSG_EXP_USB
 		board	  020,"Deneb ROM Rescue",	MSG_EXP_USB
 		board	  023,"Deneb ZII Clockport",	MSG_EXP_USB
-		board	  032,"BigRam+",		MSG_EXP_RAM
+		board	  032,"ZorRAM",			MSG_EXP_RAM
 		board	  033,"BigRam+",		MSG_EXP_RAM
 		board	  048,"Prisma Megamix",		MSG_EXP_AUDIO	; A-EON
 		board	  200,"Prometheus Firestorm Upgrade",MSG_EXP_BUSBRIDGE
