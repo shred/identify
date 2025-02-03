@@ -1416,6 +1416,8 @@ manuf_tab	tabinit
 		board	  027,"ACA1211",		MSG_EXP_MISC	; Control registers (64KB @E90000)
 		board	  028,"ACA1234",		MSG_EXP_TURBO	; Control registers (64KB @E90000)
 		board	  029,"ACA1234",		MSG_EXP_RAM
+		board	  030,"ACA1240/1260",		MSG_EXP_RAM	; 256M Memory Area
+		board	  031,"ACA1240/1260",		MSG_EXP_TURBO	; 128k I/O Area
 		board	  032,"ACA1233n (020 mode)",	MSG_EXP_RAM	; Serial = MHz, >128 = 2019 version
 		board	  033,"ACA1233n",		MSG_EXP_TURBOANDRAM ; Serial = MHz, >128 = 2019 version
 		boardf	  042,f_icomp_042
