@@ -1042,17 +1042,6 @@ do_System	move	d0,d7
 		expans	FindConfigDev		; Viper provides a card.resource,
 		tst.l	d0			; so check before Amiga 600!
 		bne	.amiga500
-	;---- Amiga 600
-		lea	(cardresource,a4),a1
-		exec	OpenResource
-		tst.l	d0
-		bne	.amiga600
-		move.l	(execbase,PC),a0
-		lea	(MemList,a0),a0
-		lea	(cardresource,a4),a1
-		exec.q	FindName
-		tst.l	d0
-		bne	.amiga600
 	;---- CDTV
 		exec.q	Forbid
 		lea	(dmacsemaphore,a4),a1
@@ -1077,8 +1066,8 @@ do_System	move	d0,d7
 	;---- Amiga 2000/060
 		btst	#AFB_68060,d7		; There is no 68060 extension for the
 		bne	.amiga2000		; Amiga 500, so must be an Amiga 2000
-	;---- Amiga 500/Amiga 2000
-	;; TODO: Are there other ways to distinguish an A500 from A2000?
+	;---- Amiga 500/Amiga 600/Amiga 2000
+	;; TODO: Are there other ways to distinguish an A500/A600/A2000?
 		bra	.amigaecs
 
 	;-- Check for OCS machines in general
