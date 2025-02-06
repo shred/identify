@@ -7,7 +7,7 @@ Requires:     AmigaOS 2.0 or higher
 Architecture: m68k-amigaos >= 2.0.4
 
 License:      GNU Lesser General Public License v3
-Source:       https://github.com/shred/identify
+Source:       https://codeberg.org/shred/identify
 Website:      https://identify.shredzone.org
 
 This is the developer packet for IdentifyUsr. In this packet you will
@@ -27,7 +27,7 @@ projects:
 Identify is Open Source Software. The source code is distributed under
 the LGPLv3 Lesser Gnu Public License.
 
-The reference repository is at GitHub: https://github.com/shred/identify
+Reference repository: https://codeberg.org/shred/identify
 
 The source code is intentionally not part of this package. If you want
 to modify the code, please consider contributing to the reference

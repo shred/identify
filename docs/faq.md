@@ -36,7 +36,7 @@ Measuring the clock requires real Fast RAM for best results. If there is only Ch
 
 > **My 68030 is detected as 68EC030 (or vice versa).**
 
-Please install the [mmu.library](https://aminet.net/package/util/libs/MMULib) by Thomas Richter. If your CPU is still detected as 68EC030, and you are _sure_ you own a full-fledged 68030, please file a [bug report](https://github.com/shred/identify/issues/new).
+Please install the [mmu.library](https://aminet.net/package/util/libs/MMULib) by Thomas Richter. If your CPU is still detected as 68EC030, and you are _sure_ you own a full-fledged 68030, please file a [bug report](https://codeberg.org/shred/identify/issues/new).
 
 > **The CPU/FPU/MMU of my new accelerator board is shown incorrectly. Have I been victim of a scam?**
 
@@ -80,7 +80,7 @@ Information about the host system is only provided by the AmigaXL emulator. UAE 
 
 > **Where do I find the source code?**
 
-It's at the official [GitHub repository](https://github.com/shred/identify) and LGPLv3 licensed. Your contribution is welcome!
+It's at the official [Codeberg repository](https://codeberg.org/shred/identify) and LGPLv3 licensed. Your contribution is welcome!
 
 > **I'm missing a translation for my language.**
 
@@ -94,4 +94,4 @@ Well, you _can_ do that. But please consider to contribute to the official proje
 
 Identify V37 was released by Thore Böckelmann in 2003. This release added new boards and new features. He published it with good intentions, but unfortunately without my consent. I can only blame myself for that, because I hadn't provided the infrastructure where a coordinated development was made possible.
 
-All changes of Thore's release have been backported to this official repository. For archiving purposes, you will find my last official Amiga built release V13.0, and Thore's V37.1, in the [GitHub releases](https://github.com/shred/identify/releases). Note that the code at the `v37.1` tag does not actually correspond to his V37.1 release, as he had used a completely different code base that was never published (to my knowledge).
+All changes of Thore's release have been backported to this official repository. For archiving purposes, you will find my last official Amiga built release V13.0, and Thore's V37.1, in the [Codeberg releases](https://codeberg.org/shred/identify/releases). Note that the code at the `v37.1` tag does not actually correspond to his V37.1 release, as he had used a completely different code base that was never published (to my knowledge).

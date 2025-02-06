@@ -24,7 +24,6 @@ For a successful Merge Request, make sure that these preconditions are met:
 - [ ] You tested your changes.
 - [ ] You keep the Assembler, C and Pascal include files in sync if you made changes to any files in the `reference` directory.
 - [ ] You document your changes (if applicable).
-- [ ] You confirm that you did not use AI based code generators (e.g. GitHub Copilot, ChatGPT) for your contribution.
 
 ## Translations
 
@@ -45,4 +44,4 @@ There are a few changes that I am not going to accept.
 
 In general, I want to be benevolent and try to merge all of your changes. However, please respect that I want to keep a "final say", so I reserve the right to reject your merge requests without giving you reasons for that.
 
-If you are not sure if I would accept your change, you can open a [new issue](https://github.com/shred/identify/issues) and discuss it first.
+If you are not sure if I would accept your change, you can open a [new issue](https://codeberg.org/shred/identify/issues) and discuss it first.

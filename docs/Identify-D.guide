@@ -79,7 +79,7 @@ du in die Library eingebaut haben möchtest.
 Copyright
 *********
 
-Identify ist © 1996-2023 Richard 'Shred' Körber und weiteren Mitwirkenden.
+Identify ist © 1996-2025 Richard 'Shred' Körber und weiteren Mitwirkenden.
 
 
 LIZENZ
@@ -506,7 +506,7 @@ FAQ
 
 Eine FAQ in Englisch findest du online unter:
 
-  https://github.com/shred/identify/blob/master/docs/faq.md
+  https://codeberg.org/shred/identify/src/branch/master/docs/faq.md
 
 @EndNode
 
