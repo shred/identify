@@ -1,5 +1,7 @@
 # identify.library
 
+> **THIS PROJECT HAS MOVED TO [CODEBERG](https://codeberg.org/shred/identify)**
+
 Identify is a shared Amiga library that helps identifying all kind of system parameters.
 
 The source code was closed, like almost all of my Amiga projects. I have now reviewed and reformatted the files, translated the comments from German to English, and made the project compilable on Linux (and probably other targets) using vbcc. The source is now open to everyone for contributing, studying, archiving, or just enjoying the good old Amiga times.
